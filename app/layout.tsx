@@ -4,8 +4,8 @@ import { Providers } from "./providers";
 import "./global.css";
 
 export const metadata: Metadata = {
-  title: "Kentworthy Machine",
-  description: "The website of Kentworthy Machine",
+  title: "Kenworthy Machine",
+  description: "The website of Kenworthy Machine",
 };
 
 export default function RootLayout({
