@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { lexend_deca } from "./fonts";
+import { lato, roboto_slab } from "./fonts";
 import { Providers } from "./providers";
 import "./global.css";
 
@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={lexend_deca.className}>
+      <body className={lato.className}>
         <Providers>{children}</Providers>
       </body>
     </html>
