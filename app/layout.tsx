@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { lexend_deca } from "./fonts";
 import { Providers } from "./providers";
+import "./global.css";
 
 export const metadata: Metadata = {
   title: "Kentworthy Machine",
