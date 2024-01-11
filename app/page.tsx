@@ -15,17 +15,25 @@ export default function Home() {
         />
       </Box>
       <Center gap="24px">
-        <Link href="/" color="blue.400" _hover={{ color: "blue.500" }}>
+        <Link
+          href="/"
+          color="white"
+          _hover={{ color: "var(--text-color-light)" }}
+        >
           Home
         </Link>
-        <Link href="/request" color="blue.400" _hover={{ color: "blue.500" }}>
+        <Link
+          href="/request"
+          color="white"
+          _hover={{ color: "var(--text-color-light)" }}
+        >
           Request a Quote
         </Link>
         <Image
           src="/images/hamburger-menu.png"
           alt="Hamburger Menu"
-          width={20}
-          height={20}
+          width={30}
+          height={30}
         />
       </Center>
     </Grid>
