@@ -1,11 +1,15 @@
 "use client";
 import { Link } from "@chakra-ui/next-js";
-import { Box, Grid, Stack, Button } from "@chakra-ui/react";
+import { Box, Grid, Stack } from "@chakra-ui/react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function Header() {
   const [hamburger, setHamburger] = useState(false);
+
+  const pathname = usePathname();
+
   const handleHamburger = () => {
     setHamburger(!hamburger);
   };
@@ -31,6 +35,9 @@ export default function Header() {
             href="/"
             color="white"
             fontSize="24px"
+            borderBottom={
+              pathname === "/" ? "solid var(--primary-red) 2px" : "none"
+            }
             _hover={{
               color: "var(--text-color-light)",
               borderBottom: "solid var(--primary-red) 2px",
@@ -39,10 +46,16 @@ export default function Header() {
           >
             Home
           </Link>
+
           <Link
             href="/request-quote"
             color="white"
             fontSize="24px"
+            borderBottom={
+              pathname === "/request-quote"
+                ? "solid var(--primary-red) 2px"
+                : "none"
+            }
             _hover={{
               color: "var(--text-color-light)",
               borderBottom: "solid var(--primary-red) 2px",
@@ -51,6 +64,7 @@ export default function Header() {
           >
             Request a Quote
           </Link>
+
           <div onClick={handleHamburger}>
             <Image
               src="/images/hamburger-menu.png"
@@ -139,7 +153,7 @@ export default function Header() {
             Careers
           </Link>
           <Link
-            href="/contact-us"
+            href="/request-quote"
             color="black"
             backgroundColor="white"
             borderRadius="20px"
