@@ -63,53 +63,96 @@ export default function Header() {
       {hamburger && (
         <Grid
           templateColumns="repeat(5, 1fr)"
-          gap="12px"
+          gap="24px"
           mx="12px"
           mb="12px"
           borderRadius="50%"
         >
-          <Button
-            colorScheme="red"
-            size="md"
-            borderRadius="20px"
+          <Link
+            href="/request-quote"
             color="white"
             backgroundColor="var(--primary-red)"
+            borderRadius="20px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            padding="6px"
+            fontWeight="700"
+            _hover={{
+              color: "var(--text-color-light)",
+              transitionDuration: "300ms",
+            }}
           >
             Request a Quote
-          </Button>
-          <Button
-            colorScheme="blue"
-            size="md"
-            borderRadius="20px"
+          </Link>
+          <Link
+            href="/view-machines"
             color="black"
             backgroundColor="white"
+            borderRadius="20px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            padding="6px"
+            fontWeight="700"
+            _hover={{
+              color: "var(--text-color-light)",
+              transitionDuration: "300ms",
+            }}
           >
             View Machines
-          </Button>
-          <Button
-            colorScheme="blue"
-            size="md"
-            borderRadius="20px"
+          </Link>
+          <Link
+            href="/about-us"
+            color="black"
             backgroundColor="white"
+            borderRadius="20px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            padding="6px"
+            fontWeight="700"
+            _hover={{
+              color: "var(--text-color-light)",
+              transitionDuration: "300ms",
+            }}
           >
             About Us
-          </Button>
-          <Button
-            colorScheme="blue"
-            size="md"
-            borderRadius="20px"
+          </Link>
+          <Link
+            href="/careers"
+            color="black"
             backgroundColor="white"
+            borderRadius="20px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            padding="6px"
+            fontWeight="700"
+            _hover={{
+              color: "var(--text-color-light)",
+              transitionDuration: "300ms",
+            }}
           >
             Careers
-          </Button>
-          <Button
-            colorScheme="blue"
-            size="md"
-            borderRadius="20px"
+          </Link>
+          <Link
+            href="/contact-us"
+            color="black"
             backgroundColor="white"
+            borderRadius="20px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            padding="6px"
+            fontWeight="700"
+            _hover={{
+              color: "var(--text-color-light)",
+              transitionDuration: "300ms",
+            }}
           >
             Contact Us
-          </Button>
+          </Link>
         </Grid>
       )}
     </Stack>
