@@ -5,7 +5,7 @@ export default function Home() {
   const divStyle = {
     minHeight: "1000px",
     backgroundColor: "var(--primary-red)",
-    margin: "24px",
+    margin: "12px",
   };
 
   return (
