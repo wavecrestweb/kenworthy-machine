@@ -18,14 +18,22 @@ export default function Header() {
         <Link
           href="/"
           color="white"
-          _hover={{ color: "var(--text-color-light)" }}
+          _hover={{
+            color: "var(--text-color-light)",
+            borderBottom: "solid var(--primary-red) 2px",
+            transitionDuration: "400ms",
+          }}
         >
           Home
         </Link>
         <Link
           href="/request-quote"
           color="white"
-          _hover={{ color: "var(--text-color-light)" }}
+          _hover={{
+            color: "var(--text-color-light)",
+            borderBottom: "solid var(--primary-red) 2px",
+            transitionDuration: "400ms",
+          }}
         >
           Request a Quote
         </Link>

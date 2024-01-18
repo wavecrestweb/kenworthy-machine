@@ -3,6 +3,7 @@ import { lato, roboto_slab } from "./fonts";
 import { Providers } from "./providers";
 import "./global.css";
 import Header from "./components/Header";
+import { Box } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
   title: "Kenworthy Machine",
@@ -18,7 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={lato.className}>
         <Providers>
-          <Header />
+          <Box sx={{ position: "sticky", top: "0" }}>
+            <Header />
+          </Box>
           {children}
         </Providers>
       </body>
