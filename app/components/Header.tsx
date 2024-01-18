@@ -17,8 +17,8 @@ export default function Header() {
           <Image
             src="/images/kenworthy-logo.jpg"
             alt="Kenworthy Machine"
-            width={600}
-            height={600}
+            width={500}
+            height={500}
           />
         </Box>
         <Box
@@ -55,8 +55,8 @@ export default function Header() {
             <Image
               src="/images/hamburger-menu.png"
               alt="Hamburger Menu"
-              width={30}
-              height={30}
+              width={40}
+              height={40}
             />
           </div>
         </Box>
