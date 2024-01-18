@@ -17,8 +17,8 @@ export default function Header() {
           <Image
             src="/images/kenworthy-logo.jpg"
             alt="Kenworthy Machine"
-            width={500}
-            height={500}
+            width={600}
+            height={600}
           />
         </Box>
         <Box
@@ -30,6 +30,7 @@ export default function Header() {
           <Link
             href="/"
             color="white"
+            fontSize="24px"
             _hover={{
               color: "var(--text-color-light)",
               borderBottom: "solid var(--primary-red) 2px",
@@ -41,6 +42,7 @@ export default function Header() {
           <Link
             href="/request-quote"
             color="white"
+            fontSize="24px"
             _hover={{
               color: "var(--text-color-light)",
               borderBottom: "solid var(--primary-red) 2px",
