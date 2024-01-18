@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { lato, roboto_slab } from "./fonts";
 import { Providers } from "./providers";
 import "./global.css";
+import Header from "./components/Header";
 
 export const metadata: Metadata = {
   title: "Kenworthy Machine",
@@ -16,7 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={lato.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   );

@@ -1,12 +1,12 @@
 /* CSS variables based on design system requirements */
 :root {
   --border-radius: 20px;
+  --box-shadow: 0px 6px 4px #00000040;
   --background-color-dark: #0b113e;
   --background-color-med: #232952;
-  --box-shadow: 0px 6px 4px #00000040;
   --text-color: #0b113e;
   --text-color-light: #938f8f;
-  --button-color: #db0a40;
+  --primary-red: #db0a40;
 }
 
 /* This CSS reset is based on the following two examples: */
