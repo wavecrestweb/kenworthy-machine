@@ -1,9 +1,10 @@
 "use client";
-import { Link } from "@chakra-ui/next-js";
-import { Box, Grid, Stack } from "@chakra-ui/react";
+import { Link as ChakraLink } from "@chakra-ui/next-js";
+import { Box, Grid, Stack, IconButton } from "@chakra-ui/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import styled from "@emotion/styled";
 
 export default function Header() {
   const [hamburger, setHamburger] = useState(false);
@@ -31,7 +32,7 @@ export default function Header() {
           justifyContent="flex-end"
           gap="24px"
         >
-          <Link
+          <ChakraLink
             href="/"
             color="white"
             fontSize="24px"
@@ -45,9 +46,9 @@ export default function Header() {
             }}
           >
             Home
-          </Link>
+          </ChakraLink>
 
-          <Link
+          <ChakraLink
             href="/request-quote"
             color="white"
             fontSize="24px"
@@ -63,18 +64,18 @@ export default function Header() {
             }}
           >
             Request a Quote
-          </Link>
+          </ChakraLink>
 
-          <div onClick={handleHamburger}>
+          <IconButton aria-label="Hamburger menu" onClick={handleHamburger}>
             <Image
               src="/images/hamburger-menu.png"
               alt="Hamburger Menu"
               width={40}
               height={40}
             />
-          </div>
+          </IconButton>
         </Box>
-        <Box></Box>
+        <Spacer></Spacer>
       </Grid>
       {hamburger && (
         <Grid
@@ -84,93 +85,27 @@ export default function Header() {
           mb="12px"
           borderRadius="50%"
         >
-          <Link
-            href="/request-quote"
-            color="white"
-            backgroundColor="var(--primary-red)"
-            borderRadius="20px"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            padding="6px"
-            fontWeight="700"
-            _hover={{
-              color: "var(--text-color-light)",
-              transitionDuration: "300ms",
-            }}
-          >
+          <ChakraLink href="/request-quote" variant="buttonPrimary">
             Request a Quote
-          </Link>
-          <Link
-            href="/view-machines"
-            color="black"
-            backgroundColor="white"
-            borderRadius="20px"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            padding="6px"
-            fontWeight="700"
-            _hover={{
-              color: "var(--text-color-light)",
-              transitionDuration: "300ms",
-            }}
-          >
+          </ChakraLink>
+          <ChakraLink href="/view-machines" variant="buttonSecondary">
             View Machines
-          </Link>
-          <Link
-            href="/about-us"
-            color="black"
-            backgroundColor="white"
-            borderRadius="20px"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            padding="6px"
-            fontWeight="700"
-            _hover={{
-              color: "var(--text-color-light)",
-              transitionDuration: "300ms",
-            }}
-          >
+          </ChakraLink>
+          <ChakraLink href="/about-us" variant="buttonSecondary">
             About Us
-          </Link>
-          <Link
-            href="/careers"
-            color="black"
-            backgroundColor="white"
-            borderRadius="20px"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            padding="6px"
-            fontWeight="700"
-            _hover={{
-              color: "var(--text-color-light)",
-              transitionDuration: "300ms",
-            }}
-          >
+          </ChakraLink>
+          <ChakraLink href="/careers" variant="buttonSecondary">
             Careers
-          </Link>
-          <Link
-            href="/request-quote"
-            color="black"
-            backgroundColor="white"
-            borderRadius="20px"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            padding="6px"
-            fontWeight="700"
-            _hover={{
-              color: "var(--text-color-light)",
-              transitionDuration: "300ms",
-            }}
-          >
+          </ChakraLink>
+          <ChakraLink href="/request-quote" variant="buttonSecondary">
             Contact Us
-          </Link>
+          </ChakraLink>
         </Grid>
       )}
     </Stack>
   );
 }
+
+const Spacer = styled.div`
+  grid-column: auto;
+`;
