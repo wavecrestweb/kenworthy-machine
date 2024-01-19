@@ -34,34 +34,22 @@ export default function Header() {
         >
           <ChakraLink
             href="/"
-            color="white"
-            fontSize="24px"
             borderBottom={
               pathname === "/" ? "solid var(--primary-red) 2px" : "none"
             }
-            _hover={{
-              color: "var(--text-color-light)",
-              borderBottom: "solid var(--primary-red) 2px",
-              transitionDuration: "400ms",
-            }}
+            variant="navigation"
           >
             Home
           </ChakraLink>
 
           <ChakraLink
             href="/request-quote"
-            color="white"
-            fontSize="24px"
             borderBottom={
               pathname === "/request-quote"
                 ? "solid var(--primary-red) 2px"
                 : "none"
             }
-            _hover={{
-              color: "var(--text-color-light)",
-              borderBottom: "solid var(--primary-red) 2px",
-              transitionDuration: "400ms",
-            }}
+            variant="navigation"
           >
             Request a Quote
           </ChakraLink>

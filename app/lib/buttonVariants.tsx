@@ -6,7 +6,7 @@ const buttonTheme = extendTheme({
       variants: {
         buttonPrimary: {
           color: "white",
-          backgroundColor: "red",
+          backgroundColor: "var(--primary-red)",
           borderRadius: "20px",
           display: "flex",
           alignItems: "center",
@@ -14,12 +14,13 @@ const buttonTheme = extendTheme({
           padding: "6px",
           fontWeight: "700",
           _hover: {
-            color: "var(--text-color-light)",
+            color: "var(--text-color)",
             transitionDuration: "300ms",
+            textDecoration: "none",
           },
         },
         buttonSecondary: {
-          color: "black",
+          color: "var(--text-color)",
           backgroundColor: "white",
           borderRadius: "20px",
           display: "flex",
@@ -28,7 +29,18 @@ const buttonTheme = extendTheme({
           padding: "6px",
           fontWeight: "700",
           _hover: {
+            backgroundColor: "var(--background-color-light)",
+            transitionDuration: "300ms",
+            textDecoration: "none",
+          },
+        },
+        navigation: {
+          color: "white",
+          fontSize: "24px",
+          _hover: {
             color: "var(--text-color-light)",
+            borderBottom: "solid var(--primary-red) 2px",
+            textDecoration: "none",
             transitionDuration: "300ms",
           },
         },
