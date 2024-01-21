@@ -7,7 +7,7 @@ const buttonTheme = extendTheme({
         buttonPrimary: {
           color: "white",
           backgroundColor: "var(--primary-red)",
-          borderRadius: "20px",
+          borderRadius: "var(--border-radius)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -22,7 +22,7 @@ const buttonTheme = extendTheme({
         buttonSecondary: {
           color: "var(--text-color)",
           backgroundColor: "white",
-          borderRadius: "20px",
+          borderRadius: "var(--border-radius)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
