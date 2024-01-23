@@ -11,7 +11,7 @@ export default function Header() {
   const pathname = usePathname();
 
   const handleHamburger = () => {
-    setHamburger(!hamburger);
+    setHamburger((prevState) => !prevState);
   };
 
   return (
