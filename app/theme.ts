@@ -7,7 +7,7 @@ const customTheme = extendTheme({
     backgroundMed: "#232952",
     text: "#0b113e",
     textLight: "#938f8f",
-    button: "#db0a40",
+    red: "#db0a40",
   },
   fonts: {
     heading: "Roboto Slab, serif",
@@ -18,7 +18,7 @@ const customTheme = extendTheme({
       variants: {
         buttonPrimary: {
           color: "white",
-          backgroundColor: "var(--primary-red)",
+          backgroundColor: "red",
           borderRadius: "var(--border-radius)",
           display: "flex",
           alignItems: "center",
@@ -50,13 +50,41 @@ const customTheme = extendTheme({
           color: "white",
           fontSize: "24px",
           _hover: {
-            color: "var(--text-color-light)",
-            borderBottom: "solid var(--primary-red) 2px",
+            borderBottom: "solid 2px",
+            borderBottomColor: "red",
+            textDecoration: "none",
+            transitionDuration: "300ms",
+          },
+        },
+        footer: {
+          textStyle: "footerNavigation",
+          _hover: {
+            borderBottom: "solid 2px",
+            borderBottomColor: "red",
             textDecoration: "none",
             transitionDuration: "300ms",
           },
         },
       },
+    },
+    Text: {
+      variants: {
+        footer: {
+          color: "white",
+          fontFamily: "body",
+          fontSize: "24px",
+          fontWeight: "700",
+          lineHeight: "28.8px",
+        },
+      },
+    },
+  },
+  textStyles: {
+    footerNavigation: {
+      color: "white",
+      fontSize: "36px",
+      fontWeight: "500",
+      lineHeight: "43.2px",
     },
   },
 });
