@@ -1,10 +1,9 @@
 "use client";
 import { Link as ChakraLink } from "@chakra-ui/next-js";
-import { Box, Grid, Stack, IconButton } from "@chakra-ui/react";
+import { Box, Grid, Stack, IconButton, Spacer } from "@chakra-ui/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import styled from "@emotion/styled";
 
 export default function Header() {
   const [hamburger, setHamburger] = useState(false);
@@ -93,7 +92,3 @@ export default function Header() {
     </Stack>
   );
 }
-
-const Spacer = styled.div`
-  grid-column: auto;
-`;
