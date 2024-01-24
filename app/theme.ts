@@ -48,7 +48,7 @@ const customTheme = extendTheme({
         },
         navigation: {
           color: "white",
-          fontSize: "24px",
+          fontSize: "24px", //32px?
           _hover: {
             borderBottom: "solid 2px",
             borderBottomColor: "red",
@@ -70,11 +70,19 @@ const customTheme = extendTheme({
     Text: {
       variants: {
         footer: {
+          textStyle: "footerText",
+        },
+      },
+    },
+    Heading: {
+      variants: {
+        footer: {
           color: "white",
           fontFamily: "body",
           fontSize: "24px",
           fontWeight: "700",
           lineHeight: "28.8px",
+          textDecoration: "underline",
         },
       },
     },
@@ -85,6 +93,13 @@ const customTheme = extendTheme({
       fontSize: "36px",
       fontWeight: "500",
       lineHeight: "43.2px",
+    },
+    footerText: {
+      color: "white",
+      fontFamily: "body",
+      fontSize: "24px",
+      fontWeight: "700",
+      lineHeight: "28.8px",
     },
   },
 });
