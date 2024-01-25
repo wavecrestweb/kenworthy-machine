@@ -43,9 +43,12 @@ const contactInfo = [
 
 const Footer = () => {
   return (
-    <Grid templateColumns="repeat(5, 1fr)" p="72px 63px">
+    <Grid
+      templateColumns="repeat(5, 1fr)"
+      p={{ md: "42px 54px", lg: "72px 63px" }}
+    >
       <GridItem colSpan={2}>
-        <Stack spacing="50px">
+        <Stack spacing={{ md: "50px", lg: "50px" }}>
           <Box>
             <Image
               src="/images/kenworthy-logo.jpg"
@@ -57,9 +60,11 @@ const Footer = () => {
           <>
             {contactInfo.map(({ heading, content }) => (
               <Box key={heading}>
-                <Heading variant="footer">{heading}</Heading>
+                <Heading variant="footer" pb={{ md: "15px" }}>
+                  {heading}
+                </Heading>
                 {content.map((line) => (
-                  <Text key={line} variant="footer">
+                  <Text key={line} size={{ md: "l", lg: "xl" }}>
                     {line}
                   </Text>
                 ))}
@@ -69,7 +74,10 @@ const Footer = () => {
         </Stack>
       </GridItem>
       <GridItem colStart={4} colEnd={6}>
-        <Stack spacing="57px" pt="28px">
+        <Stack
+          spacing={{ md: "62px", lg: "57px" }}
+          pt={{ md: "8px", lg: "28px" }}
+        >
           {links.map(({ href, text }) => (
             <FooterNavLink key={text} href={href}>
               {text}
@@ -84,7 +92,7 @@ const Footer = () => {
 const FooterNavLink = ({ children, ...props }: LinkProps) => {
   return (
     <Box>
-      <Link variant="footer" {...props}>
+      <Link variant="footer" size={{ md: "l", lg: "xl" }} {...props}>
         {children}
       </Link>
     </Box>

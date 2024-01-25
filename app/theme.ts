@@ -15,6 +15,18 @@ const customTheme = extendTheme({
   },
   components: {
     Link: {
+      sizes: {
+        l: {
+          fontSize: "32px",
+          fontWeight: "500",
+          lineHeight: "38.4px",
+        },
+        xl: {
+          fontSize: "36px",
+          fontWeight: "500",
+          lineHeight: "43.2px",
+        },
+      },
       variants: {
         buttonPrimary: {
           color: "white",
@@ -57,7 +69,6 @@ const customTheme = extendTheme({
           },
         },
         footer: {
-          textStyle: "footerNavigation",
           _hover: {
             borderBottom: "solid 2px",
             borderBottomColor: "red",
@@ -68,9 +79,16 @@ const customTheme = extendTheme({
       },
     },
     Text: {
-      variants: {
-        footer: {
-          textStyle: "footerText",
+      sizes: {
+        l: {
+          fontSize: "20px",
+          fontWeight: "700",
+          lineHeight: "24px",
+        },
+        xl: {
+          fontSize: "24px",
+          fontWeight: "700",
+          lineHeight: "28.8px",
         },
       },
     },
@@ -85,21 +103,6 @@ const customTheme = extendTheme({
           textDecoration: "underline",
         },
       },
-    },
-  },
-  textStyles: {
-    footerNavigation: {
-      color: "white",
-      fontSize: "36px",
-      fontWeight: "500",
-      lineHeight: "43.2px",
-    },
-    footerText: {
-      color: "white",
-      fontFamily: "body",
-      fontSize: "24px",
-      fontWeight: "700",
-      lineHeight: "28.8px",
     },
   },
 });
