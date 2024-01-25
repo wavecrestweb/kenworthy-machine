@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={lato.className}>
         <Providers>
-          <Box sx={{ position: "sticky", top: "0" }}>
+          <Box zIndex={10} sx={{ position: "sticky", top: "0" }}>
             <Header />
           </Box>
           {children}
