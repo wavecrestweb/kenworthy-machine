@@ -12,8 +12,8 @@ const customTheme = extendTheme({
     },
   },
   fonts: {
-    heading: "Roboto Slab, serif",
-    body: "Lato, sans-serif",
+    heading: "var(--font-roboto-slab)",
+    body: "var(--font-lato)",
   },
   components: {
     Link: {

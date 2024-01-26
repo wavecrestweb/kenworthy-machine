@@ -16,8 +16,7 @@ export default function Hero() {
     >
       <Image
         src={heroImage}
-        alt={"machines photo"}
-        layout="responsive"
+        alt={"various manufacturing machines in a shop"}
         width={1728}
         height={610}
         objectFit="cover"
