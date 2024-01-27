@@ -7,10 +7,11 @@ const content = [
 const Location = () => {
   return (
     <Box
-      bg="backgroundMed"
-      fontSize={{ lg: "5xl", md: "2rem" }}
-      lineHeight={{ lg: "3.6rem", md: "2.4rem" }}
-      p={{ lg: "8rem 4.5rem", md: "3.125rem 2.5rem" }}
+      as="p"
+      bg="brand.backgroundMed"
+      fontSize={{ lg: "5xl", sm: "2rem" }}
+      lineHeight={{ lg: "3.6rem", sm: "2.4rem" }}
+      p={{ lg: "8rem 4.5rem", sm: "3.125rem 2.5rem" }}
       textAlign={"center"}
     >
       {content}
