@@ -17,10 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={lato.className}>
+    <html lang="en" className={`${lato.variable} ${roboto_slab.variable}`}>
+      <body>
         <Providers>
-          <Box sx={{ position: "sticky", top: "0" }}>
+          <Box zIndex={10} top="0" pos="sticky">
             <Header />
           </Box>
           {children}
