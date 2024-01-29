@@ -1,5 +1,5 @@
 // LIBRARY IMPORTS
-import { Box, Heading, Text, VStack, HStack } from "@chakra-ui/react";
+import { Box, Flex, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,52 +11,55 @@ import { faClock } from "@/node_modules/@fortawesome/free-regular-svg-icons/inde
 // LOCAL IMPORTS
 import gearBackground from "../../public/images/machine-gear-background.png";
 
-// DATA - TO BE REMOVED ONCE CMS IS SET UP
-const values = [
-  {
-    heading: "Quality",
-    text: "At Kenworthy Machine, producing quality parts to our customer's specifications is our most important job.",
-    icon: faGears,
-  },
-  {
-    heading: "On Time Delivery",
-    text: "We strive to be a supplier that our customers can rely on.",
-    icon: faClock,
-  },
-  {
-    heading: "Collaboration",
-    text: "We value our relationships with our customers.",
-    icon: faPeopleGroup,
-  },
-];
-
 // VALUES COMPONENT DEFINITION
 export default function CompanyValues() {
   return (
-    <Box>
-      <VStack spacing={8}>
+    <Box bg="brand.backgroundDark" p={10}>
+      <VStack spacing={8} align="stretch">
         <Heading color="white" textAlign="center" mb={4}>
           {"Kenworthy's Values"}
         </Heading>
-        {values.map((value) => (
-          <Box
-            key={value.heading}
-            color="white"
-            p={5}
-            bg="rgba(0, 0, 0, 0.5)"
-            borderRadius="md"
-          >
+        <Box bg="white" color="brand.text">
+          <Box p={5} borderRadius="md">
             <HStack spacing={4}>
               <Box fontSize="3xl">
-                <FontAwesomeIcon icon={value.icon} />
+                <FontAwesomeIcon icon={faGears} />
               </Box>
               <VStack align="start">
-                <Heading size="md">{value.heading}</Heading>
-                <Text>{value.text}</Text>
+                <Heading size="md">Quality</Heading>
+                <Text>
+                  {
+                    "At Kenworthy Machine, producing quality parts to our customer's specifications is our most important job."
+                  }
+                </Text>
               </VStack>
             </HStack>
           </Box>
-        ))}
+          <Box p={5} borderRadius="md">
+            <HStack spacing={4}>
+              <Box fontSize="3xl">
+                <FontAwesomeIcon icon={faClock} />
+              </Box>
+              <VStack align="start">
+                <Heading size="md">On Time Delivery</Heading>
+                <Text>
+                  We strive to be a supplier that our customers can rely on.
+                </Text>
+              </VStack>
+            </HStack>
+          </Box>
+          <Box p={5} borderRadius="md">
+            <HStack spacing={4}>
+              <Box fontSize="3xl" color="button">
+                <FontAwesomeIcon icon={faPeopleGroup} />
+              </Box>
+              <VStack align="start">
+                <Heading size="md">Collaboration</Heading>
+                <Text>We value our relationships with our customers.</Text>
+              </VStack>
+            </HStack>
+          </Box>
+        </Box>
       </VStack>
     </Box>
   );

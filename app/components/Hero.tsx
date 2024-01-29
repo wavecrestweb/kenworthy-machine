@@ -31,6 +31,7 @@ export default function Hero() {
         display="flex"
         alignItems="center"
         justifyContent="center"
+        bg="brand.backgroundDark"
         opacity="90%"
       >
         <Heading size="xl" color="white">

@@ -15,7 +15,7 @@ export default function Header() {
   };
 
   return (
-    <Stack>
+    <Stack bg="brand.backgroundDark">
       <Grid templateColumns={"500px 1fr 100px"}>
         <Box p="12px">
           <Image
