@@ -9,6 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import logo from "../../public/images/kenworthy-logo.jpg";
 
 const links = [
   { href: "/about-us", text: "About Us" },
@@ -44,27 +45,37 @@ const contactInfo = [
 const Footer = () => {
   return (
     <Grid
-      templateColumns="repeat(5, 1fr)"
-      p={{ md: "42px 54px", lg: "72px 63px" }}
+      templateColumns={{
+        md: "repeat(7, 1fr)",
+        xl: "repeat(5, 1fr)",
+      }}
+      p={{ base: "3rem 1.375rem", md: "2.625rem 3.375rem", xl: "4.5rem 4rem" }}
+      gap={{ md: "1.5rem" }}
+      position="relative"
     >
-      <GridItem colSpan={2}>
-        <Stack spacing={{ md: "50px", lg: "50px" }}>
+      <GridItem colSpan={{ md: 4, xl: 2 }}>
+        <Stack spacing={{ base: "1.875rem", md: "3.125rem", xl: "3.125rem" }}>
           <Box>
-            <Image
-              src="/images/kenworthy-logo.jpg"
-              alt="Kenworthy Machine"
-              width={500}
-              height={500}
-            />
+            <Box w={{ base: "10.375rem", md: "15rem", xl: "32.75rem" }}>
+              <Image src={logo} alt="Kenworthy Machine" />
+            </Box>
           </Box>
           <>
             {contactInfo.map(({ heading, content }) => (
               <Box key={heading}>
-                <Heading variant="footer" pb={{ md: "15px" }}>
+                <Heading
+                  as="h4"
+                  variant="footer"
+                  pb={{ base: "1rem", xl: "0.625rem" }}
+                >
                   {heading}
                 </Heading>
                 {content.map((line) => (
-                  <Text key={line} size={{ md: "l", lg: "xl" }}>
+                  <Text
+                    key={line}
+                    fontSize={{ base: "xl", xl: "2xl" }}
+                    lineHeight={{ base: "1.5rem", xl: "1.8rem" }}
+                  >
                     {line}
                   </Text>
                 ))}
@@ -73,10 +84,14 @@ const Footer = () => {
           </>
         </Stack>
       </GridItem>
-      <GridItem colStart={4} colEnd={6}>
+      <GridItem
+        colStart={{ md: 5, xl: 4 }}
+        colEnd={{ md: 8, xl: 6 }}
+        display={{ base: "none", sm: "contents" }}
+      >
         <Stack
-          spacing={{ md: "62px", lg: "57px" }}
-          pt={{ md: "8px", lg: "28px" }}
+          spacing={{ md: "3.875rem", xl: "3.56rem" }}
+          pt={{ md: "0.5rem", xl: "1.75rem" }}
         >
           {links.map(({ href, text }) => (
             <FooterNavLink key={text} href={href}>
@@ -92,7 +107,12 @@ const Footer = () => {
 const FooterNavLink = ({ children, ...props }: LinkProps) => {
   return (
     <Box>
-      <Link variant="footer" size={{ md: "l", lg: "xl" }} {...props}>
+      <Link
+        variant="footer"
+        fontSize={{ md: "2rem", xl: "2.25rem" }}
+        lineHeight={{ md: "2.4rem", xl: "2.7rem" }}
+        {...props}
+      >
         {children}
       </Link>
     </Box>

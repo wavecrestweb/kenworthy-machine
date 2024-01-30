@@ -17,22 +17,10 @@ const customTheme = extendTheme({
   },
   components: {
     Link: {
-      sizes: {
-        l: {
-          fontSize: "32px",
-          fontWeight: "500",
-          lineHeight: "38.4px",
-        },
-        xl: {
-          fontSize: "36px",
-          fontWeight: "500",
-          lineHeight: "43.2px",
-        },
-      },
       variants: {
         buttonPrimary: {
           color: "white",
-          backgroundColor: "red",
+          backgroundColor: "brand.button",
           borderRadius: "var(--border-radius)",
           display: "flex",
           alignItems: "center",
@@ -62,10 +50,10 @@ const customTheme = extendTheme({
         },
         navigation: {
           color: "white",
-          fontSize: "24px", //32px?
+          fontSize: "24px",
           _hover: {
             borderBottom: "solid 2px",
-            borderBottomColor: "red",
+            borderBottomColor: "brand.button",
             textDecoration: "none",
             transitionDuration: "300ms",
           },
@@ -73,24 +61,10 @@ const customTheme = extendTheme({
         footer: {
           _hover: {
             borderBottom: "solid 2px",
-            borderBottomColor: "red",
+            borderBottomColor: "brand.button",
             textDecoration: "none",
             transitionDuration: "300ms",
           },
-        },
-      },
-    },
-    Text: {
-      sizes: {
-        l: {
-          fontSize: "20px",
-          fontWeight: "700",
-          lineHeight: "24px",
-        },
-        xl: {
-          fontSize: "24px",
-          fontWeight: "700",
-          lineHeight: "28.8px",
         },
       },
     },
@@ -99,9 +73,9 @@ const customTheme = extendTheme({
         footer: {
           color: "white",
           fontFamily: "body",
-          fontSize: "24px",
-          fontWeight: "700",
-          lineHeight: "28.8px",
+          fontSize: "2xl",
+          fontWeight: "bold",
+          lineHeight: "1.8rem",
           textDecoration: "underline",
         },
       },
