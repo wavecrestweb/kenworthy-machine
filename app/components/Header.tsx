@@ -3,8 +3,7 @@
 // LIBRARY IMPORTS
 import { Link as ChakraLink } from "@chakra-ui/next-js";
 import { Box, Grid, Stack, IconButton, Spacer } from "@chakra-ui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons/index";
+import { FaBars } from "react-icons/fa6";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -63,7 +62,7 @@ export default function Header() {
             variant="ghost"
             color="white"
             fontSize="50px"
-            icon={<FontAwesomeIcon icon={faBars} />}
+            icon={<FaBars />}
           />
         </Box>
         <Spacer></Spacer>

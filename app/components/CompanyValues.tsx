@@ -11,12 +11,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons/index";
-import {
-  faClock,
-  faStar,
-} from "@/node_modules/@fortawesome/free-regular-svg-icons/index";
+import { FaClock, FaPeopleGroup, FaRegStar } from "react-icons/fa6";
 
 // LOCAL IMPORTS
 import gearBackground from "../../public/images/machine-gear-background.png";
@@ -66,16 +61,12 @@ export default function CompanyValues() {
                     </p>
                   </Text>
                 </VStack>
-                <Box fontSize="3xl">
-                  <FontAwesomeIcon icon={faStar} />
-                </Box>
+                <Icon as={FaRegStar} fontSize="3xl" />
               </HStack>
             </Box>
             <Box>
               <HStack spacing={4} align="right">
-                <Box fontSize="3xl">
-                  <FontAwesomeIcon icon={faClock} />
-                </Box>
+                <Icon as={FaClock} fontSize="3xl" />
                 <VStack align="start">
                   <Heading size="md">On Time Delivery</Heading>
                   <Divider color="brand.button" />
@@ -109,9 +100,7 @@ export default function CompanyValues() {
                     </p>
                   </Text>
                 </VStack>
-                <Box fontSize="3xl" color="button">
-                  <FontAwesomeIcon icon={faPeopleGroup} />
-                </Box>
+                <Icon as={FaPeopleGroup} fontSize="3xl" />
               </HStack>
             </Box>
           </VStack>
