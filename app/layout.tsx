@@ -4,6 +4,7 @@ import { Providers } from "./providers";
 import "./global.css";
 import Header from "./components/Header";
 import { Box } from "@chakra-ui/react";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Kenworthy Machine",
@@ -23,6 +24,7 @@ export default function RootLayout({
             <Header />
           </Box>
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>
