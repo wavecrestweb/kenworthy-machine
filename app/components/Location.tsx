@@ -9,9 +9,10 @@ const Location = () => {
     <Box
       as="p"
       bg="brand.backgroundMed"
-      fontSize={{ lg: "5xl", sm: "2rem" }}
-      lineHeight={{ lg: "3.6rem", sm: "2.4rem" }}
-      p={{ lg: "8rem 4.5rem", sm: "3.125rem 2.5rem" }}
+      fontSize={{ base: "2rem", xl: "3rem" }}
+      fontWeight="bold"
+      lineHeight={{ base: "2.4rem", xl: "3.6rem" }}
+      p={{ base: "3.125rem 2.5rem", xl: "8rem 4.5rem" }}
       textAlign={"center"}
     >
       {content}
