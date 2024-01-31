@@ -79,7 +79,7 @@ export default function CompanyValues() {
                 <Icon as={FaRegStar} w={24} h={24} color="white" />
               </Flex>
             </HStack>
-            <HStack spacing={12} align="right">
+            <HStack spacing={12} align="center">
               <Flex
                 w={32}
                 h={32}
@@ -107,7 +107,7 @@ export default function CompanyValues() {
                 </Text>
               </VStack>
             </HStack>
-            <HStack spacing={12} align="left">
+            <HStack spacing={12} align="center">
               <VStack align="start" spacing={4}>
                 <Heading size="lg">Collaboration</Heading>
                 <Box
