@@ -20,7 +20,7 @@ const customTheme = extendTheme({
       variants: {
         buttonPrimary: {
           color: "white",
-          backgroundColor: "var(--primary-red)",
+          backgroundColor: "brand.button",
           borderRadius: "var(--border-radius)",
           display: "flex",
           alignItems: "center",
@@ -52,11 +52,31 @@ const customTheme = extendTheme({
           color: "white",
           fontSize: "24px",
           _hover: {
-            color: "var(--text-color-light)",
-            borderBottom: "solid var(--primary-red) 2px",
+            borderBottom: "solid 2px",
+            borderBottomColor: "brand.button",
             textDecoration: "none",
             transitionDuration: "300ms",
           },
+        },
+        footer: {
+          _hover: {
+            borderBottom: "solid 2px",
+            borderBottomColor: "brand.button",
+            textDecoration: "none",
+            transitionDuration: "300ms",
+          },
+        },
+      },
+    },
+    Heading: {
+      variants: {
+        footer: {
+          color: "white",
+          fontFamily: "body",
+          fontSize: "2xl",
+          fontWeight: "bold",
+          lineHeight: "1.8rem",
+          textDecoration: "underline",
         },
       },
     },
