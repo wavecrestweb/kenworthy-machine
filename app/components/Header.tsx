@@ -1,6 +1,10 @@
 "use client";
+
+// LIBRARY IMPORTS
 import { Link as ChakraLink } from "@chakra-ui/next-js";
 import { Box, Grid, Stack, IconButton, Spacer } from "@chakra-ui/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons/index";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -53,14 +57,14 @@ export default function Header() {
             Request a Quote
           </ChakraLink>
 
-          <IconButton aria-label="Hamburger menu" onClick={handleHamburger}>
-            <Image
-              src="/images/hamburger-menu.png"
-              alt="Hamburger Menu"
-              width={40}
-              height={40}
-            />
-          </IconButton>
+          <IconButton
+            aria-label="open navigation menu"
+            onClick={handleHamburger}
+            variant="ghost"
+            color="white"
+            fontSize="50px"
+            icon={<FontAwesomeIcon icon={faBars} />}
+          />
         </Box>
         <Spacer></Spacer>
       </Grid>
