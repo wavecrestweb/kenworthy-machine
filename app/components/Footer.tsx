@@ -51,10 +51,9 @@ const Footer = () => {
       }}
       p={{ base: "3rem 1.375rem", md: "2.625rem 3.375rem", xl: "4.5rem 4rem" }}
       gap={{ md: "1.5rem" }}
-      position="relative"
     >
       <GridItem colSpan={{ md: 4, xl: 2 }}>
-        <Stack spacing={{ base: "1.875rem", md: "3.125rem", xl: "3.125rem" }}>
+        <Stack spacing={{ base: "1.875rem", md: "2rem", xl: "3.125rem" }}>
           <Box>
             <Box w={{ base: "10.375rem", md: "15rem", xl: "32.75rem" }}>
               <Image src={logo} alt="Kenworthy Machine" />
@@ -66,14 +65,14 @@ const Footer = () => {
                 <Heading
                   as="h4"
                   variant="footer"
-                  pb={{ base: "1rem", xl: "0.625rem" }}
+                  pb={{ base: "1rem", md: "0.75rem", xl: "0.625rem" }}
                 >
                   {heading}
                 </Heading>
                 {content.map((line) => (
                   <Text
                     key={line}
-                    fontSize={{ base: "xl", xl: "2xl" }}
+                    fontSize={{ base: "1.25rem", xl: "1.5rem" }}
                     lineHeight={{ base: "1.5rem", xl: "1.8rem" }}
                   >
                     {line}
@@ -87,7 +86,7 @@ const Footer = () => {
       <GridItem
         colStart={{ md: 5, xl: 4 }}
         colEnd={{ md: 8, xl: 6 }}
-        display={{ base: "none", sm: "contents" }}
+        display={{ base: "none", md: "grid" }}
       >
         <Stack
           spacing={{ md: "3.875rem", xl: "3.56rem" }}
@@ -109,8 +108,8 @@ const FooterNavLink = ({ children, ...props }: LinkProps) => {
     <Box>
       <Link
         variant="footer"
-        fontSize={{ md: "2rem", xl: "2.25rem" }}
-        lineHeight={{ md: "2.4rem", xl: "2.7rem" }}
+        fontSize={{ md: "1.5rem", xl: "1.875rem" }}
+        lineHeight={{ md: "1.8rem", xl: "2.25rem" }}
         {...props}
       >
         {children}
