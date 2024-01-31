@@ -49,6 +49,7 @@ export default function CompanyValues() {
             py={24}
             spacing={36}
           >
+            {/* QUALITY VALUE CONTAINER */}
             <HStack spacing={12} align="center">
               <VStack align="start" spacing={4}>
                 <Heading size="lg">Quality</Heading>
@@ -75,10 +76,12 @@ export default function CompanyValues() {
                 bg="brand.backgroundDark"
                 borderRadius="2xl"
                 align="center"
+                justify="center"
               >
                 <Icon as={FaRegStar} w={24} h={24} color="white" />
               </Flex>
             </HStack>
+            {/* ON-TIME VALUE CONTAINER */}
             <HStack spacing={12} align="center">
               <Flex
                 w={32}
@@ -107,6 +110,7 @@ export default function CompanyValues() {
                 </Text>
               </VStack>
             </HStack>
+            {/* COLLABORATION VALUE CONTAINER */}
             <HStack spacing={12} align="center">
               <VStack align="start" spacing={4}>
                 <Heading size="lg">Collaboration</Heading>
@@ -133,6 +137,7 @@ export default function CompanyValues() {
                 bg="brand.backgroundDark"
                 borderRadius="2xl"
                 align="center"
+                justify="center"
               >
                 <Icon as={FaPeopleGroup} w={28} h={28} color="white" />
               </Flex>
