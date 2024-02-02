@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\"",
+    "build": "tinacms build && next build",
+    "start": "tinacms build && next start",
     "lint": "next lint",
     "format:check": "prettier . --check",
     "format": "prettier . --write",
@@ -19,10 +19,12 @@
     "framer-motion": "^10.18.0",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "tinacms": "^1.5.28"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@tinacms/cli": "^1.5.39",
+    "@types/node": "^20.11.14",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",

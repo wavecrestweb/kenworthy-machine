@@ -1,0 +1,37 @@
+{
+  "navigation": {
+    "logo": "/kenworthy-logo.jpg",
+    "navigationLinks": [
+      {
+        "text": "Contact Us",
+        "url": [
+          "/request-quote"
+        ]
+      },
+      {
+        "text": "Careers",
+        "url": [
+          "/careers"
+        ]
+      },
+      {
+        "text": "About Us",
+        "url": [
+          "/about-us"
+        ]
+      },
+      {
+        "text": "View Machines",
+        "url": [
+          "/view-machines"
+        ]
+      },
+      {
+        "text": "Request a Quote",
+        "url": [
+          "/request-quote"
+        ]
+      }
+    ]
+  }
+}

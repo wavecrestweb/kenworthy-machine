@@ -5,8 +5,14 @@ import Image from "next/image";
 // LOCAL IMPORTS
 import heroImage from "../../public/images/hero-photo.png";
 
+// TYPE DEFINITION
+interface HeroProps {
+  heading: string;
+  image: string;
+}
+
 // HERO COMPONENT DEFINITION
-export default function Hero() {
+const Hero: React.FC<HeroProps> = ({ heading, image }) => {
   return (
     <Box
       position="relative"
@@ -19,8 +25,6 @@ export default function Hero() {
         alt={"various manufacturing machines in a shop"}
         width={1728}
         height={610}
-        objectFit="cover"
-        objectPosition="center"
       />
       <Box
         position="absolute"
@@ -34,9 +38,11 @@ export default function Hero() {
         opacity="90%"
       >
         <Heading size="xl" color="white">
-          Machining Services
+          {heading}
         </Heading>
       </Box>
     </Box>
   );
-}
+};
+
+export default Hero;
