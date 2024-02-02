@@ -63,31 +63,27 @@ export default function CompanyValues() {
                   }
                 </Text>
               </VStack>
-              <Spacer />
               <Flex
-                w={28}
-                h={28}
+                p={4}
                 bg="brand.backgroundDark"
                 borderRadius="2xl"
                 align="center"
                 justify="center"
               >
-                <Icon as={FaRegStar} w={24} h={24} color="white" />
+                <Icon as={FaRegStar} boxSize={24} color="white" />
               </Flex>
             </HStack>
             {/* ON-TIME VALUE CONTAINER */}
             <HStack spacing={12} align="center">
               <Flex
-                w={32}
-                h={32}
+                p={4}
                 bg="brand.backgroundDark"
                 borderRadius="2xl"
                 align="center"
                 justify="center"
               >
-                <Icon as={FaRegClock} w={28} h={28} color="white" />
+                <Icon as={FaRegClock} boxSize={24} color="white" />
               </Flex>
-              <Spacer />
               <VStack align="start" spacing={4}>
                 <Heading size="lg">On Time Delivery</Heading>
                 <Box
@@ -124,16 +120,14 @@ export default function CompanyValues() {
                   reduces costs while retaining functionality.
                 </Text>
               </VStack>
-              <Spacer />
               <Flex
-                w={32}
-                h={32}
+                p={4}
                 bg="brand.backgroundDark"
                 borderRadius="2xl"
                 align="center"
                 justify="center"
               >
-                <Icon as={FaPeopleGroup} w={28} h={28} color="white" />
+                <Icon as={FaPeopleGroup} boxSize={24} color="white" />
               </Flex>
             </HStack>
           </VStack>
