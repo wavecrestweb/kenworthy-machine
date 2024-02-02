@@ -19,8 +19,6 @@ export default function Hero() {
         alt={"various manufacturing machines in a shop"}
         width={1728}
         height={610}
-        objectFit="cover"
-        objectPosition="center"
       />
       <Box
         position="absolute"
@@ -31,6 +29,7 @@ export default function Hero() {
         display="flex"
         alignItems="center"
         justifyContent="center"
+        bg="brand.backgroundDark"
         opacity="90%"
       >
         <Heading size="xl" color="white">
