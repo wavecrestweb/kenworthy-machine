@@ -6,7 +6,7 @@ import Home from "./components/Home";
 
 export default async function Page() {
   // CMS QUERIES
-  const result = await client.queries.page({ relativePath: "home.md" });
+  const result = await client.queries.page({ relativePath: "Home.md" });
 
   return <Home {...result} />;
 }

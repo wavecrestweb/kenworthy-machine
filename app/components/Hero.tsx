@@ -1,18 +1,13 @@
 // LIBRARY IMPORTS
+import { PageBlocksHero } from "@/tina/__generated__/types";
 import { Box, Heading } from "@chakra-ui/react";
 import Image from "next/image";
 
 // LOCAL IMPORTS
 import heroImage from "../../public/images/hero-photo.png";
 
-// TYPE DEFINITION
-interface HeroProps {
-  heading: string;
-  image: string;
-}
-
 // HERO COMPONENT DEFINITION
-const Hero: React.FC<HeroProps> = ({ heading, image }) => {
+export default function Hero(props: PageBlocksHero) {
   return (
     <Box
       position="relative"
@@ -38,11 +33,9 @@ const Hero: React.FC<HeroProps> = ({ heading, image }) => {
         opacity="90%"
       >
         <Heading size="xl" color="white">
-          {heading}
+          {props.heading}
         </Heading>
       </Box>
     </Box>
   );
-};
-
-export default Hero;
+}

@@ -2,7 +2,7 @@
 
 //LIBRARY IMPORTS
 import { Grid } from "@chakra-ui/react";
-import { useTina } from "tinacms/dist/edit-state";
+import { useTina } from "tinacms/dist/react";
 import { PageQuery } from "@/tina/__generated__/types";
 
 //LOCAL IMPORTS
@@ -18,9 +18,23 @@ export default function Home(props: {
   // HOOKS
   const { data } = useTina(props);
 
+  console.log("Page blocks:", data.page.blocks);
+
   return (
     <Grid templateColumns={"1fr"}>
-      <Hero {...props.data.page.hero} />
+      {data.page.blocks?.map((block, i) => {
+        switch (block?.__typename) {
+          case "PageBlocksHero": {
+            return <Hero key={i} {...block} />;
+          }
+          // case "PageBlocksCompanyValues": {
+          //   return <CompanyValues key={i} {...block} />
+          // }
+          // case "PageBlocksLocationSection": {
+          //   return <Location key={i} {...block} />
+          // }
+        }
+      })}
     </Grid>
   );
 }
