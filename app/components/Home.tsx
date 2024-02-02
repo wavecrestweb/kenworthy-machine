@@ -7,6 +7,7 @@ import { PageQuery } from "@/tina/__generated__/types";
 
 //LOCAL IMPORTS
 import Hero from "./Hero";
+import CompanyValues from "./CompanyValues";
 
 export default function Home(props: {
   data: PageQuery;
@@ -18,7 +19,8 @@ export default function Home(props: {
   // HOOKS
   const { data } = useTina(props);
 
-  console.log("Page blocks:", data.page.blocks);
+  // console.log("data props:", data);
+  // console.log("Page blocks:", data.page.blocks);
 
   return (
     <Grid templateColumns={"1fr"}>
@@ -27,11 +29,14 @@ export default function Home(props: {
           case "PageBlocksHero": {
             return <Hero key={i} {...block} />;
           }
-          // case "PageBlocksCompanyValues": {
-          //   return <CompanyValues key={i} {...block} />
-          // }
-          // case "PageBlocksLocationSection": {
+          case "PageBlocksValues": {
+            return <CompanyValues key={i} {...block} />;
+          }
+          // case "PageBlocksLocation": {
           //   return <Location key={i} {...block} />
+          // }
+          // case "PageBlocksMachineCarousel": {
+          //   return <MachineCarousel key={i} {...block} />
           // }
         }
       })}

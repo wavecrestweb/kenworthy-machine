@@ -1,11 +1,12 @@
 // LIBRARY IMPORTS
+import { PageBlocksValues } from "@/tina/__generated__/types";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import {
   Box,
   Flex,
   Heading,
   HStack,
   Icon,
-  Spacer,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -16,7 +17,8 @@ import { FaRegClock, FaPeopleGroup, FaRegStar } from "react-icons/fa6";
 import gearBackground from "../../public/images/machine-gear-background.png";
 
 // VALUES COMPONENT DEFINITION
-export default function CompanyValues() {
+export default function CompanyValues(props: PageBlocksValues) {
+  console.log("rich text: ", props.quality1?.description);
   return (
     <Box position="relative">
       <Image
@@ -46,22 +48,22 @@ export default function CompanyValues() {
             {/* QUALITY VALUE CONTAINER */}
             <HStack spacing={12} align="center">
               <VStack align="start" spacing={4}>
-                <Heading size="lg">Quality</Heading>
+                <Heading size="lg">{props.quality1?.title}</Heading>
                 <Box
                   bgGradient="linear(90deg, #DB0A40 0%, rgba(219, 10, 64, 0.04) 96%, rgba(219, 10, 64, 0) 100%)"
                   w="full"
                   h={1}
                 ></Box>
-                <Text fontWeight="bold" fontSize="lg">
-                  {
-                    "At Kenworthy Machine, producing quality parts to our customer's specifications is our most important job."
-                  }
-                </Text>
-                <Text fontSize="lg">
-                  {
-                    "Our team is dedicated to making sure your parts are correct an in tolerance every time. They use their expertise, as well as modern inspection equipment to achieve this goal. Upon request we can provide inspection reports for your parts with detailed measurements compared to drawing specifications. We also offer laser engraving to give your parts a professional appearance."
-                  }
-                </Text>
+                <TinaMarkdown
+                  content={props.quality1?.description}
+                  components={{
+                    p: ({ children }) => (
+                      <Text as="span" fontSize="xl">
+                        {children}
+                      </Text>
+                    ),
+                  }}
+                />
               </VStack>
               <Flex
                 p={4}
@@ -85,40 +87,43 @@ export default function CompanyValues() {
                 <Icon as={FaRegClock} boxSize={24} color="white" />
               </Flex>
               <VStack align="start" spacing={4}>
-                <Heading size="lg">On Time Delivery</Heading>
+                <Heading size="lg">{props.quality2?.title}</Heading>
                 <Box
                   bgGradient="linear(90deg, #DB0A40 0%, rgba(219, 10, 64, 0.04) 96%, rgba(219, 10, 64, 0) 100%)"
                   w="full"
                   h={1}
                 ></Box>
-                <Text fontWeight="bold" fontSize="lg">
-                  We strive to be a supplier that our customers can rely on.
-                </Text>
-                <Text fontSize="lg">
-                  We use a modern ERP system to accurately schedule our shop so
-                  that we give our customers accurate delivery date commitments.
-                </Text>
+                <TinaMarkdown
+                  content={props.quality2?.description}
+                  components={{
+                    p: ({ children }) => (
+                      <Text as="span" fontSize="xl">
+                        {children}
+                      </Text>
+                    ),
+                  }}
+                />
               </VStack>
             </HStack>
             {/* COLLABORATION VALUE CONTAINER */}
             <HStack spacing={12} align="center">
               <VStack align="start" spacing={4}>
-                <Heading size="lg">Collaboration</Heading>
+                <Heading size="lg">{props.quality3?.title}</Heading>
                 <Box
                   bgGradient="linear(90deg, #DB0A40 0%, rgba(219, 10, 64, 0.04) 96%, rgba(219, 10, 64, 0) 100%)"
                   w="full"
                   h={1}
                 ></Box>
-                <Text fontWeight="bold" fontSize="lg">
-                  We value our relationships with our customers.
-                </Text>
-                <Text fontSize="lg">
-                  It is important that we partner with them to give the best
-                  possible value. Let us work with your engineering and design
-                  teams to maximize value. Often our expert machining team is
-                  able to provide feedback from a manufacturing perspective that
-                  reduces costs while retaining functionality.
-                </Text>
+                <TinaMarkdown
+                  content={props.quality3?.description}
+                  components={{
+                    p: ({ children }) => (
+                      <Text as="span" fontSize="xl">
+                        {children}
+                      </Text>
+                    ),
+                  }}
+                />
               </VStack>
               <Flex
                 p={4}
