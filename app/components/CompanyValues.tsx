@@ -18,9 +18,10 @@ import gearBackground from "../../public/images/machine-gear-background.png";
 // VALUES COMPONENT DEFINITION
 export default function CompanyValues() {
   return (
-    <>
+    <Box position="relative">
       <Image
         src={gearBackground}
+        alt=""
         placeholder="blur"
         fill
         sizes="100vw"
@@ -29,14 +30,7 @@ export default function CompanyValues() {
           zIndex: -1,
         }}
       />
-      <Box
-        bgImage={gearBackground}
-        backgroundRepeat="no-repeat"
-        backgroundSize="cover"
-        p={10}
-        bg="brand.backgroundDark"
-        opacity="90%"
-      >
+      <Box bgImage={gearBackground} p={10} bg="rgba(11, 17, 62, 0.9)">
         <VStack spacing={8}>
           <Heading color="white" textAlign="center" mb={4}>
             {"Kenworthy's Values"}
@@ -145,6 +139,6 @@ export default function CompanyValues() {
           </VStack>
         </VStack>
       </Box>
-    </>
+    </Box>
   );
 }

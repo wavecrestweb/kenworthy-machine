@@ -3,7 +3,7 @@
 // LIBRARY IMPORTS
 import { Link as ChakraLink } from "@chakra-ui/next-js";
 import { Box, Grid, Stack, IconButton, Spacer } from "@chakra-ui/react";
-import { FaBars } from "react-icons/fa6";
+import { FaBars, FaXmark } from "react-icons/fa6";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -61,8 +61,13 @@ export default function Header() {
             onClick={handleHamburger}
             variant="ghost"
             color="white"
-            fontSize="50px"
-            icon={<FaBars />}
+            fontSize="5xl"
+            _hover={{
+              background: "none",
+              transform: "scale(1.1)",
+              transition: "transform 0.2s ease-in-out",
+            }}
+            icon={hamburger ? <FaXmark /> : <FaBars />}
           />
         </Box>
         <Spacer></Spacer>
