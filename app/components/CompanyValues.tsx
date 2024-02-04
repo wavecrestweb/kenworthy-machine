@@ -58,7 +58,7 @@ export default function CompanyValues(props: PageBlocksValues) {
                   content={props.quality1?.description}
                   components={{
                     p: ({ children }) => (
-                      <Text as="span" fontSize="xl">
+                      <Text as="span" fontSize="xl" color="brand.text">
                         {children}
                       </Text>
                     ),
@@ -97,7 +97,7 @@ export default function CompanyValues(props: PageBlocksValues) {
                   content={props.quality2?.description}
                   components={{
                     p: ({ children }) => (
-                      <Text as="span" fontSize="xl">
+                      <Text as="span" fontSize="xl" color="brand.text">
                         {children}
                       </Text>
                     ),
@@ -118,7 +118,7 @@ export default function CompanyValues(props: PageBlocksValues) {
                   content={props.quality3?.description}
                   components={{
                     p: ({ children }) => (
-                      <Text as="span" fontSize="xl">
+                      <Text as="span" fontSize="xl" color="brand.text">
                         {children}
                       </Text>
                     ),
