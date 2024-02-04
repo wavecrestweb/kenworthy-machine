@@ -23,7 +23,9 @@ export default function RootLayout({
           <Box zIndex={10} top="0" pos="sticky">
             <Header />
           </Box>
-          {children}
+          <Box maxW="1500px" mx="auto">
+            {children}
+          </Box>
           <Footer />
         </Providers>
       </body>
