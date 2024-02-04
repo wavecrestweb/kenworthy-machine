@@ -51,6 +51,7 @@ const Footer = () => {
       }}
       p={{ base: "3rem 1.375rem", md: "2.625rem 3.375rem", xl: "4.5rem 4rem" }}
       gap={{ md: "1.5rem" }}
+      layerStyle="darkBg"
     >
       <GridItem colSpan={{ md: 4, xl: 2 }}>
         <Stack spacing={{ base: "1.875rem", md: "2rem", xl: "3.125rem" }}>

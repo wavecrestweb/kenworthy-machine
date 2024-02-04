@@ -8,10 +8,10 @@ const Location = () => {
   return (
     <Box
       as="p"
-      bg="brand.backgroundMed"
-      fontSize={{ base: "2rem", xl: "3rem" }}
+      layerStyle="medBg"
+      fontSize={{ base: "xl", xl: "3xl" }}
       fontWeight="bold"
-      lineHeight={{ base: "2.4rem", xl: "3.6rem" }}
+      lineHeight={{ base: "7", xl: "10" }}
       p={{ base: "3.125rem 2.5rem", xl: "8rem 4.5rem" }}
       textAlign={"center"}
     >

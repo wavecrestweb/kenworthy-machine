@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <Grid templateColumns={"1fr"}>
       <Hero />
-      <Location />
       <CompanyValues />
+      <Location />
     </Grid>
   );
 }
