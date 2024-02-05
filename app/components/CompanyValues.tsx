@@ -1,4 +1,5 @@
 // LIBRARY IMPORTS
+import { ReactNode } from "react";
 import { PageBlocksValues } from "@/tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import {
@@ -57,7 +58,7 @@ export default function CompanyValues(props: PageBlocksValues) {
                 <TinaMarkdown
                   content={props.quality1?.description}
                   components={{
-                    p: ({ children }) => (
+                    p: ({ children }: { children: ReactNode }) => (
                       <Text as="span" fontSize="xl" color="brand.text">
                         {children}
                       </Text>
@@ -96,7 +97,7 @@ export default function CompanyValues(props: PageBlocksValues) {
                 <TinaMarkdown
                   content={props.quality2?.description}
                   components={{
-                    p: ({ children }) => (
+                    p: ({ children }: { children: ReactNode }) => (
                       <Text as="span" fontSize="xl" color="brand.text">
                         {children}
                       </Text>
@@ -117,7 +118,7 @@ export default function CompanyValues(props: PageBlocksValues) {
                 <TinaMarkdown
                   content={props.quality3?.description}
                   components={{
-                    p: ({ children }) => (
+                    p: ({ children }: { children: ReactNode }) => (
                       <Text as="span" fontSize="xl" color="brand.text">
                         {children}
                       </Text>

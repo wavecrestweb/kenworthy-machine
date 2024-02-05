@@ -19,9 +19,6 @@ export default function Home(props: {
   // HOOKS
   const { data } = useTina(props);
 
-  // console.log("data props:", data);
-  // console.log("Page blocks:", data.page.blocks);
-
   return (
     <Grid templateColumns={"1fr"}>
       {data.page.blocks?.map((block, i) => {
