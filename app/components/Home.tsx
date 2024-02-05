@@ -30,6 +30,9 @@ export default function Home(props: {
           case "PageBlocksValues": {
             return <CompanyValues key={i} {...block} />;
           }
+          case "PageBlocksQuoteSection": {
+            return <RequestQuote key={i} {...block} />;
+          }
           // case "PageBlocksLocation": {
           //   return <Location key={i} {...block} />
           // }
@@ -38,7 +41,6 @@ export default function Home(props: {
           // }
         }
       })}
-      <RequestQuote />
     </Grid>
   );
 }

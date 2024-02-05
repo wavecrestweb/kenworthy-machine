@@ -19,7 +19,6 @@ import gearBackground from "../../public/images/machine-gear-background.png";
 
 // VALUES COMPONENT DEFINITION
 export default function CompanyValues(props: PageBlocksValues) {
-  console.log("rich text: ", props.quality1?.description);
   return (
     <Box position="relative">
       <Image

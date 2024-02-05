@@ -8,7 +8,22 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-export default function QuoteForm() {
+// TYPE DEFINTIONS
+interface QuoteFormProps {
+  formTitle: string;
+  field1Placeholder: string;
+  field2Placeholder: string;
+  field3Placeholder: string;
+  submitButtonText: string;
+}
+
+export default function QuoteForm({
+  formTitle,
+  field1Placeholder,
+  field2Placeholder,
+  field3Placeholder,
+  submitButtonText,
+}: QuoteFormProps) {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Form submission logic goes here
@@ -17,7 +32,7 @@ export default function QuoteForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Text textAlign="center" fontSize="3xl" mt={8}>
-        Request a Quote
+        {formTitle}
       </Text>
       <VStack
         spacing={6}
@@ -32,7 +47,7 @@ export default function QuoteForm() {
             borderColor="brand.backgroundDark"
             borderRadius="full"
             id="name"
-            placeholder="Name"
+            placeholder={field1Placeholder}
             aria-label="Name"
           />
         </FormControl>
@@ -51,7 +66,7 @@ export default function QuoteForm() {
             borderColor="brand.backgroundDark"
             borderRadius="full"
             id="industry"
-            placeholder="Industry type"
+            placeholder={field2Placeholder}
             aria-label="Industry type"
           />
         </FormControl>
