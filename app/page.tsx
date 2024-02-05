@@ -8,6 +8,7 @@ import Image from "next/image";
 //LOCAL IMPORTS
 import Hero from "./components/Hero";
 import CompanyValues from "./components/CompanyValues";
+import Card from "./components/Card";
 
 export default function Home() {
   const divStyle = {
@@ -22,6 +23,7 @@ export default function Home() {
     <Grid templateColumns={"1fr"}>
       <Hero />
       <CompanyValues />
+      <Card />
     </Grid>
   );
 }
