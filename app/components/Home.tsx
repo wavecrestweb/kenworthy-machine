@@ -8,6 +8,7 @@ import { PageQuery } from "@/tina/__generated__/types";
 //LOCAL IMPORTS
 import Hero from "./Hero";
 import CompanyValues from "./CompanyValues";
+import RequestQuote from "./RequestQuote";
 
 export default function Home(props: {
   data: PageQuery;
@@ -37,6 +38,7 @@ export default function Home(props: {
           // }
         }
       })}
+      <RequestQuote />
     </Grid>
   );
 }
