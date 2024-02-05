@@ -16,10 +16,17 @@ export default function QuoteForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Text textAlign="center" size="xl" m={4}>
+      <Text textAlign="center" fontSize="3xl" mt={8}>
         Request a Quote
       </Text>
-      <VStack spacing={6} p={8} bg="white" borderRadius="lg" boxShadow="xl">
+      <VStack
+        spacing={6}
+        px={8}
+        py={10}
+        bg="white"
+        borderRadius="lg"
+        boxShadow="xl"
+      >
         <FormControl isRequired>
           <Input
             borderColor="brand.backgroundDark"
@@ -63,10 +70,12 @@ export default function QuoteForm() {
           borderRadius="full"
           px={12}
           py={6}
+          my={8}
           fontWeight="bold"
+          fontSize="xl"
           _hover={{
             bg: "brand.button",
-            transform: "scale(1.1)",
+            transform: "scale(1.03)",
             transition: "transform 0.2s ease-in-out",
           }}
           type="submit"
