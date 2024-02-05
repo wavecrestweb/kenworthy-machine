@@ -1,4 +1,5 @@
 // LIBRARY IMPORTS
+import { PageBlocksHero } from "@/tina/__generated__/types";
 import { Box, Heading } from "@chakra-ui/react";
 import Image from "next/image";
 
@@ -6,7 +7,7 @@ import Image from "next/image";
 import heroImage from "../../public/images/hero-photo.png";
 
 // HERO COMPONENT DEFINITION
-export default function Hero() {
+export default function Hero(props: PageBlocksHero) {
   return (
     <Box
       position="relative"
@@ -33,7 +34,7 @@ export default function Hero() {
         opacity="90%"
       >
         <Heading size="xl" color="white">
-          Machining Services
+          {props.heading}
         </Heading>
       </Box>
     </Box>
