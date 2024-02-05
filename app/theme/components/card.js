@@ -18,14 +18,20 @@ const sizes = {
   lg: definePartsStyle({
     container: {
       borderRadius: "20px",
-      w: "md",
-      h: "xl",
+      w: "sm",
+      h: "lg",
     },
     header: {
-      h: "l",
+      p: "0",
+      pb: "20",
+    },
+    body: {
+      p: "0",
     },
     footer: {
       borderBottomRadius: "20px",
+      w: "100%",
+      p: "5",
     },
   }),
 };

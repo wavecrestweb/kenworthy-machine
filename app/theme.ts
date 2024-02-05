@@ -114,6 +114,18 @@ const customTheme = extendTheme({
       },
     },
   },
+  textStyles: {
+    h5: {
+      fontSize: "xl",
+      lineHeight: "6",
+      fontWeight: "bold",
+    },
+    "sm-p": {
+      fontSize: "md",
+      lineHeight: "5",
+      fontWeight: "normal",
+    },
+  },
 });
 
 export default customTheme;
