@@ -1,18 +1,16 @@
-import CardsSlider from "./CardsSlider";
+"use client";
+import { Container } from "@chakra-ui/react";
+
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
-export default function Machines() {
+import MachineCarousel from "./MachineCarousel";
+
+export default function Machines({ width }) {
+  const adjustedWidth = width * 0.97;
   return (
-    <div
-      style={{
-        minWidth: "800px",
-        minHeight: "100px",
-        maxWidth: "97%",
-        maxHeight: "1000px",
-      }}
-    >
-      <CardsSlider />
-    </div>
+    <Container maxW={adjustedWidth} bg="white" color="black" py="5rem">
+      <MachineCarousel />
+    </Container>
   );
 }
