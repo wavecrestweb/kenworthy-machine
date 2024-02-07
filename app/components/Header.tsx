@@ -7,6 +7,7 @@ import { FaBars, FaXmark } from "react-icons/fa6";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import logo from "../../public/images/kenworthy-logo.jpg";
 
 export default function Header() {
   const [hamburger, setHamburger] = useState(false);
@@ -20,13 +21,13 @@ export default function Header() {
   return (
     <Stack bg="brand.backgroundDark">
       <Grid templateColumns={"500px 1fr 100px"}>
-        <Box p="12px">
-          <Image
-            src="/images/kenworthy-logo.jpg"
-            alt="Kenworthy Machine"
-            width={500}
-            height={500}
-          />
+        <Box>
+          <Box
+            p={"4rem"}
+            w={{ base: "10.375rem", md: "15rem", xl: "32.75rem" }}
+          >
+            <Image src={logo} alt="Kenworthy Machine" />
+          </Box>
         </Box>
         <Box
           display="flex"
