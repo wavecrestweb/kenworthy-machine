@@ -10,11 +10,11 @@ import {
 
 // TYPE DEFINTIONS
 interface QuoteFormProps {
-  formTitle: string;
-  field1Placeholder: string;
-  field2Placeholder: string;
-  field3Placeholder: string;
-  submitButtonText: string;
+  formTitle?: string;
+  field1Placeholder?: string;
+  field2Placeholder?: string;
+  field3Placeholder?: string;
+  submitButtonText?: string;
 }
 
 export default function QuoteForm({
@@ -32,7 +32,7 @@ export default function QuoteForm({
   return (
     <form onSubmit={handleSubmit}>
       <Text textAlign="center" fontSize="3xl" mt={8} color="brand.text">
-        {formTitle}
+        {formTitle || "Request a Quote"}
       </Text>
       <VStack
         spacing={6}
@@ -51,6 +51,9 @@ export default function QuoteForm({
             id="name"
             placeholder={field1Placeholder}
             aria-label="Name"
+            _hover={{
+              borderColor: "brand.button",
+            }}
           />
         </FormControl>
         <FormControl isRequired>
@@ -63,6 +66,9 @@ export default function QuoteForm({
             type="email"
             placeholder="Email"
             aria-label="Email"
+            _hover={{
+              borderColor: "brand.button",
+            }}
           />
         </FormControl>
         <FormControl>
@@ -74,6 +80,9 @@ export default function QuoteForm({
             id="industry"
             placeholder={field2Placeholder}
             aria-label="Industry type"
+            _hover={{
+              borderColor: "brand.button",
+            }}
           />
         </FormControl>
         <FormControl>
@@ -85,6 +94,9 @@ export default function QuoteForm({
             id="details"
             placeholder="Share additional information or questions you have. Our team will personally connect with you about this quote."
             aria-label="Share additional information or questions"
+            _hover={{
+              borderColor: "brand.button",
+            }}
           />
         </FormControl>
         <Button
