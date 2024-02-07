@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { lato, roboto_slab } from "./fonts";
 import { Providers } from "./providers";
-import "./global.css";
-import Header from "./components/Header";
 import { Box } from "@chakra-ui/react";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
@@ -23,9 +22,7 @@ export default function RootLayout({
           <Box zIndex={10} top="0" pos="sticky">
             <Header />
           </Box>
-          <Box maxW="1500px" mx="auto">
-            {children}
-          </Box>
+          {children}
           <Footer />
         </Providers>
       </body>
