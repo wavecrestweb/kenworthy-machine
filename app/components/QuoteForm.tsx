@@ -44,58 +44,62 @@ export default function QuoteForm({
       >
         <FormControl isRequired>
           <Input
-            borderColor="brand.backgroundMed"
-            focusBorderColor="brand.backgroundDark"
+            borderColor="brand.primary"
+            focusBorderColor="brand.accentGreen"
             borderRadius="full"
             border="2px"
             id="name"
             placeholder={field1Placeholder}
+            _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
             aria-label="Name"
             _hover={{
-              borderColor: "brand.button",
+              borderColor: "brand.accentGreen",
             }}
           />
         </FormControl>
         <FormControl isRequired>
           <Input
-            borderColor="brand.backgroundMed"
-            focusBorderColor="brand.backgroundDark"
+            borderColor="brand.primary"
+            focusBorderColor="brand.accentGreen"
             borderRadius="full"
             border="2px"
             id="email"
             type="email"
             placeholder="Email"
+            _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
             aria-label="Email"
             _hover={{
-              borderColor: "brand.button",
+              borderColor: "brand.accentGreen",
             }}
           />
         </FormControl>
         <FormControl>
           <Input
-            borderColor="brand.backgroundMed"
-            focusBorderColor="brand.backgroundDark"
+            borderColor="brand.primary"
+            focusBorderColor="brand.accentGreen"
             borderRadius="full"
             border="2px"
             id="industry"
             placeholder={field2Placeholder}
+            _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
             aria-label="Industry type"
             _hover={{
-              borderColor: "brand.button",
+              borderColor: "brand.accentGreen",
             }}
           />
         </FormControl>
         <FormControl>
           <Textarea
-            borderColor="brand.backgroundMed"
-            focusBorderColor="brand.backgroundDark"
+            borderColor="brand.primary"
+            focusBorderColor="brand.accentGreen"
             borderRadius="3xl"
             border="2px"
             id="details"
             placeholder="Share additional information or questions you have. Our team will personally connect with you about this quote."
+            _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
             aria-label="Share additional information or questions"
             _hover={{
-              borderColor: "brand.button",
+              borderColor: "brand.accentGreen",
             }}
           />
         </FormControl>
