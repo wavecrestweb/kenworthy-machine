@@ -129,13 +129,16 @@ export default defineConfig({
                 ],
               },
               {
-                label: "Location Section",
+                label: "Location",
                 name: "location",
                 fields: [
                   {
-                    type: "rich-text",
-                    label: "Content",
-                    name: "content",
+                    type: "string",
+                    label: "Location",
+                    name: "location",
+                    ui: {
+                      component: "textarea",
+                    },
                   },
                 ],
               },

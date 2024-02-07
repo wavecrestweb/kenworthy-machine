@@ -8,6 +8,7 @@ import { PageQuery } from "@/tina/__generated__/types";
 //LOCAL IMPORTS
 import Hero from "./Hero";
 import CompanyValues from "./CompanyValues";
+import Location from "./Location";
 
 export default function Home(props: {
   data: PageQuery;
@@ -29,9 +30,10 @@ export default function Home(props: {
           case "PageBlocksValues": {
             return <CompanyValues key={i} {...block} />;
           }
-          // case "PageBlocksLocation": {
-          //   return <Location key={i} {...block} />
-          // }
+          case "PageBlocksLocation": {
+            console.log("block", block);
+            return <Location key={i} {...block} />;
+          }
           // case "PageBlocksMachineCarousel": {
           //   return <MachineCarousel key={i} {...block} />
           // }
