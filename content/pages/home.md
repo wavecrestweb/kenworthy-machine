@@ -68,20 +68,20 @@ blocks:
       submitButtonText: Submit
     requestCopyTitle: Send Us Your Request
     fillFormCopy: >
-      Complete the Inquiry Form
+      ##### Complete the Inquiry Form
 
 
       Fill out the quote form to let us know the details of your request, or any
       questions you have.
     emailCopy: >
-      Email Us Directly
+      ##### Email Us Directly
 
 
       If you would like to email us directly or send us attachments to complete
       your quote request, reach us at
       [sales@kenworthymachine.com](mailto:sales@kenworthymachine.com).
     responseCopy: >
-      Get a Quick Response
+      ##### Get a Quick Response
 
 
       We will make sure you get a quick response from our team if you share your

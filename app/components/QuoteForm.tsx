@@ -31,7 +31,7 @@ export default function QuoteForm({
 
   return (
     <form onSubmit={handleSubmit}>
-      <Text textAlign="center" fontSize="3xl" mt={8}>
+      <Text textAlign="center" fontSize="3xl" mt={8} color="brand.text">
         {formTitle}
       </Text>
       <VStack
@@ -44,8 +44,10 @@ export default function QuoteForm({
       >
         <FormControl isRequired>
           <Input
-            borderColor="brand.backgroundDark"
+            borderColor="brand.backgroundMed"
+            focusBorderColor="brand.backgroundDark"
             borderRadius="full"
+            border="2px"
             id="name"
             placeholder={field1Placeholder}
             aria-label="Name"
@@ -53,8 +55,10 @@ export default function QuoteForm({
         </FormControl>
         <FormControl isRequired>
           <Input
-            borderColor="brand.backgroundDark"
+            borderColor="brand.backgroundMed"
+            focusBorderColor="brand.backgroundDark"
             borderRadius="full"
+            border="2px"
             id="email"
             type="email"
             placeholder="Email"
@@ -63,8 +67,10 @@ export default function QuoteForm({
         </FormControl>
         <FormControl>
           <Input
-            borderColor="brand.backgroundDark"
+            borderColor="brand.backgroundMed"
+            focusBorderColor="brand.backgroundDark"
             borderRadius="full"
+            border="2px"
             id="industry"
             placeholder={field2Placeholder}
             aria-label="Industry type"
@@ -72,8 +78,10 @@ export default function QuoteForm({
         </FormControl>
         <FormControl>
           <Textarea
-            borderColor="brand.backgroundDark"
+            borderColor="brand.backgroundMed"
+            focusBorderColor="brand.backgroundDark"
             borderRadius="3xl"
+            border="2px"
             id="details"
             placeholder="Share additional information or questions you have. Our team will personally connect with you about this quote."
             aria-label="Share additional information or questions"

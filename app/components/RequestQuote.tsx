@@ -11,6 +11,7 @@ import QuoteForm from "./QuoteForm";
 import machineBackground from "../../public/images/machineBackground.png";
 
 export default function RequestQuote(props: PageBlocksQuoteSection) {
+  console.log("copy: ", props.fillFormCopy);
   return (
     <Box position="relative">
       <Image
@@ -42,7 +43,7 @@ export default function RequestQuote(props: PageBlocksQuoteSection) {
           <QuoteForm {...props.requestQuoteForm} />
         </Box>
         <VStack flex="1" maxW={{ base: "auto", lg: "500px" }} spacing={4}>
-          <Text fontSize="3xl" fontWeight="bold" color="white" mb={6}>
+          <Text as="h3" fontSize="3xl" fontWeight="bold" color="white" mb={6}>
             {props.requestCopyTitle}
           </Text>
           <HStack align="flex-start">
@@ -51,8 +52,13 @@ export default function RequestQuote(props: PageBlocksQuoteSection) {
               <TinaMarkdown
                 content={props.fillFormCopy}
                 components={{
+                  h5: ({ children }: { children: ReactNode }) => (
+                    <Text as="div" color="white" fontSize="xl">
+                      {children}
+                    </Text>
+                  ),
                   p: ({ children }: { children: ReactNode }) => (
-                    <Text as="span" color="white">
+                    <Text as="div" color="white">
                       {children}
                     </Text>
                   ),
@@ -69,8 +75,13 @@ export default function RequestQuote(props: PageBlocksQuoteSection) {
               <TinaMarkdown
                 content={props.emailCopy}
                 components={{
+                  h5: ({ children }: { children: ReactNode }) => (
+                    <Text as="div" color="white" fontSize="xl">
+                      {children}
+                    </Text>
+                  ),
                   p: ({ children }: { children: ReactNode }) => (
-                    <Text as="span" color="white">
+                    <Text as="div" color="white">
                       {children}
                     </Text>
                   ),
@@ -81,13 +92,21 @@ export default function RequestQuote(props: PageBlocksQuoteSection) {
           <HStack align="flex-start" mt={12}>
             <Icon as={FaRegHandshake} boxSize={8} color="brand.button" mr={2} />
             <Box>
-              <Text color="white" fontSize="xl">
-                Get a Quick Response
-              </Text>
-              <Text color="white">
-                We will make sure you get a quick response from our team if you
-                share your phone number and email with us.
-              </Text>
+              <TinaMarkdown
+                content={props.responseCopy}
+                components={{
+                  h5: ({ children }: { children: ReactNode }) => (
+                    <Text as="div" color="white" fontSize="xl">
+                      {children}
+                    </Text>
+                  ),
+                  p: ({ children }: { children: ReactNode }) => (
+                    <Text as="div" color="white" fontSize="lg">
+                      {children}
+                    </Text>
+                  ),
+                }}
+              />
             </Box>
           </HStack>
         </VStack>

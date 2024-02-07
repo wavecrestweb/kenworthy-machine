@@ -58,7 +58,7 @@ export default function CompanyValues(props: PageBlocksValues) {
                   content={props.quality1?.description}
                   components={{
                     p: ({ children }: { children: ReactNode }) => (
-                      <Text as="span" fontSize="xl" color="brand.text">
+                      <Text as="div" fontSize="xl" color="brand.text">
                         {children}
                       </Text>
                     ),
