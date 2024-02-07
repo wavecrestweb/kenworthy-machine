@@ -46,7 +46,6 @@ export default defineConfig({
             list: true,
             templates: [
               {
-                type: "object",
                 label: "Hero Section",
                 name: "hero",
                 fields: [
@@ -63,7 +62,6 @@ export default defineConfig({
                 ],
               },
               {
-                type: "object",
                 label: "Company Values",
                 name: "values",
                 fields: [
@@ -131,19 +129,20 @@ export default defineConfig({
                 ],
               },
               {
-                type: "object",
-                label: "Location Section",
+                label: "Location",
                 name: "location",
                 fields: [
                   {
-                    type: "rich-text",
-                    label: "Content",
-                    name: "content",
+                    type: "string",
+                    label: "Location",
+                    name: "location",
+                    ui: {
+                      component: "textarea",
+                    },
                   },
                 ],
               },
               {
-                type: "object",
                 label: "Machine Carousel",
                 name: "machineCarousel",
                 fields: [

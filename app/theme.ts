@@ -126,6 +126,20 @@ const customTheme = extendTheme({
       fontWeight: "normal",
     },
   },
+  layerStyles: {
+    whiteBg: {
+      bg: "white",
+      color: "brand.text",
+    },
+    darkBg: {
+      bg: "brand.backgroundDark",
+      color: "white",
+    },
+    medBg: {
+      bg: "brand.backgroundMed",
+      color: "white",
+    },
+  },
 });
 
 export default customTheme;
