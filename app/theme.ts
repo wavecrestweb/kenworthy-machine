@@ -1,5 +1,6 @@
 // LIBRARY IMPORTS
 import { extendTheme } from "@chakra-ui/react";
+import { cardTheme } from "./theme/components/card";
 
 const customTheme = extendTheme({
   colors: {
@@ -68,6 +69,38 @@ const customTheme = extendTheme({
         },
       },
     },
+    Button: {
+      baseStyle: {
+        backgroundColor: "brand.backgroundDark",
+        borderRadius: "20px",
+        color: "white",
+        fontWeight: "bold",
+        fontFamily: "body",
+      },
+      sizes: {},
+      variants: {
+        "mc-blue": {
+          color: "white",
+          fontSize: "xl",
+          lineHeight: "6",
+          _hover: {
+            transform: "scale(1.1)",
+            transition: "transform 0.2s ease-in-out",
+          },
+        },
+        "mc-white": {
+          color: "brand.text",
+          backgroundColor: "white",
+          fontSize: "xl",
+          lineHeight: "6",
+          _hover: {
+            transform: "scale(1.1)",
+            transition: "transform 0.2s ease-in-out",
+          },
+        },
+      },
+    },
+    Card: cardTheme,
     Heading: {
       variants: {
         footer: {
@@ -79,6 +112,18 @@ const customTheme = extendTheme({
           textDecoration: "underline",
         },
       },
+    },
+  },
+  textStyles: {
+    h5: {
+      fontSize: "xl",
+      lineHeight: "6",
+      fontWeight: "bold",
+    },
+    "sm-p": {
+      fontSize: "md",
+      lineHeight: "5",
+      fontWeight: "normal",
     },
   },
   layerStyles: {
