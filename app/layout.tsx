@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { lato, roboto_slab } from "./fonts";
 import { Providers } from "./providers";
-import "./global.css";
-import Header from "./components/Header";
 import { Box } from "@chakra-ui/react";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
