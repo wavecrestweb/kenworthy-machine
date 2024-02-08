@@ -15,7 +15,7 @@ export default function Machines({ width }: { width: number }) {
       </Heading>
       <MachineCarousel />
       <Container maxW={"250px"} mt={20}>
-        <ChakraLink href="/view-machines" variant="buttonPrimary">
+        <ChakraLink href="/view-machines" variant="buttonPrimaryLight">
           View Machines
         </ChakraLink>
       </Container>

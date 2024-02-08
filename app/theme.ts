@@ -20,32 +20,49 @@ const customTheme = extendTheme({
   components: {
     Link: {
       variants: {
-        buttonPrimary: {
+        buttonPrimaryDark: {
           color: "white",
           backgroundColor: "brand.button",
-          borderRadius: "var(--border-radius)",
+          borderRadius: "20px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           padding: "6px",
           fontWeight: "700",
           _hover: {
-            color: "var(--text-color)",
+            color: "brand.text",
+            transitionDuration: "300ms",
+            textDecoration: "none",
+          },
+        },
+        buttonPrimaryLight: {
+          color: "white",
+          backgroundColor: "brand.button",
+          borderRadius: "20px",
+          border: "solid 2px",
+          borderColor: "white",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "6px",
+          fontWeight: "700",
+          _hover: {
+            borderColor: "black",
             transitionDuration: "300ms",
             textDecoration: "none",
           },
         },
         buttonSecondary: {
-          color: "var(--text-color)",
+          color: "brand.text",
           backgroundColor: "white",
-          borderRadius: "var(--border-radius)",
+          borderRadius: "20px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           padding: "6px",
           fontWeight: "700",
           _hover: {
-            backgroundColor: "var(--background-color-light)",
+            backgroundColor: "brand.button",
             transitionDuration: "300ms",
             textDecoration: "none",
           },
