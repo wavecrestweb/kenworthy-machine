@@ -82,7 +82,16 @@ export default function MachineCarousel() {
         }}
       />
     ),
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
+
   return (
     <Slider {...settings}>
       {Array(10)

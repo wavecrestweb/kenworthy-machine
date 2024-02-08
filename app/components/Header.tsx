@@ -20,12 +20,15 @@ export default function Header() {
 
   return (
     <Stack bg="brand.backgroundDark">
-      <Grid templateColumns={"500px 1fr 100px"}>
+      <Grid
+        templateColumns={{
+          base: "1fr 35px 1fr",
+          sm: "1fr 200px 1fr",
+          md: "500px 1fr 100px",
+        }}
+      >
         <Box>
-          <Box
-            p={"4rem"}
-            w={{ base: "10.375rem", md: "15rem", xl: "32.75rem" }}
-          >
+          <Box p={"4rem"} w={{ base: "20rem", md: "28rem", xl: "32rem" }}>
             <Image src={logo} alt="Kenworthy Machine" />
           </Box>
         </Box>
@@ -41,6 +44,7 @@ export default function Header() {
               pathname === "/" ? "solid var(--primary-red) 2px" : "none"
             }
             variant="navigation"
+            visibility={{ base: "hidden", lg: "visible" }}
           >
             Home
           </ChakraLink>
@@ -53,6 +57,7 @@ export default function Header() {
                 : "none"
             }
             variant="navigation"
+            visibility={{ base: "hidden", lg: "visible" }}
           >
             Request a Quote
           </ChakraLink>
