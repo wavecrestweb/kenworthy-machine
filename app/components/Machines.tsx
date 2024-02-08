@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 
 import MachineCarousel from "./MachineCarousel";
 
-export default function Machines({ width }) {
+export default function Machines({ width }: { width: number }) {
   const adjustedWidth = width * 0.95;
   return (
     <Container maxW={adjustedWidth} bg="white" py="4rem">

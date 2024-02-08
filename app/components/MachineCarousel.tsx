@@ -5,16 +5,19 @@ import Card from "./Card";
 import { Box } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
-function SamplePrevArrow(props) {
+type MouseEvent = React.MouseEventHandler<SVGElement>;
+
+function PrevArrow(props: { className: string; onClick: MouseEvent }) {
   const { className, onClick } = props;
-  console.log("props", props);
   return (
     <ChevronLeftIcon
       className={className}
       onClick={onClick}
       fontSize={"3rem"}
       borderRadius={"50%"}
-      backgroundColor={"transparent"}
+      backgroundColor={"rgba(255,255,255,0.5)"}
+      border={"0.5px solid"}
+      borderColor={"brand.backgroundLight"}
       color={"brand.backgroundDark"}
       boxShadow={"0px 3px 3px 0px #00000040"}
       _hover={{
@@ -27,7 +30,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-function SampleNextArrow(props) {
+function NextArrow(props: { className: string; onClick: MouseEvent }) {
   const { className, onClick } = props;
   return (
     <ChevronRightIcon
@@ -35,7 +38,9 @@ function SampleNextArrow(props) {
       onClick={onClick}
       fontSize={"3rem"}
       borderRadius={"50%"}
-      backgroundColor={"transparent"}
+      backgroundColor={"rgba(255,255,255,0.5)"}
+      border={"0.5px solid"}
+      borderColor={"brand.backgroundLight"}
       color={"brand.backgroundDark"}
       boxShadow={"0px 3px 3px 0px #00000040"}
       _hover={{
@@ -57,8 +62,26 @@ export default function MachineCarousel() {
     slidesToScroll: 1,
     arrows: true,
     accessibility: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: (
+      <NextArrow
+        className={""}
+        onClick={function (
+          event: React.MouseEvent<SVGElement, globalThis.MouseEvent>,
+        ): void {
+          throw new Error("Function not implemented.");
+        }}
+      />
+    ),
+    prevArrow: (
+      <PrevArrow
+        className={""}
+        onClick={function (
+          event: React.MouseEvent<SVGElement, globalThis.MouseEvent>,
+        ): void {
+          throw new Error("Function not implemented.");
+        }}
+      />
+    ),
   };
   return (
     <Slider {...settings}>

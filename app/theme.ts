@@ -7,6 +7,7 @@ const customTheme = extendTheme({
     brand: {
       backgroundDark: "#0b113e",
       backgroundMed: "#232952",
+      backgroundLight: "#b9c1c6",
       text: "#0b113e",
       textLight: "#938f8f",
       button: "#db0a40",
