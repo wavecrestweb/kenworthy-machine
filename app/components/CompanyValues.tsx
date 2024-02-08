@@ -16,6 +16,7 @@ import { FaRegClock, FaPeopleGroup, FaRegStar } from "react-icons/fa6";
 
 // LOCAL IMPORTS
 import gearBackground from "../../public/images/machine-gear-background.png";
+import ContentWrapper from "./ContentWrapper";
 
 // VALUES COMPONENT DEFINITION
 export default function CompanyValues(props: PageBlocksValues) {
@@ -136,7 +137,7 @@ export default function CompanyValues(props: PageBlocksValues) {
               </Flex>
             </HStack>
           </VStack>
-        </VStack>
+        </ContentWrapper>
       </Box>
     </Box>
   );

@@ -38,7 +38,7 @@ blocks:
         a manufacturing perspective that reduces costs while retaining
         functionality.
     _template: values
-  - content: >
+  - location: >-
       Our family-owned CNC production company is located in Duvall, Washington,
       just 30 miles northeast of the Seattle metropolitan area. Clients of
       Kenworthy Machine appreciate our local accessibility as well as our
@@ -88,4 +88,3 @@ blocks:
       phone number and email with us.
     _template: quoteSection
 ---
-

@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import logo from "../../public/images/kenworthy-logo.jpg";
+import ContentWrapper from "./ContentWrapper";
 
 const links = [
   { href: "/about-us", text: "About Us" },
@@ -42,66 +43,75 @@ const contactInfo = [
   },
 ];
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <Grid
-      templateColumns={{
-        md: "repeat(7, 1fr)",
-        xl: "repeat(5, 1fr)",
-      }}
-      p={{ base: "3rem 1.375rem", md: "2.625rem 3.375rem", xl: "4.5rem 4rem" }}
-      gap={{ md: "1.5rem" }}
-    >
-      <GridItem colSpan={{ md: 4, xl: 2 }}>
-        <Stack spacing={{ base: "1.875rem", md: "2rem", xl: "3.125rem" }}>
-          <Box>
-            <Box w={{ base: "10.375rem", md: "15rem", xl: "32.75rem" }}>
-              <Image src={logo} alt="Kenworthy Machine" />
-            </Box>
-          </Box>
-          <>
-            {contactInfo.map(({ heading, content }) => (
-              <Box key={heading}>
-                <Heading
-                  as="h4"
-                  variant="footer"
-                  pb={{ base: "1rem", md: "0.75rem", xl: "0.625rem" }}
-                >
-                  {heading}
-                </Heading>
-                {content.map((line) => (
-                  <Text
-                    key={line}
-                    fontSize={{ base: "1.25rem", xl: "1.5rem" }}
-                    lineHeight={{ base: "1.5rem", xl: "1.8rem" }}
-                  >
-                    {line}
-                  </Text>
-                ))}
-              </Box>
-            ))}
-          </>
-        </Stack>
-      </GridItem>
-      <GridItem
-        colStart={{ md: 5, xl: 4 }}
-        colEnd={{ md: 8, xl: 6 }}
-        display={{ base: "none", md: "grid" }}
-      >
-        <Stack
-          spacing={{ md: "3.875rem", xl: "3.56rem" }}
-          pt={{ md: "0.5rem", xl: "1.75rem" }}
+    <Box bg="brand.backgroundDark">
+      <ContentWrapper>
+        <Grid
+          templateColumns={{
+            md: "repeat(7, 1fr)",
+            xl: "repeat(5, 1fr)",
+          }}
+          p={{
+            base: "3rem 1.375rem",
+            md: "2.625rem 3.375rem",
+            xl: "4.5rem 4rem",
+          }}
+          gap={{ md: "1.5rem" }}
+          layerStyle="darkBg"
         >
-          {links.map(({ href, text }) => (
-            <FooterNavLink key={text} href={href}>
-              {text}
-            </FooterNavLink>
-          ))}
-        </Stack>
-      </GridItem>
-    </Grid>
+          <GridItem colSpan={{ md: 4, xl: 2 }}>
+            <Stack spacing={{ base: "1.875rem", md: "2rem", xl: "3.125rem" }}>
+              <Box>
+                <Box w={{ base: "10.375rem", md: "15rem", xl: "32.75rem" }}>
+                  <Image src={logo} alt="Kenworthy Machine" />
+                </Box>
+              </Box>
+              <>
+                {contactInfo.map(({ heading, content }) => (
+                  <Box key={heading}>
+                    <Heading
+                      as="h4"
+                      variant="footer"
+                      pb={{ base: "1rem", md: "0.75rem", xl: "0.625rem" }}
+                    >
+                      {heading}
+                    </Heading>
+                    {content.map((line) => (
+                      <Text
+                        key={line}
+                        fontSize={{ base: "1.25rem", xl: "1.5rem" }}
+                        lineHeight={{ base: "1.5rem", xl: "1.8rem" }}
+                      >
+                        {line}
+                      </Text>
+                    ))}
+                  </Box>
+                ))}
+              </>
+            </Stack>
+          </GridItem>
+          <GridItem
+            colStart={{ md: 5, xl: 4 }}
+            colEnd={{ md: 8, xl: 6 }}
+            display={{ base: "none", md: "grid" }}
+          >
+            <Stack
+              spacing={{ md: "3.875rem", xl: "3.56rem" }}
+              pt={{ md: "0.5rem", xl: "1.75rem" }}
+            >
+              {links.map(({ href, text }) => (
+                <FooterNavLink key={text} href={href}>
+                  {text}
+                </FooterNavLink>
+              ))}
+            </Stack>
+          </GridItem>
+        </Grid>
+      </ContentWrapper>
+    </Box>
   );
-};
+}
 
 const FooterNavLink = ({ children, ...props }: LinkProps) => {
   return (
@@ -117,5 +127,3 @@ const FooterNavLink = ({ children, ...props }: LinkProps) => {
     </Box>
   );
 };
-
-export default Footer;
