@@ -53,12 +53,12 @@ export default function RequestQuote(props: PageBlocksQuoteSection) {
                 content={props.fillFormCopy}
                 components={{
                   h5: ({ children }: { children: ReactNode }) => (
-                    <Text as="div" color="white" fontSize="xl">
+                    <Text as="div" color="white" fontSize="xl" pb="0.5rem">
                       {children}
                     </Text>
                   ),
                   p: ({ children }: { children: ReactNode }) => (
-                    <Text as="div" color="white">
+                    <Text as="div" color="white" fontSize="lg" lineHeight="5">
                       {children}
                     </Text>
                   ),
@@ -76,12 +76,12 @@ export default function RequestQuote(props: PageBlocksQuoteSection) {
                 content={props.emailCopy}
                 components={{
                   h5: ({ children }: { children: ReactNode }) => (
-                    <Text as="div" color="white" fontSize="xl">
+                    <Text as="div" color="white" fontSize="xl" pb="0.5rem">
                       {children}
                     </Text>
                   ),
                   p: ({ children }: { children: ReactNode }) => (
-                    <Text as="div" color="white">
+                    <Text as="div" color="white" fontSize="lg" lineHeight="5">
                       {children}
                     </Text>
                   ),
@@ -96,12 +96,12 @@ export default function RequestQuote(props: PageBlocksQuoteSection) {
                 content={props.responseCopy}
                 components={{
                   h5: ({ children }: { children: ReactNode }) => (
-                    <Text as="div" color="white" fontSize="xl">
+                    <Text as="div" color="white" fontSize="xl" pb="0.5rem">
                       {children}
                     </Text>
                   ),
                   p: ({ children }: { children: ReactNode }) => (
-                    <Text as="div" color="white" fontSize="lg">
+                    <Text as="div" color="white" fontSize="lg" lineHeight="5">
                       {children}
                     </Text>
                   ),
