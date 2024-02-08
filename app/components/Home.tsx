@@ -9,6 +9,7 @@ import { PageQuery } from "@/tina/__generated__/types";
 import Hero from "./Hero";
 import CompanyValues from "./CompanyValues";
 import Location from "./Location";
+import MachineCarousel from "./MachineCarousel";
 
 export default function Home(props: {
   data: PageQuery;
@@ -31,12 +32,11 @@ export default function Home(props: {
             return <CompanyValues key={i} {...block} />;
           }
           case "PageBlocksLocation": {
-            console.log("block", block);
             return <Location key={i} {...block} />;
           }
-          // case "PageBlocksMachineCarousel": {
-          //   return <MachineCarousel key={i} {...block} />
-          // }
+          case "PageBlocksMachineCarousel": {
+            return <MachineCarousel key={i} {...block} />;
+          }
         }
       })}
     </Grid>
