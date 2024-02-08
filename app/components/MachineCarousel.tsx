@@ -2,6 +2,7 @@
 import React from "react";
 import Slider from "react-slick";
 import Card from "./Card";
+import { Box } from "@chakra-ui/react";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -49,15 +50,13 @@ export default function MachineCarousel() {
   };
   return (
     <Slider {...settings}>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {Array(10)
+        .fill(0)
+        .map((_, i) => (
+          <Box key={i} p={12}>
+            <Card />
+          </Box>
+        ))}
     </Slider>
   );
 }
