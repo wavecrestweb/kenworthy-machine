@@ -3,33 +3,47 @@ import React from "react";
 import Slider from "react-slick";
 import Card from "./Card";
 import { Box } from "@chakra-ui/react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+function SamplePrevArrow(props) {
+  const { className, onClick } = props;
+  console.log("props", props);
   return (
-    <div
+    <ChevronLeftIcon
       className={className}
-      style={{
-        ...style,
-        background: "black",
-        borderRadius: "50%",
-      }}
       onClick={onClick}
+      fontSize={"3rem"}
+      borderRadius={"50%"}
+      backgroundColor={"transparent"}
+      color={"brand.backgroundDark"}
+      boxShadow={"0px 3px 3px 0px #00000040"}
+      _hover={{
+        color: "brand.textLight",
+        boxShadow: "none",
+      }}
+      transitionDuration={"600ms"}
+      zIndex={1}
     />
   );
 }
 
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+function SampleNextArrow(props) {
+  const { className, onClick } = props;
   return (
-    <div
+    <ChevronRightIcon
       className={className}
-      style={{
-        ...style,
-        background: "black",
-        borderRadius: "50%",
-      }}
       onClick={onClick}
+      fontSize={"3rem"}
+      borderRadius={"50%"}
+      backgroundColor={"transparent"}
+      color={"brand.backgroundDark"}
+      boxShadow={"0px 3px 3px 0px #00000040"}
+      _hover={{
+        color: "brand.textLight",
+        boxShadow: "none",
+      }}
+      transitionDuration={"600ms"}
+      zIndex={1}
     />
   );
 }
@@ -42,8 +56,6 @@ export default function MachineCarousel() {
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
-    swipeToSlide: true,
-    swipe: true,
     accessibility: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
