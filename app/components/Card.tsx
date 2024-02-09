@@ -7,51 +7,20 @@ import {
   Box,
   Button,
 } from "@chakra-ui/react";
-import Image from "next/image";
-import machinePhoto from "../../public/images/Ganesh-Cyclone-52-BY2.jpeg";
-import label from "../../public/images/Polygon.svg";
+import CardFront from "./CardFront";
+import CardBack from "./CardBack";
+import { useState } from "react";
+import { PageBlocksMachineCarouselMachineCard } from "@/tina/__generated__/types";
 
-const handleClick = () => {};
-
-export default function Card() {
+export default function Card(props: PageBlocksMachineCarouselMachineCard) {
+  const [isFlipped, setIsFlipped] = useState(false);
   return (
-    <ChakraCard size="lg" variant="front" align="center">
-      <CardHeader>
-        <Box position="relative">
-          <Image src={machinePhoto} alt="Ganesh Cyclone 52-BY2"></Image>
-          <Box
-            color="black"
-            borderLeft="5.3rem solid transparent"
-            borderRight="0px solid transparent"
-            borderTop="5.3rem solid #FAD50AD4"
-            position="absolute"
-            top="0"
-            right="0"
-            borderTopRightRadius="20px"
-          >
-            <Text
-              textStyle="sm-p"
-              fontWeight="bold"
-              top="-4rem"
-              right="0.5rem"
-              transform="rotate(45deg)"
-              position="absolute"
-            >
-              Lathe
-            </Text>
-          </Box>
-        </Box>
-      </CardHeader>
-      <CardBody>
-        <Text as="h5" textStyle="h5">
-          Machine Name
-        </Text>
-      </CardBody>
-      <CardFooter justifyContent="center">
-        <Button variant="mc-blue" onClick={handleClick}>
-          View Details
-        </Button>
-      </CardFooter>
-    </ChakraCard>
+    <>
+      {isFlipped ? (
+        <CardBack isFlipped={isFlipped} setIsFlipped={setIsFlipped} />
+      ) : (
+        <CardFront isFlipped={isFlipped} setIsFlipped={setIsFlipped} />
+      )}
+    </>
   );
 }
