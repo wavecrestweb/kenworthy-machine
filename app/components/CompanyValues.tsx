@@ -20,7 +20,6 @@ import ContentWrapper from "./ContentWrapper";
 
 // VALUES COMPONENT DEFINITION
 export default function CompanyValues(props: PageBlocksValues) {
-  console.log("rich text: ", props.quality1?.description);
   return (
     <Box position="relative">
       <Image

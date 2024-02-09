@@ -3,7 +3,6 @@ import { PageBlocksLocation } from "@/tina/__generated__/types";
 import ContentWrapper from "./ContentWrapper";
 
 export default function Location(props: PageBlocksLocation) {
-  console.log("text", props);
   return (
     <Box bgColor="brand.backgroundMed">
       <ContentWrapper>
