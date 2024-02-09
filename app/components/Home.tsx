@@ -35,7 +35,6 @@ export default function Home(props: {
             return <RequestQuote key={i} {...block} />;
           }
           case "PageBlocksLocation": {
-            console.log("block", block);
             return <Location key={i} {...block} />;
           }
           // case "PageBlocksMachineCarousel": {

@@ -11,7 +11,6 @@ import QuoteForm from "./QuoteForm";
 import machineBackground from "../../public/images/machineBackground.png";
 
 export default function RequestQuote(props: PageBlocksQuoteSection) {
-  console.log("copy: ", props.fillFormCopy);
   return (
     <Box position="relative">
       <Image
