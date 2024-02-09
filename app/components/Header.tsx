@@ -28,7 +28,11 @@ export default function Header() {
         }}
       >
         <Box>
-          <Box p={"4rem"} w={{ base: "20rem", md: "28rem", xl: "32rem" }}>
+          <Box
+            px={"4rem"}
+            py={"2rem"}
+            w={{ base: "20rem", md: "28rem", xl: "32rem" }}
+          >
             <Image src={logo} alt="Kenworthy Machine" />
           </Box>
         </Box>
