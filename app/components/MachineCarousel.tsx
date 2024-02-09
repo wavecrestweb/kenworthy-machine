@@ -1,60 +1,78 @@
 "use client";
-import React from "react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import { Box } from "@chakra-ui/react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import Card from "./Card";
-import { Box } from "@chakra-ui/react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 type MouseEvent = React.MouseEventHandler<SVGElement>;
 
-function PrevArrow(props: { className: string; onClick: MouseEvent }) {
-  const { className, onClick } = props;
+function PrevArrow(props: {
+  className: string;
+  onClick: MouseEvent;
+  disabled: boolean;
+}) {
+  const { className, onClick, disabled } = props;
   return (
     <ChevronLeftIcon
       className={className}
       onClick={onClick}
       fontSize={"3rem"}
       borderRadius={"50%"}
-      backgroundColor={"rgba(255,255,255,0.5)"}
+      backgroundColor={
+        disabled ? "rgba(255,255,255,0.3)" : "rgba(255,255,255,0.5)"
+      }
       border={"0.5px solid"}
       borderColor={"brand.backgroundLight"}
-      color={"brand.backgroundDark"}
+      color={disabled ? "brand.textLight" : "brand.backgroundDark"}
       boxShadow={"0px 3px 3px 0px #00000040"}
       _hover={{
-        color: "brand.textLight",
+        color: disabled ? "brand.backgroundLight" : "brand.backgroundMed",
         boxShadow: "none",
       }}
       transitionDuration={"600ms"}
       zIndex={1}
+      cursor={disabled ? "not-allowed" : "pointer"}
+      pointerEvents={disabled ? "none" : "auto"}
     />
   );
 }
 
-function NextArrow(props: { className: string; onClick: MouseEvent }) {
-  const { className, onClick } = props;
+function NextArrow(props: {
+  className: string;
+  onClick: MouseEvent;
+  disabled: boolean;
+}) {
+  const { className, onClick, disabled } = props;
   return (
     <ChevronRightIcon
       className={className}
       onClick={onClick}
       fontSize={"3rem"}
       borderRadius={"50%"}
-      backgroundColor={"rgba(255,255,255,0.5)"}
+      backgroundColor={
+        disabled ? "rgba(255,255,255,0.3)" : "rgba(255,255,255,0.5)"
+      }
       border={"0.5px solid"}
       borderColor={"brand.backgroundLight"}
-      color={"brand.backgroundDark"}
+      color={disabled ? "brand.textLight" : "brand.backgroundDark"}
       boxShadow={"0px 3px 3px 0px #00000040"}
       _hover={{
-        color: "brand.textLight",
+        color: disabled ? "brand.backgroundLight" : "brand.backgroundMed",
         boxShadow: "none",
       }}
       transitionDuration={"600ms"}
       zIndex={1}
+      cursor={disabled ? "not-allowed" : "pointer"}
+      pointerEvents={disabled ? "none" : "auto"}
     />
   );
 }
 
 export default function MachineCarousel() {
-  let settings = {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const settings = {
     dots: true,
     infinite: false,
     speed: 500,
@@ -65,23 +83,23 @@ export default function MachineCarousel() {
     nextArrow: (
       <NextArrow
         className={""}
-        onClick={function (
-          event: React.MouseEvent<SVGElement, globalThis.MouseEvent>,
-        ): void {
+        onClick={(event) => {
           throw new Error("Function not implemented.");
         }}
+        disabled={currentSlide === 7} // Hardcoded value until we can get the length of the slider
       />
     ),
     prevArrow: (
       <PrevArrow
         className={""}
-        onClick={function (
-          event: React.MouseEvent<SVGElement, globalThis.MouseEvent>,
-        ): void {
+        onClick={(event) => {
           throw new Error("Function not implemented.");
         }}
+        disabled={currentSlide === 0}
       />
     ),
+    beforeChange: (oldIndex: number, newIndex: React.SetStateAction<number>) =>
+      setCurrentSlide(newIndex),
     responsive: [
       {
         breakpoint: 1024,
@@ -94,6 +112,7 @@ export default function MachineCarousel() {
 
   return (
     <Slider {...settings}>
+      {/* Temporary filler to test Slider: repeated cards */}
       {Array(10)
         .fill(0)
         .map((_, i) => (

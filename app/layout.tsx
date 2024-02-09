@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
-import { lato, roboto_slab } from "./fonts";
-import { Providers } from "./providers";
 import { Box } from "@chakra-ui/react";
-import Header from "./components/Header";
+import type { Metadata } from "next";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
+import { lato, roboto_slab } from "./fonts";
+import "./global.css";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "Kenworthy Machine",

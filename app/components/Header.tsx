@@ -2,11 +2,11 @@
 
 // LIBRARY IMPORTS
 import { Link as ChakraLink } from "@chakra-ui/next-js";
-import { Box, Grid, Stack, IconButton, Spacer } from "@chakra-ui/react";
-import { FaBars, FaXmark } from "react-icons/fa6";
+import { Box, Grid, IconButton, Spacer, Stack } from "@chakra-ui/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { FaBars, FaXmark } from "react-icons/fa6";
 import logo from "../../public/images/kenworthy-logo.jpg";
 
 export default function Header() {
