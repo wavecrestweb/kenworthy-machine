@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import Hero from "./Hero";
 import CompanyValues from "./CompanyValues";
 import Machines from "@/app/components/Machines";
+import RequestQuote from "./RequestQuote";
 import Location from "./Location";
 
 export default function Home(props: {
@@ -38,8 +39,10 @@ export default function Home(props: {
           case "PageBlocksValues": {
             return <CompanyValues key={i} {...block} />;
           }
+          case "PageBlocksQuoteSection": {
+            return <RequestQuote key={i} {...block} />;
+          }
           case "PageBlocksLocation": {
-            console.log("block", block);
             return <Location key={i} {...block} />;
           }
           case "PageBlocksMachineCarousel": {

@@ -20,7 +20,6 @@ import ContentWrapper from "./ContentWrapper";
 
 // VALUES COMPONENT DEFINITION
 export default function CompanyValues(props: PageBlocksValues) {
-  console.log("rich text: ", props.quality1?.description);
   return (
     <Box position="relative">
       <Image
@@ -34,7 +33,7 @@ export default function CompanyValues(props: PageBlocksValues) {
           zIndex: -1,
         }}
       />
-      <Box bgImage={gearBackground} p={10} bg="rgba(11, 17, 62, 0.9)">
+      <Box bgImage={gearBackground} p={10} bg="rgba(11, 17, 62, 0.79)">
         <ContentWrapper>
           <VStack spacing={8}>
             <Heading color="white" textAlign="center" mb={4}>
@@ -61,7 +60,7 @@ export default function CompanyValues(props: PageBlocksValues) {
                     content={props.quality1?.description}
                     components={{
                       p: ({ children }: { children: ReactNode }) => (
-                        <Text as="span" fontSize="xl" color="brand.text">
+                        <Text as="div" fontSize="xl" color="brand.text">
                           {children}
                         </Text>
                       ),

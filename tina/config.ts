@@ -186,6 +186,65 @@ export default defineConfig({
                   },
                 ],
               },
+              {
+                type: "object",
+                label: "Quote Section",
+                name: "quoteSection",
+                fields: [
+                  {
+                    type: "object",
+                    label: "Request Quote Form",
+                    name: "requestQuoteForm",
+                    fields: [
+                      {
+                        type: "string",
+                        label: "Form Title",
+                        name: "formTitle",
+                      },
+                      {
+                        type: "string",
+                        label: "Form Field 1 Placeholder",
+                        name: "field1Placeholder",
+                      },
+                      {
+                        type: "string",
+                        label: "Form Field 2 Placeholder",
+                        name: "field2Placeholder",
+                      },
+                      {
+                        type: "rich-text",
+                        label: "Form Field 3 Placeholder",
+                        name: "field3Placeholder",
+                      },
+                      {
+                        type: "string",
+                        label: "Submit Button Text",
+                        name: "submitButtonText",
+                      },
+                    ],
+                  },
+                  {
+                    type: "string",
+                    label: "Request Copy Title",
+                    name: "requestCopyTitle",
+                  },
+                  {
+                    type: "rich-text",
+                    label: "Fill Form Copy",
+                    name: "fillFormCopy",
+                  },
+                  {
+                    type: "rich-text",
+                    label: "Email Copy",
+                    name: "emailCopy",
+                  },
+                  {
+                    type: "rich-text",
+                    label: "Response Copy",
+                    name: "responseCopy",
+                  },
+                ],
+              },
             ],
           },
         ],

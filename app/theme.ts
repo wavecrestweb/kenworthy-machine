@@ -11,6 +11,10 @@ const customTheme = extendTheme({
       text: "#0b113e",
       textLight: "#938f8f",
       button: "#db0a40",
+      primary: "#0b113e",
+      secondary: "#db0a40",
+      accentGreen: "#32CD32",
+      accentGrey: "#787373",
     },
   },
   fonts: {
