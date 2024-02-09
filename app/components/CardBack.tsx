@@ -6,18 +6,23 @@ import {
   ListItem,
   Text,
   UnorderedList,
-  Box,
   Button,
 } from "@chakra-ui/react";
-import Image from "next/image";
-import machinePhoto from "../../public/images/Ganesh-Cyclone-52-BY2.jpeg";
+import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 interface CardBackProps {
   isFlipped: boolean;
   setIsFlipped: React.Dispatch<React.SetStateAction<boolean>>;
+  name?: string | null;
+  description?: TinaMarkdownContent | TinaMarkdownContent[];
 }
 
-const CardBack: React.FC<CardBackProps> = ({ isFlipped, setIsFlipped }) => {
+const CardBack: React.FC<CardBackProps> = ({
+  isFlipped,
+  setIsFlipped,
+  name,
+  description,
+}) => {
   const handleClick = () => {
     setIsFlipped(!isFlipped);
   };
@@ -25,14 +30,28 @@ const CardBack: React.FC<CardBackProps> = ({ isFlipped, setIsFlipped }) => {
   return (
     <ChakraCard size="lg" variant="back" align="center">
       <CardHeader>
-        <Text as="h5" textStyle="h5" layerStyle="darkBg" pt="12">
-          Machine Name
+        <Text as="h5" textStyle="h5" layerStyle="darkBg" opacity="95%" pt="12">
+          {name}
         </Text>
       </CardHeader>
       <CardBody>
-        <UnorderedList layerStyle="darkBg">
-          <ListItem textStyle="h5">List Item</ListItem>
-        </UnorderedList>
+        {description && (
+          <TinaMarkdown
+            content={description}
+            components={{
+              ul: ({ children }) => (
+                <UnorderedList layerStyle="darkBg" lineHeight="6">
+                  {children}
+                </UnorderedList>
+              ),
+              li: ({ children }) => (
+                <ListItem textStyle="h5" listStyleType="disc">
+                  {children}
+                </ListItem>
+              ),
+            }}
+          />
+        )}
       </CardBody>
       <CardFooter justifyContent="center">
         <Button variant="mc-white" onClick={handleClick}>

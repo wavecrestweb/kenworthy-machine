@@ -1,5 +1,10 @@
 import { Text, Box } from "@chakra-ui/react";
-export default function MachineTypeLabel() {
+
+interface MachineTypeLabelProps {
+  type?: string | null;
+}
+
+const MachineTypeLabel: React.FC<MachineTypeLabelProps> = ({ type }) => {
   return (
     <Box
       color="black"
@@ -19,8 +24,10 @@ export default function MachineTypeLabel() {
         transform="rotate(45deg)"
         position="absolute"
       >
-        Machine Type Label
+        {type}
       </Text>
     </Box>
   );
-}
+};
+
+export default MachineTypeLabel;
