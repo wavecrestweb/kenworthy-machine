@@ -30,7 +30,7 @@ export default function Hero(props: PageBlocksHero) {
           display="flex"
           alignItems="center"
           justifyContent="center"
-          bg="brand.backgroundDark"
+          bg="brand.primary"
           opacity="90%"
         >
           <Heading size="xl" color="white">

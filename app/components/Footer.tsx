@@ -45,7 +45,7 @@ const contactInfo = [
 
 export default function Footer() {
   return (
-    <Box bg="brand.backgroundDark">
+    <Box bg="brand.primary">
       <ContentWrapper>
         <Grid
           templateColumns={{

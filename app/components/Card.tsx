@@ -15,7 +15,7 @@ const handleClick = () => {};
 
 export default function Card() {
   return (
-    <ChakraCard size="lg" variant="front" align="center">
+    <ChakraCard size="md" variant="front" align="center">
       <CardHeader>
         <Box position="relative">
           <Image src={machinePhoto} alt="Ganesh Cyclone 52-BY2"></Image>
@@ -47,7 +47,7 @@ export default function Card() {
           Machine Name
         </Text>
       </CardBody>
-      <CardFooter justifyContent="center">
+      <CardFooter justifyContent="center" width="100%" borderBottomRadius="6px">
         <Button variant="mc-blue" onClick={handleClick}>
           View Details
         </Button>

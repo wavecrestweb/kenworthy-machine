@@ -46,7 +46,12 @@ export default function RequestQuote(props: PageBlocksQuoteSection) {
             {props.requestCopyTitle}
           </Text>
           <HStack align="flex-start">
-            <Icon as={FaRegClipboard} boxSize={8} color="brand.button" mr={2} />
+            <Icon
+              as={FaRegClipboard}
+              boxSize={8}
+              color="brand.secondary"
+              mr={2}
+            />
             <Box>
               <TinaMarkdown
                 content={props.fillFormCopy}
@@ -69,7 +74,12 @@ export default function RequestQuote(props: PageBlocksQuoteSection) {
             OR
           </Text>
           <HStack align="flex-start">
-            <Icon as={FaRegEnvelope} boxSize={8} color="brand.button" mr={2} />
+            <Icon
+              as={FaRegEnvelope}
+              boxSize={8}
+              color="brand.secondary"
+              mr={2}
+            />
             <Box>
               <TinaMarkdown
                 content={props.emailCopy}
@@ -89,7 +99,12 @@ export default function RequestQuote(props: PageBlocksQuoteSection) {
             </Box>
           </HStack>
           <HStack align="flex-start" mt={12}>
-            <Icon as={FaRegHandshake} boxSize={8} color="brand.button" mr={2} />
+            <Icon
+              as={FaRegHandshake}
+              boxSize={8}
+              color="brand.secondary"
+              mr={2}
+            />
             <Box>
               <TinaMarkdown
                 content={props.responseCopy}

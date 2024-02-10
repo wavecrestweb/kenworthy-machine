@@ -5,12 +5,11 @@ import { cardTheme } from "./theme/components/card";
 const customTheme = extendTheme({
   colors: {
     brand: {
-      backgroundDark: "#0b113e",
-      backgroundMed: "#232952",
       text: "#0b113e",
       textLight: "#938f8f",
-      button: "#db0a40",
       primary: "#0b113e",
+      backgroundMed: "#232952",
+      backgroundLight: "#b9c1c6",
       secondary: "#db0a40",
       accentGreen: "#32CD32",
       accentGrey: "#787373",
@@ -23,32 +22,49 @@ const customTheme = extendTheme({
   components: {
     Link: {
       variants: {
-        buttonPrimary: {
+        buttonPrimaryDark: {
           color: "white",
-          backgroundColor: "brand.button",
-          borderRadius: "var(--border-radius)",
+          backgroundColor: "brand.secondary",
+          borderRadius: "20px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           padding: "6px",
           fontWeight: "700",
           _hover: {
-            color: "var(--text-color)",
+            color: "brand.text",
+            transitionDuration: "300ms",
+            textDecoration: "none",
+          },
+        },
+        buttonPrimaryLight: {
+          color: "white",
+          backgroundColor: "brand.secondary",
+          borderRadius: "20px",
+          border: "solid 2px",
+          borderColor: "white",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "6px",
+          fontWeight: "700",
+          _hover: {
+            borderColor: "black",
             transitionDuration: "300ms",
             textDecoration: "none",
           },
         },
         buttonSecondary: {
-          color: "var(--text-color)",
+          color: "brand.text",
           backgroundColor: "white",
-          borderRadius: "var(--border-radius)",
+          borderRadius: "20px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           padding: "6px",
           fontWeight: "700",
           _hover: {
-            backgroundColor: "var(--background-color-light)",
+            backgroundColor: "brand.secondary",
             transitionDuration: "300ms",
             textDecoration: "none",
           },
@@ -58,7 +74,7 @@ const customTheme = extendTheme({
           fontSize: "24px",
           _hover: {
             borderBottom: "solid 2px",
-            borderBottomColor: "brand.button",
+            borderBottomColor: "brand.secondary",
             textDecoration: "none",
             transitionDuration: "300ms",
           },
@@ -66,7 +82,7 @@ const customTheme = extendTheme({
         footer: {
           _hover: {
             borderBottom: "solid 2px",
-            borderBottomColor: "brand.button",
+            borderBottomColor: "brand.secondary",
             textDecoration: "none",
             transitionDuration: "300ms",
           },
@@ -75,7 +91,7 @@ const customTheme = extendTheme({
     },
     Button: {
       baseStyle: {
-        backgroundColor: "brand.backgroundDark",
+        backgroundColor: "brand.primary",
         borderRadius: "20px",
         color: "white",
         fontWeight: "bold",
@@ -136,7 +152,7 @@ const customTheme = extendTheme({
       color: "brand.text",
     },
     darkBg: {
-      bg: "brand.backgroundDark",
+      bg: "brand.primary",
       color: "white",
     },
     medBg: {

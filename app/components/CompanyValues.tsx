@@ -50,7 +50,9 @@ export default function CompanyValues(props: PageBlocksValues) {
               {/* QUALITY VALUE CONTAINER */}
               <HStack spacing={12} align="center">
                 <VStack align="start" spacing={4}>
-                  <Heading size="lg">{props.quality1?.title}</Heading>
+                  <Heading size="lg" color="brand.text">
+                    {props.quality1?.title}
+                  </Heading>
                   <Box
                     bgGradient="linear(90deg, #DB0A40 0%, rgba(219, 10, 64, 0.04) 96%, rgba(219, 10, 64, 0) 100%)"
                     w="full"
@@ -69,7 +71,7 @@ export default function CompanyValues(props: PageBlocksValues) {
                 </VStack>
                 <Flex
                   p={4}
-                  bg="brand.backgroundDark"
+                  bg="brand.primary"
                   borderRadius="2xl"
                   align="center"
                   justify="center"
@@ -81,7 +83,7 @@ export default function CompanyValues(props: PageBlocksValues) {
               <HStack spacing={12} align="center">
                 <Flex
                   p={4}
-                  bg="brand.backgroundDark"
+                  bg="brand.primary"
                   borderRadius="2xl"
                   align="center"
                   justify="center"
@@ -89,7 +91,9 @@ export default function CompanyValues(props: PageBlocksValues) {
                   <Icon as={FaRegClock} boxSize={24} color="white" />
                 </Flex>
                 <VStack align="start" spacing={4}>
-                  <Heading size="lg">{props.quality2?.title}</Heading>
+                  <Heading size="lg" color="brand.text">
+                    {props.quality2?.title}
+                  </Heading>
                   <Box
                     bgGradient="linear(90deg, #DB0A40 0%, rgba(219, 10, 64, 0.04) 96%, rgba(219, 10, 64, 0) 100%)"
                     w="full"
@@ -110,7 +114,9 @@ export default function CompanyValues(props: PageBlocksValues) {
               {/* COLLABORATION VALUE CONTAINER */}
               <HStack spacing={12} align="center">
                 <VStack align="start" spacing={4}>
-                  <Heading size="lg">{props.quality3?.title}</Heading>
+                  <Heading size="lg" color="brand.text">
+                    {props.quality3?.title}
+                  </Heading>
                   <Box
                     bgGradient="linear(90deg, #DB0A40 0%, rgba(219, 10, 64, 0.04) 96%, rgba(219, 10, 64, 0) 100%)"
                     w="full"
@@ -129,7 +135,7 @@ export default function CompanyValues(props: PageBlocksValues) {
                 </VStack>
                 <Flex
                   p={4}
-                  bg="brand.backgroundDark"
+                  bg="brand.primary"
                   borderRadius="2xl"
                   align="center"
                   justify="center"
