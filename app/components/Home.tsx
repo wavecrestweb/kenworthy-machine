@@ -30,7 +30,7 @@ export default function Home(props: {
   }, []);
 
   return (
-    <Grid templateColumns={"1fr"} background={"white"}>
+    <Grid templateColumns={"1fr"}>
       {data.page.blocks?.map((block, i) => {
         switch (block?.__typename) {
           case "PageBlocksHero": {
