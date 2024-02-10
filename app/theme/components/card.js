@@ -10,7 +10,7 @@ const baseStyle = definePartsStyle({
     boxShadow: "0px 6px 4px 0px #00000040",
   },
   footer: {
-    backgroundColor: "brand.backgroundDark",
+    backgroundColor: "brand.primary",
   },
 });
 
@@ -42,12 +42,12 @@ const variants = {
       backgroundColor: "white",
     },
     footer: {
-      backgroundColor: "brand.backgroundDark",
+      backgroundColor: "brand.primary",
     },
   }),
   back: definePartsStyle({
     container: {
-      backgroundColor: "brand.backgroundDark",
+      backgroundColor: "brand.primary",
     },
     footer: {
       backgroundColor: "white",

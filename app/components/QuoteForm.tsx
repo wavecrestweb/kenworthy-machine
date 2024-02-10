@@ -104,7 +104,7 @@ export default function QuoteForm({
           />
         </FormControl>
         <Button
-          bg="brand.button"
+          bg="brand.secondary"
           color="white"
           borderRadius="full"
           px={12}
@@ -113,7 +113,7 @@ export default function QuoteForm({
           fontWeight="bold"
           fontSize="xl"
           _hover={{
-            bg: "brand.button",
+            bg: "brand.secondary",
             transform: "scale(1.03)",
             transition: "transform 0.2s ease-in-out",
           }}

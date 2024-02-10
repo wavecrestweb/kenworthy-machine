@@ -19,7 +19,7 @@ export default function Header() {
   };
 
   return (
-    <Box backgroundColor="brand.backgroundDark">
+    <Box backgroundColor="brand.primary">
       <Stack maxW="1728px" mx="auto">
         <Grid
           templateColumns={{

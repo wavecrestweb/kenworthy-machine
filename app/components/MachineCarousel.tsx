@@ -24,7 +24,7 @@ function PrevArrow(props: {
       }
       border={"0.5px solid"}
       borderColor={"brand.backgroundLight"}
-      color={disabled ? "brand.textLight" : "brand.backgroundDark"}
+      color={disabled ? "brand.textLight" : "brand.primary"}
       boxShadow={disabled ? "" : "0px 3px 3px 0px #00000040"}
       _hover={{
         color: disabled ? "brand.backgroundLight" : "brand.backgroundMed",
@@ -55,7 +55,7 @@ function NextArrow(props: {
       }
       border={"0.5px solid"}
       borderColor={"brand.backgroundLight"}
-      color={disabled ? "brand.textLight" : "brand.backgroundDark"}
+      color={disabled ? "brand.textLight" : "brand.primary"}
       boxShadow={disabled ? "" : "0px 3px 3px 0px #00000040"}
       _hover={{
         color: disabled ? "brand.backgroundLight" : "brand.backgroundMed",
