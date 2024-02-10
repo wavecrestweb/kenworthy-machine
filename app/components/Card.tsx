@@ -47,7 +47,7 @@ export default function Card() {
           Machine Name
         </Text>
       </CardBody>
-      <CardFooter justifyContent="center">
+      <CardFooter justifyContent="center" width="100%" borderBottomRadius="6px">
         <Button variant="mc-blue" onClick={handleClick}>
           View Details
         </Button>
