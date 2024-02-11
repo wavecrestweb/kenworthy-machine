@@ -6,11 +6,14 @@ import { Link } from "./theme/components/link";
 const customTheme = extendTheme({
   colors: {
     brand: {
-      backgroundDark: "#0b113e",
-      backgroundMed: "#232952",
       text: "#0b113e",
       textLight: "#938f8f",
-      button: "#db0a40",
+      primary: "#0b113e",
+      backgroundMed: "#232952",
+      backgroundLight: "#b9c1c6",
+      secondary: "#db0a40",
+      accentGreen: "#32CD32",
+      accentGrey: "#787373",
     },
   },
   fonts: {
@@ -21,7 +24,7 @@ const customTheme = extendTheme({
     Link: Link,
     Button: {
       baseStyle: {
-        backgroundColor: "brand.backgroundDark",
+        backgroundColor: "brand.primary",
         borderRadius: "20px",
         color: "white",
         fontWeight: "bold",
@@ -87,7 +90,7 @@ const customTheme = extendTheme({
       color: "brand.text",
     },
     darkBg: {
-      bg: "brand.backgroundDark",
+      bg: "brand.primary",
       color: "white",
     },
     medBg: {

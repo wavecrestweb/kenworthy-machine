@@ -28,7 +28,7 @@ const CardFront: React.FC<CardFrontProps> = ({
   type,
 }) => {
   // add a placeholder image and replace "default-image-url" with correct url
-  const placeholderImage = "dummy-image-url";
+  const placeholderImage = "";
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
