@@ -27,7 +27,7 @@ export default function Careers({ width }: { width: number }) {
         </Text>
         <SimpleGrid
           spacing={4}
-          templateColumns="repeat(3, minmax(200px, 342px))"
+          templateColumns="342px 1fr 342px"
           justifyContent="center"
           mt={8}
         >
@@ -40,40 +40,35 @@ export default function Careers({ width }: { width: number }) {
             borderRadius={"1.875rem"}
           >
             <CardHeader>
-              <Heading size="md"> Job Training</Heading>
+              <Text fontSize="32px">Job Training</Text>
             </CardHeader>
             <Image src={chalkboard} width={170} alt="Chalkboard" />
             <CardBody>
-              <Text align={"center"}>
+              <Text fontSize="20px" align={"center"}>
                 Our Team is invested in training and learning together.
               </Text>
             </CardBody>
           </Card>
-          <Card>
+          <Box mx="auto">
+            <Button variant="mc-red">Apply Now</Button>
+          </Box>
+          <Card
+            w={"342px"}
+            h={"336px"}
+            color={"white"}
+            backgroundColor={"brand.primary"}
+            align={"center"}
+            borderRadius={"1.875rem"}
+          >
             <CardHeader>
-              <Heading size="md"> Customer dashboard</Heading>
+              <Text fontSize="32px">Job Training</Text>
             </CardHeader>
+            <Image src={chalkboard} width={170} alt="Chalkboard" />
             <CardBody>
-              <Text>
-                View a summary of all your customers over the last month.
+              <Text fontSize="20px" align={"center"}>
+                Our Team is invested in training and learning together.
               </Text>
             </CardBody>
-            <CardFooter>
-              <Button>View here</Button>
-            </CardFooter>
-          </Card>
-          <Card>
-            <CardHeader>
-              <Heading size="md"> Customer dashboard</Heading>
-            </CardHeader>
-            <CardBody>
-              <Text>
-                View a summary of all your customers over the last month.
-              </Text>
-            </CardBody>
-            <CardFooter>
-              <Button>View here</Button>
-            </CardFooter>
           </Card>
         </SimpleGrid>
       </Container>
