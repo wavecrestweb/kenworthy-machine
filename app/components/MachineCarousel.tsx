@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { Box } from "@chakra-ui/react";
 import Slider from "react-slick";
-import { PageBlocksMachineCarouselMachineCard } from "@/tina/__generated__/types";
+import { MachineCardsBlock } from "./Machines";
 
 import Card from "./Card";
 
@@ -71,9 +71,9 @@ function NextArrow(props: {
   );
 }
 
-export default function MachineCarousel(
-  machineCards: PageBlocksMachineCarouselMachineCard[],
-) {
+export default function MachineCarousel(props: {
+  machineCards: MachineCardsBlock["machineCards"];
+}): JSX.Element {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const settings = {
@@ -87,7 +87,7 @@ export default function MachineCarousel(
     nextArrow: (
       <NextArrow
         className={""}
-        onClick={(event) => {
+        onClick={() => {
           throw new Error("Function not implemented.");
         }}
         disabled={currentSlide === 7} // Hardcoded value until we can get the length of the slider
@@ -96,7 +96,7 @@ export default function MachineCarousel(
     prevArrow: (
       <PrevArrow
         className={""}
-        onClick={(event) => {
+        onClick={() => {
           throw new Error("Function not implemented.");
         }}
         disabled={currentSlide === 0}
@@ -116,17 +116,9 @@ export default function MachineCarousel(
 
   return (
     <Slider {...settings}>
-      {/* Temporary filler to test Slider: repeated cards */}
-      {Array(10)
-        .fill(0)
-        .map((_, i) => (
-          <Box key={i} p={12}>
-            <Card />
-          </Box>
-        ))}
-      {/* {props.machineCard?.map((card, i) => {
-        return <Card key={i} {...card}></Card>;
-      })} */}
+      {props.machineCards?.machineCard?.map((card, i) => {
+        return <Card key={i} {...card} />;
+      })}
     </Slider>
   );
 }

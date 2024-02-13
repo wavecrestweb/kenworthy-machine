@@ -3,9 +3,15 @@ import { useState } from "react";
 import CardFront from "./CardFront";
 import CardBack from "./CardBack";
 
-import { PageBlocksMachineCarouselMachineCard } from "@/tina/__generated__/types";
+type MachineCard = {
+  __typename?: "MachinesMachineCard";
+  name?: string | undefined;
+  image?: string | undefined;
+  description?: any;
+  type?: string | undefined;
+};
 
-export default function Card(props: PageBlocksMachineCarouselMachineCard) {
+export default function Card(props: MachineCard): JSX.Element {
   const [isFlipped, setIsFlipped] = useState(false);
   const frontData = {
     image: props.image,
@@ -16,7 +22,7 @@ export default function Card(props: PageBlocksMachineCarouselMachineCard) {
     name: props.name,
     description: props.description,
   };
-  console.log("props", props);
+
   return (
     <>
       {isFlipped ? (
