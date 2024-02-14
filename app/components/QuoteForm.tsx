@@ -49,7 +49,8 @@ export default function QuoteForm({
       const data = await response.json();
 
       if (data.success) {
-        console.log("Form submitted successfully");
+        // setSubmitSuccessful(true);
+        console.log("success");
       } else {
         console.error("Form submission failed");
       }
