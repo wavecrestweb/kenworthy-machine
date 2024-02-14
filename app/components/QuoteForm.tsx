@@ -24,9 +24,38 @@ export default function QuoteForm({
   field3Placeholder,
   submitButtonText,
 }: QuoteFormProps) {
-  const handleSubmit = (event) => {
+  // EVENT HANDLERS
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Form submission logic goes here
+
+    // Collect form data
+    const formData = {
+      name: event.target.name.value,
+      email: event.target.email.value,
+      industry: event.target.industry.value,
+      details: event.target.details.value,
+    };
+
+    // Send the form data to API route
+    try {
+      const response = await fetch("/api/quoteEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        console.log("Form submitted successfully");
+      } else {
+        console.error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
   };
 
   return (

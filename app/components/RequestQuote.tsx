@@ -1,6 +1,6 @@
 // LIBRARY IMPORTS
 import { Box, VStack, Text, HStack, Icon } from "@chakra-ui/react";
-import { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import { FaRegClipboard, FaRegEnvelope, FaRegHandshake } from "react-icons/fa6";
 import Image from "next/image";
 import { PageBlocksQuoteSection } from "@/tina/__generated__/types";
@@ -11,6 +11,9 @@ import QuoteForm from "./QuoteForm";
 import machineBackground from "../../public/images/machineBackground.png";
 
 export default function RequestQuote(props: PageBlocksQuoteSection) {
+  // SET STATES
+  const [submitSuccessful, setSubmitSuccessful] = useState(false);
+
   return (
     <Box position="relative">
       <Image
