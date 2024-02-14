@@ -7,6 +7,7 @@ import {
   Button,
   Text,
 } from "@chakra-ui/react";
+import React, { Dispatch, SetStateAction } from "react";
 
 // TYPE DEFINTIONS
 interface QuoteFormProps {
@@ -15,6 +16,7 @@ interface QuoteFormProps {
   field2Placeholder?: string;
   field3Placeholder?: string;
   submitButtonText?: string;
+  setSubmitSuccessful: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function QuoteForm({
@@ -23,6 +25,7 @@ export default function QuoteForm({
   field2Placeholder,
   field3Placeholder,
   submitButtonText,
+  setSubmitSuccessful,
 }: QuoteFormProps) {
   // EVENT HANDLERS
   const handleSubmit = async (event) => {
@@ -49,8 +52,8 @@ export default function QuoteForm({
       const data = await response.json();
 
       if (data.success) {
-        // setSubmitSuccessful(true);
-        console.log("success");
+        setSubmitSuccessful(true);
+        // console.log("success");
       } else {
         console.error("Form submission failed");
       }
