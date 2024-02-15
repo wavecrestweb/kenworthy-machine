@@ -4,7 +4,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import Slider from "react-slick";
 
 import { MachineCardsBlock } from "./Machines";
-import Card from "./Card";
+import Card from "./Card/Card";
 
 type MouseEvent = React.MouseEventHandler<SVGElement>;
 
