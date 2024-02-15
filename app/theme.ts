@@ -40,7 +40,7 @@ const customTheme = extendTheme({
         buttonPrimaryLight: {
           color: "white",
           backgroundColor: "brand.secondary",
-          borderRadius: "20px",
+          borderRadius: "50px",
           border: "solid 2px",
           borderColor: "white",
           display: "flex",
@@ -121,7 +121,7 @@ const customTheme = extendTheme({
         "mc-red": {
           color: "white",
           backgroundColor: "brand.secondary",
-          fontSize: "xl",
+          fontSize: "24px",
           lineHeight: "6",
           _hover: {
             transform: "scale(1.1)",
