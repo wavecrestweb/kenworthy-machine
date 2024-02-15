@@ -51,7 +51,7 @@ const CardFront: React.FC<CardFrontProps> = ({
         </Box>
       </CardHeader>
       <CardBody>
-        <Text as="h5" textStyle="h5" fontSize="2xl">
+        <Text as="h5" textStyle="h5" fontSize="2xl" textAlign="center">
           {name}
         </Text>
       </CardBody>

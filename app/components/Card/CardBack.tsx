@@ -32,7 +32,7 @@ const CardBack: React.FC<CardBackProps> = ({
   return (
     <ChakraCard size="lg" variant="back" align="center" animation={animation}>
       <CardHeader>
-        <Text as="h5" textStyle="h5" layerStyle="darkBg" opacity="95%">
+        <Text as="h5" textStyle="h5" layerStyle="darkBg" textAlign="center">
           {name}
         </Text>
       </CardHeader>
@@ -42,7 +42,11 @@ const CardBack: React.FC<CardBackProps> = ({
             content={description}
             components={{
               ul: ({ children }) => (
-                <UnorderedList layerStyle="darkBg" lineHeight="6">
+                <UnorderedList
+                  layerStyle="darkBg"
+                  lineHeight="6"
+                  textAlign="center"
+                >
                   {children}
                 </UnorderedList>
               ),

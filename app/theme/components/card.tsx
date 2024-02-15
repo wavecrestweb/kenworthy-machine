@@ -56,6 +56,7 @@ const variants = {
   back: definePartsStyle({
     container: {
       backgroundColor: "brand.primary",
+      opacity: "95%",
     },
     header: {
       pt: "12",
