@@ -11,6 +11,7 @@ import Image from "next/image";
 import MachineTypeLabel from "./MachineTypeLabel";
 
 interface CardFrontProps {
+  animation: string;
   isFlipped: boolean;
   setIsFlipped: React.Dispatch<React.SetStateAction<boolean>>;
   name?: string | null;
@@ -19,6 +20,7 @@ interface CardFrontProps {
 }
 
 const CardFront: React.FC<CardFrontProps> = ({
+  animation,
   isFlipped,
   setIsFlipped,
   name,
@@ -33,7 +35,7 @@ const CardFront: React.FC<CardFrontProps> = ({
   };
 
   return (
-    <ChakraCard size="lg" variant="front" align="center">
+    <ChakraCard size="lg" variant="front" align="center" animation={animation}>
       <CardHeader>
         <Box position="relative" w="sm" h="2xs" overflow="hidden">
           <Image

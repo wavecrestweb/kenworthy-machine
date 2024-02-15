@@ -8,14 +8,6 @@ const baseStyle = definePartsStyle({
   container: {
     backgroundColor: "white",
     boxShadow: "0px 6px 4px 0px #00000040",
-    // On click
-    // Change to: "Default";
-    // Animate: Smart animate;
-    // animation-timing-function: ease-out;
-    // animation-duration: 600ms;
-    // _active: {
-    //   transition: "transform 600ms ease-out",
-    // },
   },
   footer: {
     backgroundColor: "brand.primary",

@@ -11,6 +11,7 @@ import {
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 interface CardBackProps {
+  animation: string;
   isFlipped: boolean;
   setIsFlipped: React.Dispatch<React.SetStateAction<boolean>>;
   name?: string | null;
@@ -18,6 +19,7 @@ interface CardBackProps {
 }
 
 const CardBack: React.FC<CardBackProps> = ({
+  animation,
   isFlipped,
   setIsFlipped,
   name,
@@ -28,7 +30,7 @@ const CardBack: React.FC<CardBackProps> = ({
   };
 
   return (
-    <ChakraCard size="lg" variant="back" align="center">
+    <ChakraCard size="lg" variant="back" align="center" animation={animation}>
       <CardHeader>
         <Text as="h5" textStyle="h5" layerStyle="darkBg" opacity="95%">
           {name}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { keyframes } from "@chakra-ui/react";
 
 import CardFront from "./CardFront";
 import CardBack from "./CardBack";
@@ -11,18 +12,19 @@ type MachineCard = {
   type?: string | undefined;
 };
 
+const animationKeyFrames = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const animation = `${animationKeyFrames} 600ms ease-out`;
+
 export default function Card(props: MachineCard): JSX.Element {
   const [isFlipped, setIsFlipped] = useState(false);
-
-  const frontData = {
-    image: props?.image,
-    name: props?.name,
-    type: props?.type,
-  };
-  const backData = {
-    name: props?.name,
-    description: props?.description,
-  };
 
   return (
     <>
@@ -30,13 +32,15 @@ export default function Card(props: MachineCard): JSX.Element {
         <CardBack
           isFlipped={isFlipped}
           setIsFlipped={setIsFlipped}
-          {...backData}
+          animation={animation}
+          {...props}
         />
       ) : (
         <CardFront
           isFlipped={isFlipped}
           setIsFlipped={setIsFlipped}
-          {...frontData}
+          animation={animation}
+          {...props}
         />
       )}
     </>
