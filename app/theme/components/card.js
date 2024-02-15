@@ -8,6 +8,14 @@ const baseStyle = definePartsStyle({
   container: {
     backgroundColor: "white",
     boxShadow: "0px 6px 4px 0px #00000040",
+    // On click
+    // Change to: "Default";
+    // Animate: Smart animate;
+    // animation-timing-function: ease-out;
+    // animation-duration: 600ms;
+    // _active: {
+    //   transition: "transform 600ms ease-out",
+    // },
   },
   footer: {
     backgroundColor: "brand.primary",
@@ -20,10 +28,10 @@ const sizes = {
       borderRadius: "20px",
       w: "sm",
       h: "lg",
+      my: "4",
     },
     header: {
       p: "0",
-      pb: "20",
     },
     body: {
       p: "0",
@@ -40,6 +48,14 @@ const variants = {
   front: definePartsStyle({
     container: {
       backgroundColor: "white",
+      overflow: "hidden",
+    },
+    header: {
+      w: "sm",
+      h: "2xs",
+    },
+    body: {
+      pt: "16",
     },
     footer: {
       backgroundColor: "brand.primary",
@@ -48,6 +64,10 @@ const variants = {
   back: definePartsStyle({
     container: {
       backgroundColor: "brand.primary",
+    },
+    header: {
+      pt: "12",
+      pb: "14",
     },
     footer: {
       backgroundColor: "white",

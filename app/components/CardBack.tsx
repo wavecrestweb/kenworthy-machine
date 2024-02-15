@@ -30,7 +30,7 @@ const CardBack: React.FC<CardBackProps> = ({
   return (
     <ChakraCard size="lg" variant="back" align="center">
       <CardHeader>
-        <Text as="h5" textStyle="h5" layerStyle="darkBg" opacity="95%" pt="12">
+        <Text as="h5" textStyle="h5" layerStyle="darkBg" opacity="95%">
           {name}
         </Text>
       </CardHeader>

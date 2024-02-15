@@ -8,8 +8,6 @@ import {
   Button,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import machinePhoto from "../../public/images/Ganesh-Cyclone-52-BY2.jpeg";
-import label from "../../public/images/Polygon.svg";
 import MachineTypeLabel from "./MachineTypeLabel";
 
 interface CardFrontProps {
@@ -37,18 +35,21 @@ const CardFront: React.FC<CardFrontProps> = ({
   return (
     <ChakraCard size="lg" variant="front" align="center">
       <CardHeader>
-        <Box position="relative">
+        <Box position="relative" w="sm" h="2xs" overflow="hidden">
           <Image
             src={image ?? placeholderImage}
-            width={300}
-            height={300}
-            alt="Ganesh Cyclone 52-BY2"
+            fill={true}
+            style={{
+              objectFit: "cover",
+            }}
+            alt={name ?? ""}
+            placeholder="empty"
           />
           <MachineTypeLabel type={type} />
         </Box>
       </CardHeader>
       <CardBody>
-        <Text as="h5" textStyle="h5">
+        <Text as="h5" textStyle="h5" fontSize="2xl">
           {name}
         </Text>
       </CardBody>

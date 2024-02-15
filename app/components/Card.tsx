@@ -13,14 +13,15 @@ type MachineCard = {
 
 export default function Card(props: MachineCard): JSX.Element {
   const [isFlipped, setIsFlipped] = useState(false);
+
   const frontData = {
-    image: props.image,
-    name: props.name,
-    type: props.type,
+    image: props?.image,
+    name: props?.name,
+    type: props?.type,
   };
   const backData = {
-    name: props.name,
-    description: props.description,
+    name: props?.name,
+    description: props?.description,
   };
 
   return (
