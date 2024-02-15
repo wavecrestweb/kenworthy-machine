@@ -90,6 +90,8 @@ export default function Careers({ width }: { width: number }) {
           align={"center"}
           borderRadius={"1.875rem"}
           flexDir={"column"}
+          pos="relative"
+          bottom="100"
         >
           <CardHeader>
             <Text fontSize="32px">Career Growth</Text>
