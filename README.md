@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Kenworthy Machine Website
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This repository contains the source code for the Kenworthy Machine website, a small business located near Seattle, Washington specializing in precision machine manufacturing. The site serves to showcase the company's services, values, and product offerings to potential clients and partners.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Team
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Brett** - Developer (GitHub: [Brett's GitHub](https://github.com/username))
+- **Alex** - Developer (GitHub: [Alex's GitHub](https://github.com/username))
+- **Archaa** - Developer (GitHub: [Archaa's GitHub](https://github.com/username))
+- **Kayla** - Designer (GitHub: [Kayla's GitHub](https://github.com/username))
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Live Site
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The website is deployed and can be visited at the following URL: [Kenworthy Machine Live Site](https://kenworthymachine.com)
 
-## Learn More
+## Tools and Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+This project was built using the following technologies:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend**: React.js, Next.js, Chakra UI for styling and layout
+- **Content Management**: TinaCMS for real-time editing and content management
+- **Backend**: Node.js with Express for server-side logic
+- **Email Service**: Nodemailer for handling quote requests and contact emails
+- **Version Control**: Git for collaborative development and version control
+- **Hosting/CI/CD**: Deployed on Vercel with continuous integration and deployment from the GitHub repository
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Notable Features
 
-## Deploy on Vercel
+- **TinaCMS Integration**: Provides a powerful editing interface for site administrators to update content without needing to touch the codebase.
+- **Dynamic Form Handling**: Uses Nodemailer to manage form submissions, enabling the company to receive quote requests directly from the website.
+- **Responsive Design**: The site is fully responsive, ensuring a seamless experience across all devices and screen sizes.
+- **SEO Optimization**: Implemented best practices for SEO, helping to improve the site's visibility in search engine results.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contributions are welcome! If you have suggestions or want to contribute to the project, please create a pull request or open an issue.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
