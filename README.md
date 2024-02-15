@@ -12,7 +12,7 @@ The website is deployed and can be visited at the following URL: [Kenworthy Mach
 
 - **Alex** - Developer ([Alex's GitHub](https://github.com/alibacova))
 - **Archaa** - Developer ([Archaa's GitHub](https://github.com/avinashi10))
-- **Brett** - Developer (GitHub: [Brett's GitHub](https://github.com/BrettEastman))
+- **Brett** - Developer ([Brett's GitHub](https://github.com/BrettEastman))
 - **Kayla** - Designer ([Kayla's Portfolio](https://kaylashovlowsky.wixsite.com/kaylashovlowskyuxdes))
 
 
@@ -63,9 +63,25 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/kenworthy-machine-website.git
+git clone https://github.com/wavecrestweb/kenworthy-machine.git
 ```
+2. Navigate to the project directory:
+```bash
+cd kenworthy-machine-website
+```
+3. Install NPM packages:
+```bash
+npm install
+```
+4. Start the development server:
+```bash
+npm run dev
+```
+5. Open your browser and navigate to http://localhost:3000/admin
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
+© 2024, Wavecrest Web Collective & Kayla Shovlowsky. All Rights Reserved.
+
+Unauthorized copying, modification, distribution, or use of this software is strictly prohibited. While contributions to the project are welcome, any work containing or derived from the contents of this repository remains the exclusive property of the original authors.
+
