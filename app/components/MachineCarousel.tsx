@@ -1,10 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
-import { Box } from "@chakra-ui/react";
 import Slider from "react-slick";
-import { MachineCardsBlock } from "./Machines";
 
+import { MachineCardsBlock } from "./Machines";
 import Card from "./Card";
 
 type MouseEvent = React.MouseEventHandler<SVGElement>;

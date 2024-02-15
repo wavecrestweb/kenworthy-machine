@@ -14,6 +14,8 @@ const customTheme = extendTheme({
       secondary: "#db0a40",
       accentGreen: "#32CD32",
       accentGrey: "#787373",
+      accentOrange: "#E9981F",
+      accentYellow: "#FAD50AD4",
     },
   },
   fonts: {
@@ -71,7 +73,7 @@ const customTheme = extendTheme({
     h1: {
       fontSize: "4xl",
       lineHeight: "3rem",
-      fontWeight: "bold",
+      fontWeight: "normal",
     },
     h5: {
       fontSize: "xl",
