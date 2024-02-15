@@ -4,27 +4,41 @@
 
 This repository contains the source code for the Kenworthy Machine website, a small business located near Seattle, Washington specializing in precision machine manufacturing. The site serves to showcase the company's services, values, and product offerings to potential clients and partners.
 
-## Team
-
-- **Brett** - Developer (GitHub: [Brett's GitHub](https://github.com/username))
-- **Alex** - Developer (GitHub: [Alex's GitHub](https://github.com/username))
-- **Archaa** - Developer (GitHub: [Archaa's GitHub](https://github.com/username))
-- **Kayla** - Designer (GitHub: [Kayla's GitHub](https://github.com/username))
-
 ## Live Site
 
 The website is deployed and can be visited at the following URL: [Kenworthy Machine Live Site](https://kenworthymachine.com)
 
+## Team
+
+- **Alex** - Developer (GitHub: [Alex's GitHub](https://github.com/username))
+- **Archaa** - Developer (GitHub: [Archaa's GitHub](https://github.com/username))
+- **Brett** - Developer (GitHub: [Brett's GitHub](https://github.com/username))
+- **Kayla** - Designer (GitHub: [Kayla's GitHub](https://github.com/username))
+
+
 ## Tools and Tech Stack
 
-This project was built using the following technologies:
+### Primary
+<div>
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src='https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E' />
+  <img src="https://img.shields.io/static/v1?style=for-the-badge&message=React+Router&color=CA4245&logo=React+Router&logoColor=FFFFFF&label=">
+  <img src='https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white' />
+  <img src='https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white' />
+  <img src='https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=fff&style=for-the-badge' />
+</div>
 
-- **Frontend**: React.js, Next.js, Chakra UI for styling and layout
-- **Content Management**: TinaCMS for real-time editing and content management
-- **Backend**: Node.js with Express for server-side logic
-- **Email Service**: Nodemailer for handling quote requests and contact emails
-- **Version Control**: Git for collaborative development and version control
-- **Hosting/CI/CD**: Deployed on Vercel with continuous integration and deployment from the GitHub repository
+### Tools
+<div>
+  <img src="https://img.shields.io/badge/Tina-EC4815?logo=tina&logoColor=fff&style=for-the-badge" />
+</div>
+
+### Miscellaneous
+<div>
+  <img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white" />
+  <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white" />
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
+</div>
 
 ## Notable Features
 
