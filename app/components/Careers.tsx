@@ -59,25 +59,26 @@ export default function Careers() {
           <Button
             variant="mc-red"
             w="250px"
-            position={{ base: "static", md: "relative" }}
-            top={{ base: "0", md: "85" }}
+            position={{ base: "static", lg: "relative" }}
+            top={{ base: "0", lg: "85" }}
           >
             Apply Now
           </Button>
         </Box>
         <SimpleGrid
-          spacing={{ base: 12, md: 4 }}
-          gap={{ base: 19, md: 200 }}
+          spacing={{ base: 12, lg: 4 }}
+          gap={{ base: 19, lg: 200 }}
           justifyContent={"flex-start"}
-          templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
+          templateColumns={{ base: "1fr", lg: "repeat(3, 1fr)" }}
           mt={8}
           mx="auto"
+          px={{ base: 4, lg: 12 }}
         >
           <SmallCard {...cardData[0]} />
           <Spacer />
           <SmallCard {...cardData[1]} />
         </SimpleGrid>
-        <Box mt={{ base: 31, md: 0 }}>
+        <Box mt={{ base: 31, lg: 0 }}>
           <SmallCard {...cardData[2]} />
         </Box>
       </Stack>
