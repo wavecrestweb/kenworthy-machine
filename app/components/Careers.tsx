@@ -1,26 +1,47 @@
 import {
   Box,
   Button,
-  Card,
-  CardBody,
-  CardHeader,
   Heading,
   SimpleGrid,
   Stack,
   Text,
 } from "@chakra-ui/react";
-import Image from "next/image";
 import chalkboard from "../../public/images/Chalkboard-User.svg";
 import heart from "../../public/images/Heart-Pulse.svg";
 import graph from "../../public/images/Upward-Graph.svg";
+import SmallCard from "./SmallCard";
 
-export default function Careers({ width }: { width: number }) {
+const cardData = [
+  {
+    header: "Job Training",
+    body: "Our Team is invested in training and learning together.",
+    image: chalkboard,
+    alt: "Chalkboard",
+    repositioned: false,
+  },
+  {
+    header: "Benefits & Balance",
+    body: "We believe employees work best when they are supported and encouraged to live fulfilling lives, not just while on the job.",
+    image: heart,
+    alt: "Heart with pulse",
+    repositioned: false,
+  },
+  {
+    header: "Career Growth",
+    body: "CNC Machinists have specialized skills that allow them to evolve with new projects and advance machine technology.",
+    image: graph,
+    alt: "Graph with upward pointing arrow",
+    repositioned: true,
+  },
+];
+
+export default function Careers() {
   return (
-    <Box maxW={width} backgroundColor="white" py={8}>
-      <Stack maxW={width} bg="white" py="4rem" align={"center"}>
+    <Box w="100%" backgroundColor="white" py={8}>
+      <Stack w="100%" bg="white" py="4rem" align={"center"}>
         <Heading
           fontSize={"48px"}
-          color="black"
+          color="brand.text"
           textAlign="center"
           mb={4}
           pb={2}
@@ -39,75 +60,15 @@ export default function Careers({ width }: { width: number }) {
           templateColumns="repeat(3, 1fr)"
           mt={8}
         >
-          <Card
-            w={"342px"}
-            h={"336px"}
-            color={"white"}
-            backgroundColor={"brand.primary"}
-            align={"center"}
-            borderRadius={"1.875rem"}
-          >
-            <CardHeader>
-              <Text fontSize="32px">Job Training</Text>
-            </CardHeader>
-            <Image src={chalkboard} width={100} alt="Chalkboard" />
-            <CardBody>
-              <Text fontSize="20px" align={"center"}>
-                Our Team is invested in training and learning together.
-              </Text>
-            </CardBody>
-          </Card>
+          <SmallCard {...cardData[0]} />
           <Box mx="auto">
             <Button variant="mc-red" w="250px">
               Apply Now
             </Button>
           </Box>
-          <Card
-            w={"342px"}
-            h={"336px"}
-            color={"white"}
-            backgroundColor={"brand.primary"}
-            align={"center"}
-            borderRadius={"1.875rem"}
-          >
-            <CardHeader>
-              <Text fontSize="32px">Benefits & Balance</Text>
-            </CardHeader>
-            <Image src={heart} width={100} alt="Heart with pulse" />
-            <CardBody>
-              <Text fontSize="20px" align={"center"}>
-                We believe employees work best when they are supported and
-                encouraged to live fulfilling lives, not just while on the job.
-              </Text>
-            </CardBody>
-          </Card>
+          <SmallCard {...cardData[1]} />
         </SimpleGrid>
-        <Card
-          w={"342px"}
-          h={"336px"}
-          color={"white"}
-          backgroundColor={"brand.primary"}
-          align={"center"}
-          borderRadius={"1.875rem"}
-          flexDir={"column"}
-          pos="relative"
-          bottom="100"
-        >
-          <CardHeader>
-            <Text fontSize="32px">Career Growth</Text>
-          </CardHeader>
-          <Image
-            src={graph}
-            width={100}
-            alt="Graph with upward pointing arrow"
-          />
-          <CardBody>
-            <Text fontSize="20px" align={"center"}>
-              CNC Machinists have specialized skills that allow them to evolve
-              with new projects and advance machine technology.
-            </Text>
-          </CardBody>
-        </Card>
+        <SmallCard {...cardData[2]} />
       </Stack>
     </Box>
   );

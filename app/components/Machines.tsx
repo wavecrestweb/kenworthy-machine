@@ -13,7 +13,7 @@ export default function Machines({ width }: { width: number }) {
       <Container maxW={adjustedWidth} bg="white" py="4rem">
         <Heading
           fontSize={"48px"}
-          color="black"
+          color="brand.text"
           textAlign="center"
           mb={4}
           pb={2}

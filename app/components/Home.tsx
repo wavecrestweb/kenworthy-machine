@@ -51,7 +51,7 @@ export default function Home(props: {
           }
         }
       })}
-      <Careers width={width} />
+      <Careers />
     </Grid>
   );
 }
