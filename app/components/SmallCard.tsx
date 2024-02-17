@@ -22,8 +22,8 @@ export default function SmallCard({
       backgroundColor={"brand.primary"}
       align={"center"}
       borderRadius={"1.875rem"}
-      position={repositioned ? "relative" : "static"}
-      bottom={repositioned ? "100" : "0"}
+      position={{ base: "static", md: repositioned ? "relative" : "static" }}
+      bottom={{ base: "0", md: repositioned ? "100" : "0" }}
     >
       <CardHeader>
         <Text fontSize="32px">{header}</Text>

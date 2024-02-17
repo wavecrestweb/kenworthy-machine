@@ -3,6 +3,7 @@ import {
   Button,
   Heading,
   SimpleGrid,
+  Spacer,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -38,7 +39,7 @@ const cardData = [
 export default function Careers() {
   return (
     <Box w="100%" backgroundColor="white" py={8}>
-      <Stack w="100%" bg="white" py="4rem" align={"center"}>
+      <Stack w="100%" bg="white" py="4rem" align="center" mx="auto">
         <Heading
           fontSize={"48px"}
           color="brand.text"
@@ -54,21 +55,31 @@ export default function Careers() {
             opportunities for all experience levels at Kenworthy Machine.
           </Text>
         </Box>
+        <Box mx="auto">
+          <Button
+            variant="mc-red"
+            w="250px"
+            position={{ base: "static", md: "relative" }}
+            top={{ base: "0", md: "85" }}
+          >
+            Apply Now
+          </Button>
+        </Box>
         <SimpleGrid
-          spacing={4}
-          gap={200}
-          templateColumns="repeat(3, 1fr)"
+          spacing={{ base: 12, md: 4 }}
+          gap={{ base: 19, md: 200 }}
+          justifyContent={"flex-start"}
+          templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
           mt={8}
+          mx="auto"
         >
           <SmallCard {...cardData[0]} />
-          <Box mx="auto">
-            <Button variant="mc-red" w="250px">
-              Apply Now
-            </Button>
-          </Box>
+          <Spacer />
           <SmallCard {...cardData[1]} />
         </SimpleGrid>
-        <SmallCard {...cardData[2]} />
+        <Box mt={{ base: 31, md: 0 }}>
+          <SmallCard {...cardData[2]} />
+        </Box>
       </Stack>
     </Box>
   );
