@@ -1,13 +1,19 @@
 // LIBRARY IMPORTS
 import {
-  VStack,
+  Button,
   FormControl,
+  FormErrorMessage,
   Input,
   Textarea,
-  Button,
   Text,
+  VStack,
+  useToast,
 } from "@chakra-ui/react";
 import React, { Dispatch, SetStateAction } from "react";
+import { useForm } from "react-hook-form";
+
+// LOCAL IMPORTS
+import { sendEmail } from "@/utils/sendEmail";
 
 // TYPE DEFINTIONS
 interface QuoteFormProps {
@@ -19,6 +25,13 @@ interface QuoteFormProps {
   setSubmitSuccessful: Dispatch<SetStateAction<boolean>>;
 }
 
+export interface FormData {
+  name: string;
+  email: string;
+  industry: string;
+  details: string;
+}
+
 export default function QuoteForm({
   formTitle,
   field1Placeholder,
@@ -27,43 +40,43 @@ export default function QuoteForm({
   submitButtonText,
   setSubmitSuccessful,
 }: QuoteFormProps) {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>();
+
+  const toast = useToast();
+
   // EVENT HANDLERS
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    // Collect form data
-    const formData = {
-      name: event.target.name.value,
-      email: event.target.email.value,
-      industry: event.target.industry.value,
-      details: event.target.details.value,
-    };
-
-    // Send the form data to API route
-    try {
-      const response = await fetch("/api/quoteEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setSubmitSuccessful(true);
-        // console.log("success");
-      } else {
-        console.error("Form submission failed");
-      }
-    } catch (error) {
-      console.error("An error occurred:", error);
-    }
+  const onSubmit = (data: FormData) => {
+    console.log("data: ", data);
+    sendEmail(data);
+    // .then(response => {
+    //   if (response.success) {
+    //     setSubmitSuccessful(true);
+    //     reset();
+    //     toast({
+    //       title: "Success",
+    //       description: response.message,
+    //       status: "success",
+    //       duration: 5000,
+    //       isClosable: true,
+    //     });
+    //   } else {
+    //     toast({
+    //       title: "Failed",
+    //       description: response.message,
+    //       status: "error",
+    //       duration: 5000,
+    //       isClosable: true,
+    //     });
+    //   }
+    // });
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <Text textAlign="center" fontSize="3xl" mt={8} color="brand.text">
         {formTitle || "Request a Quote"}
       </Text>
@@ -88,6 +101,8 @@ export default function QuoteForm({
             _hover={{
               borderColor: "brand.accentGreen",
             }}
+            name="name"
+            {...register("name", { required: true })}
           />
         </FormControl>
         <FormControl isRequired>
@@ -104,6 +119,8 @@ export default function QuoteForm({
             _hover={{
               borderColor: "brand.accentGreen",
             }}
+            name="email"
+            {...register("email", { required: true })}
           />
         </FormControl>
         <FormControl>
@@ -119,6 +136,8 @@ export default function QuoteForm({
             _hover={{
               borderColor: "brand.accentGreen",
             }}
+            name="industry"
+            {...register("industry")}
           />
         </FormControl>
         <FormControl>
@@ -134,6 +153,8 @@ export default function QuoteForm({
             _hover={{
               borderColor: "brand.accentGreen",
             }}
+            name="details"
+            {...register("details")}
           />
         </FormControl>
         <Button
@@ -150,8 +171,8 @@ export default function QuoteForm({
             transform: "scale(1.03)",
             transition: "transform 0.2s ease-in-out",
           }}
-          type="submit"
           w="full"
+          type="submit"
         >
           Submit
         </Button>
