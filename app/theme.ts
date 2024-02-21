@@ -25,7 +25,7 @@ const customTheme = extendTheme({
         buttonPrimaryDark: {
           color: "white",
           backgroundColor: "brand.secondary",
-          borderRadius: "20px",
+          borderRadius: "full",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -40,7 +40,7 @@ const customTheme = extendTheme({
         buttonPrimaryLight: {
           color: "white",
           backgroundColor: "brand.secondary",
-          borderRadius: "50px",
+          borderRadius: "full",
           border: "solid 2px",
           borderColor: "white",
           display: "flex",
@@ -57,7 +57,7 @@ const customTheme = extendTheme({
         buttonSecondary: {
           color: "brand.text",
           backgroundColor: "white",
-          borderRadius: "20px",
+          borderRadius: "full",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -92,7 +92,7 @@ const customTheme = extendTheme({
     Button: {
       baseStyle: {
         backgroundColor: "brand.primary",
-        borderRadius: "20px",
+        borderRadius: "full",
         color: "white",
         fontWeight: "bold",
         fontFamily: "body",
