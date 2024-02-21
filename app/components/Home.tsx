@@ -12,7 +12,6 @@ import CompanyValues from "./CompanyValues";
 import Machines from "@/app/components/Machines";
 import RequestQuote from "./RequestQuote";
 import Location from "./Location";
-import MachineCarousel from "./MachineCarousel";
 
 export default function Home(props: {
   data: PageQuery;
@@ -34,19 +33,19 @@ export default function Home(props: {
     <Grid templateColumns={"1fr"}>
       {data.page.blocks?.map((block, i) => {
         switch (block?.__typename) {
-          case "PageBlocksHero": {
+          case "PageHomeBlocksHero": {
             return <Hero key={i} {...block} />;
           }
-          case "PageBlocksValues": {
+          case "PageHomeBlocksValues": {
             return <CompanyValues key={i} {...block} />;
           }
-          case "PageBlocksQuoteSection": {
+          case "PageHomeBlocksQuoteSection": {
             return <RequestQuote key={i} {...block} />;
           }
-          case "PageBlocksLocation": {
+          case "PageHomeBlocksLocation": {
             return <Location key={i} {...block} />;
           }
-          case "PageBlocksMachineCarousel": {
+          case "PageHomeBlocksMachineCarousel": {
             return <Machines key={i} width={width} {...block} />;
           }
         }
