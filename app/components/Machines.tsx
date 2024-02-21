@@ -11,12 +11,23 @@ export default function Machines({ width }: { width: number }) {
   return (
     <Box maxW={width} backgroundColor="white">
       <Container maxW={adjustedWidth} bg="white" py="4rem">
-        <Heading color="black" textAlign="center" mb={4} pb={2}>
+        <Heading
+          fontSize={"48px"}
+          color="brand.text"
+          textAlign="center"
+          mb={4}
+          pb={2}
+        >
           {"Our Machines"}
         </Heading>
         <MachineCarousel />
         <Container maxW={"250px"} mt={20}>
-          <ChakraLink href="/view-machines" variant="buttonPrimaryLight">
+          <ChakraLink
+            href="/view-machines"
+            variant="buttonPrimaryLight"
+            fontSize={"24px"}
+            width={"250px"}
+          >
             View Machines
           </ChakraLink>
         </Container>
