@@ -38,187 +38,287 @@ export default defineConfig({
             return "/";
           },
         },
-        fields: [
+        templates: [
           {
-            name: "blocks",
-            label: "Blocks",
-            type: "object",
-            list: true,
-            templates: [
+            name: "home",
+            label: "Home",
+            fields: [
               {
-                label: "Hero Section",
-                name: "hero",
-                fields: [
+                name: "blocks",
+                label: "Blocks",
+                type: "object",
+                list: true,
+                templates: [
                   {
-                    type: "image",
-                    label: "Hero Image",
-                    name: "image",
-                  },
-                  {
-                    type: "string",
-                    label: "Heading",
-                    name: "heading",
-                  },
-                ],
-              },
-              {
-                label: "Company Values",
-                name: "values",
-                fields: [
-                  {
-                    type: "image",
-                    label: "Background Image",
-                    name: "backgroundImage",
-                  },
-                  {
-                    type: "string",
-                    label: "Section Title",
-                    name: "title",
-                  },
-                  {
-                    type: "object",
-                    label: "Quality Value",
-                    name: "quality1",
+                    label: "Hero Section",
+                    name: "hero",
                     fields: [
                       {
-                        type: "string",
-                        label: "Title",
-                        name: "title",
+                        type: "image",
+                        label: "Hero Image",
+                        name: "image",
                       },
                       {
-                        type: "rich-text",
-                        label: "Description",
-                        name: "description",
+                        type: "string",
+                        label: "Heading",
+                        name: "heading",
                       },
                     ],
                   },
                   {
-                    type: "object",
-                    label: "On-Time Value",
-                    name: "quality2",
+                    label: "Company Values",
+                    name: "values",
                     fields: [
                       {
+                        type: "image",
+                        label: "Background Image",
+                        name: "backgroundImage",
+                      },
+                      {
                         type: "string",
-                        label: "Title",
+                        label: "Section Title",
                         name: "title",
                       },
                       {
-                        type: "rich-text",
-                        label: "Description",
-                        name: "description",
+                        type: "object",
+                        label: "Quality Value",
+                        name: "quality1",
+                        fields: [
+                          {
+                            type: "string",
+                            label: "Title",
+                            name: "title",
+                          },
+                          {
+                            type: "rich-text",
+                            label: "Description",
+                            name: "description",
+                          },
+                        ],
+                      },
+                      {
+                        type: "object",
+                        label: "On-Time Value",
+                        name: "quality2",
+                        fields: [
+                          {
+                            type: "string",
+                            label: "Title",
+                            name: "title",
+                          },
+                          {
+                            type: "rich-text",
+                            label: "Description",
+                            name: "description",
+                          },
+                        ],
+                      },
+                      {
+                        type: "object",
+                        label: "Collaboration Value",
+                        name: "quality3",
+                        fields: [
+                          {
+                            type: "string",
+                            label: "Title",
+                            name: "title",
+                          },
+                          {
+                            type: "rich-text",
+                            label: "Description",
+                            name: "description",
+                          },
+                        ],
                       },
                     ],
                   },
                   {
-                    type: "object",
-                    label: "Collaboration Value",
-                    name: "quality3",
-                    fields: [
-                      {
-                        type: "string",
-                        label: "Title",
-                        name: "title",
-                      },
-                      {
-                        type: "rich-text",
-                        label: "Description",
-                        name: "description",
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                label: "Location",
-                name: "location",
-                fields: [
-                  {
-                    type: "string",
                     label: "Location",
                     name: "location",
-                    ui: {
-                      component: "textarea",
-                    },
-                  },
-                ],
-              },
-              {
-                label: "Machine Carousel",
-                name: "machineCarousel",
-                fields: [
-                  {
-                    type: "string",
-                    label: "Section Title",
-                    name: "sectionTitle",
-                  },
-                  {
-                    type: "string",
-                    label: "Button Label",
-                    name: "buttonLabel",
-                  },
-                  {
-                    type: "reference",
-                    collections: ["machines"],
-                    name: "machineCards",
-                    label: "Machine Cards",
-                  },
-                ],
-              },
-              {
-                label: "Quote Section",
-                name: "quoteSection",
-                fields: [
-                  {
-                    type: "object",
-                    label: "Request Quote Form",
-                    name: "requestQuoteForm",
                     fields: [
                       {
                         type: "string",
-                        label: "Form Title",
-                        name: "formTitle",
-                      },
-                      {
-                        type: "string",
-                        label: "Form Field 1 Placeholder",
-                        name: "field1Placeholder",
-                      },
-                      {
-                        type: "string",
-                        label: "Form Field 2 Placeholder",
-                        name: "field2Placeholder",
-                      },
-                      {
-                        type: "rich-text",
-                        label: "Form Field 3 Placeholder",
-                        name: "field3Placeholder",
-                      },
-                      {
-                        type: "string",
-                        label: "Submit Button Text",
-                        name: "submitButtonText",
+                        label: "Location",
+                        name: "location",
+                        ui: {
+                          component: "textarea",
+                        },
                       },
                     ],
                   },
                   {
-                    type: "string",
-                    label: "Request Copy Title",
-                    name: "requestCopyTitle",
+                    label: "Machine Carousel",
+                    name: "machineCarousel",
+                    fields: [
+                      {
+                        type: "string",
+                        label: "Section Title",
+                        name: "sectionTitle",
+                      },
+                      {
+                        type: "string",
+                        label: "Button Label",
+                        name: "buttonLabel",
+                      },
+                      {
+                        type: "reference",
+                        collections: ["machines"],
+                        name: "machineCards",
+                        label: "Machine Cards",
+                      },
+                    ],
                   },
                   {
-                    type: "rich-text",
-                    label: "Fill Form Copy",
-                    name: "fillFormCopy",
+                    label: "Quote Section",
+                    name: "quoteSection",
+                    fields: [
+                      {
+                        type: "object",
+                        label: "Request Quote Form",
+                        name: "requestQuoteForm",
+                        fields: [
+                          {
+                            type: "string",
+                            label: "Form Title",
+                            name: "formTitle",
+                          },
+                          {
+                            type: "string",
+                            label: "Form Field 1 Placeholder",
+                            name: "field1Placeholder",
+                          },
+                          {
+                            type: "string",
+                            label: "Form Field 2 Placeholder",
+                            name: "field2Placeholder",
+                          },
+                          {
+                            type: "rich-text",
+                            label: "Form Field 3 Placeholder",
+                            name: "field3Placeholder",
+                          },
+                          {
+                            type: "string",
+                            label: "Submit Button Text",
+                            name: "submitButtonText",
+                          },
+                        ],
+                      },
+                      {
+                        type: "string",
+                        label: "Request Copy Title",
+                        name: "requestCopyTitle",
+                      },
+                      {
+                        type: "rich-text",
+                        label: "Fill Form Copy",
+                        name: "fillFormCopy",
+                      },
+                      {
+                        type: "rich-text",
+                        label: "Email Copy",
+                        name: "emailCopy",
+                      },
+                      {
+                        type: "rich-text",
+                        label: "Response Copy",
+                        name: "responseCopy",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "viewMachines",
+            label: "View Machines",
+            fields: [
+              {
+                name: "blocks",
+                label: "Blocks",
+                type: "object",
+                list: true,
+                templates: [
+                  {
+                    label: "Machines",
+                    name: "machines",
+                    fields: [
+                      {
+                        name: "heading",
+                        label: "Heading",
+                        type: "string",
+                      },
+                      {
+                        name: "description",
+                        label: "Description",
+                        type: "string",
+                      },
+                      {
+                        name: "machineCards",
+                        label: "Machine Cards",
+                        type: "reference",
+                        collections: ["machines"],
+                      },
+                    ],
                   },
                   {
-                    type: "rich-text",
-                    label: "Email Copy",
-                    name: "emailCopy",
-                  },
-                  {
-                    type: "rich-text",
-                    label: "Response Copy",
-                    name: "responseCopy",
+                    label: "Quote Section",
+                    name: "quoteSection",
+                    fields: [
+                      {
+                        type: "object",
+                        label: "Request Quote Form",
+                        name: "requestQuoteForm",
+                        fields: [
+                          {
+                            type: "string",
+                            label: "Form Title",
+                            name: "formTitle",
+                          },
+                          {
+                            type: "string",
+                            label: "Form Field 1 Placeholder",
+                            name: "field1Placeholder",
+                          },
+                          {
+                            type: "string",
+                            label: "Form Field 2 Placeholder",
+                            name: "field2Placeholder",
+                          },
+                          {
+                            type: "rich-text",
+                            label: "Form Field 3 Placeholder",
+                            name: "field3Placeholder",
+                          },
+                          {
+                            type: "string",
+                            label: "Submit Button Text",
+                            name: "submitButtonText",
+                          },
+                        ],
+                      },
+                      {
+                        type: "string",
+                        label: "Request Copy Title",
+                        name: "requestCopyTitle",
+                      },
+                      {
+                        type: "rich-text",
+                        label: "Fill Form Copy",
+                        name: "fillFormCopy",
+                      },
+                      {
+                        type: "rich-text",
+                        label: "Email Copy",
+                        name: "emailCopy",
+                      },
+                      {
+                        type: "rich-text",
+                        label: "Response Copy",
+                        name: "responseCopy",
+                      },
+                    ],
                   },
                 ],
               },
