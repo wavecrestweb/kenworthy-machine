@@ -42,11 +42,7 @@ const CardBack: React.FC<CardBackProps> = ({
             content={description}
             components={{
               ul: ({ children }) => (
-                <UnorderedList
-                  layerStyle="darkBg"
-                  lineHeight="6"
-                  textAlign="center"
-                >
+                <UnorderedList layerStyle="darkBg" lineHeight="6">
                   {children}
                 </UnorderedList>
               ),
