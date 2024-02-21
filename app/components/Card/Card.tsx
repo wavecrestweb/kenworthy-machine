@@ -4,12 +4,12 @@ import { keyframes } from "@chakra-ui/react";
 import CardFront from "./CardFront";
 import CardBack from "./CardBack";
 
-type MachineCard = {
+export type MachineCard = {
   __typename?: "MachinesMachineCard";
-  name?: string | undefined;
-  image?: string | undefined;
+  name?: string;
+  image?: string;
   description?: any;
-  type?: string | undefined;
+  type?: string;
 };
 
 const animationKeyFrames = keyframes`

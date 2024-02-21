@@ -1,52 +1,91 @@
+//LIBRARY IMPORTS
 import { Link as ChakraLink } from "@chakra-ui/next-js";
-import { Container, Heading, Box, Flex } from "@chakra-ui/react";
+import {
+  Container,
+  Heading,
+  Text,
+  Grid,
+  GridItem,
+  Box,
+  Flex,
+} from "@chakra-ui/react";
 import { PageQuery } from "@/tina/__generated__/types";
+import { usePathname } from "next/navigation";
 
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
+//LOCAL IMPORTS
 import MachineCarousel from "./MachineCarousel";
 import ContentWrapper from "./ContentWrapper";
+import Card from "./Card/Card";
 
-type Block = NonNullable<NonNullable<PageQuery["page"]["blocks"]>[number]>;
+type Block = NonNullable<NonNullable<PageQuery["page"]["blocks"]>>[number];
 
 export type MachineCardsBlock = Extract<
   Block,
-  { __typename: "PageBlocksMachineCarousel" }
+  | { __typename: "PageHomeBlocksMachineCarousel" }
+  | { __typename: "PageViewMachinesBlocksMachines" }
 >;
 
 export default function Machines({
   width,
   ...props
-}: { width: number } & MachineCardsBlock): JSX.Element {
-  const adjustedWidth = width <= 1728 ? width * 0.9 : 1728 * 0.9;
+}: {
+  width?: number;
+} & MachineCardsBlock): JSX.Element {
+  const pathname = usePathname();
+  const adjustedWidth = !width || width > 1728 ? 1728 * 0.9 : width * 0.9;
 
   return (
-    <Flex justifyContent="center">
-      <ContentWrapper>
-        <Container maxW={adjustedWidth} bg="white" py="4rem" px="0px" mx={8}>
-          <Heading
-            as="h2"
-            textStyle="h1"
-            fontWeight="normal"
-            textAlign="center"
-            mb={4}
-            pb={2}
-          >
-            {props.sectionTitle}
-          </Heading>
-          <MachineCarousel machineCards={props?.machineCards} />
-          <Flex mt={20} mb={8} justifyContent="center">
-            <ChakraLink
-              href="/view-machines"
-              variant="buttonPrimaryLight"
-              size={{ base: "sm", sm: "xl" }}
-            >
-              {props.buttonLabel}
-            </ChakraLink>
+    <>
+      {pathname === "/" &&
+        props.__typename === "PageHomeBlocksMachineCarousel" && (
+          <Flex justifyContent="center">
+            <ContentWrapper>
+              <Container
+                maxW={adjustedWidth}
+                bg="white"
+                py="4rem"
+                px="0px"
+                mx={8}
+              >
+                <Heading
+                  as="h2"
+                  textStyle="h1"
+                  fontWeight="normal"
+                  textAlign="center"
+                  mb={4}
+                  pb={2}
+                >
+                  {props.sectionTitle}
+                </Heading>
+                <MachineCarousel machineCards={props?.machineCards} />
+                <Flex mt={20} mb={8} justifyContent="center">
+                  <ChakraLink
+                    href="/view-machines"
+                    variant="buttonPrimaryLight"
+                    size={{ base: "sm", sm: "xl" }}
+                  >
+                    {props.buttonLabel}
+                  </ChakraLink>
+                </Flex>
+              </Container>
+            </ContentWrapper>
           </Flex>
-        </Container>
-      </ContentWrapper>
-    </Flex>
+        )}
+      {pathname === "/view-machines" &&
+        props.__typename === "PageViewMachinesBlocksMachines" && (
+          <>
+            <Heading>{props.heading}</Heading>
+            <Text>{props.description}</Text>
+            <Grid>
+              {props?.machineCards?.machineCard?.map((card, i) => (
+                <Card key={i} {...card}></Card>
+              ))}
+            </Grid>
+          </>
+        )}
+    </>
   );
 }
