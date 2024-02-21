@@ -34,8 +34,13 @@ export default defineConfig({
         name: "page",
         path: "content/pages",
         ui: {
-          router: (props) => {
-            return "/";
+          router: ({ document }) => {
+            if (document._sys.filename === "home") {
+              return "/";
+            }
+            if (document._sys.filename === "view_machines") {
+              return "/view-machines";
+            }
           },
         },
         templates: [
@@ -253,6 +258,9 @@ export default defineConfig({
                         name: "description",
                         label: "Description",
                         type: "string",
+                        ui: {
+                          component: "textarea",
+                        },
                       },
                       {
                         name: "machineCards",
@@ -330,6 +338,13 @@ export default defineConfig({
         label: "Machines",
         name: "machines",
         path: "content/machines",
+        ui: {
+          router: ({ document }) => {
+            if (document._sys.filename === "machines") {
+              return "/view-machines";
+            }
+          },
+        },
         fields: [
           {
             type: "object",
