@@ -1,14 +1,6 @@
 //LIBRARY IMPORTS
 import { Link as ChakraLink } from "@chakra-ui/next-js";
-import {
-  Container,
-  Heading,
-  Text,
-  Grid,
-  GridItem,
-  Box,
-  Flex,
-} from "@chakra-ui/react";
+import { Container, Heading, Text, SimpleGrid, Flex } from "@chakra-ui/react";
 import { PageQuery } from "@/tina/__generated__/types";
 import { usePathname } from "next/navigation";
 
@@ -76,15 +68,41 @@ export default function Machines({
         )}
       {pathname === "/view-machines" &&
         props.__typename === "PageViewMachinesBlocksMachines" && (
-          <>
-            <Heading>{props.heading}</Heading>
-            <Text>{props.description}</Text>
-            <Grid>
-              {props?.machineCards?.machineCard?.map((card, i) => (
-                <Card key={i} {...card}></Card>
-              ))}
-            </Grid>
-          </>
+          <Flex justifyContent="center">
+            <ContentWrapper>
+              <Heading
+                as="h1"
+                fontWeight="normal"
+                layerStyle="whiteBg"
+                pb={7}
+                pt={16}
+                textAlign="center"
+                textStyle="h1"
+              >
+                {props.heading}
+              </Heading>
+              <Text
+                textStyle="h5"
+                fontWeight="normal"
+                textAlign="center"
+                px={60}
+                pb={9}
+              >
+                {props.description}
+              </Text>
+              <SimpleGrid
+                columns={2}
+                justifyItems="center"
+                rowGap={14}
+                px={52}
+                pb={20}
+              >
+                {props?.machineCards?.machineCard?.map((card, i) => (
+                  <Card key={i} {...card}></Card>
+                ))}
+              </SimpleGrid>
+            </ContentWrapper>
+          </Flex>
         )}
     </>
   );
