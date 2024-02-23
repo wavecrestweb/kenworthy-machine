@@ -56,7 +56,7 @@ const CardFront: React.FC<CardFrontProps> = ({
             alt={name ?? ""}
             placeholder="empty"
           />
-          {/* <MachineTypeLabel type={type} /> */}
+          <MachineTypeLabel type={type} />
         </Box>
       </CardHeader>
       <CardBody>

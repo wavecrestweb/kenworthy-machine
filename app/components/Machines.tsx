@@ -23,30 +23,28 @@ export default function Machines({
 
   return (
     <Flex justifyContent="center">
-      <ContentWrapper>
-        <Container maxW={adjustedWidth} bg="white" py="4rem" px="0px" mx={8}>
-          <Heading
-            as="h2"
-            textStyle="h1"
-            fontWeight="normal"
-            textAlign="center"
-            mb={4}
-            pb={2}
+      <Container maxW={adjustedWidth} bg="white" py="4rem" px="0px" mx={8}>
+        <Heading
+          as="h2"
+          textStyle="h1"
+          fontWeight="normal"
+          textAlign="center"
+          mb={4}
+          pb={2}
+        >
+          {props.sectionTitle}
+        </Heading>
+        <MachineCarousel machineCards={props?.machineCards} />
+        <Flex mt={20} mb={8} justifyContent="center">
+          <ChakraLink
+            href="/view-machines"
+            variant="buttonPrimaryLight"
+            size={{ base: "sm", sm: "xl" }}
           >
-            {props.sectionTitle}
-          </Heading>
-          <MachineCarousel machineCards={props?.machineCards} />
-          <Flex mt={20} mb={8} justifyContent="center">
-            <ChakraLink
-              href="/view-machines"
-              variant="buttonPrimaryLight"
-              size={{ base: "sm", sm: "xl" }}
-            >
-              {props.buttonLabel}
-            </ChakraLink>
-          </Flex>
-        </Container>
-      </ContentWrapper>
+            {props.buttonLabel}
+          </ChakraLink>
+        </Flex>
+      </Container>
     </Flex>
   );
 }
