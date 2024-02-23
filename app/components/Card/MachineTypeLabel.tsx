@@ -31,11 +31,11 @@ const MachineTypeLabel: React.FC<MachineTypeLabelProps> = ({ type }) => {
   }
 
   return (
-    <Box w="26%" h="38%" position="absolute" top="0" right="-1px">
+    <Box w="28%" h="40%" position="absolute" top="0" right="-2.5px">
       <Box
         as="svg"
-        width="126"
-        height="123"
+        width="100%"
+        height="100%"
         viewBox="0 0 126 123"
         fill={colors.bg}
         xmlns="http://www.w3.org/2000/svg"
@@ -51,13 +51,14 @@ const MachineTypeLabel: React.FC<MachineTypeLabelProps> = ({ type }) => {
         color={colors.text}
         fontWeight="bold"
         position="absolute"
-        py="1rem"
-        right="-0.7rem"
+        py={{ md: "0.25rem", "2xl": "1rem" }}
+        right={{ md: "-0.5rem", "2xl": "-0.7rem" }}
         textAlign="center"
         textStyle="sm-p"
-        top="0.7rem"
-        transform="rotate(45deg)"
-        width="6rem"
+        fontSize={{ md: "xs", "2xl": "md" }}
+        top={{ md: "0.625rem", "2xl": "0.7rem" }}
+        transform="rotate(43.916deg)"
+        width={{ md: "4rem", "2xl": "6rem" }}
       >
         {type}
       </Text>

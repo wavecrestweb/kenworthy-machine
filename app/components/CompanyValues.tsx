@@ -36,7 +36,7 @@ export default function CompanyValues(props: PageBlocksValues) {
       <Box bgImage={gearBackground} p={10} bg="rgba(11, 17, 62, 0.79)">
         <ContentWrapper>
           <VStack spacing={8}>
-            <Heading color="white" textAlign="center" mb={4}>
+            <Heading fontSize={"48px"} color="white" textAlign="center" mb={4}>
               {"Kenworthy's Values"}
             </Heading>
             <VStack

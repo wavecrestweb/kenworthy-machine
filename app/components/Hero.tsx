@@ -26,14 +26,14 @@ export default function Hero(props: PageBlocksHero) {
           w="93%"
           left="50%"
           transform="translate(-50%, -50%)"
-          height="6rem"
+          height="10rem"
           display="flex"
           alignItems="center"
           justifyContent="center"
           bg="brand.primary"
           opacity="90%"
         >
-          <Heading size="xl" color="white">
+          <Heading fontSize={"48px"} size="xl" color="white">
             {props.heading}
           </Heading>
         </Box>

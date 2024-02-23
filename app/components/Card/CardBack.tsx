@@ -30,9 +30,18 @@ const CardBack: React.FC<CardBackProps> = ({
   };
 
   return (
-    <ChakraCard size="lg" variant="back" align="center" animation={animation}>
+    <ChakraCard
+      animation={animation}
+      variant={{ md: "back_md", "2xl": "back_lg" }}
+    >
       <CardHeader>
-        <Text as="h5" textStyle="h5" layerStyle="darkBg" textAlign="center">
+        <Text
+          as="h5"
+          textStyle="h5"
+          fontSize={{ md: "md", "2xl": "xl" }}
+          layerStyle="darkBg"
+          textAlign="center"
+        >
           {name}
         </Text>
       </CardHeader>
@@ -41,14 +50,19 @@ const CardBack: React.FC<CardBackProps> = ({
           <TinaMarkdown
             content={description}
             components={{
-              ul: ({ children }) => (
-                <UnorderedList layerStyle="darkBg" lineHeight="6">
-                  {children}
+              ul: (props) => (
+                <UnorderedList layerStyle="darkBg">
+                  {props?.children}
                 </UnorderedList>
               ),
-              li: ({ children }) => (
-                <ListItem textStyle="h5" listStyleType="disc">
-                  {children}
+              li: (props) => (
+                <ListItem
+                  textStyle="h5"
+                  lineHeight={{ md: "6", "2xl": "7" }}
+                  fontSize={{ md: "md", "2xl": "xl" }}
+                  listStyleType="disc"
+                >
+                  {props?.children}
                 </ListItem>
               ),
             }}
@@ -56,7 +70,11 @@ const CardBack: React.FC<CardBackProps> = ({
         )}
       </CardBody>
       <CardFooter justifyContent="center">
-        <Button variant="mc-white" onClick={handleClick}>
+        <Button
+          variant="mc-white"
+          fontSize={{ md: "md", "2xl": "2xl" }}
+          onClick={handleClick}
+        >
           Return
         </Button>
       </CardFooter>

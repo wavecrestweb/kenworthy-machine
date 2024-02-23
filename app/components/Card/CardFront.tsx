@@ -35,9 +35,18 @@ const CardFront: React.FC<CardFrontProps> = ({
   };
 
   return (
-    <ChakraCard size="lg" variant="front" align="center" animation={animation}>
+    <ChakraCard
+      variant={{ md: "front_md", "2xl": "front_lg" }}
+      align="center"
+      animation={animation}
+    >
       <CardHeader>
-        <Box position="relative" w="sm" h="2xs" overflow="hidden">
+        <Box
+          position="relative"
+          w={{ md: "14rem", "2xl": "20rem" }}
+          h={{ md: "9rem", "2xl": "13rem" }}
+          overflow="hidden"
+        >
           <Image
             src={image ?? placeholderImage}
             fill={true}
@@ -51,12 +60,21 @@ const CardFront: React.FC<CardFrontProps> = ({
         </Box>
       </CardHeader>
       <CardBody>
-        <Text as="h5" textStyle="h5" fontSize="2xl" textAlign="center">
+        <Text
+          as="h5"
+          textStyle="h5"
+          fontSize={{ md: "md", "2xl": "2xl" }}
+          textAlign="center"
+        >
           {name}
         </Text>
       </CardBody>
       <CardFooter justifyContent="center">
-        <Button variant="mc-blue" onClick={handleClick}>
+        <Button
+          variant="mc-blue"
+          fontSize={{ md: "md", "2xl": "2xl" }}
+          onClick={handleClick}
+        >
           View Details
         </Button>
       </CardFooter>

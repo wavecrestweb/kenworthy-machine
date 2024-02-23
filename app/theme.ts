@@ -27,7 +27,7 @@ const customTheme = extendTheme({
     Button: {
       baseStyle: {
         backgroundColor: "brand.primary",
-        borderRadius: "20px",
+        borderRadius: "full",
         color: "white",
         fontWeight: "bold",
         fontFamily: "body",
@@ -47,6 +47,16 @@ const customTheme = extendTheme({
           color: "brand.text",
           backgroundColor: "white",
           fontSize: "xl",
+          lineHeight: "6",
+          _hover: {
+            transform: "scale(1.1)",
+            transition: "transform 0.2s ease-in-out",
+          },
+        },
+        "mc-red": {
+          color: "white",
+          backgroundColor: "brand.secondary",
+          fontSize: "24px",
           lineHeight: "6",
           _hover: {
             transform: "scale(1.1)",
