@@ -157,37 +157,14 @@ export default defineConfig({
                     name: "buttonLabel",
                   },
                   {
-                    type: "object",
-                    label: "Machine Card",
-                    name: "machineCard",
-                    list: true, // Indicates that the carousel can have multiple machine cards
-                    fields: [
-                      {
-                        type: "image",
-                        label: "Machine Image",
-                        name: "image",
-                      },
-                      {
-                        type: "string",
-                        label: "Machine Name",
-                        name: "name",
-                      },
-                      {
-                        type: "rich-text",
-                        label: "Machine Description",
-                        name: "description",
-                      },
-                      {
-                        type: "string",
-                        label: "Machine Type",
-                        name: "type",
-                      },
-                    ],
+                    type: "reference",
+                    collections: ["machines"],
+                    name: "machineCards",
+                    label: "Machine Cards",
                   },
                 ],
               },
               {
-                type: "object",
                 label: "Quote Section",
                 name: "quoteSection",
                 fields: [
@@ -244,6 +221,54 @@ export default defineConfig({
                     name: "responseCopy",
                   },
                 ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        label: "Machines",
+        name: "machines",
+        path: "content/machines",
+        fields: [
+          {
+            type: "object",
+            label: "Machine Cards",
+            name: "machineCard",
+            list: true, // Indicates that the carousel can have multiple machine cards
+            ui: {
+              itemProps: (item) => {
+                return { label: item?.name };
+              },
+            },
+            fields: [
+              {
+                type: "string",
+                label: "Machine Name",
+                name: "name",
+                required: true,
+              },
+              {
+                type: "image",
+                label: "Machine Image",
+                name: "image",
+                required: true,
+              },
+              {
+                type: "rich-text",
+                label: "Machine Description",
+                name: "description",
+                required: true,
+                description:
+                  "Please select Bullet List in the input field to add Machine's description in the correct format",
+              },
+              {
+                type: "string",
+                label: "Machine Type",
+                name: "type",
+                required: true,
+                description:
+                  "Existing types include Mill, Lathe, Inspection, Engraver, and Bandsaw",
               },
             ],
           },

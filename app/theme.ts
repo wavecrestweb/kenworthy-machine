@@ -1,6 +1,7 @@
 // LIBRARY IMPORTS
 import { extendTheme } from "@chakra-ui/react";
 import { cardTheme } from "./theme/components/card";
+import { Link } from "./theme/components/link";
 
 const customTheme = extendTheme({
   colors: {
@@ -13,6 +14,8 @@ const customTheme = extendTheme({
       secondary: "#db0a40",
       accentGreen: "#32CD32",
       accentGrey: "#787373",
+      accentOrange: "#E9981F",
+      accentYellow: "#FAD50AD4",
     },
   },
   fonts: {
@@ -20,75 +23,7 @@ const customTheme = extendTheme({
     body: "var(--font-lato)",
   },
   components: {
-    Link: {
-      variants: {
-        buttonPrimaryDark: {
-          color: "white",
-          backgroundColor: "brand.secondary",
-          borderRadius: "full",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "6px",
-          fontWeight: "700",
-          _hover: {
-            color: "brand.text",
-            transitionDuration: "300ms",
-            textDecoration: "none",
-          },
-        },
-        buttonPrimaryLight: {
-          color: "white",
-          backgroundColor: "brand.secondary",
-          borderRadius: "full",
-          border: "solid 2px",
-          borderColor: "white",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "6px",
-          fontWeight: "700",
-          _hover: {
-            borderColor: "black",
-            transitionDuration: "300ms",
-            textDecoration: "none",
-          },
-        },
-        buttonSecondary: {
-          color: "brand.text",
-          backgroundColor: "white",
-          borderRadius: "full",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "6px",
-          fontWeight: "700",
-          _hover: {
-            backgroundColor: "brand.secondary",
-            transitionDuration: "300ms",
-            textDecoration: "none",
-          },
-        },
-        navigation: {
-          color: "white",
-          fontSize: "24px",
-          _hover: {
-            borderBottom: "solid 2px",
-            borderBottomColor: "brand.secondary",
-            textDecoration: "none",
-            transitionDuration: "300ms",
-          },
-        },
-        footer: {
-          _hover: {
-            borderBottom: "solid 2px",
-            borderBottomColor: "brand.secondary",
-            textDecoration: "none",
-            transitionDuration: "300ms",
-          },
-        },
-      },
-    },
+    Link: Link,
     Button: {
       baseStyle: {
         backgroundColor: "brand.primary",
@@ -145,6 +80,11 @@ const customTheme = extendTheme({
     },
   },
   textStyles: {
+    h1: {
+      fontSize: "4xl",
+      lineHeight: "3rem",
+      fontWeight: "normal",
+    },
     h5: {
       fontSize: "xl",
       lineHeight: "6",
