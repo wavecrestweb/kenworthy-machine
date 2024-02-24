@@ -38,7 +38,7 @@ export default function Machines({
               <Container
                 maxW={adjustedWidth}
                 bg="white"
-                py="4rem"
+                py="3rem"
                 px="0px"
                 mx={8}
               >
@@ -53,11 +53,13 @@ export default function Machines({
                   {props.sectionTitle}
                 </Heading>
                 <MachineCarousel machineCards={props?.machineCards} />
-                <Flex mt={20} mb={8} justifyContent="center">
+                <Flex mt={16} mb={4} justifyContent="center">
                   <ChakraLink
                     href="/view-machines"
                     variant="buttonPrimaryLight"
-                    size={{ base: "sm", sm: "xl" }}
+                    p={{ base: "0.375rem 2.5rem", sm: "0.5rem 4rem" }}
+                    lineHeight="6"
+                    fontSize={{ base: "md", md: "xl" }}
                   >
                     {props.buttonLabel}
                   </ChakraLink>
@@ -75,7 +77,7 @@ export default function Machines({
                 fontWeight="normal"
                 layerStyle="whiteBg"
                 pb={7}
-                pt={16}
+                pt={12}
                 textAlign="center"
                 textStyle="h1"
               >
@@ -83,6 +85,7 @@ export default function Machines({
               </Heading>
               <Text
                 textStyle="h5"
+                color="brand.text"
                 fontWeight="normal"
                 textAlign="center"
                 px={60}
