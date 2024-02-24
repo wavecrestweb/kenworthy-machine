@@ -72,13 +72,15 @@ const variants = {
     },
     body: {
       pt: "4rem",
+      maxHeight: "",
+      overflow: "hidden",
       //add maxH and overflow
     },
     footer: {
       backgroundColor: "brand.primary",
       w: "100%",
-      p: "1.25rem",
-      //add h
+      p: "1.5rem",
+      h: "6rem",
     },
   }),
   back_md: definePartsStyle({
@@ -116,7 +118,7 @@ const variants = {
     },
     header: {
       p: "3rem 1rem 2.25rem",
-      height: "8.25rem",
+      h: "8.25rem",
       overflow: "hidden",
     },
     body: {
@@ -141,17 +143,21 @@ const variants = {
     },
     header: {
       p: "3rem 0 3.5rem",
+      h: "8.25rem",
+      overflow: "hidden",
       //add h and overflow
     },
     body: {
-      p: "0 2rem 0 5rem",
+      p: "0 1.5rem 0 3.5rem",
+      maxHeight: "",
+      overflow: "hidden",
       //add maxh and overflow
     },
     footer: {
       backgroundColor: "white",
       w: "100%",
-      p: "1.25rem",
-      //add h
+      p: "1.5rem",
+      h: "6rem",
     },
   }),
 };

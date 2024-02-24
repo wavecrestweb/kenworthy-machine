@@ -9,6 +9,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { usePathname } from "next/navigation";
 
 interface CardBackProps {
   animation: string;
@@ -25,20 +26,25 @@ const CardBack: React.FC<CardBackProps> = ({
   name,
   description,
 }) => {
+  const pathname = usePathname();
+
+  const style =
+    pathname === "/"
+      ? responsiveValues.carousel
+      : responsiveValues.machinesPage;
+
   const handleClick = () => {
     setIsFlipped(!isFlipped);
   };
 
   return (
-    <ChakraCard
-      animation={animation}
-      variant={{ md: "back_md", "2xl": "back_lg" }}
-    >
+    <ChakraCard animation={animation} variant={style.size}>
       <CardHeader>
         <Text
           as="h5"
           textStyle="h5"
-          fontSize={{ md: "md", "2xl": "xl" }}
+          fontSize={style.header.fontSize}
+          lineHeight={style.header.lineHeight}
           layerStyle="darkBg"
           textAlign="center"
         >
@@ -58,8 +64,8 @@ const CardBack: React.FC<CardBackProps> = ({
               li: (props) => (
                 <ListItem
                   textStyle="h5"
-                  lineHeight={{ md: "6", "2xl": "7" }}
-                  fontSize={{ md: "md", "2xl": "xl" }}
+                  lineHeight={style.list.lineHeight}
+                  fontSize={style.list.fontSize}
                   listStyleType="disc"
                 >
                   {props?.children}
@@ -72,7 +78,7 @@ const CardBack: React.FC<CardBackProps> = ({
       <CardFooter justifyContent="center">
         <Button
           variant="mc-white"
-          fontSize={{ md: "md", "2xl": "2xl" }}
+          fontSize={style.button}
           onClick={handleClick}
         >
           Return
@@ -83,3 +89,30 @@ const CardBack: React.FC<CardBackProps> = ({
 };
 
 export default CardBack;
+
+const responsiveValues = {
+  carousel: {
+    size: { md: "back_md", "2xl": "back_lg" },
+    header: {
+      fontSize: { md: "md", "2xl": "xl" },
+      lineHeight: { md: "6", "2xl": "7" },
+    },
+    list: {
+      lineHeight: { md: "6", "2xl": "7" },
+      fontSize: { md: "md", "2xl": "xl" },
+    },
+    button: { md: "md", "2xl": "2xl" },
+  },
+  machinesPage: {
+    size: { md: "back_lg", "2xl": "back_xl" },
+    header: {
+      fontSize: { md: "xl", "2xl": "2xl" },
+      lineHeight: { md: "6", "2xl": "7" },
+    },
+    list: {
+      lineHeight: { md: "6", "2xl": "7" },
+      fontSize: { md: "xl", "2xl": "2xl" },
+    },
+    button: { md: "2xl", "2xl": "3xl" },
+  },
+};
