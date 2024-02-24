@@ -7,24 +7,6 @@ export const Link = defineStyleConfig({
     borderColor: "transparent",
     borderWidth: "3px",
   },
-  sizes: {
-    sm: {
-      fontSize: "md",
-      lineHeight: "5",
-    },
-    md: {
-      fontSize: "lg",
-      lineHeight: "5",
-    },
-    lg: {
-      fontSize: "xl",
-      lineHeight: "6",
-    },
-    xl: {
-      fontSize: "2xl",
-      lineHeight: "8",
-    },
-  },
   variants: {
     buttonPrimaryDark: {
       alignItems: "center",
@@ -32,8 +14,7 @@ export const Link = defineStyleConfig({
       borderRadius: "full",
       display: "flex",
       justifyContent: "center",
-      px: "16",
-      py: "3",
+      p: "0.375rem",
       _hover: {
         borderColor: "white",
         borderWidth: "3px",
@@ -54,8 +35,8 @@ export const Link = defineStyleConfig({
       borderRadius: "full",
       display: "flex",
       justifyContent: "center",
-      px: "16",
-      py: "3",
+      p: "0.375rem",
+      fontWeight: "700",
       _hover: {
         borderColor: "brand.text",
         borderWidth: "3px",
@@ -77,8 +58,8 @@ export const Link = defineStyleConfig({
       color: "brand.text",
       display: "flex",
       justifyContent: "center",
-      px: "12",
-      py: "3",
+      p: "0.375rem",
+      fontWeight: "700",
       _hover: {
         backgroundColor: "brand.secondary",
         borderColor: "white",
