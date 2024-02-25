@@ -70,8 +70,12 @@ function NextArrow(props: {
   );
 }
 
-export default function MachineCarousel(props: {
+export default function MachineCarousel({
+  machineCards,
+  path,
+}: {
   machineCards: MachineCardsBlock["machineCards"];
+  path: string;
 }): JSX.Element {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -115,8 +119,8 @@ export default function MachineCarousel(props: {
 
   return (
     <Slider {...settings}>
-      {props.machineCards?.machineCard?.map((card, i) => {
-        return <Card key={i} {...card} />;
+      {machineCards?.machineCard?.map((card, i) => {
+        return <Card key={i} {...card} path={path} />;
       })}
     </Slider>
   );

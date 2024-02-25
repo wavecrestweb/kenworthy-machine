@@ -47,7 +47,7 @@ export default function Home(props: {
             return <Location key={i} {...block} />;
           }
           case "PageHomeBlocksMachineCarousel": {
-            return <Machines key={i} width={width} {...block} />;
+            return <Machines key={i} width={width} {...block} path="/" />;
           }
         }
       })}

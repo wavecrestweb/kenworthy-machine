@@ -24,7 +24,7 @@ export default function MachinesPage(props: {
       {data.page.blocks?.map((block, i) => {
         switch (block?.__typename) {
           case "PageViewMachinesBlocksMachines": {
-            return <Machines key={i} {...block} />;
+            return <Machines key={i} {...block} path="/view-machines" />;
           }
           case "PageViewMachinesBlocksQuoteSection": {
             return <RequestQuote key={i} {...block} />;
