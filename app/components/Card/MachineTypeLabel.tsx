@@ -2,13 +2,17 @@ import { Text, Box } from "@chakra-ui/react";
 
 interface MachineTypeLabelProps {
   type?: string | null;
+  path: string;
 }
 
-const MachineTypeLabel: React.FC<MachineTypeLabelProps> = ({ type }) => {
+const MachineTypeLabel: React.FC<MachineTypeLabelProps> = ({ type, path }) => {
   const colors = {
     bg: "brand.text",
     text: "white",
   };
+
+  const style =
+    path === "/" ? responsiveValues.carousel : responsiveValues.machinesPage;
 
   switch (type) {
     case "Mill":
@@ -31,7 +35,13 @@ const MachineTypeLabel: React.FC<MachineTypeLabelProps> = ({ type }) => {
   }
 
   return (
-    <Box w="28%" h="40%" position="absolute" top="0" right="-2.5px">
+    <Box
+      w="28%"
+      h="40%"
+      position="absolute"
+      top={style.box.top}
+      right={style.box.right}
+    >
       <Box
         as="svg"
         width="100%"
@@ -51,14 +61,14 @@ const MachineTypeLabel: React.FC<MachineTypeLabelProps> = ({ type }) => {
         color={colors.text}
         fontWeight="bold"
         position="absolute"
-        py={{ md: "0.25rem", "2xl": "1rem" }}
-        right={{ md: "-0.5rem", "2xl": "-0.7rem" }}
+        py={style.text.py}
+        right={style.text.right}
         textAlign="center"
         textStyle="sm-p"
-        fontSize={{ md: "xs", "2xl": "md" }}
-        top={{ md: "0.625rem", "2xl": "0.7rem" }}
+        fontSize={style.text.fontSize}
+        top={style.text.top}
         transform="rotate(43.916deg)"
-        width={{ md: "4rem", "2xl": "6rem" }}
+        width={style.text.width}
       >
         {type}
       </Text>
@@ -67,3 +77,26 @@ const MachineTypeLabel: React.FC<MachineTypeLabelProps> = ({ type }) => {
 };
 
 export default MachineTypeLabel;
+
+const responsiveValues = {
+  carousel: {
+    box: { top: "-1px", right: "-2.75px" },
+    text: {
+      py: { md: "0.25rem", "2xl": "1rem" },
+      right: { md: "-0.5rem", "2xl": "-0.9rem" },
+      fontSize: { md: "xs", "2xl": "lg" },
+      top: { md: "0.625rem", "2xl": "0.5rem" },
+      width: { md: "4rem", "2xl": "6rem" },
+    },
+  },
+  machinesPage: {
+    box: { top: "-1px", right: "-2.75px" },
+    text: {
+      py: { base: "0.25rem", sm: "1rem" },
+      right: { base: "-0.5rem", sm: "-0.9rem" },
+      fontSize: { base: "xs", sm: "lg" },
+      top: { base: "0.625rem", sm: "0.5rem" },
+      width: { base: "4rem", sm: "6rem" },
+    },
+  },
+};

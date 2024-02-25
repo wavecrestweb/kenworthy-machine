@@ -9,7 +9,6 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import MachineTypeLabel from "./MachineTypeLabel";
-import { usePathname } from "next/navigation";
 
 interface CardFrontProps {
   animation: string;
@@ -18,6 +17,7 @@ interface CardFrontProps {
   name?: string | null;
   image?: string | null;
   type?: string | null;
+  path: string;
 }
 
 const CardFront: React.FC<CardFrontProps> = ({
@@ -27,16 +27,13 @@ const CardFront: React.FC<CardFrontProps> = ({
   name,
   image,
   type,
+  path,
 }) => {
   // add a placeholder image and replace "default-image-url" with correct url
   const placeholderImage = "";
 
-  const pathname = usePathname();
-
   const style =
-    pathname === "/"
-      ? responsiveValues.carousel
-      : responsiveValues.machinesPage;
+    path === "/" ? responsiveValues.carousel : responsiveValues.machinesPage;
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
@@ -60,7 +57,7 @@ const CardFront: React.FC<CardFrontProps> = ({
             alt={name ?? ""}
             placeholder="empty"
           />
-          <MachineTypeLabel type={type} />
+          <MachineTypeLabel type={type} path={path} />
         </Box>
       </CardHeader>
       <CardBody>
@@ -81,39 +78,21 @@ export default CardFront;
 
 const responsiveValues = {
   carousel: {
-    size: {
-      md: "front_md",
-      "2xl": "front_lg",
-    },
+    size: { md: "front_md", "2xl": "front_lg" },
     header: {
-      w: {
-        md: "14rem",
-        "2xl": "20rem",
-      },
-      h: {
-        md: "9rem",
-        "2xl": "13rem",
-      },
+      w: { md: "14rem", "2xl": "20rem" },
+      h: { md: "9rem", "2xl": "13rem" },
     },
     text: { md: "md", "2xl": "2xl" },
     button: { md: "md", "2xl": "2xl" },
   },
   machinesPage: {
-    size: {
-      md: "front_lg",
-      "2xl": "front_xl",
-    },
+    size: { base: "front_md", sm: "front_xl" },
     header: {
-      w: {
-        md: "20rem",
-        "2xl": "24rem",
-      },
-      h: {
-        md: "13rem",
-        "2xl": "16rem",
-      },
+      w: { base: "14rem", sm: "22rem" },
+      h: { base: "9rem", sm: "15rem" },
     },
-    text: { md: "2xl", "2xl": "3xl" },
-    button: { md: "2xl", "2xl": "3xl" },
+    text: { base: "md", sm: "2xl" },
+    button: { base: "md", sm: "2xl" },
   },
 };

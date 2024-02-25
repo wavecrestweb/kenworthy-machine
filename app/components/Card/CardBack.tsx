@@ -9,7 +9,6 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { usePathname } from "next/navigation";
 
 interface CardBackProps {
   animation: string;
@@ -17,6 +16,7 @@ interface CardBackProps {
   setIsFlipped: React.Dispatch<React.SetStateAction<boolean>>;
   name?: string | null;
   description?: TinaMarkdownContent | TinaMarkdownContent[];
+  path: string;
 }
 
 const CardBack: React.FC<CardBackProps> = ({
@@ -25,13 +25,10 @@ const CardBack: React.FC<CardBackProps> = ({
   setIsFlipped,
   name,
   description,
+  path,
 }) => {
-  const pathname = usePathname();
-
   const style =
-    pathname === "/"
-      ? responsiveValues.carousel
-      : responsiveValues.machinesPage;
+    path === "/" ? responsiveValues.carousel : responsiveValues.machinesPage;
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
@@ -104,15 +101,15 @@ const responsiveValues = {
     button: { md: "md", "2xl": "2xl" },
   },
   machinesPage: {
-    size: { md: "back_lg", "2xl": "back_xl" },
+    size: { base: "back_md", sm: "back_xl" },
     header: {
-      fontSize: { md: "xl", "2xl": "2xl" },
-      lineHeight: { md: "6", "2xl": "7" },
+      fontSize: { base: "md", sm: "2xl" },
+      lineHeight: { base: "6", sm: "7" },
     },
     list: {
-      lineHeight: { md: "6", "2xl": "7" },
-      fontSize: { md: "xl", "2xl": "2xl" },
+      lineHeight: { base: "6", sm: "7" },
+      fontSize: { base: "md", sm: "2xl" },
     },
-    button: { md: "2xl", "2xl": "3xl" },
+    button: { base: "md", sm: "2xl" },
   },
 };

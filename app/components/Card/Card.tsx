@@ -10,6 +10,7 @@ export type MachineCard = {
   image?: string;
   description?: any;
   type?: string;
+  path: string;
 };
 
 const animationKeyFrames = keyframes`
