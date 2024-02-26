@@ -18,7 +18,9 @@ import MachineCarousel from "./MachineCarousel";
 import ContentWrapper from "./ContentWrapper";
 import Card from "./Card/Card";
 
-type Block = NonNullable<NonNullable<PageQuery["page"]["blocks"]>>[number];
+export type Block = NonNullable<
+  NonNullable<PageQuery["page"]["blocks"]>
+>[number];
 
 export type MachineCardsBlock = Extract<
   Block,
@@ -78,16 +80,12 @@ export default function Machines({
         props.__typename === "PageViewMachinesBlocksMachines" && (
           <Flex justifyContent="center">
             <ContentWrapper>
-              <Stack px={{ sm: "10", xl: "32" }}>
+              <Stack px={{ sm: "10", xl: "28", "2xl": "32" }}>
                 <Heading
                   as="h1"
                   fontWeight="normal"
                   layerStyle="whiteBg"
-                  pb={{
-                    base: "6",
-                    sm: "8",
-                    xl: "12",
-                  }}
+                  pb={{ base: "6", sm: "8", xl: "12" }}
                   pt={{ base: "12", sm: "14", lg: "16", xl: "20" }}
                   textAlign="center"
                   textStyle="h1"
@@ -103,7 +101,8 @@ export default function Machines({
                   textAlign="center"
                   px={{
                     base: "8",
-                    xl: "52",
+                    xl: "30",
+                    "2xl": "52",
                   }}
                   pb={{ base: "5", sm: "12", lg: "9", xl: "16" }}
                 >

@@ -41,6 +41,9 @@ export default defineConfig({
             if (document._sys.filename === "view_machines") {
               return "/view-machines";
             }
+            if (document._sys.filename === "careers") {
+              return "/view-careers";
+            }
           },
         },
         templates: [
