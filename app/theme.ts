@@ -85,6 +85,11 @@ const customTheme = extendTheme({
       lineHeight: "3rem",
       fontWeight: "normal",
     },
+    h4: {
+      fontSize: "2xl",
+      lineHeight: "8",
+      fontWeight: "bold",
+    },
     h5: {
       fontSize: "xl",
       lineHeight: "6",

@@ -15,9 +15,7 @@ export default function CareersPage(props: {
   };
   query: string;
 }) {
-  // HOOKS
   const { data } = useTina(props);
-  console.log(data);
 
   return (
     <Grid templateColumns={"1fr"}>
