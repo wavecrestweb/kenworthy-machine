@@ -12,33 +12,34 @@ import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 interface CardBackProps {
   animation: string;
-  isFlipped: boolean;
   setIsFlipped: React.Dispatch<React.SetStateAction<boolean>>;
   name?: string | null;
   description?: TinaMarkdownContent | TinaMarkdownContent[];
+  path: string;
 }
 
-const CardBack: React.FC<CardBackProps> = ({
+export default function CardBack({
   animation,
-  isFlipped,
   setIsFlipped,
   name,
   description,
-}) => {
+  path,
+}: CardBackProps): JSX.Element {
+  const style =
+    path === "/" ? responsiveValues.carousel : responsiveValues.machinesPage;
+
   const handleClick = () => {
-    setIsFlipped(!isFlipped);
+    setIsFlipped((prev) => !prev);
   };
 
   return (
-    <ChakraCard
-      animation={animation}
-      variant={{ md: "back_md", "2xl": "back_lg" }}
-    >
+    <ChakraCard animation={animation} variant={style.size}>
       <CardHeader>
         <Text
           as="h5"
           textStyle="h5"
-          fontSize={{ md: "md", "2xl": "xl" }}
+          fontSize={style.header.fontSize}
+          lineHeight={style.header.lineHeight}
           layerStyle="darkBg"
           textAlign="center"
         >
@@ -58,8 +59,8 @@ const CardBack: React.FC<CardBackProps> = ({
               li: (props) => (
                 <ListItem
                   textStyle="h5"
-                  lineHeight={{ md: "6", "2xl": "7" }}
-                  fontSize={{ md: "md", "2xl": "xl" }}
+                  lineHeight={style.list.lineHeight}
+                  fontSize={style.list.fontSize}
                   listStyleType="disc"
                 >
                   {props?.children}
@@ -72,7 +73,7 @@ const CardBack: React.FC<CardBackProps> = ({
       <CardFooter justifyContent="center">
         <Button
           variant="mc-white"
-          fontSize={{ md: "md", "2xl": "2xl" }}
+          fontSize={style.button}
           onClick={handleClick}
         >
           Return
@@ -80,6 +81,31 @@ const CardBack: React.FC<CardBackProps> = ({
       </CardFooter>
     </ChakraCard>
   );
-};
+}
 
-export default CardBack;
+const responsiveValues = {
+  carousel: {
+    size: { md: "back_md", "2xl": "back_lg" },
+    header: {
+      fontSize: { md: "md", "2xl": "xl" },
+      lineHeight: { md: "6", "2xl": "7" },
+    },
+    list: {
+      lineHeight: { md: "6", "2xl": "7" },
+      fontSize: { md: "md", "2xl": "xl" },
+    },
+    button: { md: "md", "2xl": "2xl" },
+  },
+  machinesPage: {
+    size: { base: "back_md", sm: "back_xl" },
+    header: {
+      fontSize: { base: "md", sm: "2xl" },
+      lineHeight: { base: "6", sm: "7" },
+    },
+    list: {
+      lineHeight: { base: "6", sm: "7" },
+      fontSize: { base: "md", sm: "2xl" },
+    },
+    button: { base: "md", sm: "2xl" },
+  },
+};

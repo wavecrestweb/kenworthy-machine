@@ -69,7 +69,7 @@ blocks:
 
       If you would like to email us directly or send us attachments to complete
       your quote request, reach us at
-      [sales@kenworthymachine.com](mailto:sales@kenworthymachine.com).
+      [sales@kenworthymachine.com](mailto\:sales@kenworthymachine.com).
     responseCopy: >
       ##### Get a Quick Response
 
@@ -77,5 +77,5 @@ blocks:
       We will make sure you get a quick response from our team if you share your
       phone number and email with us.
     _template: quoteSection
+_template: home
 ---
-

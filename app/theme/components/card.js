@@ -62,8 +62,8 @@ const variants = {
   }),
   front_xl: definePartsStyle({
     container: {
-      w: "24rem",
-      h: "32rem",
+      w: "22rem",
+      h: "30rem",
       my: "1rem",
       overflow: "hidden",
     },
@@ -71,14 +71,15 @@ const variants = {
       p: "0",
     },
     body: {
-      pt: "4rem",
-      //add maxH and overflow
+      pt: "3.5rem",
+      maxHeight: "9.5rem",
+      overflow: "hidden",
     },
     footer: {
       backgroundColor: "brand.primary",
       w: "100%",
-      p: "1.25rem",
-      //add h
+      p: "1.5rem",
+      h: "5.5rem",
     },
   }),
   back_md: definePartsStyle({
@@ -116,7 +117,7 @@ const variants = {
     },
     header: {
       p: "3rem 1rem 2.25rem",
-      height: "8.25rem",
+      h: "8.25rem",
       overflow: "hidden",
     },
     body: {
@@ -135,23 +136,25 @@ const variants = {
     container: {
       backgroundColor: "brand.primary",
       opacity: "95%",
-      w: "24rem",
-      h: "32rem",
+      w: "22rem",
+      h: "30rem",
       my: "1rem",
     },
     header: {
-      p: "3rem 0 3.5rem",
-      //add h and overflow
+      p: "3rem 1rem 3.5rem",
+      h: "8.25rem",
+      overflow: "hidden",
     },
     body: {
-      p: "0 2rem 0 5rem",
-      //add maxh and overflow
+      p: "0 1.5rem 0 3.5rem",
+      maxHeight: "16.25rem",
+      overflow: "hidden",
     },
     footer: {
       backgroundColor: "white",
       w: "100%",
-      p: "1.25rem",
-      //add h
+      p: "1.5rem",
+      h: "5.5rem",
     },
   }),
 };

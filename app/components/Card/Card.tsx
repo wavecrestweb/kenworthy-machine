@@ -4,12 +4,13 @@ import { keyframes } from "@chakra-ui/react";
 import CardFront from "./CardFront";
 import CardBack from "./CardBack";
 
-type MachineCard = {
+export type MachineCard = {
   __typename?: "MachinesMachineCard";
-  name?: string | undefined;
-  image?: string | undefined;
+  name?: string;
+  image?: string;
   description?: any;
-  type?: string | undefined;
+  type?: string;
+  path: string;
 };
 
 const animationKeyFrames = keyframes`
@@ -30,14 +31,12 @@ export default function Card(props: MachineCard): JSX.Element {
     <>
       {isFlipped ? (
         <CardBack
-          isFlipped={isFlipped}
           setIsFlipped={setIsFlipped}
           animation={animation}
           {...props}
         />
       ) : (
         <CardFront
-          isFlipped={isFlipped}
           setIsFlipped={setIsFlipped}
           animation={animation}
           {...props}
