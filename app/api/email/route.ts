@@ -1,5 +1,5 @@
 // LIBRARY IMPORTS
-import { type NextRequest, NextResponse } from "next";
+import { type NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
 

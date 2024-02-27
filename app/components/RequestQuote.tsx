@@ -20,6 +20,10 @@ export default function RequestQuote(props: PageBlocksQuoteSection) {
   // SET STATES
   const [submitSuccessful, setSubmitSuccessful] = useState(false);
 
+  const handleCloseSuccess = () => {
+    setSubmitSuccessful(false);
+  };
+
   return (
     <Box position="relative">
       <Image
@@ -49,7 +53,7 @@ export default function RequestQuote(props: PageBlocksQuoteSection) {
           maxW={{ base: "auto", lg: "500px" }}
         >
           {submitSuccessful ? (
-            <SuccessMessage />
+            <SuccessMessage handleCloseSuccess={handleCloseSuccess} />
           ) : (
             <QuoteForm
               setSubmitSuccessful={setSubmitSuccessful}

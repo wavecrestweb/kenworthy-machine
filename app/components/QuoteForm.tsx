@@ -42,6 +42,7 @@ export default function QuoteForm({
 }: QuoteFormProps) {
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>();
@@ -50,29 +51,49 @@ export default function QuoteForm({
 
   // EVENT HANDLERS
   const onSubmit = (data: FormData) => {
-    console.log("data: ", data);
-    sendEmail(data);
-    // .then(response => {
-    //   if (response.success) {
-    //     setSubmitSuccessful(true);
-    //     reset();
-    //     toast({
-    //       title: "Success",
-    //       description: response.message,
-    //       status: "success",
-    //       duration: 5000,
-    //       isClosable: true,
-    //     });
-    //   } else {
-    //     toast({
-    //       title: "Failed",
-    //       description: response.message,
-    //       status: "error",
-    //       duration: 5000,
-    //       isClosable: true,
-    //     });
-    //   }
-    // });
+    sendEmail(data)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok.");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("data: ", data);
+        if (data.message === "Email sent") {
+          setSubmitSuccessful(true);
+          reset();
+          toast({
+            containerStyle: {
+              width: "800px",
+              maxWidth: "100%",
+              border: "20px solid white",
+            },
+            description:
+              "We have received your request. Our team will reach out to you using the contact information provided.",
+            duration: 9000,
+            isClosable: true,
+          });
+        } else {
+          toast({
+            title: "Failed to send quote request.",
+            description: "Please try again later.",
+            status: "error",
+            duration: 9000,
+            isClosable: true,
+          });
+        }
+      })
+      .catch((error) => {
+        console.error("An error occurred:", error);
+        toast({
+          title: "Error",
+          description: "An error occurred while sending the quote request.",
+          status: "error",
+          duration: 9000,
+          isClosable: true,
+        });
+      });
   };
 
   return (
