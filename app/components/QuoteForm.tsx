@@ -165,23 +165,7 @@ export default function QuoteForm({
             {...register("details")}
           />
         </FormControl>
-        <Button
-          bg="brand.secondary"
-          color="white"
-          borderRadius="full"
-          px={12}
-          py={6}
-          my={8}
-          fontWeight="bold"
-          fontSize="xl"
-          _hover={{
-            bg: "brand.secondary",
-            transform: "scale(1.03)",
-            transition: "transform 0.2s ease-in-out",
-          }}
-          w="full"
-          type="submit"
-        >
+        <Button px={12} py={6} my={8} variant="mc-red" w="full" type="submit">
           Submit
         </Button>
       </VStack>

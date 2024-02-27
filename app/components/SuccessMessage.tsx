@@ -38,15 +38,7 @@ export default function SuccessMessage({
           We have received your request. Our team will reach out to you using
           the contact information provided.
         </Text>
-        <Button
-          onClick={handleCloseSuccess}
-          variant="buttonPrimaryLight"
-          _hover={{
-            background: "brand.primary",
-            transform: "scale(1.1)",
-            transition: "transform 0.2s ease-in-out",
-          }}
-        >
+        <Button onClick={handleCloseSuccess} variant="mc-red">
           Submit another request
         </Button>
       </VStack>

@@ -118,6 +118,16 @@ const customTheme = extendTheme({
             transition: "transform 0.2s ease-in-out",
           },
         },
+        "mc-red": {
+          color: "white",
+          backgroundColor: "brand.secondary",
+          fontSize: "xl",
+          lineHeight: "6",
+          _hover: {
+            transform: "scale(1.1)",
+            transition: "transform 0.2s ease-in-out",
+          },
+        },
       },
     },
     Card: cardTheme,
