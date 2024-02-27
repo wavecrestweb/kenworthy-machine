@@ -27,8 +27,8 @@ interface QuoteFormProps {
 export interface FormData {
   name: string;
   email: string;
-  industry: string;
-  details: string;
+  industry?: string;
+  details?: string;
 }
 
 export default function QuoteForm({

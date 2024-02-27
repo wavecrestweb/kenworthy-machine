@@ -1,12 +1,7 @@
 // LIBRARY IMPORTS
 import { Box, VStack, Text, HStack, Icon } from "@chakra-ui/react";
 import React, { ReactNode, useState } from "react";
-import {
-  FaRegClipboard,
-  FaRegEnvelope,
-  FaRegHandshake,
-  FaRegPaperPlane,
-} from "react-icons/fa6";
+import { FaRegClipboard, FaRegEnvelope, FaRegHandshake } from "react-icons/fa6";
 import Image from "next/image";
 import { PageBlocksQuoteSection } from "@/tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
