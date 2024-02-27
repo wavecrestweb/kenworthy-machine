@@ -2,7 +2,6 @@
 import {
   Button,
   FormControl,
-  FormErrorMessage,
   Input,
   Textarea,
   Text,
@@ -59,21 +58,9 @@ export default function QuoteForm({
         return response.json();
       })
       .then((data) => {
-        console.log("data: ", data);
         if (data.message === "Email sent") {
           setSubmitSuccessful(true);
           reset();
-          toast({
-            containerStyle: {
-              width: "800px",
-              maxWidth: "100%",
-              border: "20px solid white",
-            },
-            description:
-              "We have received your request. Our team will reach out to you using the contact information provided.",
-            duration: 9000,
-            isClosable: true,
-          });
         } else {
           toast({
             title: "Failed to send quote request.",

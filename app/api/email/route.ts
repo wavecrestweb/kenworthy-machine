@@ -4,7 +4,6 @@ import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
 
 export async function POST(request: NextRequest) {
-  console.log("request: ", request);
   const { email, name, industry, details } = await request.json();
 
   // Creates a transporter object using the default SMTP transport
