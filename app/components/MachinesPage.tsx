@@ -15,7 +15,7 @@ export default function MachinesPage(props: {
     relativePath: string;
   };
   query: string;
-}) {
+}): JSX.Element {
   // HOOKS
   const { data } = useTina(props);
 

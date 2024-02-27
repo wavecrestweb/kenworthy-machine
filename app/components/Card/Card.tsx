@@ -31,14 +31,12 @@ export default function Card(props: MachineCard): JSX.Element {
     <>
       {isFlipped ? (
         <CardBack
-          isFlipped={isFlipped}
           setIsFlipped={setIsFlipped}
           animation={animation}
           {...props}
         />
       ) : (
         <CardFront
-          isFlipped={isFlipped}
           setIsFlipped={setIsFlipped}
           animation={animation}
           {...props}

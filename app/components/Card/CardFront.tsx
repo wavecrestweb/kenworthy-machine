@@ -12,7 +12,6 @@ import MachineTypeLabel from "./MachineTypeLabel";
 
 interface CardFrontProps {
   animation: string;
-  isFlipped: boolean;
   setIsFlipped: React.Dispatch<React.SetStateAction<boolean>>;
   name?: string | null;
   image?: string | null;
@@ -20,15 +19,14 @@ interface CardFrontProps {
   path: string;
 }
 
-const CardFront: React.FC<CardFrontProps> = ({
+export default function CardFront({
   animation,
-  isFlipped,
   setIsFlipped,
   name,
   image,
   type,
   path,
-}) => {
+}: CardFrontProps): JSX.Element {
   // add a placeholder image and replace "default-image-url" with correct url
   const placeholderImage = "";
 
@@ -36,7 +34,7 @@ const CardFront: React.FC<CardFrontProps> = ({
     path === "/" ? responsiveValues.carousel : responsiveValues.machinesPage;
 
   const handleClick = () => {
-    setIsFlipped(!isFlipped);
+    setIsFlipped((prev) => !prev);
   };
 
   return (
@@ -72,9 +70,7 @@ const CardFront: React.FC<CardFrontProps> = ({
       </CardFooter>
     </ChakraCard>
   );
-};
-
-export default CardFront;
+}
 
 const responsiveValues = {
   carousel: {
