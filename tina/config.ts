@@ -42,7 +42,7 @@ export default defineConfig({
               return "/view-machines";
             }
             if (document._sys.filename === "careers") {
-              return "/view-careers";
+              return "/careers";
             }
           },
         },
