@@ -3,11 +3,11 @@ blocks:
   - heading: Benefits at Kenworthy
     benefits:
       - benefitTitle: 401k Matching
-        icon: /machine-gear-background.png
+        icon: /icons/piggy-bank.svg
       - benefitTitle: 'Medical, Vision & Dental'
-        icon: /machine-gear-background.png
+        icon: /icons/star-of-life.svg
       - benefitTitle: Paid Time Off
-        icon: /machine-gear-background.png
+        icon: /icons/cloud-sun.svg
     _template: benefits
 _template: careers
 ---
