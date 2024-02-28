@@ -46,17 +46,7 @@ blocks:
     _template: location
   - sectionTitle: Our Machines
     buttonLabel: View Machines
-    machineCard:
-      - image: /GaneshCyclone.png
-        name: GANESH Cyclone-52BY2
-        description: |
-          * CNC 9-axis
-          * CNC turning center
-          * (18) live tool holders
-          * Tool holders
-          * PATRIOT 551 bar feeder
-          * Chip conveyor
-        type: Lathe
+    machineCards: content/machines/machines.md
     _template: machineCarousel
   - requestQuoteForm:
       formTitle: Request a Quote
@@ -79,7 +69,7 @@ blocks:
 
       If you would like to email us directly or send us attachments to complete
       your quote request, reach us at
-      [sales@kenworthymachine.com](mailto:sales@kenworthymachine.com).
+      [sales@kenworthymachine.com](mailto\:sales@kenworthymachine.com).
     responseCopy: >
       ##### Get a Quick Response
 
@@ -87,4 +77,5 @@ blocks:
       We will make sure you get a quick response from our team if you share your
       phone number and email with us.
     _template: quoteSection
+_template: home
 ---
