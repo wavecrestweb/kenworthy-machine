@@ -99,11 +99,7 @@ export default function Machines({
                   lineHeight={{ base: "6", sm: "8", xl: "9" }}
                   fontSize={{ base: "xl", sm: "2xl", xl: "3xl" }}
                   textAlign="center"
-                  px={{
-                    base: "8",
-                    xl: "30",
-                    "2xl": "52",
-                  }}
+                  px={{ base: "8", xl: "30", "2xl": "52" }}
                   pb={{ base: "5", sm: "12", lg: "9", xl: "16" }}
                 >
                   {props.description}

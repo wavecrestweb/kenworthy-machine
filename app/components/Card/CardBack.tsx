@@ -12,26 +12,24 @@ import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 interface CardBackProps {
   animation: string;
-  isFlipped: boolean;
   setIsFlipped: React.Dispatch<React.SetStateAction<boolean>>;
   name?: string | null;
   description?: TinaMarkdownContent | TinaMarkdownContent[];
   path: string;
 }
 
-const CardBack: React.FC<CardBackProps> = ({
+export default function CardBack({
   animation,
-  isFlipped,
   setIsFlipped,
   name,
   description,
   path,
-}) => {
+}: CardBackProps): JSX.Element {
   const style =
     path === "/" ? responsiveValues.carousel : responsiveValues.machinesPage;
 
   const handleClick = () => {
-    setIsFlipped(!isFlipped);
+    setIsFlipped((prev) => !prev);
   };
 
   return (
@@ -83,9 +81,7 @@ const CardBack: React.FC<CardBackProps> = ({
       </CardFooter>
     </ChakraCard>
   );
-};
-
-export default CardBack;
+}
 
 const responsiveValues = {
   carousel: {
