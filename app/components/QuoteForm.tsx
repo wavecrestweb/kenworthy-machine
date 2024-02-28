@@ -77,8 +77,12 @@ export default function QuoteForm({
           title: "Error",
           description: "An error occurred while sending the quote request.",
           status: "error",
+          position: "top",
           duration: 9000,
           isClosable: true,
+          containerStyle: {
+            border: "1.25rem solid white",
+          },
         });
       });
   };
@@ -109,7 +113,6 @@ export default function QuoteForm({
             _hover={{
               borderColor: "brand.accentGreen",
             }}
-            name="name"
             {...register("name", { required: true })}
           />
         </FormControl>
@@ -127,7 +130,6 @@ export default function QuoteForm({
             _hover={{
               borderColor: "brand.accentGreen",
             }}
-            name="email"
             {...register("email", { required: true })}
           />
         </FormControl>
@@ -144,7 +146,6 @@ export default function QuoteForm({
             _hover={{
               borderColor: "brand.accentGreen",
             }}
-            name="industry"
             {...register("industry")}
           />
         </FormControl>
@@ -161,7 +162,6 @@ export default function QuoteForm({
             _hover={{
               borderColor: "brand.accentGreen",
             }}
-            name="details"
             {...register("details")}
           />
         </FormControl>
