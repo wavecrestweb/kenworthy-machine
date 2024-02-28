@@ -1,5 +1,5 @@
 // LIBRARY IMPORTS
-import { PageBlocksHero } from "@/tina/__generated__/types";
+import { PageHomeBlocksHero } from "@/tina/__generated__/types";
 import { Box, Heading } from "@chakra-ui/react";
 import Image from "next/image";
 
@@ -8,7 +8,7 @@ import heroImage from "../../public/images/hero-photo.png";
 import ContentWrapper from "./ContentWrapper";
 
 // HERO COMPONENT DEFINITION
-export default function Hero(props: PageBlocksHero) {
+export default function Hero(props: PageHomeBlocksHero) {
   return (
     <Box
       position="relative"
