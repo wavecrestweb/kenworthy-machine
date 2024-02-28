@@ -3,14 +3,14 @@ import { Box, VStack, Text, HStack, Icon } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { FaRegClipboard, FaRegEnvelope, FaRegHandshake } from "react-icons/fa6";
 import Image from "next/image";
-import { PageBlocksQuoteSection } from "@/tina/__generated__/types";
+import { PageHomeBlocksQuoteSection } from "@/tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 // LOCAL IMPORTS
 import QuoteForm from "./QuoteForm";
 import machineBackground from "../../public/images/machineBackground.png";
 
-export default function RequestQuote(props: PageBlocksQuoteSection) {
+export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
   return (
     <Box position="relative">
       <Image

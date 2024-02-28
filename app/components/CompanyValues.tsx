@@ -1,6 +1,6 @@
 // LIBRARY IMPORTS
 import { ReactNode } from "react";
-import { PageBlocksValues } from "@/tina/__generated__/types";
+import { PageHomeBlocksValues } from "@/tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import {
   Box,
@@ -19,7 +19,7 @@ import gearBackground from "../../public/images/machine-gear-background.png";
 import ContentWrapper from "./ContentWrapper";
 
 // VALUES COMPONENT DEFINITION
-export default function CompanyValues(props: PageBlocksValues) {
+export default function CompanyValues(props: PageHomeBlocksValues) {
   return (
     <Box position="relative">
       <Image
