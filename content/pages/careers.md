@@ -1,5 +1,9 @@
 ---
 blocks:
+  - title: Work With Us
+    subtitle: Kenworthy Careers
+    heroImage: /images/CareersHeroPhoto.png
+    _template: hero
   - heading: Benefits at Kenworthy
     benefits:
       - benefitTitle: 401k Matching
