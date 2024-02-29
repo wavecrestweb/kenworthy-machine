@@ -13,6 +13,7 @@ import { useForm } from "react-hook-form";
 
 // LOCAL IMPORTS
 import { sendEmail } from "@/utils/sendEmail";
+import { useSendQuoteRequest } from "@/utils/hooks/useSendQuoteRequest";
 
 // TYPE DEFINTIONS
 interface QuoteFormProps {
@@ -21,6 +22,7 @@ interface QuoteFormProps {
   field2Placeholder?: string;
   field3Placeholder?: string;
   submitButtonText?: string;
+  layoutType: string;
   setSubmitSuccessful: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -38,57 +40,14 @@ export default function QuoteForm({
   field3Placeholder,
   submitButtonText,
   setSubmitSuccessful,
+  layoutType,
 }: QuoteFormProps) {
-  const {
-    register,
-    reset,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>();
-
-  const toast = useToast();
-
-  // EVENT HANDLERS
-  const onSubmit = (data: FormData) => {
-    sendEmail(data)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok.");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        if (data.message === "Email sent") {
-          setSubmitSuccessful(true);
-          reset();
-        } else {
-          toast({
-            title: "Failed to send quote request.",
-            description: "Please try again later.",
-            status: "error",
-            duration: 9000,
-            isClosable: true,
-          });
-        }
-      })
-      .catch((error) => {
-        console.error("An error occurred:", error);
-        toast({
-          title: "Error",
-          description: "An error occurred while sending the quote request.",
-          status: "error",
-          position: "top",
-          duration: 9000,
-          isClosable: true,
-          containerStyle: {
-            border: "1.25rem solid white",
-          },
-        });
-      });
-  };
+  const { register, handleSubmit, errors, onSubmit } = useSendQuoteRequest();
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form
+      onSubmit={handleSubmit((data) => onSubmit(data, setSubmitSuccessful))}
+    >
       <Text textAlign="center" fontSize="3xl" mt={8} color="brand.text">
         {formTitle || "Request a Quote"}
       </Text>

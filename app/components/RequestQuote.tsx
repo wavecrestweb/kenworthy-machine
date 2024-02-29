@@ -3,7 +3,7 @@ import { Box, VStack, Text, HStack, Icon } from "@chakra-ui/react";
 import React, { ReactNode, useState } from "react";
 import { FaRegClipboard, FaRegEnvelope, FaRegHandshake } from "react-icons/fa6";
 import Image from "next/image";
-import { PageBlocksQuoteSection } from "@/tina/__generated__/types";
+import { PageHomeBlocksQuoteSection } from "@/tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 // LOCAL IMPORTS
@@ -11,7 +11,12 @@ import QuoteForm from "./QuoteForm";
 import SuccessMessage from "./SuccessMessage";
 import machineBackground from "../../public/images/machineBackground.png";
 
-export default function RequestQuote(props: PageBlocksQuoteSection) {
+// TYPE DEFINITIONS
+interface RequestQuoteProps extends PageHomeBlocksQuoteSection {
+  layoutType: string;
+}
+
+export default function RequestQuote(props: RequestQuoteProps) {
   // SET STATES
   const [submitSuccessful, setSubmitSuccessful] = useState(false);
 
@@ -53,6 +58,7 @@ export default function RequestQuote(props: PageBlocksQuoteSection) {
             <QuoteForm
               setSubmitSuccessful={setSubmitSuccessful}
               {...props.requestQuoteForm}
+              layoutType={props.layoutType}
             />
           )}
         </Box>
