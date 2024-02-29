@@ -1,5 +1,5 @@
 // LIBRARY IMPORTS
-import { Box, VStack, Heading, Center } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import Image from "next/image";
 import { PageCareersBlocksHero } from "@/tina/__generated__/types";
 
@@ -9,7 +9,7 @@ import ContentWrapper from "./ContentWrapper";
 // HERO COMPONENT DEFINITION
 export default function CareersHero(props: PageCareersBlocksHero): JSX.Element {
   return (
-    <Box position="relative" minH="35vw">
+    <Box position="relative" minH={{ base: "25vh", lg: "52vh" }}>
       <Image
         src={props?.heroImage || ""}
         alt={""}
@@ -27,21 +27,29 @@ export default function CareersHero(props: PageCareersBlocksHero): JSX.Element {
         bg="rgba(11, 17, 62, 0.77)"
       >
         <ContentWrapper>
-          <Center>
-            <VStack spacing={12} py={48}>
-              <Heading
-                as="h3"
-                fontSize="3xl"
-                fontWeight="normal"
-                color="brand.secondary"
-              >
-                {props?.title}
-              </Heading>
-              <Heading as="h1" textStyle="h1" fontWeight="normal" color="white">
-                {props?.subtitle}
-              </Heading>
-            </VStack>
-          </Center>
+          <Flex
+            direction="column"
+            alignItems="center"
+            pt={{ base: "7vh", md: "8vh", lg: "18vh" }}
+            gap={{ base: "1vh", sm: "1vh", md: "1.5vh", lg: "3vh" }}
+          >
+            <Heading
+              as="h3"
+              fontSize={{ base: "xl", lg: "3xl" }}
+              fontWeight={{ base: "bold", lg: "normal" }}
+              color="brand.secondary"
+            >
+              {props?.title}
+            </Heading>
+            <Heading
+              as="h1"
+              fontSize={{ base: "xl", sm: "3xl" }}
+              fontWeight="normal"
+              color="white"
+            >
+              {props?.subtitle}
+            </Heading>
+          </Flex>
         </ContentWrapper>
       </Box>
     </Box>
