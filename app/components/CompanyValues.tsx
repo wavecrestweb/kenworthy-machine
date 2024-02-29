@@ -33,7 +33,7 @@ export default function CompanyValues(props: PageHomeBlocksValues) {
           zIndex: -1,
         }}
       />
-      <Box bgImage={gearBackground} p={10} bg="rgba(11, 17, 62, 0.79)">
+      <Box bgImage={gearBackground.src} p={10} bg="rgba(11, 17, 62, 0.79)">
         <ContentWrapper>
           <VStack spacing={8}>
             <Heading fontSize={"48px"} color="white" textAlign="center" mb={4}>
@@ -61,9 +61,9 @@ export default function CompanyValues(props: PageHomeBlocksValues) {
                   <TinaMarkdown
                     content={props.quality1?.description}
                     components={{
-                      p: ({ children }: { children: ReactNode }) => (
+                      p: (props) => (
                         <Text as="div" fontSize="xl" color="brand.text">
-                          {children}
+                          {props?.children}
                         </Text>
                       ),
                     }}
@@ -102,9 +102,9 @@ export default function CompanyValues(props: PageHomeBlocksValues) {
                   <TinaMarkdown
                     content={props.quality2?.description}
                     components={{
-                      p: ({ children }: { children: ReactNode }) => (
+                      p: (props) => (
                         <Text as="span" fontSize="xl" color="brand.text">
-                          {children}
+                          {props?.children}
                         </Text>
                       ),
                     }}
@@ -125,9 +125,9 @@ export default function CompanyValues(props: PageHomeBlocksValues) {
                   <TinaMarkdown
                     content={props.quality3?.description}
                     components={{
-                      p: ({ children }: { children: ReactNode }) => (
+                      p: (props) => (
                         <Text as="span" fontSize="xl" color="brand.text">
-                          {children}
+                          {props?.children}
                         </Text>
                       ),
                     }}
