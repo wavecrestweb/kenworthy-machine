@@ -1,16 +1,30 @@
 // LIBRARY IMPORTS
 import { Box, VStack, Text, HStack, Icon } from "@chakra-ui/react";
-import { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import { FaRegClipboard, FaRegEnvelope, FaRegHandshake } from "react-icons/fa6";
 import Image from "next/image";
-import { PageHomeBlocksQuoteSection } from "@/tina/__generated__/types";
+import {
+  PageHomeBlocksQuoteSection,
+  PageViewMachinesBlocksQuoteSection,
+  PageQuery,
+} from "@/tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 // LOCAL IMPORTS
 import QuoteForm from "./QuoteForm";
+import SuccessMessage from "./SuccessMessage";
 import machineBackground from "../../public/images/machineBackground.png";
 
-export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
+export default function RequestQuote(
+  props: PageHomeBlocksQuoteSection | PageViewMachinesBlocksQuoteSection,
+) {
+  // SET STATES
+  const [submitSuccessful, setSubmitSuccessful] = useState(false);
+
+  const handleCloseSuccess = () => {
+    setSubmitSuccessful(false);
+  };
+
   return (
     <Box position="relative">
       <Image
@@ -30,7 +44,7 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
         spacing={16}
         justifyContent="space-around"
         mx="auto"
-        bgImage={machineBackground}
+        bgImage={machineBackground.src}
         bg="rgba(11, 17, 62, 0.79)"
       >
         <Box
@@ -39,7 +53,14 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
           minW={{ base: "auto", md: "500px" }}
           maxW={{ base: "auto", lg: "500px" }}
         >
-          <QuoteForm {...props.requestQuoteForm} />
+          {submitSuccessful ? (
+            <SuccessMessage handleCloseSuccess={handleCloseSuccess} />
+          ) : (
+            <QuoteForm
+              setSubmitSuccessful={setSubmitSuccessful}
+              {...props.requestQuoteForm}
+            />
+          )}
         </Box>
         <VStack flex="1" maxW={{ base: "auto", lg: "500px" }} spacing={4}>
           <Text as="h3" fontSize="3xl" fontWeight="bold" color="white" mb={6}>
@@ -56,14 +77,14 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
               <TinaMarkdown
                 content={props.fillFormCopy}
                 components={{
-                  h5: ({ children }: { children: ReactNode }) => (
+                  h5: (props) => (
                     <Text as="div" color="white" fontSize="xl" pb="0.5rem">
-                      {children}
+                      {props?.children}
                     </Text>
                   ),
-                  p: ({ children }: { children: ReactNode }) => (
+                  p: (props) => (
                     <Text as="div" color="white" fontSize="lg" lineHeight="5">
-                      {children}
+                      {props?.children}
                     </Text>
                   ),
                 }}
@@ -84,14 +105,14 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
               <TinaMarkdown
                 content={props.emailCopy}
                 components={{
-                  h5: ({ children }: { children: ReactNode }) => (
+                  h5: (props) => (
                     <Text as="div" color="white" fontSize="xl" pb="0.5rem">
-                      {children}
+                      {props?.children}
                     </Text>
                   ),
-                  p: ({ children }: { children: ReactNode }) => (
+                  p: (props) => (
                     <Text as="div" color="white" fontSize="lg" lineHeight="5">
-                      {children}
+                      {props?.children}
                     </Text>
                   ),
                 }}
@@ -109,14 +130,14 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
               <TinaMarkdown
                 content={props.responseCopy}
                 components={{
-                  h5: ({ children }: { children: ReactNode }) => (
+                  h5: (props) => (
                     <Text as="div" color="white" fontSize="xl" pb="0.5rem">
-                      {children}
+                      {props?.children}
                     </Text>
                   ),
-                  p: ({ children }: { children: ReactNode }) => (
+                  p: (props) => (
                     <Text as="div" color="white" fontSize="lg" lineHeight="5">
-                      {children}
+                      {props?.children}
                     </Text>
                   ),
                 }}

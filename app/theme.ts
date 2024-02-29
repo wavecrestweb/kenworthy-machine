@@ -56,7 +56,7 @@ const customTheme = extendTheme({
         "mc-red": {
           color: "white",
           backgroundColor: "brand.secondary",
-          fontSize: "24px",
+          fontSize: "xl",
           lineHeight: "6",
           _hover: {
             transform: "scale(1.1)",
