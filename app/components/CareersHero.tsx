@@ -9,7 +9,10 @@ import ContentWrapper from "./ContentWrapper";
 // HERO COMPONENT DEFINITION
 export default function CareersHero(props: PageCareersBlocksHero): JSX.Element {
   return (
-    <Box position="relative" minH={{ base: "25vh", lg: "52vh" }}>
+    <Box
+      position="relative"
+      minH={{ base: "25vh", md: "30vh", lg: "40vh", xl: "52vh" }}
+    >
       <Image
         src={props?.heroImage || ""}
         alt={""}
@@ -30,8 +33,8 @@ export default function CareersHero(props: PageCareersBlocksHero): JSX.Element {
           <Flex
             direction="column"
             alignItems="center"
-            pt={{ base: "7vh", md: "8vh", lg: "18vh" }}
-            gap={{ base: "1vh", sm: "1vh", md: "1.5vh", lg: "3vh" }}
+            pt={{ base: "7vh", md: "9vh", lg: "13vh", xl: "18vh" }}
+            gap={{ base: "1vh", md: "2vh", xl: "3vh" }}
           >
             <Heading
               as="h3"
