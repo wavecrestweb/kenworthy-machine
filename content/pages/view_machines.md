@@ -6,6 +6,7 @@ blocks:
       operators who know how to get the most out of them.
     machineCards: content/machines/machines.md
     _template: machines
+  - _template: quoteSection
 _template: viewMachines
 ---
 

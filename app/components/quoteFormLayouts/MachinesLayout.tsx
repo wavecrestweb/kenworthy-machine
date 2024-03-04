@@ -1,12 +1,14 @@
 // LIBRARY IMPORTS
 import {
+  Box,
   Button,
+  chakra,
   FormControl,
+  HStack,
   Input,
   Textarea,
   Text,
   VStack,
-  useToast,
 } from "@chakra-ui/react";
 import React, { Dispatch, SetStateAction } from "react";
 import { useForm } from "react-hook-form";
@@ -29,6 +31,8 @@ interface HomeLayoutQuoteFormProps extends QuoteFormProps {
   errors: ReturnType<typeof useForm>["formState"]["errors"];
 }
 
+const ChakraForm = chakra("form");
+
 export default function MachinesLayoutQuoteForm({
   formTitle,
   field1Placeholder,
@@ -40,71 +44,71 @@ export default function MachinesLayoutQuoteForm({
   const { register, handleSubmit, errors, onSubmit } = useSendQuoteRequest();
 
   return (
-    <form
+    <ChakraForm
+      bg="brand.primary"
       onSubmit={handleSubmit((data) => onSubmit(data, setSubmitSuccessful))}
     >
-      <Text textAlign="center" fontSize="3xl" mt={8} color="brand.text">
+      <Text textAlign="center" fontSize="3xl" mt={8} color="white">
         {formTitle || "Request a Quote"}
       </Text>
-      <VStack
-        spacing={6}
-        px={8}
-        py={10}
-        bg="white"
-        borderRadius="lg"
-        boxShadow="xl"
-      >
-        <FormControl isRequired>
-          <Input
-            borderColor="brand.primary"
-            focusBorderColor="brand.accentGreen"
-            borderRadius="full"
-            border="2px"
-            id="name"
-            placeholder={field1Placeholder}
-            _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
-            aria-label="Name"
-            _hover={{
-              borderColor: "brand.accentGreen",
-            }}
-            {...register("name", { required: true })}
-          />
-        </FormControl>
-        <FormControl isRequired>
-          <Input
-            borderColor="brand.primary"
-            focusBorderColor="brand.accentGreen"
-            borderRadius="full"
-            border="2px"
-            id="email"
-            type="email"
-            placeholder="Email"
-            _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
-            aria-label="Email"
-            _hover={{
-              borderColor: "brand.accentGreen",
-            }}
-            {...register("email", { required: true })}
-          />
-        </FormControl>
-        <FormControl>
-          <Input
-            borderColor="brand.primary"
-            focusBorderColor="brand.accentGreen"
-            borderRadius="full"
-            border="2px"
-            id="industry"
-            placeholder={field2Placeholder}
-            _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
-            aria-label="Industry type"
-            _hover={{
-              borderColor: "brand.accentGreen",
-            }}
-            {...register("industry")}
-          />
-        </FormControl>
+      <VStack spacing={6} px={8} py={10} borderRadius="lg" boxShadow="xl">
+        <HStack>
+          <FormControl isRequired>
+            <Input
+              bg="white"
+              borderColor="white"
+              focusBorderColor="brand.accentGreen"
+              borderRadius="full"
+              border="2px"
+              id="name"
+              placeholder={field1Placeholder}
+              _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
+              aria-label="Name"
+              _hover={{
+                borderColor: "brand.accentGreen",
+              }}
+              {...register("name", { required: true })}
+            />
+          </FormControl>
+          <FormControl isRequired>
+            <Input
+              bg="white"
+              borderColor="brand.primary"
+              focusBorderColor="brand.accentGreen"
+              borderRadius="full"
+              border="2px"
+              id="email"
+              type="email"
+              placeholder="Email"
+              _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
+              aria-label="Email"
+              _hover={{
+                borderColor: "brand.accentGreen",
+              }}
+              {...register("email", { required: true })}
+            />
+          </FormControl>
+          <FormControl>
+            <Input
+              bg="white"
+              borderColor="brand.primary"
+              focusBorderColor="brand.accentGreen"
+              borderRadius="full"
+              border="2px"
+              id="industry"
+              placeholder={field2Placeholder}
+              _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
+              aria-label="Industry type"
+              _hover={{
+                borderColor: "brand.accentGreen",
+              }}
+              {...register("industry")}
+            />
+          </FormControl>
+        </HStack>
         <FormControl>
           <Textarea
+            bg="white"
             borderColor="brand.primary"
             focusBorderColor="brand.accentGreen"
             borderRadius="3xl"
@@ -123,6 +127,6 @@ export default function MachinesLayoutQuoteForm({
           Submit
         </Button>
       </VStack>
-    </form>
+    </ChakraForm>
   );
 }
