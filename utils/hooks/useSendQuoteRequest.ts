@@ -4,9 +4,15 @@ import { useToast } from "@chakra-ui/react";
 
 // LOCAL IMPORTS
 import { sendEmail } from "@/utils/sendEmail";
-import { FormData } from "../../app/components/QuoteForm";
 
 // TYPE DEFINITIONS
+interface FormData {
+  name: string;
+  email: string;
+  industry?: string;
+  details?: string;
+}
+
 interface UseSendQuoteRequestReturn {
   register: ReturnType<(typeof useForm<FormData>)["register"]>;
   handleSubmit: ReturnType<(typeof useForm<FormData>)["handleSubmit"]>;

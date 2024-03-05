@@ -1,6 +1,5 @@
 // LIBRARY IMPORTS
 import {
-  Box,
   Button,
   chakra,
   FormControl,
@@ -15,43 +14,40 @@ import { useForm } from "react-hook-form";
 
 // LOCAL IMPORTS
 import { useSendQuoteRequest } from "@/utils/hooks/useSendQuoteRequest";
-import { QuoteFormProps } from "../QuoteForm";
+import { PageViewMachinesBlocksQuoteSection } from "@/tina/__generated__/types";
 
 // TYPE DEFINTIONS
-interface FormData {
-  name: string;
-  email: string;
-  industry?: string;
-  details?: string;
-}
-
-interface HomeLayoutQuoteFormProps extends QuoteFormProps {
-  register: ReturnType<typeof useForm>["register"];
-  handleSubmit: ReturnType<typeof useForm>["handleSubmit"];
-  errors: ReturnType<typeof useForm>["formState"]["errors"];
+interface MachineLayoutQuoteFormProps
+  extends PageViewMachinesBlocksQuoteSection {
+  setSubmitSuccessful: Dispatch<SetStateAction<boolean>>;
 }
 
 const ChakraForm = chakra("form");
 
-export default function MachinesLayoutQuoteForm({
-  formTitle,
-  field1Placeholder,
-  field2Placeholder,
-  field3Placeholder,
-  submitButtonText,
-  setSubmitSuccessful,
-}: QuoteFormProps) {
+export default function MachinesLayoutQuoteForm(
+  props: MachineLayoutQuoteFormProps,
+) {
   const { register, handleSubmit, errors, onSubmit } = useSendQuoteRequest();
 
   return (
     <ChakraForm
       bg="brand.primary"
-      onSubmit={handleSubmit((data) => onSubmit(data, setSubmitSuccessful))}
+      onSubmit={handleSubmit((data) =>
+        onSubmit(data, props.setSubmitSuccessful),
+      )}
     >
       <Text textAlign="center" fontSize="3xl" mt={8} color="white">
-        {formTitle || "Request a Quote"}
+        {props?.requestQuoteForm?.formTitle || "Request a Quote"}
       </Text>
-      <VStack spacing={6} px={8} py={10} borderRadius="lg" boxShadow="xl">
+      <VStack
+        spacing={6}
+        px={8}
+        py={10}
+        borderRadius="lg"
+        boxShadow="xl"
+        maxW="7xl"
+        mx="auto"
+      >
         <HStack>
           <FormControl isRequired>
             <Input
@@ -61,7 +57,7 @@ export default function MachinesLayoutQuoteForm({
               borderRadius="full"
               border="2px"
               id="name"
-              placeholder={field1Placeholder}
+              placeholder={props?.requestQuoteForm?.field1Placeholder}
               _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
               aria-label="Name"
               _hover={{
@@ -96,7 +92,7 @@ export default function MachinesLayoutQuoteForm({
               borderRadius="full"
               border="2px"
               id="industry"
-              placeholder={field2Placeholder}
+              placeholder={props?.requestQuoteForm?.field2Placeholder}
               _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
               aria-label="Industry type"
               _hover={{

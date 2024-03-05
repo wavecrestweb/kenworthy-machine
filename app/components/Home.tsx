@@ -41,7 +41,7 @@ export default function Home(props: {
             return <CompanyValues key={i} {...block} />;
           }
           case "PageHomeBlocksQuoteSection": {
-            return <RequestQuote key={i} {...block} layoutType="homePage" />;
+            return <RequestQuote key={i} {...block} />;
           }
           case "PageHomeBlocksLocation": {
             return <Location key={i} {...block} />;

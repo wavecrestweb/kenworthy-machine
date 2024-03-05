@@ -6,27 +6,21 @@ import {
   Textarea,
   Text,
   VStack,
-  useToast,
 } from "@chakra-ui/react";
 import React, { Dispatch, SetStateAction } from "react";
 import { useForm } from "react-hook-form";
 
 // LOCAL IMPORTS
 import { useSendQuoteRequest } from "@/utils/hooks/useSendQuoteRequest";
-import { QuoteFormProps } from "../QuoteForm";
 
 // TYPE DEFINTIONS
-interface FormData {
-  name: string;
-  email: string;
-  industry?: string;
-  details?: string;
-}
-
-interface HomeLayoutQuoteFormProps extends QuoteFormProps {
-  register: ReturnType<typeof useForm>["register"];
-  handleSubmit: ReturnType<typeof useForm>["handleSubmit"];
-  errors: ReturnType<typeof useForm>["formState"]["errors"];
+interface HomeLayoutQuoteFormProps {
+  formTitle?: string;
+  field1Placeholder?: string;
+  field2Placeholder?: string;
+  field3Placeholder?: string;
+  submitButtonText?: string;
+  setSubmitSuccessful: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function HomeLayoutQuoteForm({
@@ -36,7 +30,8 @@ export default function HomeLayoutQuoteForm({
   field3Placeholder,
   submitButtonText,
   setSubmitSuccessful,
-}: QuoteFormProps) {
+}: HomeLayoutQuoteFormProps) {
+  // Custom Hook
   const { register, handleSubmit, errors, onSubmit } = useSendQuoteRequest();
 
   return (
