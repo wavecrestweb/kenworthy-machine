@@ -14,7 +14,7 @@ import { useForm } from "react-hook-form";
 import { useSendQuoteRequest } from "@/utils/hooks/useSendQuoteRequest";
 
 // TYPE DEFINTIONS
-interface HomeLayoutQuoteFormProps {
+interface HomeQuoteFormProps {
   formTitle?: string;
   field1Placeholder?: string;
   field2Placeholder?: string;
@@ -23,14 +23,14 @@ interface HomeLayoutQuoteFormProps {
   setSubmitSuccessful: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function HomeLayoutQuoteForm({
+export default function HomeQuoteForm({
   formTitle,
   field1Placeholder,
   field2Placeholder,
   field3Placeholder,
   submitButtonText,
   setSubmitSuccessful,
-}: HomeLayoutQuoteFormProps) {
+}: HomeQuoteFormProps) {
   // Custom Hook
   const { register, handleSubmit, errors, onSubmit } = useSendQuoteRequest();
 

@@ -7,9 +7,9 @@ import { PageHomeBlocksQuoteSection } from "@/tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 // LOCAL IMPORTS
-import HomeLayoutQuoteForm from "./quoteFormLayouts/HomeLayout";
+import HomeQuoteForm from "./HomeQuoteForm";
 import SuccessMessage from "./SuccessMessage";
-import machineBackground from "../../public/images/machineBackground.png";
+import machineBackground from "../../../public/images/machineBackground.png";
 
 // TYPE DEFINITIONS
 // interface RequestQuoteProps extends PageHomeBlocksQuoteSection {
@@ -55,7 +55,7 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
           {submitSuccessful ? (
             <SuccessMessage handleCloseSuccess={handleCloseSuccess} />
           ) : (
-            <HomeLayoutQuoteForm
+            <HomeQuoteForm
               setSubmitSuccessful={setSubmitSuccessful}
               {...props.requestQuoteForm}
             />

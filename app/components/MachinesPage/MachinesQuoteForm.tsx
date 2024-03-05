@@ -24,9 +24,7 @@ interface MachineLayoutQuoteFormProps
 
 const ChakraForm = chakra("form");
 
-export default function MachinesLayoutQuoteForm(
-  props: MachineLayoutQuoteFormProps,
-) {
+export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
   const { register, handleSubmit, errors, onSubmit } = useSendQuoteRequest();
 
   return (

@@ -7,7 +7,7 @@ import { useTina } from "tinacms/dist/react";
 import { PageQuery } from "@/tina/__generated__/types";
 
 //LOCAL IMPORTS
-import MachinesLayoutQuoteForm from "./quoteFormLayouts/MachinesLayout";
+import MachinesQuoteForm from "./MachinesQuoteForm";
 import Machines from "./Machines";
 
 export default function MachinesPage(props: {
@@ -35,7 +35,7 @@ export default function MachinesPage(props: {
           }
           case "PageViewMachinesBlocksQuoteSection": {
             return (
-              <MachinesLayoutQuoteForm
+              <MachinesQuoteForm
                 key={i}
                 {...block}
                 setSubmitSuccessful={setSubmitSuccessful}
