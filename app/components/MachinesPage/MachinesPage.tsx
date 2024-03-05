@@ -9,6 +9,7 @@ import { PageQuery } from "@/tina/__generated__/types";
 //LOCAL IMPORTS
 import MachinesQuoteForm from "./MachinesQuoteForm";
 import Machines from "./Machines";
+import MachinesSuccessMessage from "./MachinesSuccessMessage";
 
 export default function MachinesPage(props: {
   data: PageQuery;
@@ -34,7 +35,12 @@ export default function MachinesPage(props: {
             return <Machines key={i} {...block} path="/view-machines" />;
           }
           case "PageViewMachinesBlocksQuoteSection": {
-            return (
+            return submitSuccessful ? (
+              <MachinesSuccessMessage
+                key={i}
+                handleCloseSuccess={handleCloseSuccess}
+              />
+            ) : (
               <MachinesQuoteForm
                 key={i}
                 {...block}

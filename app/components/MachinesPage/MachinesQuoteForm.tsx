@@ -3,6 +3,7 @@ import {
   Button,
   chakra,
   FormControl,
+  Heading,
   HStack,
   Input,
   Textarea,
@@ -29,24 +30,26 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
 
   return (
     <ChakraForm
+      pt={14}
+      pb={24}
       bg="brand.primary"
       onSubmit={handleSubmit((data) =>
         onSubmit(data, props.setSubmitSuccessful),
       )}
     >
-      <Text textAlign="center" fontSize="3xl" mt={8} color="white">
+      <Heading textAlign="center" fontSize="3xl" mt={8} color="white">
         {props?.requestQuoteForm?.formTitle || "Request a Quote"}
-      </Text>
+      </Heading>
       <VStack
         spacing={6}
         px={8}
         py={10}
         borderRadius="lg"
         boxShadow="xl"
-        maxW="7xl"
+        maxW="6xl"
         mx="auto"
       >
-        <HStack>
+        <HStack w="full" spacing={6}>
           <FormControl isRequired>
             <Input
               bg="white"
@@ -117,7 +120,7 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
             {...register("details")}
           />
         </FormControl>
-        <Button px={12} py={6} my={8} variant="mc-red" w="full" type="submit">
+        <Button px={12} py={6} my={8} variant="mc-red" w="md" type="submit">
           Submit
         </Button>
       </VStack>
