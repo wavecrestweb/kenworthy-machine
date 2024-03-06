@@ -4,7 +4,7 @@ import Image from "next/image";
 import { PageCareersBlocksHero } from "@/tina/__generated__/types";
 
 // LOCAL IMPORTS
-import ContentWrapper from "./ContentWrapper";
+import ContentWrapper from "../ContentWrapper";
 
 // HERO COMPONENT DEFINITION
 export default function CareersHero(props: PageCareersBlocksHero): JSX.Element {

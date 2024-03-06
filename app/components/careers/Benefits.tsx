@@ -4,7 +4,7 @@ import Image from "next/image";
 import { PageQuery } from "@/tina/__generated__/types";
 
 //LOCAL IMPORTS
-import ContentWrapper from "./ContentWrapper";
+import ContentWrapper from "../ContentWrapper";
 
 type Block = NonNullable<NonNullable<PageQuery["page"]["blocks"]>>[number];
 type Benefits = NonNullable<
