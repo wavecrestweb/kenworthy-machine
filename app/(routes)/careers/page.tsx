@@ -2,7 +2,7 @@
 import client from "@/tina/__generated__/client";
 
 // LOCAL IMPORTS
-import CareersPage from "@/app/components/CareersPage";
+import CareersPage from "@/app/components/careers/CareersPage";
 
 export default async function Careers() {
   const result = await client.queries.page({
