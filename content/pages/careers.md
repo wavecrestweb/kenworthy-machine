@@ -4,6 +4,13 @@ blocks:
     subtitle: Kenworthy Careers
     heroImage: /images/CareersHeroPhoto.png
     _template: hero
+  - title: Why work for Kenworthy Machine?
+    description: >-
+      We value our employees, their professional growth, and enriching our lives
+      outside of the office. From novice to experts, we’ve got lots of
+      experience levels on our team, which helps remain grounded in our
+      knowledge and strive toward innovation.
+    _template: whyKM
   - heading: Benefits at Kenworthy
     benefits:
       - benefitTitle: 401k Matching

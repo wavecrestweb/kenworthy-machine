@@ -363,6 +363,23 @@ export default defineConfig({
                     ],
                   },
                   {
+                    label: "Why KM",
+                    name: "whyKM",
+                    fields: [
+                      {
+                        label: "Title",
+                        name: "title",
+                        type: "string",
+                      },
+                      {
+                        label: "Description",
+                        name: "description",
+                        type: "string",
+                        ui: { component: "textarea" },
+                      },
+                    ],
+                  },
+                  {
                     label: "Benefits Section",
                     name: "benefits",
                     fields: [
