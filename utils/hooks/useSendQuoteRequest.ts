@@ -1,5 +1,5 @@
 // LIBRARY IMPORTS
-import { useForm } from "react-hook-form";
+import { useForm, FieldErrors } from "react-hook-form";
 import { useToast } from "@chakra-ui/react";
 
 // LOCAL IMPORTS
@@ -13,19 +13,17 @@ interface FormData {
   details?: string;
 }
 
-interface UseSendQuoteRequestReturn {
-  register: ReturnType<typeof useForm>["register"];
-  handleSubmit: ReturnType<typeof useForm>["handleSubmit"];
+type UseSendQuoteRequestReturn = {
+  register: ReturnType<typeof useForm<FormData>>["register"];
+  handleSubmit: ReturnType<typeof useForm<FormData>>["handleSubmit"];
   formState: {
-    errors: {
-      [key in keyof FormData]?: string;
-    };
+    errors: FieldErrors<FormData>;
   };
   onSubmit: (
     data: FormData,
     onSuccess: React.Dispatch<React.SetStateAction<boolean>>,
   ) => void;
-}
+};
 
 export const useSendQuoteRequest = (): UseSendQuoteRequestReturn => {
   const {
@@ -77,7 +75,7 @@ export const useSendQuoteRequest = (): UseSendQuoteRequestReturn => {
   return {
     register,
     handleSubmit: handleSubmit,
-    errors,
+    formState: { errors },
     onSubmit,
   };
 };

@@ -34,7 +34,7 @@ export default function HomeQuoteForm({
   setSubmitSuccessful,
 }: HomeQuoteFormProps) {
   // CUSTOM HOOK
-  const { register, handleSubmit, errors, onSubmit } = useSendQuoteRequest();
+  const { register, handleSubmit, formState, onSubmit } = useSendQuoteRequest();
 
   return (
     <form
@@ -58,7 +58,7 @@ export default function HomeQuoteForm({
             borderRadius="full"
             border="2px"
             id="name"
-            placeholder={field1Placeholder}
+            placeholder={field1Placeholder || "Name"}
             _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
             aria-label="Name"
             _hover={{
@@ -91,7 +91,7 @@ export default function HomeQuoteForm({
             borderRadius="full"
             border="2px"
             id="industry"
-            placeholder={field2Placeholder}
+            placeholder={field2Placeholder || "Industry type"}
             _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
             aria-label="Industry type"
             _hover={{

@@ -24,7 +24,7 @@ interface MachineLayoutQuoteFormProps
 const ChakraForm = chakra("form");
 
 export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
-  const { register, handleSubmit, errors, onSubmit } = useSendQuoteRequest();
+  const { register, handleSubmit, formState, onSubmit } = useSendQuoteRequest();
 
   return (
     <ChakraForm
@@ -56,7 +56,7 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
               border="2px"
               id="name"
               fontSize="lg"
-              placeholder={props?.requestQuoteForm?.field1Placeholder}
+              placeholder={props?.requestQuoteForm?.field1Placeholder || "Name"}
               _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
               aria-label="Name"
               _hover={{
@@ -95,7 +95,9 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
               border="2px"
               id="industry"
               fontSize="lg"
-              placeholder={props?.requestQuoteForm?.field2Placeholder}
+              placeholder={
+                props?.requestQuoteForm?.field2Placeholder || "Industry type"
+              }
               _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
               aria-label="Industry type"
               _hover={{
