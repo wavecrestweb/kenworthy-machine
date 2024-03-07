@@ -4,7 +4,6 @@ import {
   Button,
   Center,
   Icon,
-  IconButton,
   Text,
   VStack,
 } from "@chakra-ui/react";
