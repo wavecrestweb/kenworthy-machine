@@ -14,9 +14,13 @@ interface FormData {
 }
 
 interface UseSendQuoteRequestReturn {
-  register: ReturnType<(typeof useForm<FormData>)["register"]>;
-  handleSubmit: ReturnType<(typeof useForm<FormData>)["handleSubmit"]>;
-  errors: ReturnType<(typeof useForm<FormData>)["formState"]>;
+  register: ReturnType<typeof useForm>["register"];
+  handleSubmit: ReturnType<typeof useForm>["handleSubmit"];
+  formState: {
+    errors: {
+      [key in keyof FormData]?: string;
+    };
+  };
   onSubmit: (
     data: FormData,
     onSuccess: React.Dispatch<React.SetStateAction<boolean>>,

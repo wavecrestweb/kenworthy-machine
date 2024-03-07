@@ -11,8 +11,6 @@ import HomeQuoteForm from "./HomeQuoteForm";
 import SuccessMessage from "./SuccessMessage";
 import machineBackground from "../../../public/images/machineBackground.png";
 
-// TYPE DEFINITIONS
-
 export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
   // SET STATES
   const [submitSuccessful, setSubmitSuccessful] = useState(false);
@@ -20,6 +18,14 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
   const handleCloseSuccess = () => {
     setSubmitSuccessful(false);
   };
+
+  const {
+    formTitle = "",
+    field1Placeholder = "",
+    field2Placeholder = "",
+    field3Placeholder = "",
+    submitButtonText = "",
+  } = props.requestQuoteForm || {};
 
   return (
     <Box position="relative">
@@ -53,8 +59,12 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
             <SuccessMessage handleCloseSuccess={handleCloseSuccess} />
           ) : (
             <HomeQuoteForm
+              formTitle={formTitle}
+              field1Placeholder={field1Placeholder}
+              field2Placeholder={field2Placeholder}
+              field3Placeholder={field3Placeholder}
+              submitButtonText={submitButtonText}
               setSubmitSuccessful={setSubmitSuccessful}
-              {...props.requestQuoteForm}
             />
           )}
         </Box>

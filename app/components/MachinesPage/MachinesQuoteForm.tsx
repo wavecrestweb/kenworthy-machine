@@ -35,25 +35,27 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
         onSubmit(data, props.setSubmitSuccessful),
       )}
     >
-      <Heading textAlign="center" fontSize="3xl" fontWeight="normal" mt={8} color="white">
+      <Heading
+        textAlign="center"
+        fontSize="3xl"
+        fontWeight="normal"
+        mt={8}
+        color="white"
+      >
         {props?.requestQuoteForm?.formTitle || "Request a Quote"}
       </Heading>
-      <VStack
-        spacing={6}
-        px={8}
-        py={10}
-        maxW="6xl"
-        mx="auto"
-      >
+      <VStack spacing={6} px={8} py={10} maxW="6xl" mx="auto">
         <HStack w="full" spacing={6}>
           <FormControl isRequired>
             <Input
+              p={6}
               bg="white"
               borderColor="white"
               focusBorderColor="brand.accentGreen"
               borderRadius="full"
               border="2px"
               id="name"
+              fontSize="lg"
               placeholder={props?.requestQuoteForm?.field1Placeholder}
               _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
               aria-label="Name"
@@ -65,6 +67,7 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
           </FormControl>
           <FormControl isRequired>
             <Input
+              p={6}
               bg="white"
               borderColor="brand.primary"
               focusBorderColor="brand.accentGreen"
@@ -72,6 +75,7 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
               border="2px"
               id="email"
               type="email"
+              fontSize="lg"
               placeholder="Email"
               _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
               aria-label="Email"
@@ -83,12 +87,14 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
           </FormControl>
           <FormControl>
             <Input
+              p={6}
               bg="white"
               borderColor="brand.primary"
               focusBorderColor="brand.accentGreen"
               borderRadius="full"
               border="2px"
               id="industry"
+              fontSize="lg"
               placeholder={props?.requestQuoteForm?.field2Placeholder}
               _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
               aria-label="Industry type"
@@ -101,12 +107,14 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
         </HStack>
         <FormControl>
           <Textarea
+            p={4}
             bg="white"
             borderColor="brand.primary"
             focusBorderColor="brand.accentGreen"
             borderRadius="3xl"
             border="2px"
             id="details"
+            fontSize="lg"
             placeholder="Share additional information or questions you have. Our team will personally connect with you about this quote."
             _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
             aria-label="Share additional information or questions"
@@ -116,7 +124,15 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
             {...register("details")}
           />
         </FormControl>
-        <Button px={12} py={6} my={8} variant="mc-red" fontSize="2xl" w="md" type="submit">
+        <Button
+          px={12}
+          py={6}
+          my={8}
+          variant="mc-red"
+          fontSize="2xl"
+          w="md"
+          type="submit"
+        >
           Submit
         </Button>
       </VStack>

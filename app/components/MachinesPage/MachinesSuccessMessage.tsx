@@ -1,12 +1,5 @@
 // LIBRARY IMPORTS
-import {
-  Box,
-  Button,
-  Center,
-  Icon,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Button, Center, Icon, Text, VStack } from "@chakra-ui/react";
 import { FaRegPaperPlane } from "react-icons/fa6";
 
 // TYPE DEFINITIONS
@@ -25,13 +18,13 @@ export default function MachinesSuccessMessage({
         <Text fontSize="3xl" fontWeight="bold" color="brand.secondary" mb={4}>
           THANK YOU!
         </Text>
-        <Text textAlign="center" maxW="22%" fontSize="2xl" color="white" mb={8}>
+        <Text textAlign="center" maxW="30%" fontSize="2xl" color="white" mb={8}>
           We have received your request. Our team will reach out to you using
           the contact information provided.
         </Text>
       </VStack>
       <Center position="absolute" left={0} right={0}>
-        <Button onClick={handleCloseSuccess} variant="mc-red">
+        <Button onClick={handleCloseSuccess} variant="mc-red" p={7}>
           Submit another request
         </Button>
       </Center>

@@ -8,18 +8,20 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React, { Dispatch, SetStateAction } from "react";
-import { useForm } from "react-hook-form";
 
 // LOCAL IMPORTS
 import { useSendQuoteRequest } from "@/utils/hooks/useSendQuoteRequest";
 
 // TYPE DEFINTIONS
-interface HomeQuoteFormProps {
-  formTitle?: string;
-  field1Placeholder?: string;
-  field2Placeholder?: string;
-  field3Placeholder?: string;
-  submitButtonText?: string;
+interface RequestQuoteForm {
+  formTitle?: string | null;
+  field1Placeholder?: string | null;
+  field2Placeholder?: string | null;
+  field3Placeholder?: string | null;
+  submitButtonText?: string | null;
+}
+
+interface HomeQuoteFormProps extends RequestQuoteForm {
   setSubmitSuccessful: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -31,7 +33,7 @@ export default function HomeQuoteForm({
   submitButtonText,
   setSubmitSuccessful,
 }: HomeQuoteFormProps) {
-  // Custom Hook
+  // CUSTOM HOOK
   const { register, handleSubmit, errors, onSubmit } = useSendQuoteRequest();
 
   return (
