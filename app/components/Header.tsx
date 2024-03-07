@@ -89,11 +89,11 @@ export default function Header() {
             templateColumns={{
               base: "1fr",
               md: "1fr 1fr",
-              lg: "repeat(5, 1fr)",
+              lg: "repeat(4, 1fr)",
             }}
-            gap="24px"
-            mx="12px"
-            mb="12px"
+            gap="1.5rem"
+            mx={6}
+            mb={6}
             borderRadius="50%"
             maxW={{ base: "60%", md: "75%", lg: "100%" }}
           >
@@ -102,9 +102,6 @@ export default function Header() {
             </ChakraLink>
             <ChakraLink href="/view-machines" variant="buttonSecondary">
               View Machines
-            </ChakraLink>
-            <ChakraLink href="/about-us" variant="buttonSecondary">
-              About Us
             </ChakraLink>
             <ChakraLink href="/careers" variant="buttonSecondary">
               Careers
