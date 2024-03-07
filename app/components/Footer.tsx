@@ -13,7 +13,6 @@ import logo from "../../public/images/kenworthy-logo.jpg";
 import ContentWrapper from "./ContentWrapper";
 
 const links = [
-  { href: "/about-us", text: "About Us" },
   { href: "/view-machines", text: "View Machines" },
   { href: "/careers", text: "Careers" },
   { href: "/request-quote", text: "Contact Us" },

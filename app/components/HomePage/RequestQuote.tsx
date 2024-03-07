@@ -3,21 +3,29 @@ import { Box, VStack, Text, HStack, Icon } from "@chakra-ui/react";
 import React, { ReactNode, useState } from "react";
 import { FaRegClipboard, FaRegEnvelope, FaRegHandshake } from "react-icons/fa6";
 import Image from "next/image";
-import { PageBlocksQuoteSection } from "@/tina/__generated__/types";
+import { PageHomeBlocksQuoteSection } from "@/tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 // LOCAL IMPORTS
-import QuoteForm from "./QuoteForm";
+import HomeQuoteForm from "./HomeQuoteForm";
 import SuccessMessage from "./SuccessMessage";
-import machineBackground from "../../public/images/machineBackground.png";
+import machineBackground from "../../../public/images/machineBackground.png";
 
-export default function RequestQuote(props: PageBlocksQuoteSection) {
+export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
   // SET STATES
   const [submitSuccessful, setSubmitSuccessful] = useState(false);
 
   const handleCloseSuccess = () => {
     setSubmitSuccessful(false);
   };
+
+  const {
+    formTitle = "",
+    field1Placeholder = "",
+    field2Placeholder = "",
+    field3Placeholder = "",
+    submitButtonText = "",
+  } = props.requestQuoteForm || {};
 
   return (
     <Box position="relative">
@@ -50,9 +58,13 @@ export default function RequestQuote(props: PageBlocksQuoteSection) {
           {submitSuccessful ? (
             <SuccessMessage handleCloseSuccess={handleCloseSuccess} />
           ) : (
-            <QuoteForm
+            <HomeQuoteForm
+              formTitle={formTitle}
+              field1Placeholder={field1Placeholder}
+              field2Placeholder={field2Placeholder}
+              field3Placeholder={field3Placeholder}
+              submitButtonText={submitButtonText}
               setSubmitSuccessful={setSubmitSuccessful}
-              {...props.requestQuoteForm}
             />
           )}
         </Box>

@@ -14,9 +14,9 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 //LOCAL IMPORTS
-import MachineCarousel from "./MachineCarousel";
-import ContentWrapper from "./ContentWrapper";
-import Card from "./Card/Card";
+import MachineCarousel from "../HomePage/MachineCarousel";
+import ContentWrapper from "../ContentWrapper";
+import Card from "../Card/Card";
 
 export type Block = NonNullable<
   NonNullable<PageQuery["page"]["blocks"]>

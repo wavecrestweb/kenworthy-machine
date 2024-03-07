@@ -7,10 +7,10 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import chalkboard from "../../public/images/Chalkboard-User.svg";
-import heart from "../../public/images/Heart-Pulse.svg";
-import graph from "../../public/images/Upward-Graph.svg";
-import SmallCard from "./SmallCard";
+import chalkboard from "../../../public/images/Chalkboard-User.svg";
+import heart from "../../../public/images/Heart-Pulse.svg";
+import graph from "../../../public/images/Upward-Graph.svg";
+import SmallCard from "../SmallCard";
 
 const cardData = [
   {
