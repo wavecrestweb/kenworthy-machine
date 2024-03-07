@@ -89,27 +89,40 @@ export default function Header() {
             templateColumns={{
               base: "1fr",
               md: "1fr 1fr",
-              lg: "repeat(5, 1fr)",
+              lg: "repeat(4, 1fr)",
             }}
-            gap="24px"
-            mx="12px"
-            mb="12px"
+            gap="1.5rem"
+            mx={6}
+            mb={6}
             borderRadius="50%"
             maxW={{ base: "60%", md: "75%", lg: "100%" }}
           >
-            <ChakraLink href="/request-quote" variant="buttonPrimaryDark">
+            <ChakraLink
+              href="/request-quote"
+              variant="buttonPrimaryDark"
+              onClick={handleHamburger}
+            >
               Request a Quote
             </ChakraLink>
-            <ChakraLink href="/view-machines" variant="buttonSecondary">
+            <ChakraLink
+              href="/view-machines"
+              variant="buttonSecondary"
+              onClick={handleHamburger}
+            >
               View Machines
             </ChakraLink>
-            <ChakraLink href="/about-us" variant="buttonSecondary">
-              About Us
-            </ChakraLink>
-            <ChakraLink href="/careers" variant="buttonSecondary">
+            <ChakraLink
+              href="/careers"
+              variant="buttonSecondary"
+              onClick={handleHamburger}
+            >
               Careers
             </ChakraLink>
-            <ChakraLink href="/request-quote" variant="buttonSecondary">
+            <ChakraLink
+              href="/request-quote"
+              variant="buttonSecondary"
+              onClick={handleHamburger}
+            >
               Contact Us
             </ChakraLink>
           </Grid>

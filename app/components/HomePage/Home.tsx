@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 //LOCAL IMPORTS
 import Hero from "./Hero";
 import CompanyValues from "./CompanyValues";
-import Machines from "./Machines";
+import Machines from "../MachinesPage/Machines";
 import RequestQuote from "./RequestQuote";
 import Location from "./Location";
 import Careers from "./Careers";

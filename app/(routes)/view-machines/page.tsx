@@ -2,7 +2,7 @@
 import client from "@/tina/__generated__/client";
 
 // LOCAL IMPORTS
-import MachinesPage from "@/app/components/MachinesPage";
+import MachinesPage from "@/app/components/MachinesPage/MachinesPage";
 
 export default async function ViewMachines() {
   const result = await client.queries.page({

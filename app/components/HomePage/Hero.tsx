@@ -4,8 +4,8 @@ import { Box, Heading } from "@chakra-ui/react";
 import Image from "next/image";
 
 // LOCAL IMPORTS
-import heroImage from "../../public/images/hero-photo.png";
-import ContentWrapper from "./ContentWrapper";
+import heroImage from "../../../public/images/hero-photo.png";
+import ContentWrapper from "../ContentWrapper";
 
 // HERO COMPONENT DEFINITION
 export default function Hero(props: PageBlocksHero) {
