@@ -44,8 +44,6 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
         spacing={6}
         px={8}
         py={10}
-        borderRadius="lg"
-        boxShadow="xl"
         maxW="6xl"
         mx="auto"
       >
