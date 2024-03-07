@@ -11,7 +11,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React, { Dispatch, SetStateAction } from "react";
-import { useForm } from "react-hook-form";
 
 // LOCAL IMPORTS
 import { useSendQuoteRequest } from "@/utils/hooks/useSendQuoteRequest";
