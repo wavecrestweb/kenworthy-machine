@@ -7,7 +7,6 @@ import {
   HStack,
   Input,
   Textarea,
-  Text,
   VStack,
 } from "@chakra-ui/react";
 import React, { Dispatch, SetStateAction } from "react";
