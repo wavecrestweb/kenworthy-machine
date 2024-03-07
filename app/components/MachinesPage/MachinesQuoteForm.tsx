@@ -37,7 +37,7 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
         onSubmit(data, props.setSubmitSuccessful),
       )}
     >
-      <Heading textAlign="center" fontSize="3xl" mt={8} color="white">
+      <Heading textAlign="center" fontSize="3xl" fontWeight="normal" mt={8} color="white">
         {props?.requestQuoteForm?.formTitle || "Request a Quote"}
       </Heading>
       <VStack
