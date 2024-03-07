@@ -117,7 +117,7 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
             {...register("details")}
           />
         </FormControl>
-        <Button px={12} py={6} my={8} variant="mc-red" w="md" type="submit">
+        <Button px={12} py={6} my={8} variant="mc-red" fontSize="2xl" w="md" type="submit">
           Submit
         </Button>
       </VStack>
