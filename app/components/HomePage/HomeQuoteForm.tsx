@@ -6,89 +6,40 @@ import {
   Textarea,
   Text,
   VStack,
-  useToast,
 } from "@chakra-ui/react";
 import React, { Dispatch, SetStateAction } from "react";
-import { useForm } from "react-hook-form";
 
 // LOCAL IMPORTS
-import { sendEmail } from "@/utils/sendEmail";
+import { useSendQuoteRequest } from "@/utils/hooks/useSendQuoteRequest";
 
 // TYPE DEFINTIONS
-interface QuoteFormProps {
+interface RequestQuoteForm {
   formTitle?: string | null;
   field1Placeholder?: string | null;
   field2Placeholder?: string | null;
   field3Placeholder?: string | null;
   submitButtonText?: string | null;
+}
+
+interface HomeQuoteFormProps extends RequestQuoteForm {
   setSubmitSuccessful: Dispatch<SetStateAction<boolean>>;
 }
 
-export interface FormData {
-  name: string;
-  email: string;
-  industry?: string;
-  details?: string;
-}
-
-export default function QuoteForm({
+export default function HomeQuoteForm({
   formTitle,
   field1Placeholder,
   field2Placeholder,
   field3Placeholder,
   submitButtonText,
   setSubmitSuccessful,
-}: QuoteFormProps) {
-  const {
-    register,
-    reset,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>();
-
-  const toast = useToast();
-
-  // EVENT HANDLERS
-  const onSubmit = (data: FormData) => {
-    sendEmail(data)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok.");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        if (data.message === "Email sent") {
-          setSubmitSuccessful(true);
-          reset();
-        } else {
-          toast({
-            title: "Failed to send quote request.",
-            description: "Please try again later.",
-            status: "error",
-            duration: 9000,
-            isClosable: true,
-          });
-        }
-      })
-      .catch((error) => {
-        console.error("An error occurred:", error);
-        toast({
-          title: "Error",
-          description: "An error occurred while sending the quote request.",
-          status: "error",
-          position: "top",
-          duration: 9000,
-          isClosable: true,
-          containerStyle: {
-            border: "1.25rem solid white",
-          },
-        });
-      });
-  };
+}: HomeQuoteFormProps) {
+  // CUSTOM HOOK
+  const { register, handleSubmit, formState, onSubmit } = useSendQuoteRequest();
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form
+      onSubmit={handleSubmit((data) => onSubmit(data, setSubmitSuccessful))}
+    >
       <Text textAlign="center" fontSize="3xl" mt={8} color="brand.text">
         {formTitle || "Request a Quote"}
       </Text>
@@ -107,7 +58,7 @@ export default function QuoteForm({
             borderRadius="full"
             border="2px"
             id="name"
-            placeholder={field1Placeholder ?? ""}
+            placeholder={field1Placeholder || "Name"}
             _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
             aria-label="Name"
             _hover={{
@@ -140,7 +91,7 @@ export default function QuoteForm({
             borderRadius="full"
             border="2px"
             id="industry"
-            placeholder={field2Placeholder ?? ""}
+            placeholder={field2Placeholder || "Industry type"}
             _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
             aria-label="Industry type"
             _hover={{

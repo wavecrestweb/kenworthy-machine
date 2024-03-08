@@ -309,26 +309,6 @@ export default defineConfig({
                           },
                         ],
                       },
-                      {
-                        type: "string",
-                        label: "Request Copy Title",
-                        name: "requestCopyTitle",
-                      },
-                      {
-                        type: "rich-text",
-                        label: "Fill Form Copy",
-                        name: "fillFormCopy",
-                      },
-                      {
-                        type: "rich-text",
-                        label: "Email Copy",
-                        name: "emailCopy",
-                      },
-                      {
-                        type: "rich-text",
-                        label: "Response Copy",
-                        name: "responseCopy",
-                      },
                     ],
                   },
                 ],

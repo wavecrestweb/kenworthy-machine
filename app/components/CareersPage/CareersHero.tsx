@@ -46,7 +46,7 @@ export default function CareersHero(props: PageCareersBlocksHero): JSX.Element {
             </Heading>
             <Heading
               as="h1"
-              fontSize={{ base: "xl", sm: "3xl" }}
+              fontSize={{ base: "xl", sm: "3xl", lg: "4xl", "2xl": "5xl" }}
               fontWeight="normal"
               color="white"
             >
