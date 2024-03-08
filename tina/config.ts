@@ -326,6 +326,23 @@ export default defineConfig({
                 list: true,
                 templates: [
                   {
+                    label: "Hero Section",
+                    name: "hero",
+                    fields: [
+                      {
+                        label: "Title",
+                        name: "title",
+                        type: "string",
+                      },
+                      { label: "Subtitle", name: "subtitle", type: "string" },
+                      {
+                        label: "Hero Image",
+                        name: "heroImage",
+                        type: "image",
+                      },
+                    ],
+                  },
+                  {
                     label: "Benefits Section",
                     name: "benefits",
                     fields: [
