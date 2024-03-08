@@ -18,7 +18,9 @@ import MachineCarousel from "../HomePage/MachineCarousel";
 import ContentWrapper from "../ContentWrapper";
 import Card from "../Card/Card";
 
-type Block = NonNullable<NonNullable<PageQuery["page"]["blocks"]>>[number];
+export type Block = NonNullable<
+  NonNullable<PageQuery["page"]["blocks"]>
+>[number];
 
 export type MachineCardsBlock = Extract<
   Block,

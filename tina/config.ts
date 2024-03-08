@@ -41,6 +41,9 @@ export default defineConfig({
             if (document._sys.filename === "view_machines") {
               return "/view-machines";
             }
+            if (document._sys.filename === "careers") {
+              return "/careers";
+            }
           },
         },
         templates: [
@@ -303,6 +306,55 @@ export default defineConfig({
                             type: "string",
                             label: "Submit Button Text",
                             name: "submitButtonText",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "careers",
+            label: "Careers",
+            fields: [
+              {
+                name: "blocks",
+                label: "Blocks",
+                type: "object",
+                list: true,
+                templates: [
+                  {
+                    label: "Benefits Section",
+                    name: "benefits",
+                    fields: [
+                      {
+                        name: "heading",
+                        label: "Heading",
+                        type: "string",
+                      },
+                      {
+                        name: "benefits",
+                        label: "Benefits",
+                        type: "object",
+                        list: true,
+                        ui: {
+                          itemProps: (item) => {
+                            return { label: item?.benefitTitle };
+                          },
+                          max: 3,
+                        },
+                        fields: [
+                          {
+                            name: "benefitTitle",
+                            type: "string",
+                            label: "Benefit Title",
+                          },
+                          {
+                            name: "icon",
+                            type: "image",
+                            label: "Icon",
                           },
                         ],
                       },

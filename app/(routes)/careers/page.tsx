@@ -1,9 +1,13 @@
-import { Box } from "@chakra-ui/react";
+// LIBRARY IMPORTS
+import client from "@/tina/__generated__/client";
 
-export default function Careers() {
-  return (
-    <Box>
-      <h1>This is the Careers page.</h1>
-    </Box>
-  );
+// LOCAL IMPORTS
+import CareersPage from "@/app/components/CareersPage";
+
+export default async function Careers() {
+  const result = await client.queries.page({
+    relativePath: "careers.md",
+  });
+
+  return <CareersPage {...result} />;
 }
