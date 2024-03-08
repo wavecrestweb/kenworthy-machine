@@ -2,7 +2,7 @@
 import client from "@/tina/__generated__/client";
 
 // LOCAL IMPORTS
-import Home from "./components/Home";
+import Home from "./components/HomePage/Home";
 
 export default async function Page() {
   // CMS QUERIES

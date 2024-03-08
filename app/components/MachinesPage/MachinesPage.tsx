@@ -1,13 +1,15 @@
 "use client";
 
 //LIBRARY IMPORTS
+import React, { useState } from "react";
 import { Grid } from "@chakra-ui/react";
 import { useTina } from "tinacms/dist/react";
 import { PageQuery } from "@/tina/__generated__/types";
 
 //LOCAL IMPORTS
-import RequestQuote from "./RequestQuote";
+import MachinesQuoteForm from "./MachinesQuoteForm";
 import Machines from "./Machines";
+import MachinesSuccessMessage from "./MachinesSuccessMessage";
 
 export default function MachinesPage(props: {
   data: PageQuery;
@@ -16,7 +18,13 @@ export default function MachinesPage(props: {
   };
   query: string;
 }): JSX.Element {
+  // SET STATES
+  const [submitSuccessful, setSubmitSuccessful] = useState(false);
+
   // HOOKS
+  const handleCloseSuccess = () => {
+    setSubmitSuccessful(false);
+  };
   const { data } = useTina(props);
 
   return (
@@ -27,7 +35,18 @@ export default function MachinesPage(props: {
             return <Machines key={i} {...block} path="/view-machines" />;
           }
           case "PageViewMachinesBlocksQuoteSection": {
-            return <RequestQuote key={i} {...block} />;
+            return submitSuccessful ? (
+              <MachinesSuccessMessage
+                key={i}
+                handleCloseSuccess={handleCloseSuccess}
+              />
+            ) : (
+              <MachinesQuoteForm
+                key={i}
+                {...block}
+                setSubmitSuccessful={setSubmitSuccessful}
+              />
+            );
           }
         }
       })}

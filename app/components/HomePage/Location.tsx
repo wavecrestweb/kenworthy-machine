@@ -1,8 +1,8 @@
 import { Box, Text } from "@chakra-ui/react";
-import { PageHomeBlocksLocation } from "@/tina/__generated__/types";
-import ContentWrapper from "./ContentWrapper";
+import { PageBlocksLocation } from "@/tina/__generated__/types";
+import ContentWrapper from "../ContentWrapper";
 
-export default function Location(props: PageHomeBlocksLocation) {
+export default function Location(props: PageBlocksLocation) {
   return (
     <Box bgColor="brand.backgroundMed">
       <ContentWrapper>

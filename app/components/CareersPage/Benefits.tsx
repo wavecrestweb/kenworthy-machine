@@ -4,7 +4,7 @@ import Image from "next/image";
 import { PageQuery } from "@/tina/__generated__/types";
 
 //LOCAL IMPORTS
-import ContentWrapper from "./ContentWrapper";
+import ContentWrapper from "../ContentWrapper";
 
 type Block = NonNullable<NonNullable<PageQuery["page"]["blocks"]>>[number];
 type Benefits = NonNullable<
@@ -18,11 +18,12 @@ export default function Benefits(props: Benefits): JSX.Element {
         <Flex direction="column" alignItems="center">
           <Heading
             as="h2"
-            fontSize={{ base: "xl", sm: "3xl", xl: "4xl" }}
+            fontSize={{ base: "2xl", sm: "3xl", xl: "4xl" }}
             lineHeight={{ base: "6", sm: "2.7rem", xl: "3rem" }}
             fontWeight="normal"
             layerStyle="whiteBg"
-            py={{ base: "20", xl: "28" }}
+            pt={{ base: "20", xl: "28" }}
+            pb={{ base: "16", xl: "28" }}
           >
             {props?.heading}
           </Heading>

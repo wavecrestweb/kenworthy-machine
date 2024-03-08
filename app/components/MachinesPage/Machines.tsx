@@ -14,9 +14,9 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 //LOCAL IMPORTS
-import MachineCarousel from "./MachineCarousel";
-import ContentWrapper from "./ContentWrapper";
-import Card from "./Card/Card";
+import MachineCarousel from "../HomePage/MachineCarousel";
+import ContentWrapper from "../ContentWrapper";
+import Card from "../Card/Card";
 
 export type Block = NonNullable<
   NonNullable<PageQuery["page"]["blocks"]>
@@ -99,11 +99,7 @@ export default function Machines({
                   lineHeight={{ base: "6", sm: "8", xl: "9" }}
                   fontSize={{ base: "xl", sm: "2xl", xl: "3xl" }}
                   textAlign="center"
-                  px={{
-                    base: "8",
-                    xl: "30",
-                    "2xl": "52",
-                  }}
+                  px={{ base: "8", xl: "30", "2xl": "52" }}
                   pb={{ base: "5", sm: "12", lg: "9", xl: "16" }}
                 >
                   {props.description}
