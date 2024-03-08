@@ -46,7 +46,7 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
         spacing={16}
         justifyContent="space-around"
         mx="auto"
-        bgImage={machineBackground}
+        bgImage={machineBackground.src}
         bg="rgba(11, 17, 62, 0.79)"
       >
         <Box
@@ -83,14 +83,14 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
               <TinaMarkdown
                 content={props.fillFormCopy}
                 components={{
-                  h5: ({ children }: { children: ReactNode }) => (
+                  h5: (props) => (
                     <Text as="div" color="white" fontSize="xl" pb="0.5rem">
-                      {children}
+                      {props?.children}
                     </Text>
                   ),
-                  p: ({ children }: { children: ReactNode }) => (
+                  p: (props) => (
                     <Text as="div" color="white" fontSize="lg" lineHeight="5">
-                      {children}
+                      {props?.children}
                     </Text>
                   ),
                 }}
@@ -111,14 +111,14 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
               <TinaMarkdown
                 content={props.emailCopy}
                 components={{
-                  h5: ({ children }: { children: ReactNode }) => (
+                  h5: (props) => (
                     <Text as="div" color="white" fontSize="xl" pb="0.5rem">
-                      {children}
+                      {props?.children}
                     </Text>
                   ),
-                  p: ({ children }: { children: ReactNode }) => (
+                  p: (props) => (
                     <Text as="div" color="white" fontSize="lg" lineHeight="5">
-                      {children}
+                      {props?.children}
                     </Text>
                   ),
                 }}
@@ -136,14 +136,14 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
               <TinaMarkdown
                 content={props.responseCopy}
                 components={{
-                  h5: ({ children }: { children: ReactNode }) => (
+                  h5: (props) => (
                     <Text as="div" color="white" fontSize="xl" pb="0.5rem">
-                      {children}
+                      {props?.children}
                     </Text>
                   ),
-                  p: ({ children }: { children: ReactNode }) => (
+                  p: (props) => (
                     <Text as="div" color="white" fontSize="lg" lineHeight="5">
-                      {children}
+                      {props?.children}
                     </Text>
                   ),
                 }}
