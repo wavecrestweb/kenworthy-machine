@@ -1,41 +1,46 @@
 // LIBRARY IMPORTS
-import { Box, Text, Heading, Flex } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { PageCareersBlocksWhyKm } from "@/tina/__generated__/types";
-import ContentWrapper from "../ContentWrapper";
 
 // LOCAL IMPORTS
+import ContentWrapper from "../ContentWrapper";
 
 // HERO COMPONENT DEFINITION
 export default function WhyKM(props: PageCareersBlocksWhyKm): JSX.Element {
   return (
     <Box>
       <ContentWrapper>
-        <Flex
-          direction={{ sm: "column", xl: "row" }}
-          px="2.5rem"
-          py="3.8rem"
-          gap={{ lg: "1rem", "2xl": "5rem" }}
+        <Grid
           alignItems="center"
+          gap={{ base: "1rem", lg: "1.25rem", xl: "0" }}
+          px={{ base: "3rem", lg: "3.25rem", xl: "2.5rem" }}
+          pt={{ base: "5rem", lg: "6rem", xl: "3.8rem" }}
+          templateColumns={{ base: "1fr", xl: "30% 8% 62%" }}
         >
-          <Heading
-            as="h2"
-            color="brand.text"
-            // fontSize={{ sm: "xl", xl: "3xl" }}
-            fontSize={{ sm: "xl", lg: "3xl", "2xl": "5xl" }}
-            lineHeight={{ sm: "6", lg: "10", "2xl": "3.6rem" }}
-            fontWeight="normal"
-            minWidth={{ lg: "40vw", xl: "7.5rem", "2xl": "30vw" }}
-          >
-            {props?.title}
-          </Heading>
-          <Text
-            fontSize={{ sm: "lg", lg: "xl", "2xl": "2rem" }}
-            lineHeight={{ sm: "5", lg: "6", "2xl": "2.4rem" }}
-            color="brand.text"
-          >
-            {props?.description}
-          </Text>
-        </Flex>
+          <GridItem>
+            <Heading
+              as="h2"
+              color="brand.text"
+              fontSize={{ base: "xl", lg: "3xl", "2xl": "4xl" }}
+              fontWeight={{ base: "bold", xl: "normal" }}
+              lineHeight={{ base: "6", lg: "10", "2xl": "3.6rem" }}
+              textAlign={{ base: "center", xl: "start" }}
+            >
+              {props?.title}
+            </Heading>
+          </GridItem>
+          <GridItem></GridItem>
+          <GridItem>
+            <Text
+              color="brand.text"
+              fontSize={{ base: "lg", lg: "2xl", "2xl": "3xl" }}
+              lineHeight={{ base: "6", lg: "7", "2xl": "2.4rem" }}
+              textAlign={{ base: "center", xl: "start" }}
+            >
+              {props?.description}
+            </Text>
+          </GridItem>
+        </Grid>
       </ContentWrapper>
     </Box>
   );
