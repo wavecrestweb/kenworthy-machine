@@ -1,3 +1,4 @@
+import QuotePageForm from "@/app/components/QuotePage/QuotePageForm";
 import { defineConfig } from "tinacms";
 
 // Your hosting provider likely exposes this as an environment variable
@@ -43,6 +44,9 @@ export default defineConfig({
             }
             if (document._sys.filename === "careers") {
               return "/careers";
+            }
+            if (document._sys.filename === "request_quote") {
+              return "/request-quote";
             }
           },
         },
@@ -374,6 +378,72 @@ export default defineConfig({
                             label: "Icon",
                           },
                         ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "request_quote",
+            label: "Request Quote",
+            fields: [
+              {
+                name: "blocks",
+                label: "Blocks",
+                type: "object",
+                list: true,
+                templates: [
+                  {
+                    label: "Quote Page Form",
+                    name: "quotePageForm",
+                    fields: [
+                      {
+                        type: "string",
+                        label: "Form Title",
+                        name: "formTitle",
+                      },
+                      {
+                        type: "string",
+                        label: "Form Field 1 Placeholder",
+                        name: "field1Placeholder",
+                      },
+                      {
+                        type: "string",
+                        label: "Form Field 2 Placeholder",
+                        name: "field2Placeholder",
+                      },
+                      {
+                        type: "rich-text",
+                        label: "Form Field 3 Placeholder",
+                        name: "field3Placeholder",
+                      },
+                      {
+                        type: "string",
+                        label: "Submit Button Text",
+                        name: "submitButtonText",
+                      },
+                    ],
+                  },
+                  {
+                    label: "Quote Page Message",
+                    name: "quotePageMessage",
+                    fields: [
+                      {
+                        label: "Message Image",
+                        name: "messageImage",
+                        type: "image",
+                      },
+                      {
+                        type: "string",
+                        label: "Message Title",
+                        name: "messageTitle",
+                      },
+                      {
+                        type: "string",
+                        label: "Message Body",
+                        name: "messageBody",
                       },
                     ],
                   },
