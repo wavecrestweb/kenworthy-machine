@@ -360,6 +360,90 @@ export default defineConfig({
                     ],
                   },
                   {
+                    label: "Openings Section",
+                    name: "openings",
+                    fields: [
+                      {
+                        name: "isOpeningsListNotEmpty",
+                        label: "Are there any openings available?",
+                        type: "boolean",
+                      },
+                      {
+                        name: "noOpenings",
+                        label: "No openings",
+                        type: "object",
+                        fields: [
+                          {
+                            name: "heading",
+                            label: "Heading",
+                            type: "string",
+                          },
+                          {
+                            name: "description",
+                            label: "Description",
+                            type: "string",
+                            ui: {
+                              component: "textarea",
+                            },
+                          },
+                          {
+                            name: "buttonText",
+                            label: "Button Text",
+                            type: "string",
+                          },
+                        ],
+                      },
+                      {
+                        name: "openingsList",
+                        label: "Openings",
+                        type: "object",
+                        fields: [
+                          {
+                            name: "heading",
+                            label: "Section Heading",
+                            type: "string",
+                          },
+                          {
+                            name: "positions",
+                            label: "Positions",
+                            type: "object",
+                            list: true,
+                            ui: {
+                              itemProps: (item) => {
+                                return { label: item?.title };
+                              },
+                            },
+                            fields: [
+                              {
+                                name: "title",
+                                label: "Title",
+                                type: "string",
+                              },
+                              {
+                                name: "subtitle",
+                                label: "Subtitle",
+                                type: "string",
+                                ui: {
+                                  component: "textarea",
+                                },
+                              },
+                              {
+                                name: "jobDescriptionLink",
+                                label: "Job Description Link",
+                                type: "string",
+                              },
+                            ],
+                          },
+                          {
+                            name: "buttonText",
+                            label: "Button Text for every position",
+                            type: "string",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  {
                     label: "Benefits Section",
                     name: "benefits",
                     fields: [
