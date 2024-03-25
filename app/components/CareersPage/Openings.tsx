@@ -26,15 +26,20 @@ const emailLink = `mailto:${process.env.NEXT_PUBLIC_EMAIL_TO}?subject=${subjectL
 export default function Openings(props: OpeningsProps): JSX.Element {
   function OpeningsAvailable() {
     return (
-      <Flex direction="column" gap="1rem">
+      <Flex
+        direction="column"
+        gap={{ base: "3rem", sm: "5rem", "2xl": "6rem" }}
+        pt={{ base: "3rem", xl: "5rem" }}
+        px={{ lg: "5rem", "2xl": "7rem" }}
+      >
         {props.openingsList?.positions?.map((position, i) => (
           <Card
             key={i}
             variant={{
               base: "position_sm",
-              "2xl": "position_lg",
+              xl: "position_lg",
             }}
-            maxW={{ base: "95vw", md: "88vw", "2xl": "95vw" }}
+            maxW={{ base: "95vw" }}
             flexDirection={{ base: "column", sm: "row" }}
           >
             <CardHeader>
@@ -95,7 +100,11 @@ export default function Openings(props: OpeningsProps): JSX.Element {
 
   return (
     <ContentWrapper>
-      <Flex direction="column" alignItems="center">
+      <Flex
+        direction="column"
+        alignItems="center"
+        pt={{ base: "5rem", lg: "6rem", xl: "3.8rem" }}
+      >
         <Heading>
           {props.isOpeningsListNotEmpty
             ? props.openingsList?.heading
