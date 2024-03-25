@@ -12,6 +12,7 @@ const customTheme = extendTheme({
       backgroundMed: "#232952",
       backgroundLight: "#b9c1c6",
       secondary: "#db0a40",
+      secondaryGhost: "#db0a403d",
       accentGreen: "#32CD32",
       accentGrey: "#787373",
       accentOrange: "#E9981F",
