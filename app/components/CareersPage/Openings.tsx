@@ -15,7 +15,26 @@ const emailLink = `mailto:${process.env.NEXT_PUBLIC_EMAIL_TO}?subject=${subjectL
 
 export default function Openings(props: OpeningsProps): JSX.Element {
   function OpeningsAvailable() {
-    return <div>Openings</div>;
+    return (
+      <Flex direction="column" gap="1rem">
+        {props.openingsList?.positions?.map((position, i) => (
+          <Card key={i} variant="position">
+            <Flex direction="column">
+              <Heading>{position?.title}</Heading>
+              <Text>{position?.subtitle}</Text>
+            </Flex>
+            <Link
+              color="brand.text"
+              href={position?.jobDescriptionLink || ""}
+              isExternal
+              target="_blank"
+            >
+              {props.openingsList?.buttonText}
+            </Link>
+          </Card>
+        ))}
+      </Flex>
+    );
   }
 
   function NoOpenings() {
