@@ -29,7 +29,7 @@ export default function Openings(props: OpeningsProps): JSX.Element {
       <Flex
         direction="column"
         gap={{ base: "3rem", sm: "5rem", "2xl": "6rem" }}
-        pt={{ base: "3rem", xl: "5rem" }}
+        pt={{ base: "3rem", "2xl": "4rem" }}
         px={{ lg: "5rem", "2xl": "7rem" }}
       >
         {props.openingsList?.positions?.map((position, i) => (
@@ -45,7 +45,7 @@ export default function Openings(props: OpeningsProps): JSX.Element {
             <CardHeader>
               <Heading
                 color="brand.text"
-                fontSize={{ base: "2xl", sm: "2rem", "2xl": "5xl" }}
+                fontSize={{ base: "2xl", sm: "3xl", "2xl": "5xl" }}
                 fontWeight={{ base: "bold", xl: "normal" }}
                 lineHeight={{ base: "7", sm: "10", "2xl": "3.6rem" }}
               >
@@ -103,9 +103,15 @@ export default function Openings(props: OpeningsProps): JSX.Element {
       <Flex
         direction="column"
         alignItems="center"
-        pt={{ base: "5rem", lg: "6rem", xl: "3.8rem" }}
+        pt={{ base: "5rem", lg: "6rem", xl: "5rem", "2xl": "7rem" }}
       >
-        <Heading>
+        <Heading
+          as="h2"
+          color="brand.text"
+          fontSize={{ base: "3xl", sm: "4xl", "2xl": "6xl" }}
+          fontWeight="normal"
+          lineHeight={{ base: "7", sm: "10" }}
+        >
           {props.isOpeningsListNotEmpty
             ? props.openingsList?.heading
             : props.noOpenings?.heading}
