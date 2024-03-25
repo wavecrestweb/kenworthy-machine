@@ -1,5 +1,15 @@
 //LIBRARY IMPORTS
-import { Box, Heading, Flex, Card, Text, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Flex,
+  Card,
+  Text,
+  Link,
+  CardBody,
+  CardFooter,
+  CardHeader,
+} from "@chakra-ui/react";
 import { PageQuery } from "@/tina/__generated__/types";
 
 //LOCAL IMPORTS
@@ -18,19 +28,27 @@ export default function Openings(props: OpeningsProps): JSX.Element {
     return (
       <Flex direction="column" gap="1rem">
         {props.openingsList?.positions?.map((position, i) => (
-          <Card key={i} variant="position">
-            <Flex direction="column">
+          <Card
+            key={i}
+            variant={{ base: "position_sm", "2xl": "position_md" }}
+            w={{ base: "95vw", sm: "88vw", "2xl": "95vw" }}
+            flexDirection={{ base: "column", sm: "row" }}
+          >
+            <CardHeader>
               <Heading>{position?.title}</Heading>
               <Text>{position?.subtitle}</Text>
-            </Flex>
-            <Link
-              color="brand.text"
-              href={position?.jobDescriptionLink || ""}
-              isExternal
-              target="_blank"
-            >
-              {props.openingsList?.buttonText}
-            </Link>
+            </CardHeader>
+            <CardBody></CardBody>
+            <CardFooter p={{ base: "2.5rem 0 0 0", sm: "0" }}>
+              <Link
+                color="brand.text"
+                href={position?.jobDescriptionLink || ""}
+                isExternal
+                target="_blank"
+              >
+                {props.openingsList?.buttonText}
+              </Link>
+            </CardFooter>
           </Card>
         ))}
       </Flex>
@@ -47,7 +65,7 @@ export default function Openings(props: OpeningsProps): JSX.Element {
       </>
     );
   }
-  console.log("openings", props);
+
   return (
     <Box>
       <ContentWrapper>
