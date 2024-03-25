@@ -35,8 +35,22 @@ export default function Openings(props: OpeningsProps): JSX.Element {
             flexDirection={{ base: "column", sm: "row" }}
           >
             <CardHeader>
-              <Heading>{position?.title}</Heading>
-              <Text>{position?.subtitle}</Text>
+              <Heading
+                color="brand.text"
+                fontSize={{ base: "lg", sm: "xl", "2xl": "3xl" }}
+                fontWeight={{ "2xl": "normal" }}
+                lineHeight={{ base: "5", sm: "6", "2xl": "10" }}
+              >
+                {position?.title}
+              </Heading>
+              <Text
+                color="brand.text"
+                fontSize={{ base: "md", sm: "lg", "2xl": "xl" }}
+                lineHeight={{ base: "5", sm: "5", "2xl": "6" }}
+                pt={{ base: "1.25rem", "2xl": "2rem" }}
+              >
+                {position?.subtitle}
+              </Text>
             </CardHeader>
             <CardBody></CardBody>
             <CardFooter p={{ base: "2.5rem 0 0 0", sm: "0" }}>
