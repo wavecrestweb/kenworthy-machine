@@ -17,7 +17,7 @@ const baseStyle = definePartsStyle({
 });
 
 const variants = {
-  position_md: definePartsStyle({
+  position_lg: definePartsStyle({
     container: {
       boxShadow: "0px 4px 4px 0px #00000040",
       alignItems: "center",

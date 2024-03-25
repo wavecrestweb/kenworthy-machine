@@ -98,6 +98,7 @@ export const Link = defineStyleConfig({
       fontSize: "lg",
       p: "1rem 3.125rem",
       lineHeight: "5",
+      textAlign: "center",
       _hover: {
         backgroundColor: "brand.secondaryGhost",
         transform: "scale(1.1)",

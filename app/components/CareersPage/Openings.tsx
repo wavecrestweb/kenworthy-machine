@@ -67,10 +67,11 @@ export default function Openings(props: OpeningsProps): JSX.Element {
                 isExternal
                 target="_blank"
                 variant="outline"
-                fontSize={{ base: "xl", md: "2xl", "2xl": "2xl" }}
-                lineHeight={{ base: "6", md: "7" }}
+                fontSize={{ base: "xl", "2xl": "2xl" }}
+                lineHeight={{ base: "6", "2xl": "7" }}
                 minW={{ base: "85vw", sm: "100%" }}
                 maxW={{ base: "0%" }}
+                p={{ base: "1rem 0rem", sm: "1rem 3.125rem" }}
               >
                 {props.openingsList?.buttonText}
               </Link>
