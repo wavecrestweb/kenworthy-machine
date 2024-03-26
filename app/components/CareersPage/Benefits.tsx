@@ -18,7 +18,7 @@ export default function Benefits(props: Benefits): JSX.Element {
         <Flex direction="column" alignItems="center">
           <Heading
             as="h2"
-            fontSize={{ base: "2xl", sm: "2.75rem", "2xl": "6xl" }}
+            fontSize={{ base: "2xl", sm: "2.5rem", "2xl": "6xl" }}
             lineHeight={{ base: "6", sm: "2.7rem", xl: "3rem" }}
             fontWeight="normal"
             layerStyle="whiteBg"

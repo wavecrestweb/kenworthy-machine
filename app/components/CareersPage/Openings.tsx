@@ -1,6 +1,5 @@
 //LIBRARY IMPORTS
 import {
-  Box,
   Heading,
   Flex,
   Card,
