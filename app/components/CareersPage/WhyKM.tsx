@@ -13,18 +13,19 @@ export default function WhyKM(props: PageCareersBlocksWhyKm): JSX.Element {
         <Grid
           alignItems="center"
           gap={{ base: "1rem", lg: "1.25rem", xl: "0" }}
-          px={{ base: "3rem", lg: "3.25rem", xl: "2.5rem" }}
+          px={{ base: "3rem", lg: "5rem", xl: "7rem" }}
           pt={{ base: "5rem", lg: "6rem", xl: "3.8rem" }}
-          templateColumns={{ base: "1fr", xl: "30% 8% 62%" }}
+          templateColumns={{ base: "1fr", lg: "30% 8% 62%" }}
         >
           <GridItem>
             <Heading
               as="h2"
               color="brand.text"
-              fontSize={{ base: "xl", lg: "3xl", "2xl": "4xl" }}
-              fontWeight={{ base: "bold", xl: "normal" }}
-              lineHeight={{ base: "6", lg: "10", "2xl": "3.6rem" }}
-              textAlign={{ base: "center", xl: "start" }}
+              fontFamily="body"
+              fontSize={{ base: "2xl", sm: "3xl", "2xl": "5xl" }}
+              fontWeight={{ base: "bold", lg: "normal" }}
+              lineHeight={{ base: "6", sm: "10", "2xl": "3.75rem" }}
+              textAlign={{ base: "center", lg: "start" }}
             >
               {props?.title}
             </Heading>
@@ -33,9 +34,9 @@ export default function WhyKM(props: PageCareersBlocksWhyKm): JSX.Element {
           <GridItem>
             <Text
               color="brand.text"
-              fontSize={{ base: "lg", lg: "2xl", "2xl": "3xl" }}
-              lineHeight={{ base: "6", lg: "7", "2xl": "2.4rem" }}
-              textAlign={{ base: "center", xl: "start" }}
+              fontSize={{ base: "xl", sm: "2xl", "2xl": "3xl" }}
+              lineHeight={{ base: "6", sm: "7", "2xl": "2.4rem" }}
+              textAlign={{ base: "center", lg: "start" }}
             >
               {props?.description}
             </Text>
