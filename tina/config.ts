@@ -364,11 +364,6 @@ export default defineConfig({
                     name: "openings",
                     fields: [
                       {
-                        name: "isOpeningsListNotEmpty",
-                        label: "Are there any openings available?",
-                        type: "boolean",
-                      },
-                      {
                         name: "noOpenings",
                         label: "No openings",
                         type: "object",

@@ -11,8 +11,7 @@ blocks:
       experience levels on our team, which helps remain grounded in our
       knowledge and strive toward innovation.
     _template: whyKM
-  - isOpeningsListNotEmpty: true
-    noOpenings:
+  - noOpenings:
       heading: Send us your resume
       description: >-
         There are no openings currently, but we always welcome you to send us
@@ -39,11 +38,10 @@ blocks:
     benefits:
       - benefitTitle: 401k Matching
         icon: /icons/piggy-bank.svg
-      - benefitTitle: 'Medical, Vision & Dental'
+      - benefitTitle: "Medical, Vision & Dental"
         icon: /icons/star-of-life.svg
       - benefitTitle: Paid Time Off
         icon: /icons/cloud-sun.svg
     _template: benefits
 _template: careers
 ---
-

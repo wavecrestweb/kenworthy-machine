@@ -149,7 +149,11 @@ export default function Openings(props: OpeningsProps): JSX.Element {
 
   return (
     <ContentWrapper>
-      {props?.isOpeningsListNotEmpty ? <OpeningsAvailable /> : <NoOpenings />}
+      {props?.openingsList?.positions?.length ? (
+        <OpeningsAvailable />
+      ) : (
+        <NoOpenings />
+      )}
     </ContentWrapper>
   );
 }
