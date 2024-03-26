@@ -117,7 +117,7 @@ export default function Openings(props: OpeningsProps): JSX.Element {
         <Heading
           as="h2"
           color="brand.secondary"
-          fontSize={{ base: "2xl", sm: "4xl", "2xl": "5xl" }}
+          fontSize={{ base: "3xl", sm: "4xl", "2xl": "5xl" }}
           fontWeight={{ base: "bold", xl: "normal" }}
           lineHeight={{ base: "7", sm: "10" }}
           fontFamily="body"

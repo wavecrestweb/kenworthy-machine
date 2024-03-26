@@ -22,9 +22,9 @@ export default function WhyKM(props: PageCareersBlocksWhyKm): JSX.Element {
               as="h2"
               color="brand.text"
               fontFamily="body"
-              fontSize={{ base: "2xl", sm: "3xl", "2xl": "5xl" }}
+              fontSize={{ base: "3xl", sm: "3xl", "2xl": "5xl" }}
               fontWeight={{ base: "bold", lg: "normal" }}
-              lineHeight={{ base: "6", sm: "10", "2xl": "3.75rem" }}
+              lineHeight={{ base: "7", sm: "10", "2xl": "3.75rem" }}
               textAlign={{ base: "center", lg: "start" }}
             >
               {props?.title}
