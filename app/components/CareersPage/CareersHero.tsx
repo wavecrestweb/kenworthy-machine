@@ -40,6 +40,7 @@ export default function CareersHero(props: PageCareersBlocksHero): JSX.Element {
               as="h3"
               fontSize={{ base: "xl", lg: "3xl" }}
               fontWeight={{ base: "bold", lg: "normal" }}
+              fontFamily="body"
               color="brand.secondary"
             >
               {props?.title}
