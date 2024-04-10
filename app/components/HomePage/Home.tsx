@@ -24,6 +24,8 @@ export default function Home(props: {
   // HOOKS
   const { data } = useTina(props);
 
+  console.log("data.page.blocks:", data.page.blocks);
+
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
@@ -49,9 +51,12 @@ export default function Home(props: {
           case "PageHomeBlocksMachineCarousel": {
             return <Machines key={i} width={width} {...block} path="/" />;
           }
+          case "PageHomeBlocksCareerSection": {
+            return <Careers key={i} {...block} />;
+          }
         }
       })}
-      <Careers />
+      {/* <Careers /> */}
     </Grid>
   );
 }
