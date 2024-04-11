@@ -84,7 +84,7 @@ blocks:
     buttonLabel: Apply Now
     card1:
       title: Job Training
-      card1Description: >
+      card1Description: |
         Our Team is invested in training and learning together.
     card2:
       title: Benefits & Balance
@@ -99,3 +99,4 @@ blocks:
     _template: careerSection
 _template: home
 ---
+

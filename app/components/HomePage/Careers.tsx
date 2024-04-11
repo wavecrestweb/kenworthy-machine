@@ -1,3 +1,4 @@
+import { PageHomeBlocksCareerSection } from "@/tina/__generated__/types";
 import {
   Box,
   Button,
@@ -5,15 +6,12 @@ import {
   SimpleGrid,
   Spacer,
   Stack,
-  Text,
 } from "@chakra-ui/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import chalkboard from "../../../public/images/Chalkboard-User.svg";
 import heart from "../../../public/images/Heart-Pulse.svg";
 import graph from "../../../public/images/Upward-Graph.svg";
 import SmallCard from "../SmallCard";
-import { PageHomeBlocksCareerSection } from "@/tina/__generated__/types";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { Tina } from "tinacms";
 
 export default function Careers(props: PageHomeBlocksCareerSection) {
   const cardData = [
@@ -79,7 +77,7 @@ export default function Careers(props: PageHomeBlocksCareerSection) {
             {props.buttonLabel}
           </Button>
         </Box>
-        {/* <SimpleGrid
+        <SimpleGrid
           spacing={{ base: 12, lg: 4 }}
           gap={{ base: 19, lg: 200 }}
           justifyContent={"flex-start"}
@@ -94,7 +92,7 @@ export default function Careers(props: PageHomeBlocksCareerSection) {
         </SimpleGrid>
         <Box mt={{ base: 31, lg: 0 }}>
           <SmallCard {...cardData[2]} />
-        </Box> */}
+        </Box>
       </Stack>
     </Box>
   );

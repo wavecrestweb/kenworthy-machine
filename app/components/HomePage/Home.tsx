@@ -1,18 +1,18 @@
 "use client";
 
 //LIBRARY IMPORTS
-import { Grid } from "@chakra-ui/react";
-import { useTina } from "tinacms/dist/react";
 import { PageQuery } from "@/tina/__generated__/types";
+import { Grid } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { useTina } from "tinacms/dist/react";
 
 //LOCAL IMPORTS
-import Hero from "./Hero";
-import CompanyValues from "./CompanyValues";
 import Machines from "../MachinesPage/Machines";
-import RequestQuote from "./RequestQuote";
-import Location from "./Location";
 import Careers from "./Careers";
+import CompanyValues from "./CompanyValues";
+import Hero from "./Hero";
+import Location from "./Location";
+import RequestQuote from "./RequestQuote";
 
 export default function Home(props: {
   data: PageQuery;
@@ -56,7 +56,6 @@ export default function Home(props: {
           }
         }
       })}
-      {/* <Careers /> */}
     </Grid>
   );
 }
