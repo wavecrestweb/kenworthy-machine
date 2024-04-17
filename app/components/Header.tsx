@@ -34,7 +34,9 @@ export default function Header() {
               py={"2rem"}
               w={{ base: "20rem", md: "28rem", xl: "32rem" }}
             >
-              <Image src={logo} alt="Kenworthy Machine" />
+              <ChakraLink href="/">
+                <Image src={logo} alt="Kenworthy Machine" />
+              </ChakraLink>
             </Box>
           </Box>
           <Box

@@ -234,6 +234,78 @@ export default defineConfig({
                       },
                     ],
                   },
+                  {
+                    label: "Career Section",
+                    name: "careerSection",
+                    fields: [
+                      {
+                        type: "string",
+                        label: "Heading",
+                        name: "heading",
+                      },
+                      {
+                        type: "rich-text",
+                        label: "Career Section Description",
+                        name: "careerDescription",
+                      },
+                      {
+                        type: "string",
+                        label: "Button Label",
+                        name: "buttonLabel",
+                      },
+                      {
+                        type: "object",
+                        label: "Training Card",
+                        name: "card1",
+                        fields: [
+                          {
+                            type: "string",
+                            label: "Title",
+                            name: "title",
+                          },
+                          {
+                            type: "string",
+                            label: "Description",
+                            name: "card1Description",
+                          },
+                        ],
+                      },
+                      {
+                        type: "object",
+                        label: "Benefits Card",
+                        name: "card2",
+                        fields: [
+                          {
+                            type: "string",
+                            label: "Title",
+                            name: "title",
+                          },
+                          {
+                            type: "string",
+                            label: "Description",
+                            name: "card2Description",
+                          },
+                        ],
+                      },
+                      {
+                        type: "object",
+                        label: "Growth Card",
+                        name: "card3",
+                        fields: [
+                          {
+                            type: "string",
+                            label: "Title",
+                            name: "title",
+                          },
+                          {
+                            type: "string",
+                            label: "Description",
+                            name: "card3Description",
+                          },
+                        ],
+                      },
+                    ],
+                  },
                 ],
               },
             ],

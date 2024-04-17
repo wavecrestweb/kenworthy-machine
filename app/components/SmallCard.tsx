@@ -1,5 +1,14 @@
+import { Maybe } from "@/tina/__generated__/types";
 import { Card, CardBody, CardHeader, Text } from "@chakra-ui/react";
 import Image from "next/image";
+
+type SmallCardProps = {
+  header: Maybe<string> | undefined;
+  body: Maybe<string> | undefined;
+  image: any;
+  alt: string;
+  repositioned: boolean;
+};
 
 export default function SmallCard({
   header,
@@ -7,13 +16,7 @@ export default function SmallCard({
   image,
   alt,
   repositioned,
-}: {
-  header: string;
-  body: string;
-  image: string;
-  alt: string;
-  repositioned?: boolean;
-}) {
+}: SmallCardProps) {
   return (
     <Card
       w={"342px"}

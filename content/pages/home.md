@@ -77,5 +77,26 @@ blocks:
       We will make sure you get a quick response from our team if you share your
       phone number and email with us.
     _template: quoteSection
+  - heading: Join Our Team
+    careerDescription: >
+      ### Whether you’re a beginner or a CNC expert, there are
+      excitingopportunities for all experience levels at Kenworthy Machine.
+    buttonLabel: Apply Now
+    card1:
+      title: Job Training
+      card1Description: |
+        Our Team is invested in training and learning together.
+    card2:
+      title: Benefits & Balance
+      card2Description: >
+        We believe employees work best when they are supported and encouraged to
+        live fulfilling lives, not just while on the job.
+    card3:
+      title: Career Growth
+      card3Description: >
+        CNC Machinists have specialized skills that allow them to evolve with
+        new projects and advance machine technology.
+    _template: careerSection
 _template: home
 ---
+
