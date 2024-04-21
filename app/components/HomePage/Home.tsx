@@ -24,12 +24,6 @@ export default function Home(props: {
   // HOOKS
   const { data } = useTina(props);
 
-  const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    setWidth(typeof window !== "undefined" ? window.innerWidth : 0);
-  }, []);
-
   return (
     <Grid templateColumns={"1fr"}>
       {data.page.blocks?.map((block, i) => {
@@ -47,7 +41,7 @@ export default function Home(props: {
             return <Location key={i} {...block} />;
           }
           case "PageHomeBlocksMachineCarousel": {
-            return <Machines key={i} width={width} {...block} path="/" />;
+            return <Machines key={i} {...block} path="/" />;
           }
           case "PageHomeBlocksCareerSection": {
             return <Careers key={i} {...block} />;

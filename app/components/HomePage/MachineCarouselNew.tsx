@@ -2,10 +2,11 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination, A11y, FreeMode } from "swiper/modules";
 
 import { MachineCardsBlock } from "../MachinesPage/Machines";
 import Card from "../Card/Card";
+import { Spacer } from "@chakra-ui/react";
 
 type MouseEvent = React.MouseEventHandler<SVGElement>;
 
@@ -79,11 +80,49 @@ export default function MachineCarouselNew({
   path: string;
 }): JSX.Element {
   return (
-    <Swiper slidesPerView={3} navigation={true} modules={[Navigation]}>
+    <Swiper
+      // slidesPerView={3}
+      // autoHeight
+      // navigation
+      // pagination={{ clickable: true }}
+      // modules={[Navigation, Pagination, A11y]}
+      freeMode={true}
+      grabCursor={true}
+      modules={[FreeMode]}
+      className="mySwiper"
+      breakpoints={{
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        // when window width is >= 768px
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+        // when window width is >= 1024px
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 50,
+        },
+      }}
+    >
       {machineCards?.machineCard?.map((card, i) => {
         return (
-          <SwiperSlide key={i}>
+          <SwiperSlide key={i} color={"yellogreen"}>
             <Card key={i} {...card} path={path} />
+            <Spacer padding={8} />
           </SwiperSlide>
         );
       })}
