@@ -118,10 +118,11 @@ export default function MachineCarousel({
   };
 
   return (
-    <Slider {...settings}>
-      {machineCards?.machineCard?.map((card, i) => {
-        return <Card key={i} {...card} path={path} />;
-      })}
-    </Slider>
+    <div>Hello World</div>
+    // <Slider {...settings}>
+    //   {machineCards?.machineCard?.map((card, i) => {
+    //     return <Card key={i} {...card} path={path} />;
+    //   })}
+    // </Slider>
   );
 }
