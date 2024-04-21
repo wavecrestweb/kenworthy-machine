@@ -29,27 +29,17 @@ export type MachineCardsBlock = Extract<
 >;
 
 export default function Machines({
-  width,
   path,
   ...props
 }: {
-  width?: number;
   path: string;
 } & MachineCardsBlock): JSX.Element {
-  const adjustedWidth = !width || width > 1728 ? 1728 * 0.9 : width * 0.9;
-
   return (
     <>
       {path === "/" && props.__typename === "PageHomeBlocksMachineCarousel" && (
         <Flex justifyContent="center">
           <ContentWrapper>
-            <Container
-              maxW={adjustedWidth}
-              bg="white"
-              py="3rem"
-              px="0px"
-              mx={8}
-            >
+            <Container maxW={"auto"} bg="white" py="3rem" px="0px" mx={8}>
               <Heading
                 as="h2"
                 textStyle="h1"

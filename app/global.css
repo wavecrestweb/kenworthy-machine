@@ -10,3 +10,18 @@
   --text-color-light: #586874;
   --primary-red: #db0a40;
 }
+
+.swiper-button-prev {
+  color: orange;
+}
+.swiper-button-next {
+  color: orange;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background-color-dark);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}

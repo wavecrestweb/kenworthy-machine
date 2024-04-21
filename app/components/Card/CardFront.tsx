@@ -51,6 +51,7 @@ export default function CardFront({
             fill={true}
             style={{
               objectFit: "cover",
+              objectPosition: "center",
             }}
             alt={name ?? ""}
             placeholder="empty"
