@@ -80,7 +80,7 @@ blocks:
   - heading: Join Our Team
     careerDescription: >
       ### Whether you’re a beginner or a CNC expert, there are
-      excitingopportunities for all experience levels at Kenworthy Machine.
+      exciting opportunities for all experience levels at Kenworthy Machine.
     buttonLabel: Apply Now
     card1:
       title: Job Training
@@ -99,4 +99,3 @@ blocks:
     _template: careerSection
 _template: home
 ---
-

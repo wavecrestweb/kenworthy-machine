@@ -14,7 +14,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 //LOCAL IMPORTS
-import MachineCarousel from "../HomePage/MachineCarousel";
+import MachineCarouselNew from "../HomePage/MachineCarouselNew";
 import ContentWrapper from "../ContentWrapper";
 import Card from "../Card/Card";
 
@@ -60,7 +60,10 @@ export default function Machines({
               >
                 {props.sectionTitle}
               </Heading>
-              <MachineCarousel machineCards={props?.machineCards} path={path} />
+              <MachineCarouselNew
+                machineCards={props?.machineCards}
+                path={path}
+              />
               <Flex mt={16} mb={4} justifyContent="center">
                 <ChakraLink
                   href="/view-machines"

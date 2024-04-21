@@ -24,8 +24,6 @@ export default function Home(props: {
   // HOOKS
   const { data } = useTina(props);
 
-  console.log("data.page.blocks:", data.page.blocks);
-
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
