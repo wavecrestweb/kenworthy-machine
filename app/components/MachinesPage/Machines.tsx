@@ -1,17 +1,10 @@
 //LIBRARY IMPORTS
 import { Link as ChakraLink } from "@chakra-ui/next-js";
-import {
-  Container,
-  Heading,
-  Text,
-  SimpleGrid,
-  Flex,
-  Stack,
-} from "@chakra-ui/react";
+import { Heading, Text, SimpleGrid, Flex, Stack, Box } from "@chakra-ui/react";
 import { PageQuery } from "@/tina/__generated__/types";
 
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
 
 //LOCAL IMPORTS
 import MachineCarouselNew from "../HomePage/MachineCarouselNew";
@@ -39,7 +32,11 @@ export default function Machines({
       {path === "/" && props.__typename === "PageHomeBlocksMachineCarousel" && (
         <Flex justifyContent="center">
           <ContentWrapper>
-            <Container maxW={"90%"} bg="white" py="3rem" px="0px" mx={8}>
+            <Box
+              bg="white"
+              mx={"80px"}
+              maxW={{ base: "300px", lg: "1000px", xl: "1500px" }}
+            >
               <Heading
                 as="h2"
                 textStyle="h1"
@@ -67,7 +64,7 @@ export default function Machines({
                   {props.buttonLabel}
                 </ChakraLink>
               </Flex>
-            </Container>
+            </Box>
           </ContentWrapper>
         </Flex>
       )}
