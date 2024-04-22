@@ -39,7 +39,7 @@ export default function Machines({
       {path === "/" && props.__typename === "PageHomeBlocksMachineCarousel" && (
         <Flex justifyContent="center">
           <ContentWrapper>
-            <Container maxW={"auto"} bg="white" py="3rem" px="0px" mx={8}>
+            <Container maxW={"90%"} bg="white" py="3rem" px="0px" mx={8}>
               <Heading
                 as="h2"
                 textStyle="h1"
@@ -50,10 +50,12 @@ export default function Machines({
               >
                 {props.sectionTitle}
               </Heading>
+
               <MachineCarouselNew
                 machineCards={props?.machineCards}
                 path={path}
               />
+
               <Flex mt={16} mb={4} justifyContent="center">
                 <ChakraLink
                   href="/view-machines"
