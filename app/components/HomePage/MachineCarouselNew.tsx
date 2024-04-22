@@ -3,6 +3,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Navigation, Pagination, A11y, FreeMode } from "swiper/modules";
+import "../../global.css";
 
 import { MachineCardsBlock } from "../MachinesPage/Machines";
 import Card from "../Card/Card";
@@ -83,12 +84,12 @@ export default function MachineCarouselNew({
     <Swiper
       // slidesPerView={3}
       // autoHeight
-      // navigation
-      // pagination={{ clickable: true }}
+      navigation
+      pagination={{ clickable: true }}
       // modules={[Navigation, Pagination, A11y]}
       freeMode={true}
       grabCursor={true}
-      modules={[FreeMode]}
+      modules={[FreeMode, Navigation, Pagination, A11y]}
       className="mySwiper"
       breakpoints={{
         // when window width is >= 320px
@@ -98,7 +99,7 @@ export default function MachineCarouselNew({
         },
         // when window width is >= 480px
         480: {
-          slidesPerView: 2,
+          slidesPerView: 1,
           spaceBetween: 20,
         },
         // when window width is >= 640px
@@ -112,15 +113,15 @@ export default function MachineCarouselNew({
           spaceBetween: 40,
         },
         // when window width is >= 1024px
-        1024: {
-          slidesPerView: 5,
-          spaceBetween: 50,
-        },
+        // 1024: {
+        //   slidesPerView: 5,
+        //   spaceBetween: 50,
+        // },
       }}
     >
       {machineCards?.machineCard?.map((card, i) => {
         return (
-          <SwiperSlide key={i} color={"yellogreen"}>
+          <SwiperSlide key={i} color={"purple"}>
             <Card key={i} {...card} path={path} />
             <Spacer padding={8} />
           </SwiperSlide>

@@ -109,6 +109,12 @@ export default function MachineCarousel({
       setCurrentSlide(newIndex),
     responsive: [
       {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
@@ -118,11 +124,10 @@ export default function MachineCarousel({
   };
 
   return (
-    <div>Hello World</div>
-    // <Slider {...settings}>
-    //   {machineCards?.machineCard?.map((card, i) => {
-    //     return <Card key={i} {...card} path={path} />;
-    //   })}
-    // </Slider>
+    <Slider {...settings}>
+      {machineCards?.machineCard?.map((card, i) => {
+        return <Card key={i} {...card} path={path} />;
+      })}
+    </Slider>
   );
 }
