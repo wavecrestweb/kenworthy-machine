@@ -6,7 +6,7 @@ import "../../global.css";
 
 import { MachineCardsBlock } from "../MachinesPage/Machines";
 import Card from "../Card/Card";
-import { Spacer } from "@chakra-ui/react";
+import { Box, Spacer } from "@chakra-ui/react";
 
 export default function MachineCarouselNew({
   machineCards,
@@ -17,6 +17,8 @@ export default function MachineCarouselNew({
 }): JSX.Element {
   return (
     <Swiper
+      cssMode={true}
+      slidesOffsetBefore={200}
       navigation
       pagination={{ clickable: true }}
       freeMode={true}
@@ -45,7 +47,6 @@ export default function MachineCarouselNew({
         return (
           <SwiperSlide key={i}>
             <Card key={i} {...card} path={path} />
-            <Spacer padding={8} />
           </SwiperSlide>
         );
       })}

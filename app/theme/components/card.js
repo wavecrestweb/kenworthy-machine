@@ -10,6 +10,9 @@ const baseStyle = definePartsStyle({
     boxShadow: "0px 6px 4px 0px #00000040",
     borderRadius: "1.25rem",
   },
+  header: {
+    p: "1.25rem",
+  },
   footer: {
     backgroundColor: "brand.primary",
     borderBottomRadius: "1.25rem",
@@ -17,6 +20,50 @@ const baseStyle = definePartsStyle({
 });
 
 const variants = {
+  front_xs: definePartsStyle({
+    container: {
+      w: "10rem",
+      h: "13rem",
+      my: "0.5rem",
+      overflow: "hidden",
+    },
+    header: {
+      p: "0",
+    },
+    body: {
+      pt: "1rem",
+      maxHeight: "4rem",
+      overflow: "hidden",
+    },
+    footer: {
+      backgroundColor: "brand.primary",
+      w: "100%",
+      p: "0.25rem",
+      h: "2rem",
+    },
+  }),
+  front_sm: definePartsStyle({
+    container: {
+      w: "12rem",
+      h: "16rem",
+      my: "1rem",
+      overflow: "hidden",
+    },
+    header: {
+      p: "0",
+    },
+    body: {
+      pt: "1.5rem",
+      maxHeight: "5rem",
+      overflow: "hidden",
+    },
+    footer: {
+      backgroundColor: "brand.primary",
+      w: "100%",
+      p: "0.25rem",
+      h: "3rem",
+    },
+  }),
   front_md: definePartsStyle({
     container: {
       w: "14rem",
