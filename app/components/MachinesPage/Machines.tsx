@@ -35,15 +35,15 @@ export default function Machines({
             <Box
               bg="white"
               mx={"80px"}
-              maxW={{ base: "300px", lg: "1000px", xl: "1500px" }}
+              maxW={{ base: "300px", sm: "600px", lg: "1000px", xl: "1500px" }}
             >
               <Heading
                 as="h2"
                 textStyle="h1"
                 fontWeight="normal"
                 textAlign="center"
-                mb={4}
-                pb={2}
+                my={4}
+                py={2}
               >
                 {props.sectionTitle}
               </Heading>
@@ -53,7 +53,7 @@ export default function Machines({
                 path={path}
               />
 
-              <Flex mt={16} mb={4} justifyContent="center">
+              <Flex mt={16} mb={12} justifyContent="center">
                 <ChakraLink
                   href="/view-machines"
                   variant="buttonPrimaryLight"
