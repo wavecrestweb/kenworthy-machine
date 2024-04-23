@@ -28,7 +28,7 @@ export default function Card(props: MachineCard): JSX.Element {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <Box px={"6rem"}>
+    <Box padding={8} margin={"auto"}>
       {isFlipped ? (
         <CardBack
           setIsFlipped={setIsFlipped}

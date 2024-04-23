@@ -28,7 +28,7 @@ export default function CardFront({
   path,
 }: CardFrontProps): JSX.Element {
   // add a placeholder image and replace "default-image-url" with correct url
-  const placeholderImage = "";
+  const placeholderImage = "/machines/Kitamura-Mycenter-HX250G.png";
 
   const style =
     path === "/" ? responsiveValues.carousel : responsiveValues.machinesPage;
@@ -54,7 +54,7 @@ export default function CardFront({
               objectPosition: "center",
             }}
             alt={name ?? ""}
-            placeholder="empty"
+            // placeholder="empty"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           <MachineTypeLabel type={type} path={path} />

@@ -34,7 +34,8 @@ export default function Machines({
           <ContentWrapper>
             <Box
               bg="white"
-              mx={"80px"}
+              width={"90%"}
+              mx={"auto"}
               maxW={{ base: "300px", sm: "600px", lg: "1000px", xl: "1500px" }}
             >
               <Heading
