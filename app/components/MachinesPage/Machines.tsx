@@ -3,11 +3,8 @@ import { Link as ChakraLink } from "@chakra-ui/next-js";
 import { Heading, Text, SimpleGrid, Flex, Stack, Box } from "@chakra-ui/react";
 import { PageQuery } from "@/tina/__generated__/types";
 
-// import "slick-carousel/slick/slick-theme.css";
-// import "slick-carousel/slick/slick.css";
-
 //LOCAL IMPORTS
-import MachineCarouselNew from "../HomePage/MachineCarouselNew";
+import MachineCarousel from "../HomePage/MachineCarousel";
 import ContentWrapper from "../ContentWrapper";
 import Card from "../Card/Card";
 
@@ -41,18 +38,15 @@ export default function Machines({
               <Heading
                 as="h2"
                 textStyle="h1"
-                fontWeight="normal"
+                fontWeight="600"
                 textAlign="center"
-                my={4}
+                mt={20}
                 py={2}
               >
                 {props.sectionTitle}
               </Heading>
 
-              <MachineCarouselNew
-                machineCards={props?.machineCards}
-                path={path}
-              />
+              <MachineCarousel machineCards={props?.machineCards} path={path} />
 
               <Flex mt={16} mb={12} justifyContent="center">
                 <ChakraLink
@@ -60,6 +54,7 @@ export default function Machines({
                   variant="buttonPrimaryLight"
                   p={{ base: "0.375rem 2.5rem", sm: "0.5rem 4rem" }}
                   lineHeight="6"
+                  mb={20}
                   fontSize={{ base: "md", md: "xl" }}
                 >
                   {props.buttonLabel}

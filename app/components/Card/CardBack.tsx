@@ -85,7 +85,7 @@ export default function CardBack({
 
 const responsiveValues = {
   carousel: {
-    size: { md: "back_md", "2xl": "back_lg" },
+    size: { xs: "back_xs", sm: "back_sm", md: "back_md", "2xl": "back_lg" },
     header: {
       fontSize: { md: "md", "2xl": "xl" },
       lineHeight: { md: "6", "2xl": "7" },
