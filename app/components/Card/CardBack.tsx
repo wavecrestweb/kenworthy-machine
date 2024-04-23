@@ -92,7 +92,7 @@ const responsiveValues = {
     },
     list: {
       lineHeight: { md: "6", "2xl": "7" },
-      fontSize: { md: "md", "2xl": "xl" },
+      fontSize: { sm: "sm", md: "md", "2xl": "xl" },
     },
     button: { md: "md", "2xl": "2xl" },
   },
