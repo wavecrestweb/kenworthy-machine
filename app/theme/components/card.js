@@ -129,6 +129,56 @@ const variants = {
       h: "5.5rem",
     },
   }),
+  back_xs: definePartsStyle({
+    container: {
+      backgroundColor: "brand.primary",
+      opacity: "95%",
+      w: "10rem",
+      h: "13rem",
+      my: "0.5rem",
+    },
+    header: {
+      p: "1rem 0.3rem 0.25rem",
+      height: "4.25rem",
+      overflow: "hidden",
+    },
+    body: {
+      p: "0 0.5rem 0 1rem",
+      maxHeight: "11rem",
+      overflow: "hidden",
+    },
+    footer: {
+      backgroundColor: "white",
+      p: "0.25rem",
+      h: "2rem",
+      w: "100%",
+    },
+  }),
+  back_sm: definePartsStyle({
+    container: {
+      backgroundColor: "brand.primary",
+      opacity: "95%",
+      w: "12rem",
+      h: "16rem",
+      my: "0.5rem",
+    },
+    header: {
+      p: "1rem 0.3rem 0.25rem",
+      height: "4.25rem",
+      overflow: "hidden",
+    },
+    body: {
+      p: "0 0.5rem 0 1rem",
+      maxHeight: "11rem",
+      overflow: "hidden",
+    },
+    footer: {
+      backgroundColor: "white",
+      p: "0.25rem",
+      h: "3.25rem",
+      w: "100%",
+    },
+  }),
   back_md: definePartsStyle({
     container: {
       backgroundColor: "brand.primary",

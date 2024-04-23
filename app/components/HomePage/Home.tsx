@@ -3,7 +3,6 @@
 //LIBRARY IMPORTS
 import { PageQuery } from "@/tina/__generated__/types";
 import { Grid } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
 import { useTina } from "tinacms/dist/react";
 
 //LOCAL IMPORTS
