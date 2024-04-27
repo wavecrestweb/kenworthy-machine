@@ -18,18 +18,18 @@ export default function Benefits(props: Benefits): JSX.Element {
         <Flex direction="column" alignItems="center">
           <Heading
             as="h2"
-            fontSize={{ base: "3xl", sm: "2.5rem", "2xl": "6xl" }}
-            lineHeight={{ base: "7", sm: "2.7rem", xl: "3rem" }}
+            fontSize={{ base: "2xl", sm: "3xl", "2xl": "5xl" }}
+            lineHeight={{ base: "6", sm: "2.7rem", xl: "3rem" }}
             fontWeight="normal"
             layerStyle="whiteBg"
-            pb={{ base: "16", sm: "20", lg: "28" }}
+            pb={{ base: "16", lg: "28" }}
           >
             {props?.heading}
           </Heading>
           {props.benefits && (
             <Grid
               templateColumns={{ base: "1", lg: "repeat(3, 1fr)" }}
-              gap={{ base: "16", lg: "28" }}
+              gap={{ base: "16", xl: "28" }}
               pb={{ base: "20", lg: "36" }}
             >
               {props.benefits.map((benefit, i) => (
@@ -58,8 +58,8 @@ export default function Benefits(props: Benefits): JSX.Element {
                     </Card>
                     <Heading
                       as="h4"
-                      fontSize={{ base: "lg", sm: "2xl", "2xl": "3xl" }}
-                      lineHeight={{ base: "7", sm: "8", "2xl": "9" }}
+                      fontSize={{ base: "lg", sm: "2xl" }}
+                      lineHeight={{ base: "7", sm: "8" }}
                       fontWeight="bold"
                       textAlign="center"
                       layerStyle="whiteBg"

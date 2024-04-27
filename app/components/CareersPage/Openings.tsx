@@ -28,24 +28,25 @@ export default function Openings(props: OpeningsProps): JSX.Element {
       <Flex
         alignItems="center"
         direction="column"
-        pt={{ base: "5rem", lg: "6rem", xl: "5rem", "2xl": "9rem" }}
-        pb={{ base: "20", sm: "24", lg: "32" }}
+        pt={{ base: "5rem", "2xl": "7rem" }}
+        pb={{ base: "20", sm: "24", lg: "32", "2xl": "52" }}
       >
         <Heading
           as="h2"
           color="brand.text"
           fontFamily="body"
-          fontSize={{ base: "3xl", sm: "4xl", "2xl": "5xl" }}
+          fontSize={{ base: "2xl", sm: "3xl", "2xl": "5xl" }}
           fontWeight="normal"
-          lineHeight={{ base: "7", sm: "10" }}
+          lineHeight={{ base: "6", sm: "2.7rem", xl: "3rem" }}
         >
           {props.openingsList?.heading}
         </Heading>
         <Flex
           direction="column"
-          gap={{ base: "3rem", sm: "5rem", "2xl": "6rem" }}
+          gap={{ base: "3rem", sm: "4rem", "2xl": "6rem" }}
           pt={{ base: "3rem", "2xl": "4rem" }}
-          px={{ lg: "5rem", "2xl": "7rem" }}
+          px={{ base: "1rem", md: "2rem" }}
+          minW={{ base: "95%" }}
         >
           {props.openingsList?.positions?.map((position, i) => (
             <Card
@@ -54,21 +55,20 @@ export default function Openings(props: OpeningsProps): JSX.Element {
                 base: "position_sm",
                 xl: "position_lg",
               }}
-              maxW={{ base: "95vw" }}
               flexDirection={{ base: "column", sm: "row" }}
             >
               <CardHeader>
                 <Heading
                   color="brand.text"
-                  fontSize={{ base: "2xl", sm: "3xl", "2xl": "5xl" }}
+                  fontSize={{ base: "lg", sm: "xl", xl: "2xl", "2xl": "4xl" }}
                   fontWeight={{ base: "bold", xl: "normal" }}
-                  lineHeight={{ base: "7", sm: "10", "2xl": "3.6rem" }}
+                  lineHeight={{ base: "6", sm: "2.7rem", "2xl": "3rem" }}
                 >
                   {position?.title}
                 </Heading>
                 <Text
                   color="brand.text"
-                  fontSize={{ base: "xl", sm: "2xl", "2xl": "2rem" }}
+                  fontSize={{ base: "md", sm: "lg", "2xl": "2xl" }}
                   lineHeight={{ base: "6", sm: "7", "2xl": "10" }}
                   pt={{ base: "1.25rem", "2xl": "2rem" }}
                   pr={{ sm: "1rem" }}
@@ -81,16 +81,18 @@ export default function Openings(props: OpeningsProps): JSX.Element {
                 p={{ base: "2.5rem 0 0 0", sm: "0" }}
                 minW={{ base: "0%", md: "max-content" }}
                 flex={{ base: "1 0 auto" }}
+                justifyContent={{ base: "stretch", md: "end" }}
+                alignItems={{ base: "center" }}
               >
                 <Link
                   href={position?.jobDescriptionLink || ""}
                   isExternal
                   target="_blank"
                   variant="outline"
-                  fontSize={{ base: "xl", "2xl": "2xl" }}
-                  lineHeight={{ base: "6", "2xl": "7" }}
-                  minW={{ base: "85vw", sm: "100%" }}
-                  maxW={{ base: "0%" }}
+                  fontSize={{ base: "md", "2xl": "xl" }}
+                  lineHeight={{ base: "5", "2xl": "7" }}
+                  w={{ base: "90%", sm: "10%" }}
+                  minW={{ base: "85vw", sm: "max-content" }}
                   p={{ base: "1rem 0rem", sm: "1rem 3.125rem" }}
                 >
                   {props.openingsList?.buttonText}
@@ -110,26 +112,26 @@ export default function Openings(props: OpeningsProps): JSX.Element {
         mx="auto"
         direction="column"
         alignItems="center"
-        gap={{ base: "1rem", lg: "3rem" }}
+        gap={{ base: "1rem", lg: "1.5rem", xl: "3rem" }}
         pt={{ base: "5rem", lg: "6rem", xl: "5rem", "2xl": "9rem" }}
-        pb={{ base: "20", xl: "28" }}
+        pb={{ base: "20", sm: "24", lg: "40" }}
       >
         <Heading
           as="h2"
           color="brand.secondary"
-          fontSize={{ base: "3xl", sm: "4xl", "2xl": "5xl" }}
+          fontSize={{ base: "2xl", sm: "xl", lg: "3xl" }}
           fontWeight={{ base: "bold", xl: "normal" }}
-          lineHeight={{ base: "7", sm: "10" }}
+          lineHeight={{ base: "6", sm: "2.7rem", lg: "3rem" }}
           fontFamily="body"
         >
           {props.noOpenings?.heading}
         </Heading>
         <Text
           color="brand.text"
-          fontSize={{ base: "2xl", lg: "3xl", "2xl": "4xl" }}
-          lineHeight={{ base: "7", sm: "9", "2xl": "3rem" }}
+          fontSize={{ base: "xl", lg: "2xl", "2xl": "3xl" }}
+          lineHeight={{ base: "6", sm: "9", "2xl": "10" }}
           textAlign="center"
-          pb={{ base: "1.5rem" }}
+          pb={{ base: "1.25rem" }}
         >
           {props.noOpenings?.description}
         </Text>
@@ -138,8 +140,8 @@ export default function Openings(props: OpeningsProps): JSX.Element {
           isExternal
           target="_blank"
           variant="outline"
-          fontSize={{ base: "lg", sm: "xl", lg: "2xl", "2xl": "3xl" }}
-          lineHeight={{ base: "6", sm: "7", "2xl": "9" }}
+          fontSize={{ base: "md", sm: "lg" }}
+          lineHeight={{ base: "6", sm: "7" }}
         >
           {props.noOpenings?.buttonText}
         </Link>

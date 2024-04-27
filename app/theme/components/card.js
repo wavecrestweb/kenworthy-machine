@@ -20,7 +20,6 @@ const variants = {
   position_lg: definePartsStyle({
     container: {
       boxShadow: "0px 4px 4px 0px #00000040",
-      alignItems: "center",
       p: "2rem 3rem 2.5rem 2rem",
     },
     footer: {
@@ -30,7 +29,6 @@ const variants = {
   position_sm: definePartsStyle({
     container: {
       boxShadow: "0px 4px 4px 0px #00000040",
-      alignItems: "center",
       p: "1.25rem",
     },
     header: {
