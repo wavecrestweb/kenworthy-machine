@@ -39,7 +39,7 @@ const variants = {
       backgroundColor: "brand.primary",
       w: "100%",
       p: "0.25rem",
-      h: "2rem",
+      h: "1.5rem",
     },
   }),
   front_sm: definePartsStyle({
@@ -61,7 +61,7 @@ const variants = {
       backgroundColor: "brand.primary",
       w: "100%",
       p: "0.25rem",
-      h: "3rem",
+      h: "2.6rem",
     },
   }),
   front_md: definePartsStyle({

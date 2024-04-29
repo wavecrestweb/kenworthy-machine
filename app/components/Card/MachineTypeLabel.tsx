@@ -82,11 +82,11 @@ const responsiveValues = {
   carousel: {
     box: { top: "-1px", right: "-2.75px" },
     text: {
-      py: { md: "0.25rem", "2xl": "1rem" },
-      right: { md: "-0.5rem", "2xl": "-0.9rem" },
-      fontSize: { md: "xs", "2xl": "lg" },
-      top: { md: "0.625rem", "2xl": "0.5rem" },
-      width: { md: "4rem", "2xl": "6rem" },
+      py: { base: "0.5rem", md: "0.25rem", "2xl": "1rem" },
+      right: { base: "-0.3rem", md: "-0.5rem", "2xl": "-0.9rem" },
+      fontSize: { base: "7px", md: "xs", "2xl": "lg" },
+      top: { base: "-0.01rem", md: "0.625rem", "2xl": "0.5rem" },
+      width: { base: "5rem", md: "4rem", "2xl": "6rem" },
     },
   },
   machinesPage: {
@@ -94,7 +94,7 @@ const responsiveValues = {
     text: {
       py: { base: "0.25rem", sm: "1rem" },
       right: { base: "-0.5rem", sm: "-0.9rem" },
-      fontSize: { base: "xs", sm: "lg" },
+      fontSize: { base: "8px", md: "xs", "2xl": "lg" },
       top: { base: "0.625rem", sm: "0.5rem" },
       width: { base: "4rem", sm: "6rem" },
     },

@@ -85,16 +85,16 @@ export default function CardBack({
 
 const responsiveValues = {
   carousel: {
-    size: { xs: "back_xs", sm: "back_sm", md: "back_md", "2xl": "back_lg" },
+    size: { base: "back_xs", sm: "back_sm", md: "back_md", "2xl": "back_lg" },
     header: {
-      fontSize: { md: "md", "2xl": "xl" },
-      lineHeight: { md: "6", "2xl": "7" },
+      fontSize: { base: "md", "2xl": "xl" },
+      lineHeight: { base: "6", "2xl": "7" },
     },
     list: {
-      lineHeight: { md: "6", "2xl": "7" },
-      fontSize: { sm: "sm", md: "md", "2xl": "xl" },
+      lineHeight: { base: "6", "2xl": "7" },
+      fontSize: { base: "sm", md: "md", "2xl": "xl" },
     },
-    button: { md: "md", "2xl": "2xl" },
+    button: { base: "md", "2xl": "2xl" },
   },
   machinesPage: {
     size: { base: "back_md", sm: "back_xl" },

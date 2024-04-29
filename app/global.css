@@ -11,6 +11,10 @@
   --primary-red: #db0a40;
 }
 
+body {
+  background-color: var(--background-color-dark);
+}
+
 .swiper-button-prev {
   color: (var(--background-color-med));
   border-radius: 50%;
