@@ -47,9 +47,12 @@ export default function CardFront({
         >
           <Image
             src={image ?? placeholderImage}
-            width={500}
-            height={500}
+            fill={true}
+            style={{
+              objectFit: "cover",
+            }}
             alt={name ?? ""}
+            placeholder="empty"
           />
           <MachineTypeLabel type={type} path={path} />
         </Box>
@@ -70,13 +73,18 @@ export default function CardFront({
 
 const responsiveValues = {
   carousel: {
-    size: { xs: "front_xs", sm: "front_sm", md: "front_md", "2xl": "front_lg" },
-    header: {
-      w: { md: "14rem", "2xl": "20rem" },
-      h: { md: "9rem", "2xl": "13rem" },
+    size: {
+      base: "front_xs",
+      sm: "front_sm",
+      md: "front_md",
+      "2xl": "front_lg",
     },
-    text: { md: "md", "2xl": "2xl" },
-    button: { md: "md", "2xl": "2xl" },
+    header: {
+      w: { base: "14rem", "2xl": "20rem" },
+      h: { base: "9rem", "2xl": "13rem" },
+    },
+    text: { base: "sm", md: "md", "2xl": "2xl" },
+    button: { base: "md", "2xl": "2xl" },
   },
   machinesPage: {
     size: { base: "front_md", sm: "front_xl" },
