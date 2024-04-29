@@ -47,10 +47,8 @@ export default function CardFront({
         >
           <Image
             src={image ?? placeholderImage}
-            fill={true}
-            style={{
-              objectFit: "cover",
-            }}
+            width={500}
+            height={500}
             alt={name ?? ""}
             placeholder="empty"
           />
@@ -84,7 +82,7 @@ const responsiveValues = {
       h: { base: "9rem", "2xl": "13rem" },
     },
     text: { base: "sm", md: "md", "2xl": "2xl" },
-    button: { base: "md", "2xl": "2xl" },
+    button: { base: "front_md", "2xl": "2xl" },
   },
   machinesPage: {
     size: { base: "front_md", sm: "front_xl" },
@@ -93,6 +91,6 @@ const responsiveValues = {
       h: { base: "9rem", sm: "15rem" },
     },
     text: { base: "md", sm: "2xl" },
-    button: { base: "md", sm: "2xl" },
+    button: { base: "front_md", sm: "2xl" },
   },
 };
