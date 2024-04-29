@@ -23,7 +23,7 @@ const variants = {
   front_xs: definePartsStyle({
     container: {
       w: "10rem",
-      h: "13rem",
+      h: "15rem",
       my: "0.5rem",
       overflow: "hidden",
     },
@@ -38,8 +38,8 @@ const variants = {
     footer: {
       backgroundColor: "brand.primary",
       w: "100%",
-      p: "0.25rem",
-      h: "1.5rem",
+      p: "0rem",
+      h: "2.2rem",
     },
   }),
   front_sm: definePartsStyle({
@@ -60,7 +60,7 @@ const variants = {
     footer: {
       backgroundColor: "brand.primary",
       w: "100%",
-      p: "0.25rem",
+      p: "0rem",
       h: "2.6rem",
     },
   }),
