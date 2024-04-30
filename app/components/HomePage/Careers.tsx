@@ -1,3 +1,4 @@
+import { PageHomeBlocksCareerSection } from "@/tina/__generated__/types";
 import {
   Box,
   Button,
@@ -5,38 +6,38 @@ import {
   SimpleGrid,
   Spacer,
   Stack,
-  Text,
 } from "@chakra-ui/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import chalkboard from "../../../public/images/Chalkboard-User.svg";
 import heart from "../../../public/images/Heart-Pulse.svg";
 import graph from "../../../public/images/Upward-Graph.svg";
 import SmallCard from "../SmallCard";
 
-const cardData = [
-  {
-    header: "Job Training",
-    body: "Our Team is invested in training and learning together.",
-    image: chalkboard,
-    alt: "Chalkboard",
-    repositioned: false,
-  },
-  {
-    header: "Benefits & Balance",
-    body: "We believe employees work best when they are supported and encouraged to live fulfilling lives, not just while on the job.",
-    image: heart,
-    alt: "Heart with pulse",
-    repositioned: false,
-  },
-  {
-    header: "Career Growth",
-    body: "CNC Machinists have specialized skills that allow them to evolve with new projects and advance machine technology.",
-    image: graph,
-    alt: "Graph with upward pointing arrow",
-    repositioned: true,
-  },
-];
+export default function Careers(props: PageHomeBlocksCareerSection) {
+  const cardData = [
+    {
+      header: props.card1?.title,
+      body: props.card1?.card1Description,
+      image: chalkboard,
+      alt: "Chalkboard",
+      repositioned: false,
+    },
+    {
+      header: props.card2?.title,
+      body: props.card2?.card2Description,
+      image: heart,
+      alt: "Heart with pulse",
+      repositioned: false,
+    },
+    {
+      header: props.card3?.title,
+      body: props.card3?.card3Description,
+      image: graph,
+      alt: "Graph with upward pointing arrow",
+      repositioned: true,
+    },
+  ];
 
-export default function Careers() {
   return (
     <Box w="100%" backgroundColor="white" py={8}>
       <Stack w="100%" bg="white" py="4rem" align="center" mx="auto">
@@ -47,13 +48,24 @@ export default function Careers() {
           mb={4}
           pb={2}
         >
-          {"Join Our Team"}
+          {props.heading}
         </Heading>
         <Box w={"50%"} pb={"3rem"}>
-          <Text fontSize={"24px"} color={"brand.text"} align={"center"}>
-            Whether you’re a beginner or a CNC expert, there are exciting
-            opportunities for all experience levels at Kenworthy Machine.
-          </Text>
+          <TinaMarkdown
+            content={props.careerDescription}
+            components={{
+              h3: (props) => (
+                <h3
+                  style={{
+                    fontSize: "24px",
+                    color: "brand.text",
+                    textAlign: "center",
+                  }}
+                  {...props}
+                />
+              ),
+            }}
+          />
         </Box>
         <Box mx="auto">
           <Button
@@ -62,7 +74,7 @@ export default function Careers() {
             position={{ base: "static", lg: "relative" }}
             top={{ base: "0", lg: "85" }}
           >
-            Apply Now
+            {props.buttonLabel}
           </Button>
         </Box>
         <SimpleGrid
