@@ -403,7 +403,7 @@ export default defineConfig({
             ],
           },
           {
-            name: "request_quote",
+            name: "requestQuote",
             label: "Request Quote",
             fields: [
               {

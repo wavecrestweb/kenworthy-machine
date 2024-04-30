@@ -1,22 +1,63 @@
+"use client";
+
 // LIBRARY IMPORTS
-import { Box, VStack, Text, HStack, Icon } from "@chakra-ui/react";
-import React, { ReactNode, useState } from "react";
+import React, { useState } from "react";
+import { Box, VStack, Text, HStack } from "@chakra-ui/react";
 import Image from "next/image";
-import { PageHomeBlocksQuoteSection } from "@/tina/__generated__/types";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { useTina } from "tinacms/dist/react";
 
 // LOCAL IMPORTS
 import QuotePageForm from "./QuotePageForm";
 import SuccessMessage from "./SuccessMessage";
-import gearBackgroundLong from "../../../public/images/gearBackgroundLong.png";
 
-export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
+// DEFINE TYPES
+interface PageRequestQuoteBlocksQuotePageForm {
+  formTitle: string;
+  field1Placeholder: string;
+  field2Placeholder: string;
+  field3Placeholder: string;
+  submitButtonText: string;
+}
+
+interface PageRequestQuoteBlocksQuotePageMessage {
+  messageImage: string;
+  messageTitle: string;
+  messageBody: string;
+}
+
+interface PageQuery {
+  page: {
+    blocks: Array<
+      | PageRequestQuoteBlocksQuotePageForm
+      | PageRequestQuoteBlocksQuotePageMessage
+    >;
+  };
+}
+
+export default function RequestQuote(props: {
+  data: PageQuery;
+  variables: {
+    relativePath: string;
+  };
+  query: string;
+}): JSX.Element {
   // SET STATES
   const [submitSuccessful, setSubmitSuccessful] = useState(false);
 
+  // HOOKS
+  const { data } = useTina(props);
   const handleCloseSuccess = () => {
     setSubmitSuccessful(false);
   };
+
+  const quoteFormBlock = data.page.blocks?.find(
+    (block) =>
+      (block as any).__typename === "PageRequestQuoteBlocksQuotePageForm",
+  ) as PageRequestQuoteBlocksQuotePageForm | undefined;
+  const messageBlock = data.page.blocks?.find(
+    (block) =>
+      (block as any).__typename === "PageRequestQuoteBlocksQuotePageMessage",
+  ) as PageRequestQuoteBlocksQuotePageMessage | undefined;
 
   const {
     formTitle = "",
@@ -24,14 +65,18 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
     field2Placeholder = "",
     field3Placeholder = "",
     submitButtonText = "",
-  } = props.requestQuoteForm || {};
+  } = quoteFormBlock || {};
+
+  const messageTitle = messageBlock?.messageTitle;
+  const messageBody = messageBlock?.messageBody;
+  const messageImage = messageBlock?.messageImage;
 
   return (
     <Box position="relative">
       <Image
-        src={gearBackgroundLong}
+        src={messageImage || ""}
         alt=""
-        placeholder="blur"
+        placeholder="empty"
         fill
         sizes="100vw"
         style={{
@@ -45,7 +90,7 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
         spacing={16}
         justifyContent="space-around"
         mx="auto"
-        bgImage={gearBackgroundLong.src}
+        bgImage={messageImage || ""}
         bg="rgba(11, 17, 62, 0.79)"
       >
         <Box
@@ -68,50 +113,12 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
           )}
         </Box>
         <VStack flex="1" maxW={{ base: "auto", lg: "500px" }} spacing={4}>
-          <Text as="h3" fontSize="3xl" fontWeight="bold" color="white" mb={6}>
-            {props.requestCopyTitle}
+          <Text as="h3" fontSize="3xl" color="white" mb={6}>
+            {messageTitle}
           </Text>
-          <HStack align="flex-start">
-            <Box>
-              <TinaMarkdown
-                content={props.fillFormCopy}
-                components={{
-                  h5: (props) => (
-                    <Text as="div" color="white" fontSize="xl" pb="0.5rem">
-                      {props?.children}
-                    </Text>
-                  ),
-                  p: (props) => (
-                    <Text as="div" color="white" fontSize="lg" lineHeight="5">
-                      {props?.children}
-                    </Text>
-                  ),
-                }}
-              />
-            </Box>
-          </HStack>
-          <Text color="white" fontSize="3xl">
-            OR
+          <Text as="h2" fontSize="4xl" color="white" mb={6}>
+            {messageBody}
           </Text>
-          <HStack align="flex-start">
-            <Box>
-              <TinaMarkdown
-                content={props.emailCopy}
-                components={{
-                  h5: (props) => (
-                    <Text as="div" color="white" fontSize="xl" pb="0.5rem">
-                      {props?.children}
-                    </Text>
-                  ),
-                  p: (props) => (
-                    <Text as="div" color="white" fontSize="lg" lineHeight="5">
-                      {props?.children}
-                    </Text>
-                  ),
-                }}
-              />
-            </Box>
-          </HStack>
         </VStack>
       </HStack>
     </Box>
