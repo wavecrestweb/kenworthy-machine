@@ -2,7 +2,7 @@
 
 // LIBRARY IMPORTS
 import React, { useState } from "react";
-import { Box, VStack, Text, HStack } from "@chakra-ui/react";
+import { Box, VStack, Text, Stack } from "@chakra-ui/react";
 import Image from "next/image";
 import { useTina } from "tinacms/dist/react";
 
@@ -84,20 +84,21 @@ export default function RequestQuote(props: {
           zIndex: -1,
         }}
       />
-      <HStack
-        px={10}
+      <Stack
+        px={{ base: 0, md: 10 }}
         py={20}
         spacing={16}
+        direction={{ base: "column", lg: "row" }}
         justifyContent="space-around"
-        mx="auto"
+        mx={{ base: 0, md: "auto" }}
         bgImage={messageImage || ""}
         bg="rgba(11, 17, 62, 0.79)"
       >
         <Box
           bg="white"
           flex="1"
-          minW={{ base: "auto", md: "500px" }}
-          maxW={{ base: "auto", lg: "500px" }}
+          minW={{ base: "full", md: "500px" }}
+          maxW={{ base: "full", lg: "500px" }}
         >
           {submitSuccessful ? (
             <SuccessMessage handleCloseSuccess={handleCloseSuccess} />
@@ -112,15 +113,20 @@ export default function RequestQuote(props: {
             />
           )}
         </Box>
-        <VStack flex="1" maxW={{ base: "auto", lg: "500px" }} spacing={4}>
+        <VStack
+          flex="1"
+          maxW={{ base: "auto", lg: "500px" }}
+          spacing={4}
+          justifyContent="center"
+        >
           <Text as="h3" fontSize="3xl" color="white" mb={6}>
             {messageTitle}
           </Text>
-          <Text as="h2" fontSize="4xl" color="white" mb={6}>
+          <Text as="h2" fontSize="4xl" color="white" mb={6} textAlign="center">
             {messageBody}
           </Text>
         </VStack>
-      </HStack>
+      </Stack>
     </Box>
   );
 }
