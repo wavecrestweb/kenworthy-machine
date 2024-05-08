@@ -6,7 +6,7 @@ This repository contains the source code for the Kenworthy Machine website, a sm
 
 ## Live Site
 
-The website is deployed and can be visited at the following URL: [Kenworthy Machine Live Site](https://kenworthymachine.com)
+The website is deployed and can be visited at the following URL: [Kenworthy Machine Live Site](https://kenworthy-machine.vercel.app/)
 
 ## Team
 
