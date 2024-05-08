@@ -27,8 +27,7 @@ export default function CardFront({
   type,
   path,
 }: CardFrontProps): JSX.Element {
-  // add a placeholder image and replace "default-image-url" with correct url
-  const placeholderImage = "";
+  const placeholderImage = "/machine-gear-background.png";
 
   const style =
     path === "/" ? responsiveValues.carousel : responsiveValues.machinesPage;
@@ -48,10 +47,8 @@ export default function CardFront({
         >
           <Image
             src={image ?? placeholderImage}
-            fill={true}
-            style={{
-              objectFit: "cover",
-            }}
+            width={500}
+            height={500}
             alt={name ?? ""}
             placeholder="empty"
           />
@@ -74,13 +71,18 @@ export default function CardFront({
 
 const responsiveValues = {
   carousel: {
-    size: { md: "front_md", "2xl": "front_lg" },
-    header: {
-      w: { md: "14rem", "2xl": "20rem" },
-      h: { md: "9rem", "2xl": "13rem" },
+    size: {
+      base: "front_xs",
+      sm: "front_sm",
+      md: "front_md",
+      "2xl": "front_lg",
     },
-    text: { md: "md", "2xl": "2xl" },
-    button: { md: "md", "2xl": "2xl" },
+    header: {
+      w: { base: "14rem", "2xl": "20rem" },
+      h: { base: "9rem", "2xl": "13rem" },
+    },
+    text: { base: "sm", md: "md", "2xl": "2xl" },
+    button: { base: "front_md", "2xl": "2xl" },
   },
   machinesPage: {
     size: { base: "front_md", sm: "front_xl" },
@@ -89,6 +91,6 @@ const responsiveValues = {
       h: { base: "9rem", sm: "15rem" },
     },
     text: { base: "md", sm: "2xl" },
-    button: { base: "md", sm: "2xl" },
+    button: { base: "front_md", sm: "2xl" },
   },
 };

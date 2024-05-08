@@ -19,8 +19,8 @@ export default function Header() {
   };
 
   return (
-    <Box backgroundColor="brand.primary">
-      <Stack maxW="1728px" mx="auto">
+    <Box backgroundColor="brand.primary" maxW="1728px" mx="auto" width="100%">
+      <Stack>
         <Grid
           templateColumns={{
             base: "1fr 1fr 20px",

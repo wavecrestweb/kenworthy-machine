@@ -1,17 +1,7 @@
 //LIBRARY IMPORTS
 import { Link as ChakraLink } from "@chakra-ui/next-js";
-import {
-  Container,
-  Heading,
-  Text,
-  SimpleGrid,
-  Flex,
-  Stack,
-} from "@chakra-ui/react";
+import { Heading, Text, SimpleGrid, Flex, Stack, Box } from "@chakra-ui/react";
 import { PageQuery } from "@/tina/__generated__/types";
-
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
 
 //LOCAL IMPORTS
 import MachineCarousel from "../HomePage/MachineCarousel";
@@ -29,50 +19,48 @@ export type MachineCardsBlock = Extract<
 >;
 
 export default function Machines({
-  width,
   path,
   ...props
 }: {
-  width?: number;
   path: string;
 } & MachineCardsBlock): JSX.Element {
-  const adjustedWidth = !width || width > 1728 ? 1728 * 0.9 : width * 0.9;
-
   return (
     <>
       {path === "/" && props.__typename === "PageHomeBlocksMachineCarousel" && (
         <Flex justifyContent="center">
           <ContentWrapper>
-            <Container
-              maxW={adjustedWidth}
+            <Box
               bg="white"
-              py="3rem"
-              px="0px"
-              mx={8}
+              width={"90%"}
+              mx={"auto"}
+              maxW={{ base: "300px", sm: "600px", lg: "1000px", xl: "1500px" }}
             >
               <Heading
                 as="h2"
                 textStyle="h1"
-                fontWeight="normal"
+                fontWeight="600"
                 textAlign="center"
-                mb={4}
-                pb={2}
+                mt={20}
+                py={2}
               >
                 {props.sectionTitle}
               </Heading>
+
               <MachineCarousel machineCards={props?.machineCards} path={path} />
-              <Flex mt={16} mb={4} justifyContent="center">
+
+              <Flex mt={16} mb={12} justifyContent="center">
                 <ChakraLink
                   href="/view-machines"
                   variant="buttonPrimaryLight"
                   p={{ base: "0.375rem 2.5rem", sm: "0.5rem 4rem" }}
                   lineHeight="6"
+                  mb={20}
                   fontSize={{ base: "md", md: "xl" }}
                 >
                   {props.buttonLabel}
                 </ChakraLink>
               </Flex>
-            </Container>
+            </Box>
           </ContentWrapper>
         </Flex>
       )}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { keyframes } from "@chakra-ui/react";
+import { Box, keyframes } from "@chakra-ui/react";
 
 import CardFront from "./CardFront";
 import CardBack from "./CardBack";
@@ -28,7 +28,7 @@ export default function Card(props: MachineCard): JSX.Element {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <>
+    <Box padding={8} margin={"auto"}>
       {isFlipped ? (
         <CardBack
           setIsFlipped={setIsFlipped}
@@ -42,6 +42,6 @@ export default function Card(props: MachineCard): JSX.Element {
           {...props}
         />
       )}
-    </>
+    </Box>
   );
 }
