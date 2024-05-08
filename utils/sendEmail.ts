@@ -1,4 +1,4 @@
-import { FormData } from "@/app/components/QuoteForm";
+import { FormData } from "./types";
 
 export function sendEmail(data: FormData) {
   const apiEndpoint = "/api/email";
