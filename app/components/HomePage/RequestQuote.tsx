@@ -1,5 +1,5 @@
 // LIBRARY IMPORTS
-import { Box, VStack, Text, HStack, Icon } from "@chakra-ui/react";
+import { Box, Flex, VStack, Text, HStack, Icon } from "@chakra-ui/react";
 import React, { ReactNode, useState } from "react";
 import { FaRegClipboard, FaRegEnvelope, FaRegHandshake } from "react-icons/fa6";
 import Image from "next/image";
@@ -40,15 +40,18 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
           zIndex: -1,
         }}
       />
-      <HStack
-        px={10}
+      <Box
+        display="flex"
+        flexDirection={{ base: "column-reverse", lg: "row" }}
+        gap="4rem"
+        px={{ base: 12, md: 24, lg: 10 }}
         py={20}
-        spacing={16}
         justifyContent="space-around"
         mx="auto"
         bgImage={machineBackground.src}
         bg="rgba(11, 17, 62, 0.79)"
       >
+        <Flex></Flex>
         <Box
           bg="white"
           flex="1"
@@ -151,7 +154,7 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
             </Box>
           </HStack>
         </VStack>
-      </HStack>
+      </Box>
     </Box>
   );
 }

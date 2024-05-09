@@ -1,5 +1,4 @@
 // LIBRARY IMPORTS
-import { ReactNode } from "react";
 import { PageHomeBlocksValues } from "@/tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import {
@@ -43,12 +42,16 @@ export default function CompanyValues(props: PageHomeBlocksValues) {
               maxW="1400px"
               bg="white"
               borderRadius="2xl"
-              px={32}
+              px={{ base: 8, md: 16, lg: 32 }}
               py={24}
-              spacing={36}
+              spacing={{ base: 8, md: 24, lg: 36 }}
             >
               {/* QUALITY VALUE CONTAINER */}
-              <HStack spacing={12} align="center">
+              <HStack
+                direction={{ base: "column", md: "row" }}
+                spacing={12}
+                align="center"
+              >
                 <VStack align="start" spacing={4}>
                   <Heading size="lg" color="brand.text">
                     {props.quality1?.title}
@@ -80,7 +83,11 @@ export default function CompanyValues(props: PageHomeBlocksValues) {
                 </Flex>
               </HStack>
               {/* ON-TIME VALUE CONTAINER */}
-              <HStack spacing={12} align="center">
+              <HStack
+                direction={{ base: "column", md: "row" }}
+                spacing={12}
+                align="center"
+              >
                 <Flex
                   p={4}
                   bg="brand.primary"
@@ -112,7 +119,11 @@ export default function CompanyValues(props: PageHomeBlocksValues) {
                 </VStack>
               </HStack>
               {/* COLLABORATION VALUE CONTAINER */}
-              <HStack spacing={12} align="center">
+              <HStack
+                direction={{ base: "column", md: "row" }}
+                spacing={12}
+                align="center"
+              >
                 <VStack align="start" spacing={4}>
                   <Heading size="lg" color="brand.text">
                     {props.quality3?.title}
