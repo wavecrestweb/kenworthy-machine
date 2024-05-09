@@ -1,6 +1,6 @@
 // LIBRARY IMPORTS
-import { Box, Flex, VStack, Text, HStack, Icon } from "@chakra-ui/react";
-import React, { ReactNode, useState } from "react";
+import { Box, VStack, Text, HStack, Icon } from "@chakra-ui/react";
+import React, { useState } from "react";
 import { FaRegClipboard, FaRegEnvelope, FaRegHandshake } from "react-icons/fa6";
 import Image from "next/image";
 import { PageHomeBlocksQuoteSection } from "@/tina/__generated__/types";
@@ -51,7 +51,6 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
         bgImage={machineBackground.src}
         bg="rgba(11, 17, 62, 0.79)"
       >
-        <Flex></Flex>
         <Box
           bg="white"
           flex="1"
