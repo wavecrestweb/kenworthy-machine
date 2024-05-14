@@ -8,6 +8,7 @@ import {
   HStack,
   Icon,
   Text,
+  Stack,
   VStack,
 } from "@chakra-ui/react";
 import Image from "next/image";
@@ -43,16 +44,20 @@ export default function CompanyValues(props: PageHomeBlocksValues) {
               bg="white"
               borderRadius="2xl"
               px={{ base: 8, md: 16, lg: 32 }}
-              py={24}
+              py={{ base: 16, md: 24 }}
               spacing={{ base: 8, md: 24, lg: 36 }}
             >
               {/* QUALITY VALUE CONTAINER */}
-              <HStack
+              <Stack
                 direction={{ base: "column", md: "row" }}
                 spacing={12}
                 align="center"
               >
-                <VStack align="start" spacing={4}>
+                <VStack
+                  align={{ base: "center", md: "start" }}
+                  spacing={4}
+                  order={{ base: 2, md: 0 }}
+                >
                   <Heading size="lg" color="brand.text">
                     {props.quality1?.title}
                   </Heading>
@@ -78,18 +83,20 @@ export default function CompanyValues(props: PageHomeBlocksValues) {
                   borderRadius="2xl"
                   align="center"
                   justify="center"
+                  order={{ base: 1, md: 0 }}
                 >
                   <Icon as={FaRegStar} boxSize={24} color="white" />
                 </Flex>
-              </HStack>
+              </Stack>
               {/* ON-TIME VALUE CONTAINER */}
-              <HStack
+              <Stack
                 direction={{ base: "column", md: "row" }}
                 spacing={12}
                 align="center"
               >
                 <Flex
                   p={4}
+                  mt={{ base: 8 }}
                   bg="brand.primary"
                   borderRadius="2xl"
                   align="center"
@@ -97,7 +104,7 @@ export default function CompanyValues(props: PageHomeBlocksValues) {
                 >
                   <Icon as={FaRegClock} boxSize={24} color="white" />
                 </Flex>
-                <VStack align="start" spacing={4}>
+                <VStack align={{ base: "center", md: "start" }} spacing={4}>
                   <Heading size="lg" color="brand.text">
                     {props.quality2?.title}
                   </Heading>
@@ -117,14 +124,18 @@ export default function CompanyValues(props: PageHomeBlocksValues) {
                     }}
                   />
                 </VStack>
-              </HStack>
+              </Stack>
               {/* COLLABORATION VALUE CONTAINER */}
-              <HStack
+              <Stack
                 direction={{ base: "column", md: "row" }}
                 spacing={12}
                 align="center"
               >
-                <VStack align="start" spacing={4}>
+                <VStack
+                  align={{ base: "center", md: "start" }}
+                  spacing={4}
+                  order={{ base: 2, md: 0 }}
+                >
                   <Heading size="lg" color="brand.text">
                     {props.quality3?.title}
                   </Heading>
@@ -146,14 +157,16 @@ export default function CompanyValues(props: PageHomeBlocksValues) {
                 </VStack>
                 <Flex
                   p={4}
+                  mt={{ base: 8 }}
                   bg="brand.primary"
                   borderRadius="2xl"
                   align="center"
                   justify="center"
+                  order={{ base: 1, md: 0 }}
                 >
                   <Icon as={FaPeopleGroup} boxSize={24} color="white" />
                 </Flex>
-              </HStack>
+              </Stack>
             </VStack>
           </VStack>
         </ContentWrapper>
