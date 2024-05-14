@@ -8,6 +8,7 @@ import { useTina } from "tinacms/dist/react";
 
 // LOCAL IMPORTS
 import QuotePageForm from "./QuotePageForm";
+import HomeQuoteForm from "../HomePage/HomeQuoteForm";
 import SuccessMessage from "./SuccessMessage";
 
 // DEFINE TYPES

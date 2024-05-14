@@ -8,6 +8,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React, { Dispatch, SetStateAction } from "react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 // LOCAL IMPORTS
 import { useSendQuoteRequest } from "@/utils/hooks/useSendQuoteRequest";
@@ -107,7 +108,10 @@ export default function QuotePageForm({
             borderRadius="3xl"
             border="2px"
             id="details"
-            placeholder={field3Placeholder || "Share additional information or questions you have. Our team will personally connect with you about this quote."}
+            placeholder={
+              field3Placeholder ||
+              "Share additional information or questions you have. Our team will personally connect with you about this quote."
+            }
             _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
             aria-label="Share additional information or questions"
             _hover={{

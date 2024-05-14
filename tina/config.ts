@@ -202,7 +202,7 @@ export default defineConfig({
                             name: "field2Placeholder",
                           },
                           {
-                            type: "rich-text",
+                            type: "string",
                             label: "Form Field 3 Placeholder",
                             name: "field3Placeholder",
                           },
@@ -371,7 +371,7 @@ export default defineConfig({
                             name: "field2Placeholder",
                           },
                           {
-                            type: "rich-text",
+                            type: "string",
                             label: "Form Field 3 Placeholder",
                             name: "field3Placeholder",
                           },
@@ -501,7 +501,7 @@ export default defineConfig({
                         name: "field2Placeholder",
                       },
                       {
-                        type: "rich-text",
+                        type: "string",
                         label: "Form Field 3 Placeholder",
                         name: "field3Placeholder",
                       },
