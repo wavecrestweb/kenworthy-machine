@@ -28,7 +28,7 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
   } = props.requestQuoteForm || {};
 
   return (
-    <Box position="relative">
+    <Box position="relative" overflow="hidden">
       <Image
         src={machineBackground}
         alt=""

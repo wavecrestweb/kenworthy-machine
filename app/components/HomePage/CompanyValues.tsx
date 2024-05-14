@@ -20,7 +20,7 @@ import ContentWrapper from "../ContentWrapper";
 // VALUES COMPONENT DEFINITION
 export default function CompanyValues(props: PageHomeBlocksValues) {
   return (
-    <Box position="relative">
+    <Box position="relative" overflow="hidden">
       <Image
         src={gearBackground}
         alt=""

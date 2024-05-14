@@ -45,6 +45,7 @@ export default function Header() {
             alignItems="center"
             justifyContent={{ base: "flex-start", lg: "flex-end" }}
             gap={{ base: "0", lg: "24px" }}
+            overflow="hidden"
           >
             <ChakraLink
               href="/"
@@ -84,7 +85,6 @@ export default function Header() {
               icon={hamburger ? <FaXmark /> : <FaBars />}
             />
           </Box>
-          <Spacer></Spacer>
         </Grid>
         {hamburger && (
           <Grid
