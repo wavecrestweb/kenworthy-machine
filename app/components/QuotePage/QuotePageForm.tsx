@@ -8,7 +8,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React, { Dispatch, SetStateAction } from "react";
-import { FaRegClipboard, FaRegEnvelope, FaRegHandshake } from "react-icons/fa6";
 
 // LOCAL IMPORTS
 import { useSendQuoteRequest } from "@/utils/hooks/useSendQuoteRequest";
@@ -108,7 +107,7 @@ export default function QuotePageForm({
             borderRadius="3xl"
             border="2px"
             id="details"
-            placeholder="Share additional information or questions you have. Our team will personally connect with you about this quote."
+            placeholder={field3Placeholder || "Share additional information or questions you have. Our team will personally connect with you about this quote."}
             _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
             aria-label="Share additional information or questions"
             _hover={{

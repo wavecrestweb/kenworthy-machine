@@ -1,4 +1,3 @@
-import QuotePageForm from "@/app/components/QuotePage/QuotePageForm";
 import { defineConfig } from "tinacms";
 
 // Your hosting provider likely exposes this as an environment variable
