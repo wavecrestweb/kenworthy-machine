@@ -9,6 +9,7 @@ import { PageQuery } from "@/tina/__generated__/types";
 import Benefits from "./Benefits";
 import CareersHero from "./CareersHero";
 import WhyKM from "./WhyKM";
+import Openings from "./Openings";
 
 export default function CareersPage(props: {
   data: PageQuery;
@@ -31,6 +32,9 @@ export default function CareersPage(props: {
           }
           case "PageCareersBlocksWhyKM": {
             return <WhyKM key={i} {...block} />;
+          }
+          case "PageCareersBlocksOpenings": {
+            return <Openings key={i} {...block} />;
           }
         }
       })}
