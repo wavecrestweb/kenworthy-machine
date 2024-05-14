@@ -10,6 +10,9 @@ const baseStyle = definePartsStyle({
     boxShadow: "0px 6px 4px 0px #00000040",
     borderRadius: "1.25rem",
   },
+  header: {
+    p: "1.25rem",
+  },
   footer: {
     backgroundColor: "brand.primary",
     borderBottomRadius: "1.25rem",
@@ -17,6 +20,50 @@ const baseStyle = definePartsStyle({
 });
 
 const variants = {
+  front_xs: definePartsStyle({
+    container: {
+      w: "10rem",
+      h: "15rem",
+      my: "0.5rem",
+      overflow: "hidden",
+    },
+    header: {
+      p: "0",
+    },
+    body: {
+      pt: "1rem",
+      maxHeight: "4rem",
+      overflow: "hidden",
+    },
+    footer: {
+      backgroundColor: "brand.primary",
+      w: "100%",
+      p: "0rem",
+      h: "2.2rem",
+    },
+  }),
+  front_sm: definePartsStyle({
+    container: {
+      w: "12rem",
+      h: "16rem",
+      my: "1rem",
+      overflow: "hidden",
+    },
+    header: {
+      p: "0",
+    },
+    body: {
+      pt: "1.5rem",
+      maxHeight: "5rem",
+      overflow: "hidden",
+    },
+    footer: {
+      backgroundColor: "brand.primary",
+      w: "100%",
+      p: "0rem",
+      h: "2.6rem",
+    },
+  }),
   position_lg: definePartsStyle({
     container: {
       boxShadow: "0px 4px 4px 0px #00000040",
@@ -106,6 +153,56 @@ const variants = {
       w: "100%",
       p: "1.5rem",
       h: "5.5rem",
+    },
+  }),
+  back_xs: definePartsStyle({
+    container: {
+      backgroundColor: "brand.primary",
+      opacity: "95%",
+      w: "10rem",
+      h: "13rem",
+      my: "0.5rem",
+    },
+    header: {
+      p: "1rem 0.3rem 0.25rem",
+      height: "4.25rem",
+      overflow: "hidden",
+    },
+    body: {
+      p: "0 0.5rem 0 1rem",
+      maxHeight: "11rem",
+      overflow: "hidden",
+    },
+    footer: {
+      backgroundColor: "white",
+      p: "0.25rem",
+      h: "2rem",
+      w: "100%",
+    },
+  }),
+  back_sm: definePartsStyle({
+    container: {
+      backgroundColor: "brand.primary",
+      opacity: "95%",
+      w: "12rem",
+      h: "16rem",
+      my: "0.5rem",
+    },
+    header: {
+      p: "1rem 0.3rem 0.25rem",
+      height: "4.25rem",
+      overflow: "hidden",
+    },
+    body: {
+      p: "0 0.5rem 0 1rem",
+      maxHeight: "11rem",
+      overflow: "hidden",
+    },
+    footer: {
+      backgroundColor: "white",
+      p: "0.25rem",
+      h: "3.25rem",
+      w: "100%",
     },
   }),
   back_md: definePartsStyle({
