@@ -33,7 +33,7 @@ export default function Machines({
               bg="white"
               width={"90%"}
               mx={"auto"}
-              maxW={{ base: "300px", sm: "600px", lg: "1000px", xl: "1500px" }}
+              maxW={{ base: "250px", md: "600px", lg: "950px", xl: "1200px" }}
             >
               <Heading
                 as="h2"

@@ -1,6 +1,6 @@
 // LIBRARY IMPORTS
 import { Box, VStack, Text, HStack, Icon } from "@chakra-ui/react";
-import React, { ReactNode, useState } from "react";
+import React, { useState } from "react";
 import { FaRegClipboard, FaRegEnvelope, FaRegHandshake } from "react-icons/fa6";
 import Image from "next/image";
 import { PageHomeBlocksQuoteSection } from "@/tina/__generated__/types";
@@ -28,7 +28,7 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
   } = props.requestQuoteForm || {};
 
   return (
-    <Box position="relative">
+    <Box position="relative" overflow="hidden">
       <Image
         src={machineBackground}
         alt=""
@@ -40,10 +40,12 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
           zIndex: -1,
         }}
       />
-      <HStack
-        px={10}
+      <Box
+        display="flex"
+        flexDirection={{ base: "column-reverse", lg: "row" }}
+        gap="4rem"
+        px={{ base: 12, md: 24, lg: 10 }}
         py={20}
-        spacing={16}
         justifyContent="space-around"
         mx="auto"
         bgImage={machineBackground.src}
@@ -151,7 +153,7 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
             </Box>
           </HStack>
         </VStack>
-      </HStack>
+      </Box>
     </Box>
   );
 }
