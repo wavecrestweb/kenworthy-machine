@@ -35,12 +35,14 @@ interface PageQuery {
   };
 }
 
-export default function RequestQuote(props: {
+export default function QuotePage(props: {
   data: PageQuery;
   variables: {
     relativePath: string;
   };
   query: string;
+  errors?: { message: string }[];
+  path?: string[];
 }): JSX.Element {
   // SET STATES
   const [submitSuccessful, setSubmitSuccessful] = useState(false);
