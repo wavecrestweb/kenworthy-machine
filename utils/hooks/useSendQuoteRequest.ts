@@ -11,7 +11,6 @@ type UseSendQuoteRequestReturn = {
   handleSubmit: ReturnType<typeof useForm<FormData>>["handleSubmit"];
   formState: {
     errors: FieldErrors<FormData>;
-    isSubmitting: boolean;
   };
   onSubmit: (
     data: FormData,
@@ -24,7 +23,7 @@ export const useSendQuoteRequest = (): UseSendQuoteRequestReturn => {
     register,
     reset,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<FormData>();
   const toast = useToast();
 
@@ -69,7 +68,7 @@ export const useSendQuoteRequest = (): UseSendQuoteRequestReturn => {
   return {
     register,
     handleSubmit: handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors },
     onSubmit,
   };
 };
