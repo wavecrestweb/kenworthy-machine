@@ -110,6 +110,7 @@ export default function HomeQuoteForm({
             focusBorderColor="brand.accentGreen"
             borderRadius="3xl"
             border="2px"
+            height={36}
             id="details"
             placeholder="Share additional information or questions you have. Our team will personally connect with you about this quote."
             _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
