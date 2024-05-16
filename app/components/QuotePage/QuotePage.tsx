@@ -10,9 +10,11 @@ import { useTina } from "tinacms/dist/react";
 import QuotePageForm from "./QuotePageForm";
 import HomeQuoteForm from "../HomePage/HomeQuoteForm";
 import SuccessMessage from "./SuccessMessage";
+import gearBackground from "../../../public/images/machine-gear-background.png";
 
 // DEFINE TYPES
 interface PageRequestQuoteBlocksQuotePageForm {
+  __typename: "PageRequestQuoteBlocksQuotePageForm";
   formTitle: string;
   field1Placeholder: string;
   field2Placeholder: string;
@@ -21,7 +23,7 @@ interface PageRequestQuoteBlocksQuotePageForm {
 }
 
 interface PageRequestQuoteBlocksQuotePageMessage {
-  messageImage: string;
+  __typename: "PageRequestQuoteBlocksQuotePageMessage";
   messageTitle: string;
   messageBody: string;
 }
@@ -35,7 +37,7 @@ interface PageQuery {
   };
 }
 
-export default function QuotePage(props: {
+interface QuotePageProps {
   data: PageQuery;
   variables: {
     relativePath: string;
@@ -43,12 +45,18 @@ export default function QuotePage(props: {
   query: string;
   errors?: { message: string }[];
   path?: string[];
-}): JSX.Element {
+}
+
+export default function QuotePage(props: QuotePageProps): JSX.Element {
   // SET STATES
   const [submitSuccessful, setSubmitSuccessful] = useState(false);
 
   // HOOKS
   const { data } = useTina(props);
+
+  // Debugging: Log the data structure
+  console.log("Tina Data:", data);
+
   const handleCloseSuccess = () => {
     setSubmitSuccessful(false);
   };
@@ -72,12 +80,11 @@ export default function QuotePage(props: {
 
   const messageTitle = messageBlock?.messageTitle;
   const messageBody = messageBlock?.messageBody;
-  const messageImage = messageBlock?.messageImage;
 
   return (
     <Box position="relative">
       <Image
-        src={messageImage || ""}
+        src={gearBackground}
         alt=""
         placeholder="empty"
         fill
@@ -94,7 +101,7 @@ export default function QuotePage(props: {
         direction={{ base: "column", lg: "row" }}
         justifyContent="space-around"
         mx={{ base: 0, md: "auto" }}
-        bgImage={messageImage || ""}
+        bgImage={gearBackground.src}
         bg="rgba(11, 17, 62, 0.79)"
       >
         <Box

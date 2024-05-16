@@ -517,11 +517,6 @@ export default defineConfig({
                     name: "quotePageMessage",
                     fields: [
                       {
-                        label: "Message Image",
-                        name: "messageImage",
-                        type: "image",
-                      },
-                      {
                         type: "string",
                         label: "Message Title",
                         name: "messageTitle",
