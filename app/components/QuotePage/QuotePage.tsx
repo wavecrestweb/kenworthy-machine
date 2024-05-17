@@ -8,7 +8,6 @@ import { useTina } from "tinacms/dist/react";
 
 // LOCAL IMPORTS
 import QuotePageForm from "./QuotePageForm";
-import HomeQuoteForm from "../HomePage/HomeQuoteForm";
 import SuccessMessage from "./SuccessMessage";
 import gearBackground from "../../../public/images/machine-gear-background.png";
 
@@ -28,17 +27,8 @@ interface PageRequestQuoteBlocksQuotePageMessage {
   messageBody: string;
 }
 
-interface PageQuery {
-  page: {
-    blocks: Array<
-      | PageRequestQuoteBlocksQuotePageForm
-      | PageRequestQuoteBlocksQuotePageMessage
-    >;
-  };
-}
-
 interface QuotePageProps {
-  data: PageQuery;
+  data: any;
   variables: {
     relativePath: string;
   };
@@ -61,14 +51,22 @@ export default function QuotePage(props: QuotePageProps): JSX.Element {
     setSubmitSuccessful(false);
   };
 
-  const quoteFormBlock = data.page.blocks?.find(
-    (block) =>
-      (block as any).__typename === "PageRequestQuoteBlocksQuotePageForm",
-  ) as PageRequestQuoteBlocksQuotePageForm | undefined;
-  const messageBlock = data.page.blocks?.find(
-    (block) =>
-      (block as any).__typename === "PageRequestQuoteBlocksQuotePageMessage",
-  ) as PageRequestQuoteBlocksQuotePageMessage | undefined;
+  const quoteFormBlock: PageRequestQuoteBlocksQuotePageForm | undefined =
+    data.page.blocks?.find(
+      (
+        block:
+          | PageRequestQuoteBlocksQuotePageForm
+          | PageRequestQuoteBlocksQuotePageMessage,
+      ) => block.__typename === "PageRequestQuoteBlocksQuotePageForm",
+    ) as PageRequestQuoteBlocksQuotePageForm;
+  const messageBlock: PageRequestQuoteBlocksQuotePageMessage | undefined =
+    data.page.blocks?.find(
+      (
+        block:
+          | PageRequestQuoteBlocksQuotePageForm
+          | PageRequestQuoteBlocksQuotePageMessage,
+      ) => block.__typename === "PageRequestQuoteBlocksQuotePageMessage",
+    ) as PageRequestQuoteBlocksQuotePageMessage;
 
   const {
     formTitle = "",
