@@ -117,7 +117,10 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
             border="2px"
             id="details"
             fontSize="lg"
-            placeholder="Share additional information or questions you have. Our team will personally connect with you about this quote."
+            placeholder={
+              props?.requestQuoteForm?.field3Placeholder ||
+              "Share additional information or questions you have. Our team will personally connect with you about this quote."
+            }
             _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
             aria-label="Share additional information or questions"
             _hover={{
@@ -135,7 +138,7 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
           w="md"
           type="submit"
         >
-          Submit
+          {props?.requestQuoteForm?.submitButtonText || "Submit"}
         </Button>
       </VStack>
     </ChakraForm>

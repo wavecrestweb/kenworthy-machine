@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useTina } from "tinacms/dist/react";
 
 // LOCAL IMPORTS
-import QuotePageForm from "./QuotePageForm";
+import HomeQuoteForm from "../HomePage/HomeQuoteForm";
 import SuccessMessage from "./SuccessMessage";
 import gearBackground from "../../../public/images/machine-gear-background.png";
 
@@ -93,8 +93,8 @@ export default function QuotePage(props: QuotePageProps): JSX.Element {
         }}
       />
       <Stack
-        px={{ base: 0, md: 10 }}
-        py={20}
+        px={{ base: 0, lg: 10 }}
+        py={{ base: 0, lg: 20 }}
         spacing={16}
         direction={{ base: "column", lg: "row" }}
         justifyContent="space-around"
@@ -111,7 +111,7 @@ export default function QuotePage(props: QuotePageProps): JSX.Element {
           {submitSuccessful ? (
             <SuccessMessage handleCloseSuccess={handleCloseSuccess} />
           ) : (
-            <QuotePageForm
+            <HomeQuoteForm
               formTitle={formTitle}
               field1Placeholder={field1Placeholder}
               field2Placeholder={field2Placeholder}
@@ -130,7 +130,14 @@ export default function QuotePage(props: QuotePageProps): JSX.Element {
           <Text as="h3" fontSize="3xl" color="white" mb={6}>
             {messageTitle}
           </Text>
-          <Text as="h2" fontSize="4xl" color="white" mb={6} textAlign="center">
+          <Text
+            as="h2"
+            fontSize="4xl"
+            color="white"
+            mb={6}
+            textAlign="center"
+            px={{ base: 10, md: 0 }}
+          >
             {messageBody}
           </Text>
         </VStack>
