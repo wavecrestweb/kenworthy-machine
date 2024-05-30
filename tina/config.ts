@@ -42,6 +42,9 @@ export default defineConfig({
             if (document._sys.filename === "careers") {
               return "/careers";
             }
+            if (document._sys.filename === "request_quote") {
+              return "/request-quote";
+            }
           },
         },
         templates: [
@@ -199,7 +202,7 @@ export default defineConfig({
                             name: "field2Placeholder",
                           },
                           {
-                            type: "rich-text",
+                            type: "string",
                             label: "Form Field 3 Placeholder",
                             name: "field3Placeholder",
                           },
@@ -368,7 +371,7 @@ export default defineConfig({
                             name: "field2Placeholder",
                           },
                           {
-                            type: "rich-text",
+                            type: "string",
                             label: "Form Field 3 Placeholder",
                             name: "field3Placeholder",
                           },
@@ -540,6 +543,67 @@ export default defineConfig({
                             label: "Icon",
                           },
                         ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "requestQuote",
+            label: "Request Quote",
+            fields: [
+              {
+                name: "blocks",
+                label: "Blocks",
+                type: "object",
+                list: true,
+                templates: [
+                  {
+                    label: "Quote Page Form",
+                    name: "quotePageForm",
+                    fields: [
+                      {
+                        type: "string",
+                        label: "Form Title",
+                        name: "formTitle",
+                      },
+                      {
+                        type: "string",
+                        label: "Form Field 1 Placeholder",
+                        name: "field1Placeholder",
+                      },
+                      {
+                        type: "string",
+                        label: "Form Field 2 Placeholder",
+                        name: "field2Placeholder",
+                      },
+                      {
+                        type: "string",
+                        label: "Form Field 3 Placeholder",
+                        name: "field3Placeholder",
+                      },
+                      {
+                        type: "string",
+                        label: "Submit Button Text",
+                        name: "submitButtonText",
+                      },
+                    ],
+                  },
+                  {
+                    label: "Quote Page Message",
+                    name: "quotePageMessage",
+                    fields: [
+                      {
+                        type: "string",
+                        label: "Message Title",
+                        name: "messageTitle",
+                      },
+                      {
+                        type: "string",
+                        label: "Message Body",
+                        name: "messageBody",
                       },
                     ],
                   },

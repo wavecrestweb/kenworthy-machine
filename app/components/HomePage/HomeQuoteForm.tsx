@@ -1,5 +1,6 @@
 // LIBRARY IMPORTS
 import {
+  Box,
   Button,
   FormControl,
   Input,
@@ -41,20 +42,15 @@ export default function HomeQuoteForm({
   const { register, handleSubmit, formState, onSubmit } = useSendQuoteRequest();
 
   return (
-    <form
+    <Box
+      as="form"
       onSubmit={handleSubmit((data) => onSubmit(data, setSubmitSuccessful))}
+      px={{ base: 2, md: 10, lg: 0 }}
     >
       <Text textAlign="center" fontSize="3xl" mt={8} color="brand.text">
         {formTitle || "Request a Quote"}
       </Text>
-      <VStack
-        spacing={6}
-        px={8}
-        py={10}
-        bg="white"
-        borderRadius="lg"
-        boxShadow="xl"
-      >
+      <VStack spacing={6} px={8} py={10} bg="white" borderRadius="lg">
         <FormControl isRequired>
           <Input
             borderColor="brand.primary"
@@ -112,7 +108,10 @@ export default function HomeQuoteForm({
             border="2px"
             height={36}
             id="details"
-            placeholder="Share additional information or questions you have. Our team will personally connect with you about this quote."
+            placeholder={
+              field3Placeholder ||
+              "Share additional information or questions you have. Our team will personally connect with you about this quote."
+            }
             _placeholder={{ opacity: 1, color: "brand.accentGrey" }}
             aria-label="Share additional information or questions"
             _hover={{
@@ -136,6 +135,6 @@ export default function HomeQuoteForm({
           {buttonDisabled ? "Submitting..." : submitButtonText || "Submit"}
         </Button>
       </VStack>
-    </form>
+    </Box>
   );
 }
