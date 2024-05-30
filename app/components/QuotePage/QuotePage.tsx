@@ -40,6 +40,7 @@ interface QuotePageProps {
 export default function QuotePage(props: QuotePageProps): JSX.Element {
   // SET STATES
   const [submitSuccessful, setSubmitSuccessful] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
   // HOOKS
   const { data } = useTina(props);
@@ -49,6 +50,7 @@ export default function QuotePage(props: QuotePageProps): JSX.Element {
 
   const handleCloseSuccess = () => {
     setSubmitSuccessful(false);
+    setButtonDisabled(false);
   };
 
   const quoteFormBlock: PageRequestQuoteBlocksQuotePageForm | undefined =
@@ -118,6 +120,8 @@ export default function QuotePage(props: QuotePageProps): JSX.Element {
               field3Placeholder={field3Placeholder}
               submitButtonText={submitButtonText}
               setSubmitSuccessful={setSubmitSuccessful}
+              buttonDisabled={buttonDisabled}
+              setButtonDisabled={setButtonDisabled}
             />
           )}
         </Box>
