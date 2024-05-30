@@ -125,6 +125,7 @@ export default function QuotePage(props: QuotePageProps): JSX.Element {
           flex="1"
           maxW={{ base: "auto", lg: "500px" }}
           spacing={4}
+          pb={{ base: 4, lg: 0 }}
           justifyContent="center"
         >
           <Text as="h3" fontSize="3xl" color="white" mb={6}>
