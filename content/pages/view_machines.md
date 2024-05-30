@@ -10,6 +10,8 @@ blocks:
       formTitle: Request a Quote
       field1Placeholder: Name
       field2Placeholder: Industry Type
+      field3Placeholder: Share additional information or questions you have. Our team will personally connect with you about this quote.
+      submitButtonText: Submit
     _template: quoteSection
 _template: viewMachines
 ---
