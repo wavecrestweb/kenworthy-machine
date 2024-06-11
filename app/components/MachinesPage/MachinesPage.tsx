@@ -20,10 +20,12 @@ export default function MachinesPage(props: {
 }): JSX.Element {
   // SET STATES
   const [submitSuccessful, setSubmitSuccessful] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
   // HOOKS
   const handleCloseSuccess = () => {
     setSubmitSuccessful(false);
+    setButtonDisabled(false);
   };
   const { data } = useTina(props);
 
@@ -45,6 +47,8 @@ export default function MachinesPage(props: {
                 key={i}
                 {...block}
                 setSubmitSuccessful={setSubmitSuccessful}
+                buttonDisabled={buttonDisabled}
+                setButtonDisabled={setButtonDisabled}
               />
             );
           }
