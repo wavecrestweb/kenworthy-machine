@@ -19,6 +19,8 @@ import { PageViewMachinesBlocksQuoteSection } from "@/tina/__generated__/types";
 interface MachineLayoutQuoteFormProps
   extends PageViewMachinesBlocksQuoteSection {
   setSubmitSuccessful: Dispatch<SetStateAction<boolean>>;
+  buttonDisabled?: boolean;
+  setButtonDisabled?: Dispatch<SetStateAction<boolean>>;
 }
 
 const ChakraForm = chakra("form");
@@ -133,12 +135,21 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
           px={12}
           py={6}
           my={8}
-          variant="mc-red"
+          cursor={props?.buttonDisabled ? "not-allowed" : "pointer"}
+          variant={props?.buttonDisabled ? "mc-white" : "mc-red"}
           fontSize="2xl"
           w="md"
           type="submit"
+          disabled={props?.buttonDisabled}
+          onClick={() => {
+            if (props?.setButtonDisabled) {
+              props.setButtonDisabled(true);
+            }
+          }}
         >
-          {props?.requestQuoteForm?.submitButtonText || "Submit"}
+          {props?.buttonDisabled
+            ? "Submitting..."
+            : props?.requestQuoteForm?.submitButtonText || "Submit"}
         </Button>
       </VStack>
     </ChakraForm>

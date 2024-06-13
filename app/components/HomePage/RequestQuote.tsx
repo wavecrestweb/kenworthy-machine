@@ -14,9 +14,11 @@ import machineBackground from "../../../public/images/machineBackground.png";
 export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
   // SET STATES
   const [submitSuccessful, setSubmitSuccessful] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
   const handleCloseSuccess = () => {
     setSubmitSuccessful(false);
+    setButtonDisabled(false);
   };
 
   const {
@@ -67,6 +69,8 @@ export default function RequestQuote(props: PageHomeBlocksQuoteSection) {
               field3Placeholder={field3Placeholder}
               submitButtonText={submitButtonText}
               setSubmitSuccessful={setSubmitSuccessful}
+              buttonDisabled={buttonDisabled}
+              setButtonDisabled={setButtonDisabled}
             />
           )}
         </Box>

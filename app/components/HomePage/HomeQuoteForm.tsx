@@ -8,7 +8,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 // LOCAL IMPORTS
 import { useSendQuoteRequest } from "@/utils/hooks/useSendQuoteRequest";
@@ -24,6 +24,8 @@ interface RequestQuoteForm {
 
 interface HomeQuoteFormProps extends RequestQuoteForm {
   setSubmitSuccessful: Dispatch<SetStateAction<boolean>>;
+  buttonDisabled?: boolean;
+  setButtonDisabled?: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function HomeQuoteForm({
@@ -33,6 +35,8 @@ export default function HomeQuoteForm({
   field3Placeholder,
   submitButtonText,
   setSubmitSuccessful,
+  buttonDisabled,
+  setButtonDisabled,
 }: HomeQuoteFormProps) {
   // CUSTOM HOOK
   const { register, handleSubmit, formState, onSubmit } = useSendQuoteRequest();
@@ -102,6 +106,7 @@ export default function HomeQuoteForm({
             focusBorderColor="brand.accentGreen"
             borderRadius="3xl"
             border="2px"
+            height={36}
             id="details"
             placeholder={
               field3Placeholder ||
@@ -115,8 +120,20 @@ export default function HomeQuoteForm({
             {...register("details")}
           />
         </FormControl>
-        <Button px={12} py={6} my={8} variant="mc-red" w="full" type="submit">
-          {submitButtonText || "Submit"}
+        <Button
+          px={12}
+          py={6}
+          my={8}
+          cursor={buttonDisabled ? "not-allowed" : "pointer"}
+          variant={buttonDisabled ? "mc-white" : "mc-red"}
+          w="full"
+          type="submit"
+          disabled={buttonDisabled}
+          onClick={
+            setButtonDisabled ? () => setButtonDisabled(true) : undefined
+          }
+        >
+          {buttonDisabled ? "Submitting..." : submitButtonText || "Submit"}
         </Button>
       </VStack>
     </Box>
