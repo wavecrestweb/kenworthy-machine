@@ -124,6 +124,7 @@ export default function HomeQuoteForm({
           px={12}
           py={6}
           my={8}
+          cursor={buttonDisabled ? "not-allowed" : "pointer"}
           variant={buttonDisabled ? "mc-white" : "mc-red"}
           w="full"
           type="submit"

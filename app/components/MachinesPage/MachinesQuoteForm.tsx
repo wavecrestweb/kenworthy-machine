@@ -135,6 +135,7 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
           px={12}
           py={6}
           my={8}
+          cursor={props?.buttonDisabled ? "not-allowed" : "pointer"}
           variant={props?.buttonDisabled ? "mc-white" : "mc-red"}
           fontSize="2xl"
           w="md"
