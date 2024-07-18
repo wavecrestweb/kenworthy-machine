@@ -2,7 +2,7 @@
 
 // LIBRARY IMPORTS
 import { Link as ChakraLink } from "@chakra-ui/next-js";
-import { Box, Grid, IconButton, Spacer, Stack } from "@chakra-ui/react";
+import { Box, Grid, IconButton, Stack } from "@chakra-ui/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -19,31 +19,30 @@ export default function Header() {
   };
 
   return (
-    <Box backgroundColor="brand.primary" maxW="1728px" mx="auto" width="100%">
+    <Box backgroundColor="brand.primary" mx="auto" width="100%">
       <Stack>
         <Grid
           templateColumns={{
-            base: "1fr 1fr 20px",
+            base: "1fr 1fr 1fr",
             sm: "1fr 1fr 100px",
             md: "500px 1fr 100px",
           }}
         >
-          <Box>
-            <Box
-              px={"4rem"}
-              py={"2rem"}
-              w={{ base: "20rem", md: "28rem", xl: "32rem" }}
-            >
-              <ChakraLink href="/">
-                <Image src={logo} alt="Kenworthy Machine" />
-              </ChakraLink>
-            </Box>
+          <Box
+            px={{ base: "2rem", md: "4rem" }}
+            py={{ base: "1rem", md: "2rem" }}
+            w={{ base: "20rem", md: "28rem", xl: "32rem" }}
+          >
+            <ChakraLink href="/">
+              <Image src={logo} alt="Kenworthy Machine" />
+            </ChakraLink>
           </Box>
+
           <Box
             display="flex"
-            flexDirection={{ base: "row-reverse", lg: "row" }}
+            flexDirection="row"
             alignItems="center"
-            justifyContent={{ base: "flex-start", lg: "flex-end" }}
+            justifyContent="flex-end"
             gap={{ base: "0", lg: "24px" }}
             overflow="hidden"
           >
@@ -86,6 +85,7 @@ export default function Header() {
             />
           </Box>
         </Grid>
+
         {hamburger && (
           <Grid
             templateColumns={{
