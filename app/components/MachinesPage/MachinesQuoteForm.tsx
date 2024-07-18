@@ -30,7 +30,7 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
 
   return (
     <ChakraForm
-      width={"100vw"}
+      width={"100%"}
       pt={14}
       pb={24}
       bg="brand.primary"
