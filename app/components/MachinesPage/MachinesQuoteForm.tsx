@@ -9,11 +9,11 @@ import {
   Textarea,
   VStack,
 } from "@chakra-ui/react";
-import React, { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 // LOCAL IMPORTS
-import { useSendQuoteRequest } from "@/utils/hooks/useSendQuoteRequest";
 import { PageViewMachinesBlocksQuoteSection } from "@/tina/__generated__/types";
+import { useSendQuoteRequest } from "@/utils/hooks/useSendQuoteRequest";
 
 // TYPE DEFINTIONS
 interface MachineLayoutQuoteFormProps

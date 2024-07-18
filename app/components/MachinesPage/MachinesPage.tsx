@@ -1,14 +1,14 @@
 "use client";
 
 //LIBRARY IMPORTS
-import React, { useState } from "react";
-import { Grid } from "@chakra-ui/react";
-import { useTina } from "tinacms/dist/react";
 import { PageQuery } from "@/tina/__generated__/types";
+import { Grid } from "@chakra-ui/react";
+import { useState } from "react";
+import { useTina } from "tinacms/dist/react";
 
 //LOCAL IMPORTS
-import MachinesQuoteForm from "./MachinesQuoteForm";
 import Machines from "./Machines";
+import MachinesQuoteForm from "./MachinesQuoteForm";
 import MachinesSuccessMessage from "./MachinesSuccessMessage";
 
 export default function MachinesPage(props: {

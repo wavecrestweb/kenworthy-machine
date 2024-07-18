@@ -2,7 +2,7 @@
 
 // LIBRARY IMPORTS
 import { Link as ChakraLink } from "@chakra-ui/next-js";
-import { Box, Grid, GridItem, IconButton, Stack } from "@chakra-ui/react";
+import { Box, Grid, IconButton, Stack } from "@chakra-ui/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -33,7 +33,6 @@ export default function Header() {
             py={{ base: "1rem", md: "2rem" }}
             w={{ base: "20rem", md: "28rem", xl: "32rem" }}
             h={{ base: "10rem", md: "12rem", xl: "14rem" }}
-            // minWidth="12rem"
           >
             <ChakraLink href="/">
               <Image src={logo} alt="Kenworthy Machine" />
