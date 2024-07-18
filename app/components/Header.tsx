@@ -2,7 +2,7 @@
 
 // LIBRARY IMPORTS
 import { Link as ChakraLink } from "@chakra-ui/next-js";
-import { Box, Grid, IconButton, Stack } from "@chakra-ui/react";
+import { Box, Grid, GridItem, IconButton, Stack } from "@chakra-ui/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -21,17 +21,18 @@ export default function Header() {
   return (
     <Box backgroundColor="brand.primary" mx="auto" width="100%">
       <Stack>
-        <Grid
-          templateColumns={{
-            base: "1fr 1fr 1fr",
-            sm: "1fr 1fr 100px",
-            md: "500px 1fr 100px",
-          }}
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          marginRight={{ base: "2rem", md: "4rem" }}
+          minHeight={150}
         >
           <Box
             px={{ base: "2rem", md: "4rem" }}
             py={{ base: "1rem", md: "2rem" }}
             w={{ base: "20rem", md: "28rem", xl: "32rem" }}
+            minWidth="12rem"
           >
             <ChakraLink href="/">
               <Image src={logo} alt="Kenworthy Machine" />
@@ -42,9 +43,8 @@ export default function Header() {
             display="flex"
             flexDirection="row"
             alignItems="center"
-            justifyContent="flex-end"
-            gap={{ base: "0", lg: "24px" }}
-            overflow="hidden"
+            justifyContent="flex-start"
+            gap={{ base: "12px", lg: "24px" }}
           >
             <ChakraLink
               href="/"
@@ -53,6 +53,8 @@ export default function Header() {
               }
               variant="navigation"
               visibility={{ base: "hidden", lg: "visible" }}
+              width={{ base: "0", lg: "auto" }}
+              height={{ base: "0", lg: "auto" }}
             >
               Home
             </ChakraLink>
@@ -66,6 +68,8 @@ export default function Header() {
               }
               variant="navigation"
               visibility={{ base: "hidden", lg: "visible" }}
+              width={{ base: "0", lg: "auto" }}
+              height={{ base: "0", lg: "auto" }}
             >
               Request a Quote
             </ChakraLink>
@@ -84,7 +88,7 @@ export default function Header() {
               icon={hamburger ? <FaXmark /> : <FaBars />}
             />
           </Box>
-        </Grid>
+        </Box>
 
         {hamburger && (
           <Grid
