@@ -98,10 +98,11 @@ export default function Header() {
               lg: "repeat(4, 1fr)",
             }}
             gap="1.5rem"
-            mx={6}
+            w={{ base: "80%", md: "90%", lg: "100%" }}
+            mx={"auto"}
+            px="2rem"
             mb={6}
             borderRadius="50%"
-            maxW={{ base: "60%", md: "75%", lg: "100%" }}
           >
             <ChakraLink
               href="/request-quote"
