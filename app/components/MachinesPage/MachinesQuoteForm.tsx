@@ -30,6 +30,7 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
 
   return (
     <ChakraForm
+      width={"100vw"}
       pt={14}
       pb={24}
       bg="brand.primary"
@@ -119,6 +120,7 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
             border="2px"
             id="details"
             fontSize="lg"
+            height={{ base: "150px", md: "100px" }}
             placeholder={
               props?.requestQuoteForm?.field3Placeholder ||
               "Share additional information or questions you have. Our team will personally connect with you about this quote."
@@ -138,7 +140,7 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
           cursor={props?.buttonDisabled ? "not-allowed" : "pointer"}
           variant={props?.buttonDisabled ? "mc-white" : "mc-red"}
           fontSize="2xl"
-          w="md"
+          w="60%"
           type="submit"
           disabled={props?.buttonDisabled}
           onClick={() => {
