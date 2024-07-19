@@ -1,0 +1,9 @@
+EMAIL_TO=
+EMAIL_USER=
+EMAIL_PASSWORD=
+
+# email for resumes when there are no openings
+NEXT_PUBLIC_EMAIL_TO=
+
+NEXT_PUBLIC_TINA_CLIENT_ID=
+TINA_TOKEN=
