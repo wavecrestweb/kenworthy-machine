@@ -618,10 +618,9 @@ export default defineConfig({
         name: "machines",
         path: "content/machines",
         ui: {
-          router: ({ document }) => {
-            if (document._sys.filename === "machines") {
-              return "/view-machines";
-            }
+          allowedActions: {
+            create: false,
+            delete: false,
           },
         },
         fields: [
@@ -664,6 +663,62 @@ export default defineConfig({
                 description:
                   "Existing types include Mill, Lathe, Inspection, Engraver, and Bandsaw",
               },
+            ],
+          },
+        ],
+      },
+      {
+        label: "Footer",
+        name: "footer",
+        path: "content/footer",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+          global: true,
+        },
+        fields: [
+          {
+            type: "object",
+            label: "Contact info",
+            name: "contactInfo",
+            list: true,
+            ui: {
+              itemProps: (item) => {
+                return { label: item?.heading };
+              },
+            },
+            fields: [
+              {
+                type: "string",
+                label: "Category heading",
+                name: "heading",
+              },
+              {
+                type: "rich-text",
+                label: "Category content",
+                name: "content",
+              },
+            ],
+          },
+          {
+            type: "object",
+            label: "Navigation links",
+            name: "navLinks",
+            list: true,
+            ui: {
+              itemProps: (item) => {
+                return { label: item?.label };
+              },
+            },
+            fields: [
+              {
+                type: "string",
+                label: "Link label",
+                name: "label",
+              },
+              { type: "string", label: "Page link", name: "href" },
             ],
           },
         ],
