@@ -45,12 +45,13 @@ export default function Openings(props: OpeningsProps): JSX.Element {
           direction="column"
           gap={{ base: "3rem", sm: "4rem", "2xl": "6rem" }}
           pt={{ base: "3rem", "2xl": "4rem" }}
-          px={{ base: "1rem", md: "2rem" }}
           minW={{ base: "95vw" }}
         >
           {props.openingsList?.positions?.map((position, i) => (
             <Card
               key={i}
+              width={"90%"}
+              alignSelf={"center"}
               variant={{
                 base: "position_sm",
                 xl: "position_lg",

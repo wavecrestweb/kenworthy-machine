@@ -57,7 +57,7 @@ export default function Careers(props: PageHomeBlocksCareerSection) {
               h3: (props) => (
                 <h3
                   style={{
-                    fontSize: "24px",
+                    fontSize: "20px",
                     color: "brand.text",
                     textAlign: "center",
                   }}
@@ -79,7 +79,7 @@ export default function Careers(props: PageHomeBlocksCareerSection) {
         </Box>
         <SimpleGrid
           spacing={{ base: 12, lg: 4 }}
-          gap={{ base: 19, lg: 200 }}
+          gap={{ base: 19, lg: 90 }}
           justifyContent={"flex-start"}
           templateColumns={{ base: "1fr", lg: "repeat(3, 1fr)" }}
           mt={8}

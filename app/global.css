@@ -11,10 +11,6 @@
   --primary-red: #db0a40;
 }
 
-body {
-  width: fit-content;
-}
-
 .swiper-button-prev {
   color: (var(--background-color-med));
   border-radius: 50%;
