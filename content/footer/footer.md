@@ -1,4 +1,5 @@
 ---
+logo: /kenworthy-logo.jpg
 contactInfo:
   - heading: Mailing Address
     content: |

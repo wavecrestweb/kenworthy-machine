@@ -680,6 +680,11 @@ export default defineConfig({
         },
         fields: [
           {
+            type: "image",
+            label: "Logo",
+            name: "logo",
+          },
+          {
             type: "object",
             label: "Contact info",
             name: "contactInfo",
