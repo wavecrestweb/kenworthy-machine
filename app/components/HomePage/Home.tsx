@@ -23,7 +23,6 @@ export default function Home(props: {
 }) {
   // HOOKS
   const { data } = useTina(props);
-  console.log("data", data);
 
   return (
     <Grid templateColumns={"1fr"}>
@@ -50,6 +49,7 @@ export default function Home(props: {
         }
       })}
       <Footer
+        logo={data.footer.logo}
         navLinks={data.footer.navLinks}
         contactInfo={data.footer.contactInfo}
       />

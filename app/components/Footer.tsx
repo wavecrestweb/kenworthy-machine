@@ -13,7 +13,6 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { FooterNavLinks, FooterContactInfo } from "@/tina/__generated__/types";
 
 //LOCAL IMPORTS
-import logo from "../../public/images/kenworthy-logo.jpg";
 import ContentWrapper from "./ContentWrapper";
 
 export type navLinksData = (FooterNavLinks | null)[] | null | undefined;
@@ -22,8 +21,9 @@ export type contactInfo = (FooterContactInfo | null)[] | null | undefined;
 export default function Footer(props: {
   navLinks: navLinksData;
   contactInfo: contactInfo;
+  logo: string | null | undefined;
 }) {
-  const { navLinks, contactInfo } = props;
+  const { navLinks, contactInfo, logo } = props;
   return (
     <Box bg="brand.primary">
       <ContentWrapper>
@@ -42,10 +42,17 @@ export default function Footer(props: {
         >
           <GridItem colSpan={{ md: 4, xl: 2 }}>
             <Stack spacing={{ base: "1.875rem", md: "2rem", xl: "3.125rem" }}>
-              <Box>
-                <Box w={{ base: "10.375rem", md: "15rem", xl: "32.75rem" }}>
-                  <Image src={logo} alt="Kenworthy Machine" />
-                </Box>
+              <Box
+                w="87%"
+                maxW={{ base: "10.375rem", md: "15rem", xl: "32rem" }}
+              >
+                <Image
+                  alt="Kenworthy Machine"
+                  height={500}
+                  placeholder="empty"
+                  src={logo ?? ""}
+                  width={500}
+                />
               </Box>
               <>
                 {contactInfo?.map(
