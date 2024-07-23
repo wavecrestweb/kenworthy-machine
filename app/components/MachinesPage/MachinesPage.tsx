@@ -1,18 +1,19 @@
 "use client";
 
 //LIBRARY IMPORTS
-import React, { useState } from "react";
+import { PageAndFooterQuery } from "@/tina/__generated__/types";
 import { Grid } from "@chakra-ui/react";
+import { useState } from "react";
 import { useTina } from "tinacms/dist/react";
-import { PageQuery } from "@/tina/__generated__/types";
 
 //LOCAL IMPORTS
-import MachinesQuoteForm from "./MachinesQuoteForm";
+import Footer from "../Footer";
 import Machines from "./Machines";
+import MachinesQuoteForm from "./MachinesQuoteForm";
 import MachinesSuccessMessage from "./MachinesSuccessMessage";
 
 export default function MachinesPage(props: {
-  data: PageQuery;
+  data: PageAndFooterQuery;
   variables: {
     relativePath: string;
   };
@@ -54,6 +55,11 @@ export default function MachinesPage(props: {
           }
         }
       })}
+      <Footer
+        logo={data.footer.logo}
+        navLinks={data.footer.navLinks}
+        contactInfo={data.footer.contactInfo}
+      />
     </Grid>
   );
 }

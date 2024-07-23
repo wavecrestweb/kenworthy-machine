@@ -1,15 +1,16 @@
 "use client";
 
 // LIBRARY IMPORTS
-import React, { useState } from "react";
-import { Box, VStack, Text, Stack } from "@chakra-ui/react";
+import { Box, Stack, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
+import { useState } from "react";
 import { useTina } from "tinacms/dist/react";
 
 // LOCAL IMPORTS
+import gearBackground from "../../../public/images/machine-gear-background.png";
+import Footer from "../Footer";
 import HomeQuoteForm from "../HomePage/HomeQuoteForm";
 import SuccessMessage from "./SuccessMessage";
-import gearBackground from "../../../public/images/machine-gear-background.png";
 
 // DEFINE TYPES
 interface PageRequestQuoteBlocksQuotePageForm {
@@ -147,6 +148,11 @@ export default function QuotePage(props: QuotePageProps): JSX.Element {
           </Text>
         </VStack>
       </Stack>
+      <Footer
+        logo={data.footer.logo}
+        navLinks={data.footer.navLinks}
+        contactInfo={data.footer.contactInfo}
+      />
     </Box>
   );
 }
