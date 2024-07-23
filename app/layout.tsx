@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en" className={`${lato.variable} ${roboto_slab.variable}`}>
       <body>
         <Providers>
-          <Box zIndex={10} top="0" pos="sticky" width="100%">
+          <Box zIndex={10} top="0" pos="sticky">
             <Header />
           </Box>
           {children}

@@ -2,7 +2,7 @@
 
 // LIBRARY IMPORTS
 import { Link as ChakraLink } from "@chakra-ui/next-js";
-import { Box, Grid, IconButton, Spacer, Stack } from "@chakra-ui/react";
+import { Box, Grid, IconButton, Stack } from "@chakra-ui/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -19,33 +19,32 @@ export default function Header() {
   };
 
   return (
-    <Box backgroundColor="brand.primary" maxW="1728px" mx="auto" width="100%">
+    <Box backgroundColor="brand.primary" mx="auto" width="100%">
       <Stack>
-        <Grid
-          templateColumns={{
-            base: "1fr 1fr 20px",
-            sm: "1fr 1fr 100px",
-            md: "500px 1fr 100px",
-          }}
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          marginRight={{ base: "2rem", md: "4rem" }}
+          minHeight={150}
         >
-          <Box>
-            <Box
-              px={"4rem"}
-              py={"2rem"}
-              w={{ base: "20rem", md: "28rem", xl: "32rem" }}
-            >
-              <ChakraLink href="/">
-                <Image src={logo} alt="Kenworthy Machine" />
-              </ChakraLink>
-            </Box>
+          <Box
+            px={{ base: "2rem", md: "4rem" }}
+            py={{ base: "1rem", md: "2rem" }}
+            w={{ base: "20rem", md: "28rem", xl: "32rem" }}
+            h={{ base: "10rem", md: "12rem", xl: "14rem" }}
+          >
+            <ChakraLink href="/">
+              <Image src={logo} alt="Kenworthy Machine" />
+            </ChakraLink>
           </Box>
+
           <Box
             display="flex"
-            flexDirection={{ base: "row-reverse", lg: "row" }}
+            flexDirection="row"
             alignItems="center"
-            justifyContent={{ base: "flex-start", lg: "flex-end" }}
-            gap={{ base: "0", lg: "24px" }}
-            overflow="hidden"
+            justifyContent="flex-start"
+            gap={{ base: "12px", lg: "24px" }}
           >
             <ChakraLink
               href="/"
@@ -54,6 +53,8 @@ export default function Header() {
               }
               variant="navigation"
               visibility={{ base: "hidden", lg: "visible" }}
+              width={{ base: "0", lg: "auto" }}
+              height={{ base: "0", lg: "auto" }}
             >
               Home
             </ChakraLink>
@@ -67,6 +68,8 @@ export default function Header() {
               }
               variant="navigation"
               visibility={{ base: "hidden", lg: "visible" }}
+              width={{ base: "0", lg: "auto" }}
+              height={{ base: "0", lg: "auto" }}
             >
               Request a Quote
             </ChakraLink>
@@ -85,7 +88,8 @@ export default function Header() {
               icon={hamburger ? <FaXmark /> : <FaBars />}
             />
           </Box>
-        </Grid>
+        </Box>
+
         {hamburger && (
           <Grid
             templateColumns={{
@@ -94,10 +98,11 @@ export default function Header() {
               lg: "repeat(4, 1fr)",
             }}
             gap="1.5rem"
-            mx={6}
+            w={{ base: "80%", md: "90%", lg: "100%" }}
+            mx={"auto"}
+            px="2rem"
             mb={6}
             borderRadius="50%"
-            maxW={{ base: "60%", md: "75%", lg: "100%" }}
           >
             <ChakraLink
               href="/request-quote"
