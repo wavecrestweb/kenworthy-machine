@@ -20,7 +20,6 @@ contactInfo:
     content: |
       [sales@kenworthymachine.com](mailto:sales@kenworthymachine.com)
 navLinks:
-  - {}
   - label: View Machines
     href: /view-machines
   - label: Careers
