@@ -1,8 +1,8 @@
 import {
   Box,
-  Heading,
   Grid,
   GridItem,
+  Heading,
   Link,
   LinkProps,
   Stack,
