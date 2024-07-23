@@ -1,12 +1,12 @@
 //LIBRARY IMPORTS
-import { Link as ChakraLink } from "@chakra-ui/next-js";
-import { Heading, Text, SimpleGrid, Flex, Stack, Box } from "@chakra-ui/react";
 import { PageQuery } from "@/tina/__generated__/types";
+import { Link as ChakraLink } from "@chakra-ui/next-js";
+import { Box, Flex, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 
 //LOCAL IMPORTS
-import MachineCarousel from "../HomePage/MachineCarousel";
-import ContentWrapper from "../ContentWrapper";
 import Card from "../Card/Card";
+import ContentWrapper from "../ContentWrapper";
+import MachineCarousel from "../HomePage/MachineCarousel";
 
 export type Block = NonNullable<
   NonNullable<PageQuery["page"]["blocks"]>
