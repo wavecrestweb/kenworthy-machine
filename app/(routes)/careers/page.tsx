@@ -5,7 +5,7 @@ import client from "@/tina/__generated__/client";
 import CareersPage from "@/app/components/CareersPage";
 
 export default async function Careers() {
-  const result = await client.queries.page({
+  const result = await client.queries.pageAndFooter({
     relativePath: "careers.md",
   });
 

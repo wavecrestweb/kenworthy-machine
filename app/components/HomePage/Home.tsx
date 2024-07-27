@@ -1,7 +1,7 @@
 "use client";
 
 //LIBRARY IMPORTS
-import { PageQuery } from "@/tina/__generated__/types";
+import { PageAndFooterQuery } from "@/tina/__generated__/types";
 import { Grid } from "@chakra-ui/react";
 import { useTina } from "tinacms/dist/react";
 
@@ -12,9 +12,10 @@ import CompanyValues from "./CompanyValues";
 import Hero from "./Hero";
 import Location from "./Location";
 import RequestQuote from "./RequestQuote";
+import Footer from "../Footer";
 
 export default function Home(props: {
-  data: PageQuery;
+  data: PageAndFooterQuery;
   variables: {
     relativePath: string;
   };
@@ -47,6 +48,11 @@ export default function Home(props: {
           }
         }
       })}
+      <Footer
+        logo={data.footer.logo}
+        navLinks={data.footer.navLinks}
+        contactInfo={data.footer.contactInfo}
+      />
     </Grid>
   );
 }

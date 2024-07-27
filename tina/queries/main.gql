@@ -1,0 +1,30 @@
+query pageAndFooter($relativePath: String!) {
+  page(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...PageParts
+  }
+  footer(relativePath: "footer.md") {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...FooterParts
+  }
+}

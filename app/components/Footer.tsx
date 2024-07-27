@@ -1,48 +1,29 @@
+//LIBRARY IMPORTS
 import {
   Box,
   Grid,
   GridItem,
   Heading,
   Link,
-  LinkProps,
   Stack,
   Text,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import logo from "../../public/images/kenworthy-logo.jpg";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { FooterNavLinks, FooterContactInfo } from "@/tina/__generated__/types";
+
+//LOCAL IMPORTS
 import ContentWrapper from "./ContentWrapper";
 
-const links = [
-  { href: "/view-machines", text: "View Machines" },
-  { href: "/careers", text: "Careers" },
-  { href: "/request-quote", text: "Contact Us" },
-  { href: "/request-quote", text: "Request a Quote" },
-];
+export type navLinksData = (FooterNavLinks | null)[] | null | undefined;
+export type contactInfo = (FooterContactInfo | null)[] | null | undefined;
 
-const contactInfo = [
-  {
-    heading: "Mailing Address",
-    content: [
-      "14751 North Kelsey Street, Suite 105",
-      "PMB 616",
-      "Monroe, WA 98272-1458",
-    ],
-  },
-  {
-    heading: "Shipping Address",
-    content: ["30330 NE 172nd Street", "Duvall, WA 98019"],
-  },
-  {
-    heading: "Phone",
-    content: ["(425) 788-2100"],
-  },
-  {
-    heading: "Email",
-    content: ["sales@kenworthymachine.com"],
-  },
-];
-
-export default function Footer() {
+export default function Footer(props: {
+  navLinks: navLinksData;
+  contactInfo: contactInfo;
+  logo: string | null | undefined;
+}) {
+  const { navLinks, contactInfo, logo } = props;
   return (
     <Box bg="brand.primary">
       <ContentWrapper>
@@ -61,32 +42,26 @@ export default function Footer() {
         >
           <GridItem colSpan={{ md: 4, xl: 2 }}>
             <Stack spacing={{ base: "1.875rem", md: "2rem", xl: "3.125rem" }}>
-              <Box>
-                <Box w={{ base: "10.375rem", md: "15rem", xl: "32.75rem" }}>
-                  <Image src={logo} alt="Kenworthy Machine" />
-                </Box>
+              <Box
+                w="87%"
+                maxW={{ base: "10.375rem", md: "15rem", xl: "32rem" }}
+              >
+                <Image
+                  alt="Kenworthy Machine"
+                  height={500}
+                  placeholder="empty"
+                  src={logo ?? ""}
+                  width={500}
+                />
               </Box>
               <>
-                {contactInfo.map(({ heading, content }) => (
-                  <Box key={heading}>
-                    <Heading
-                      as="h4"
-                      variant="footer"
-                      pb={{ base: "1rem", md: "0.75rem", xl: "0.625rem" }}
-                    >
-                      {heading}
-                    </Heading>
-                    {content.map((line) => (
-                      <Text
-                        key={line}
-                        fontSize={{ base: "1.25rem", xl: "1.5rem" }}
-                        lineHeight={{ base: "1.5rem", xl: "1.8rem" }}
-                      >
-                        {line}
-                      </Text>
-                    ))}
-                  </Box>
-                ))}
+                {contactInfo?.map(
+                  (item) =>
+                    item?.heading &&
+                    item?.content && (
+                      <FooterContactInfoBlock key={item?.heading} item={item} />
+                    ),
+                )}
               </>
             </Stack>
           </GridItem>
@@ -99,11 +74,13 @@ export default function Footer() {
               spacing={{ md: "3.875rem", xl: "3.56rem" }}
               pt={{ md: "0.5rem", xl: "1.75rem" }}
             >
-              {links.map(({ href, text }) => (
-                <FooterNavLink key={text} href={href}>
-                  {text}
-                </FooterNavLink>
-              ))}
+              {navLinks?.map(
+                (link) =>
+                  link?.href &&
+                  link?.label && (
+                    <FooterNavLinksBlock key={link?.label} link={link} />
+                  ),
+              )}
             </Stack>
           </GridItem>
         </Grid>
@@ -112,17 +89,46 @@ export default function Footer() {
   );
 }
 
-const FooterNavLink = ({ children, ...props }: LinkProps) => {
+function FooterContactInfoBlock(props: { item: FooterContactInfo | null }) {
+  const { item } = props;
+  return (
+    <Box key={item?.heading}>
+      <Heading
+        as="h4"
+        variant="footer"
+        pb={{ base: "1rem", md: "0.75rem", xl: "0.625rem" }}
+      >
+        {item?.heading}
+      </Heading>
+      <TinaMarkdown
+        content={item?.content}
+        components={{
+          p: (props) => (
+            <Text
+              fontSize={{ base: "1.25rem", xl: "1.5rem" }}
+              lineHeight={{ base: "1.5rem", xl: "1.8rem" }}
+            >
+              {props?.children}
+            </Text>
+          ),
+        }}
+      />
+    </Box>
+  );
+}
+
+function FooterNavLinksBlock(props: { link: FooterNavLinks | null }) {
+  const { link } = props;
   return (
     <Box>
       <Link
         variant="footer"
         fontSize={{ md: "1.5rem", xl: "1.875rem" }}
         lineHeight={{ md: "1.8rem", xl: "2.25rem" }}
-        {...props}
+        href={link?.href ?? ""}
       >
-        {children}
+        {link?.label}
       </Link>
     </Box>
   );
-};
+}

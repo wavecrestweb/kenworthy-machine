@@ -5,7 +5,7 @@ import client from "@/tina/__generated__/client";
 import MachinesPage from "@/app/components/MachinesPage/MachinesPage";
 
 export default async function ViewMachines() {
-  const result = await client.queries.page({
+  const result = await client.queries.pageAndFooter({
     relativePath: "view_machines.md",
   });
 

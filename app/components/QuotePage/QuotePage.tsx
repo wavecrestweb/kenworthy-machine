@@ -8,6 +8,7 @@ import { useTina } from "tinacms/dist/react";
 
 // LOCAL IMPORTS
 import gearBackground from "../../../public/images/machine-gear-background.png";
+import Footer from "../Footer";
 import HomeQuoteForm from "../HomePage/HomeQuoteForm";
 import SuccessMessage from "./SuccessMessage";
 
@@ -147,6 +148,11 @@ export default function QuotePage(props: QuotePageProps): JSX.Element {
           </Text>
         </VStack>
       </Stack>
+      <Footer
+        logo={data.footer.logo}
+        navLinks={data.footer.navLinks}
+        contactInfo={data.footer.contactInfo}
+      />
     </Box>
   );
 }

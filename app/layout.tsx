@@ -1,6 +1,5 @@
 import { Box } from "@chakra-ui/react";
 import type { Metadata } from "next";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { lato, roboto_slab } from "./fonts";
 import "./global.css";
@@ -24,7 +23,6 @@ export default function RootLayout({
             <Header />
           </Box>
           {children}
-          <Footer />
         </Providers>
       </body>
     </html>

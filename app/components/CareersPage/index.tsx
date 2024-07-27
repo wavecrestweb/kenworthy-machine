@@ -1,18 +1,19 @@
 "use client";
 
 //LIBRARY IMPORTS
+import { PageAndFooterQuery } from "@/tina/__generated__/types";
 import { Grid } from "@chakra-ui/react";
 import { useTina } from "tinacms/dist/react";
-import { PageQuery } from "@/tina/__generated__/types";
 
 //LOCAL IMPORTS
 import Benefits from "./Benefits";
 import CareersHero from "./CareersHero";
-import WhyKM from "./WhyKM";
+import Footer from "../Footer";
 import Openings from "./Openings";
+import WhyKM from "./WhyKM";
 
 export default function CareersPage(props: {
-  data: PageQuery;
+  data: PageAndFooterQuery;
   variables: {
     relativePath: string;
   };
@@ -38,6 +39,11 @@ export default function CareersPage(props: {
           }
         }
       })}
+      <Footer
+        logo={data.footer.logo}
+        navLinks={data.footer.navLinks}
+        contactInfo={data.footer.contactInfo}
+      />
     </Grid>
   );
 }

@@ -5,7 +5,7 @@ import client from "@/tina/__generated__/client";
 import QuotePage from "@/app/components/QuotePage/QuotePage";
 
 export default async function RequestQuotePage() {
-  const result = await client.queries.page({
+  const result = await client.queries.pageAndFooter({
     relativePath: "request_quote.md",
   });
 
