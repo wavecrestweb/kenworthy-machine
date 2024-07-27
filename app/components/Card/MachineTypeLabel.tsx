@@ -80,23 +80,33 @@ export default MachineTypeLabel;
 
 const responsiveValues = {
   carousel: {
-    box: { top: "-1px", right: "-2.75px" },
+    box: { top: "-2.5px", right: "-2.75px" },
     text: {
-      py: { base: "0.5rem", md: "0.25rem", "2xl": "1rem" },
-      right: { base: "-0.3rem", md: "-0.5rem", "2xl": "-0.9rem" },
-      fontSize: { base: "7px", md: "xs", "2xl": "lg" },
-      top: { base: "-0.01rem", md: "0.625rem", "2xl": "0.5rem" },
-      width: { base: "5rem", md: "4rem", "2xl": "6rem" },
+      py: { base: "0.25rem", sm: "0.25rem", md: "0.25rem", "2xl": "1rem" },
+      right: {
+        base: "-0.25rem",
+        sm: "-0.6rem",
+        md: "-0.625rem",
+        "2xl": "-0.9rem",
+      },
+      fontSize: { base: "8px", sm: "10px", md: "xs", "2xl": "md" },
+      top: {
+        base: "0.25rem",
+        sm: "0.425rem",
+        md: "0.625rem",
+        "2xl": "0.5rem",
+      },
+      width: { base: "2.75rem", sm: "3.75rem", md: "4.25rem", "2xl": "6rem" },
     },
   },
   machinesPage: {
-    box: { top: "-1px", right: "-2.75px" },
+    box: { top: "-2.5px", right: "-2.75px" },
     text: {
-      py: { base: "0.25rem", sm: "1rem" },
-      right: { base: "-0.5rem", sm: "-0.9rem" },
-      fontSize: { base: "8px", md: "xs", "2xl": "lg" },
-      top: { base: "0.625rem", sm: "0.5rem" },
-      width: { base: "4rem", sm: "6rem" },
+      py: { base: "0.275rem", md: "1rem" },
+      right: { base: "-0.7rem", md: "-0.9rem" },
+      fontSize: { base: "12px", md: "sm", xl: "md" },
+      top: { base: "0.6rem", md: "0.5rem" },
+      width: { base: "4.25rem", md: "6rem" },
     },
   },
 };
