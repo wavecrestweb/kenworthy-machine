@@ -69,32 +69,6 @@ const variants = {
       h: "3.25rem",
     },
   }),
-  position_lg: definePartsStyle({
-    container: {
-      boxShadow: "0px 4px 4px 0px #00000040",
-      p: "2rem 3rem 2.5rem 2rem",
-    },
-    footer: {
-      backgroundColor: "white",
-    },
-  }),
-  position_sm: definePartsStyle({
-    container: {
-      boxShadow: "0px 4px 4px 0px #00000040",
-      p: "1.25rem",
-    },
-    header: {
-      p: "0px",
-    },
-    body: {
-      p: "0px",
-    },
-    footer: {
-      p: "2.5rem 0rem 0rem 0rem",
-      justifyContent: "center",
-      backgroundColor: "white",
-    },
-  }),
   front_md: definePartsStyle({
     container: {
       w: "14rem",
@@ -288,6 +262,32 @@ const variants = {
       w: "100%",
       p: "1.5rem",
       h: "5.5rem",
+    },
+  }),
+  position_sm: definePartsStyle({
+    container: {
+      boxShadow: "0px 4px 4px 0px #00000040",
+      p: "1.25rem",
+    },
+    header: {
+      p: "0px",
+    },
+    body: {
+      p: "0px",
+    },
+    footer: {
+      p: "2.5rem 0rem 0rem 0rem",
+      justifyContent: "center",
+      backgroundColor: "white",
+    },
+  }),
+  position_lg: definePartsStyle({
+    container: {
+      boxShadow: "0px 4px 4px 0px #00000040",
+      p: "2rem 3rem 2.5rem 2rem",
+    },
+    footer: {
+      backgroundColor: "white",
     },
   }),
 };
