@@ -1,4 +1,5 @@
 import {
+  Button,
   CardBody,
   CardFooter,
   CardHeader,
@@ -6,7 +7,6 @@ import {
   ListItem,
   Text,
   UnorderedList,
-  Button,
 } from "@chakra-ui/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
@@ -97,15 +97,15 @@ const responsiveValues = {
     button: { base: "md", "2xl": "2xl" },
   },
   machinesPage: {
-    size: { base: "back_md", sm: "back_xl" },
+    size: { base: "back_md", md: "back_lg" },
     header: {
-      fontSize: { base: "md", sm: "2xl" },
-      lineHeight: { base: "6", sm: "7" },
+      fontSize: { base: "md", md: "xl" },
+      lineHeight: { base: "6", md: "7" },
     },
     list: {
-      lineHeight: { base: "6", sm: "7" },
-      fontSize: { base: "md", sm: "2xl" },
+      lineHeight: { base: "6", md: "7" },
+      fontSize: { base: "md", md: "xl" },
     },
-    button: { base: "md", sm: "2xl" },
+    button: { base: "md", md: "2xl" },
   },
 };
