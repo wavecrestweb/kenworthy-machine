@@ -1,11 +1,11 @@
 import {
+  Box,
+  Button,
   CardBody,
   CardFooter,
   CardHeader,
   Card as ChakraCard,
   Text,
-  Box,
-  Button,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import MachineTypeLabel from "./MachineTypeLabel";
@@ -47,8 +47,9 @@ export default function CardFront({
         >
           <Image
             src={image ?? placeholderImage}
-            width={500}
-            height={500}
+            fill={true}
+            object-fit="cover"
+            sizes={style.img_sizes}
             alt={name ?? ""}
             placeholder="empty"
           />
@@ -71,6 +72,8 @@ export default function CardFront({
 
 const responsiveValues = {
   carousel: {
+    img_sizes:
+      "(max-width: 480px) 10rem, (max-width: 768px) 12rem, (max-width: 1536px) 14rem, 20rem",
     size: {
       base: "front_xs",
       sm: "front_sm",
@@ -78,19 +81,20 @@ const responsiveValues = {
       "2xl": "front_lg",
     },
     header: {
-      w: { base: "14rem", "2xl": "20rem" },
-      h: { base: "9rem", "2xl": "13rem" },
+      w: { base: "10rem", sm: "12rem", md: "14rem", "2xl": "20rem" },
+      h: { base: "7.5rem", sm: "8rem", md: "9rem", "2xl": "13rem" },
     },
     text: { base: "sm", md: "md", "2xl": "2xl" },
-    button: { base: "front_md", "2xl": "2xl" },
+    button: { base: "md", "2xl": "2xl" },
   },
   machinesPage: {
-    size: { base: "front_md", sm: "front_xl" },
+    img_sizes: "(max-width: 768px) 14rem, 20rem",
+    size: { base: "front_md", md: "front_lg" },
     header: {
-      w: { base: "14rem", sm: "22rem" },
-      h: { base: "9rem", sm: "15rem" },
+      w: { base: "14rem", md: "20rem" },
+      h: { base: "9rem", md: "13rem" },
     },
-    text: { base: "md", sm: "2xl" },
-    button: { base: "front_md", sm: "2xl" },
+    text: { base: "md", md: "2xl" },
+    button: { base: "md", md: "2xl" },
   },
 };
