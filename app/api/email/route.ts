@@ -8,11 +8,21 @@ export async function POST(request: NextRequest) {
 
   // Creates a transporter object using the default SMTP transport
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: process.env.EMAIL_HOST,
+    port: 587,
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASSWORD,
     },
+  });
+
+  //CONSOLE LOG TO ENSURE AUTH IS CORRECT, remove upon verification
+  transporter.verify(function (error, success) {
+    if (error) {
+      console.log("transporter verify error", error);
+    } else {
+      console.log("Server is ready to take our messages");
+    }
   });
 
   // Sets up email data
