@@ -1,4 +1,4 @@
-import { PageHomeBlocksCareerSection } from "@/tina/__generated__/types";
+// LIBRARY IMPORTS
 import {
   Box,
   Button,
@@ -7,7 +7,11 @@ import {
   Spacer,
   Stack,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+
+// LOCAL IMPORTS
+import { PageHomeBlocksCareerSection } from "@/tina/__generated__/types";
 import chalkboard from "../../../public/images/Chalkboard-User.svg";
 import heart from "../../../public/images/Heart-Pulse.svg";
 import graph from "../../../public/images/Upward-Graph.svg";
@@ -68,14 +72,17 @@ export default function Careers(props: PageHomeBlocksCareerSection) {
           />
         </Box>
         <Box mx="auto">
-          <Button
-            variant="mc-red"
-            w="250px"
-            position={{ base: "static", lg: "relative" }}
-            top={{ base: "0", lg: "85" }}
-          >
-            {props.buttonLabel}
-          </Button>
+          <Link href="/careers" passHref>
+            <Button
+              as="a"
+              variant="mc-red"
+              w="250px"
+              position={{ base: "static", lg: "relative" }}
+              top={{ base: "0", lg: "85" }}
+            >
+              {props.buttonLabel}
+            </Button>
+          </Link>
         </Box>
         <SimpleGrid
           spacing={{ base: 12, lg: 4 }}
