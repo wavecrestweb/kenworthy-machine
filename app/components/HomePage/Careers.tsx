@@ -74,7 +74,6 @@ export default function Careers(props: PageHomeBlocksCareerSection) {
         <Box mx="auto">
           <Link href="/careers" passHref>
             <Button
-              as="a"
               variant="mc-red"
               w="250px"
               position={{ base: "static", lg: "relative" }}
