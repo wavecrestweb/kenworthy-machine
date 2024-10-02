@@ -39,12 +39,19 @@ export default function HomeQuoteForm({
   setButtonDisabled,
 }: HomeQuoteFormProps) {
   // CUSTOM HOOK
-  const { register, handleSubmit, formState, onSubmit } = useSendQuoteRequest();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    onSubmit,
+  } = useSendQuoteRequest();
 
   return (
     <Box
       as="form"
-      onSubmit={handleSubmit((data) => onSubmit(data, setSubmitSuccessful))}
+      onSubmit={handleSubmit((data) =>
+        onSubmit(data, setSubmitSuccessful, setButtonDisabled!),
+      )}
       px={{ base: 2, md: 10, lg: 0 }}
     >
       <Text textAlign="center" fontSize="3xl" mt={8} color="brand.text">
@@ -124,16 +131,14 @@ export default function HomeQuoteForm({
           px={12}
           py={6}
           my={8}
-          cursor={buttonDisabled ? "not-allowed" : "pointer"}
-          variant={buttonDisabled ? "mc-white" : "mc-red"}
+          cursor={isSubmitting ? "not-allowed" : "pointer"}
+          variant={isSubmitting ? "mc-white" : "mc-red"}
           w="full"
           type="submit"
-          disabled={buttonDisabled}
-          onClick={
-            setButtonDisabled ? () => setButtonDisabled(true) : undefined
-          }
+          isLoading={isSubmitting}
+          loadingText="Submitting..."
         >
-          {buttonDisabled ? "Submitting..." : submitButtonText || "Submit"}
+          {submitButtonText || "Submit"}
         </Button>
       </VStack>
     </Box>

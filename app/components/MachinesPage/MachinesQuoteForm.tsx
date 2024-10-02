@@ -35,7 +35,7 @@ export default function MachinesQuoteForm(props: MachineLayoutQuoteFormProps) {
       pb={24}
       bg="brand.primary"
       onSubmit={handleSubmit((data) =>
-        onSubmit(data, props.setSubmitSuccessful),
+        onSubmit(data, props.setSubmitSuccessful, props.setButtonDisabled!),
       )}
     >
       <Heading

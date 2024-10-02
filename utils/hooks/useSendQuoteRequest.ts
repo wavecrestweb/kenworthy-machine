@@ -11,10 +11,12 @@ type UseSendQuoteRequestReturn = {
   handleSubmit: ReturnType<typeof useForm<FormData>>["handleSubmit"];
   formState: {
     errors: FieldErrors<FormData>;
+    isSubmitting: boolean;
   };
   onSubmit: (
     data: FormData,
     onSuccess: React.Dispatch<React.SetStateAction<boolean>>,
+    setButtonDisabled: React.Dispatch<React.SetStateAction<boolean>>,
   ) => void;
 };
 
@@ -23,14 +25,16 @@ export const useSendQuoteRequest = (): UseSendQuoteRequestReturn => {
     register,
     reset,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<FormData>();
   const toast = useToast();
 
   const onSubmit = (
     data: FormData,
     onSuccess: React.Dispatch<React.SetStateAction<boolean>>,
+    setButtonDisabled: React.Dispatch<React.SetStateAction<boolean>>,
   ) => {
+    setButtonDisabled(true);
     sendEmail(data)
       .then((response) => {
         if (!response.ok) {
@@ -62,13 +66,16 @@ export const useSendQuoteRequest = (): UseSendQuoteRequestReturn => {
           duration: 9000,
           isClosable: true,
         });
+      })
+      .finally(() => {
+        setButtonDisabled(false);
       });
   };
 
   return {
     register,
     handleSubmit: handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     onSubmit,
   };
 };
