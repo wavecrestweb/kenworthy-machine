@@ -8,6 +8,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { Link as ChakraLink } from "@chakra-ui/next-js";
 import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { FooterNavLinks, FooterContactInfo } from "@/tina/__generated__/types";
@@ -46,13 +47,15 @@ export default function Footer(props: {
                 w="87%"
                 maxW={{ base: "10.375rem", md: "15rem", xl: "32rem" }}
               >
-                <Image
-                  alt="Kenworthy Machine"
-                  height={500}
-                  placeholder="empty"
-                  src={logo ?? ""}
-                  width={500}
-                />
+                <ChakraLink href="/">
+                  <Image
+                    alt="Kenworthy Machine"
+                    height={500}
+                    placeholder="empty"
+                    src={logo ?? ""}
+                    width={500}
+                  />
+                </ChakraLink>
               </Box>
               <>
                 {contactInfo?.map(
