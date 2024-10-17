@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
   //CONSOLE LOG TO ENSURE AUTH IS CORRECT, remove upon verification
   transporter.verify(function (error, success) {
     if (error) {
-      console.log("transporter verify error", error);
+      console.error("transporter verify error", error);
     } else {
       console.log("Server is ready to take our messages");
     }

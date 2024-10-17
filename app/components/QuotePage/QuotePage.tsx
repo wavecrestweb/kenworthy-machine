@@ -46,9 +46,6 @@ export default function QuotePage(props: QuotePageProps): JSX.Element {
   // HOOKS
   const { data } = useTina(props);
 
-  // Debugging: Log the data structure
-  console.log("Tina Data:", data);
-
   const handleCloseSuccess = () => {
     setSubmitSuccessful(false);
     setButtonDisabled(false);
