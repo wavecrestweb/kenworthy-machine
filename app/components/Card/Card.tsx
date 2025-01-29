@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Box, keyframes } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
 
 import CardFront from "./CardFront";
 import CardBack from "./CardBack";
