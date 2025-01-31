@@ -12,19 +12,19 @@
 }
 
 .swiper-button-prev {
-  color: (var(--background-color-med));
+  color: var(--background-color-med);
   border-radius: 50%;
-  width: 75px;
-  height: 75px;
+  min-width: 75px;
+  min-height: 75px;
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: var(--box-shadow);
 }
 
 .swiper-button-next {
-  color: (var(--background-color-med));
+  color: var(--background-color-med);
   border-radius: 50%;
-  width: 75px;
-  height: 75px;
+  min-width: 75px;
+  min-height: 75px;
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: var(--box-shadow);
 }
