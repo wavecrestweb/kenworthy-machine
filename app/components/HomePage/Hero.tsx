@@ -16,8 +16,10 @@ export default function Hero(props: PageHomeBlocksHero) {
       minH="calc(38.25vw + 6rem)"
     >
       <Image
-        src={heroImage}
+        src={props.image ? props.image : heroImage}
         alt={"various manufacturing machines in a shop"}
+        width={1728}
+        height={610}
         style={{ width: "100%", height: "auto", objectFit: "cover" }}
       />
       <Box

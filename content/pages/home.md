@@ -1,6 +1,6 @@
 ---
 blocks:
-  - image: /HeroMachines.jpg
+  - image: ''
     heading: Machining Services
     _template: hero
   - backgroundImage: /machine-gear-background.png
@@ -52,7 +52,9 @@ blocks:
       formTitle: Request a Quote
       field1Placeholder: Name
       field2Placeholder: Industry Type
-      field3Placeholder: Share additional information or questions you have. Our team will personally connect with you about this quote.
+      field3Placeholder: >-
+        Share additional information or questions you have. Our team will
+        personally connect with you about this quote.
       submitButtonText: Submit
     requestCopyTitle: Send Us Your Request
     fillFormCopy: >
@@ -77,8 +79,8 @@ blocks:
     _template: quoteSection
   - heading: Join Our Team
     careerDescription: >
-      ### Whether you’re a beginner or a CNC expert, there are
-      exciting opportunities for all experience levels at Kenworthy Machine.
+      ### Whether you’re a beginner or a CNC expert, there are exciting
+      opportunities for all experience levels at Kenworthy Machine.
     buttonLabel: Apply Now
     card1:
       title: Job Training
@@ -97,3 +99,4 @@ blocks:
     _template: careerSection
 _template: home
 ---
+

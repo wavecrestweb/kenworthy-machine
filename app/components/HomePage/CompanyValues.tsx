@@ -23,9 +23,8 @@ export default function CompanyValues(props: PageHomeBlocksValues) {
   return (
     <Box position="relative" overflow="hidden">
       <Image
-        src={gearBackground}
-        alt=""
-        placeholder="blur"
+        src={props.backgroundImage ? props.backgroundImage : gearBackground}
+        alt="piles of machine gears"
         fill
         sizes="100vw"
         style={{
