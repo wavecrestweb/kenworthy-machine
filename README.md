@@ -2,11 +2,11 @@
 
 ## Overview
 
-This repository contains the source code for the Kenworthy Machine website, a small business located near Seattle, Washington specializing in precision machine manufacturing. The site serves to showcase the company's services, values, and product offerings to potential clients and partners.
+This repository contains the source code for the Kenworthy Machine website, a small business located near Seattle, Washington specializing in precision machine manufacturing. Wavecrest Web Collective's overhaul of the company's site, using web design by Kayla Shovlowsky, serves to better showcase the company's services, values, and product offerings to potential clients and partners.
 
 ## Live Site
 
-The website is deployed and can be visited at the following URL: [Kenworthy Machine Live Site](https://kenworthy-machine.vercel.app/)
+The website is live and can be visited at the following URL: [Kenworthy Machine Live Site](https://kenworthymachine.com/)
 
 ## Team
 
